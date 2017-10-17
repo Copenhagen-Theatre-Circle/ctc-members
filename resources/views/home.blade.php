@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welcome to the CTC Members' Section! <br/>
+                    More coming soon!
                 </div>
             </div>
         </div>
