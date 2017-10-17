@@ -25,4 +25,4 @@ Route::get('/nomember', function(){
   return view('nomember');
 });
 
-Route::get('/members', 'MembersController@index');
+Route::get('/membership', 'MembersController@index');
