@@ -65,7 +65,7 @@
 
                           <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Show Data
+                                CTCDB+
                             </a>
                           </li>
                           <li>
