@@ -48,8 +48,8 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                           <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Members
+                            <a href="/membership" role="button" aria-expanded="false">
+                                Membership List
                             </a>
                           </li>
                           <li>
