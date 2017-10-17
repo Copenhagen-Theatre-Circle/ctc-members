@@ -15,7 +15,7 @@
                     @endif
 
                     Welcome to the CTC Members' Section! <br/>
-                    More coming soon!
+                    More coming soon! Promise!
                 </div>
             </div>
         </div>
