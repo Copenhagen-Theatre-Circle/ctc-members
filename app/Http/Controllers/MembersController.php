@@ -22,6 +22,6 @@ class MembersController extends Controller
   public function index()
   {
       $people=Person::orderBy('last_name', 'asc')->get();
-      return view('members', ['people' => $people]);
+      return view('membership', ['people' => $people]);
   }//
 }
