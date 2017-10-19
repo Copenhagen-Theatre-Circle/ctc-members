@@ -88,7 +88,7 @@ class PersonController extends Controller
         $reformed['wants_to_learn']=array_values($reformed['wants_to_learn']);
         $reformed['experience']=array_values($reformed['experience']);
 
-        return $reformed;
+        return view('memberprofile')->with($reformed);
 
     }
 
