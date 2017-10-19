@@ -7,14 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends Model
 {
 
-  protected function memberships()
+  public function memberships()
      {
          return $this->hasMany('App\Membership');
      }
 
-  protected function portraits()
+  public function portraits()
     {
         return $this->hasMany('App\Photograph');
+    }
+
+  public function questionnaire_answers()
+    {
+        return $this->hasMany('App\QuestionnaireAnswer');
     }
 
   public function ismember()
@@ -27,6 +32,15 @@ class Person extends Model
     $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
     return $portrait;
   }
+
+
+  protected $appends = array('portrait');
+
+  public function getPortraitAttribute()
+
+   {
+     return $this->main_portrait();
+   }
 
 
 
