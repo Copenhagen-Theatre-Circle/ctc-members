@@ -8,6 +8,8 @@
           <h1 class="display-4">{{$first_name}}</h1><h1 class="display-4">{{$last_name}}</h1>
         </div>
       </div>
+
+      @if (! empty($biography))
       <div class="row">
         <div class="col-xs-12">
           <br/>
@@ -16,8 +18,9 @@
           </p></blockquote>
         </div>
       </div>
+      @endif
 
-      @if ($general_interests)
+      @if (! empty($general_interests))
 
         <div class="row">
           <div class="col-xs-12" style="line-height: 36px;">
@@ -37,7 +40,7 @@
 
       @endif
 
-      @if ($experience)
+      @if (! empty($experience))
 
         <div class="row">
           <div class="col-xs-12" style="line-height: 180%;">
@@ -57,7 +60,7 @@
 
       @endif
 
-      @if ($wants_to_learn)
+      @if (! empty($wants_to_learn))
 
         <div class="row">
           <div class="col-xs-12" style="line-height: 180%;">
