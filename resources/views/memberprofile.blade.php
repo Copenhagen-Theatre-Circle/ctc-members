@@ -2,7 +2,7 @@
   <div class="container alert alert-secondary" style="max-width: 100%; background-color: #efefef; margin-bottom: 0px; padding: 30px;">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
-          <img src="https://ctc-members.dk/media/{{$portrait}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 5%;">
+          <img src="https://ctc-members.dk/media/{{$portrait}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
         </div>
         <div class="col-sm-8 col-xs-12">
           <h1 class="display-4">{{$first_name}}</h1><h1 class="display-4">{{$last_name}}</h1>
