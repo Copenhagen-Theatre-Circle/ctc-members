@@ -51,35 +51,23 @@
                             </td>
 
                             <td style="vertical-align:middle;">
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" href="/nomember">
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}" >
                               More info
                               </button>
 
                               <!-- Modal -->
-                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="Member_{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                   <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body">
-                                      ...
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                      <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+                                    
                                   </div>
                                 </div>
                               </div>
                                 <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
                                 <script type="text/javascript">
-                                $('#exampleModal').on('click', function(e){
+                                $('#Member_{{$person->id}}').on('click', function(e){
                                   e.preventDefault();
-                                  $('#exampleModal').modal('show').find('.modal-body').load($(this).attr('href'));
+                                  $('#Member_{{$person->id}}').modal('show').find('.modal-body').load($(this).attr('href'));
                                 });
                                 </script>
                             </td>
