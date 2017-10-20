@@ -13,9 +13,11 @@
       <div class="row">
         <div class="col-xs-12">
           <br/>
-          <blockquote class="blockquote" style="font-size: 16px;"><p>
+          <blockquote class="blockquote" style="padding-right: 40px; padding-left: 0px; margin-bottom: 0px;">
+            <p style="font-size: 16px; margin-bottom: 0px; text-align: justify;">
             "{!! nl2br(e($biography)) !!}"
-          </p></blockquote>
+            </p>
+          </blockquote>
         </div>
       </div>
       @endif
