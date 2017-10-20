@@ -46,7 +46,9 @@ class PersonController extends Controller
      */
     public function show($id)
     {
+
         $initial = Person::with('questionnaire_answers')->find($id);
+
 
         $reformed = array();
         $reformed['id']=$initial->id;
