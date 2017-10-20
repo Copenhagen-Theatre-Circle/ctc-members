@@ -53,14 +53,18 @@ class PersonController extends Controller
         $reformed['first_name']=$initial->first_name;
         $reformed['last_name']=$initial->last_name;
         $reformed['biography']=$initial->member_bio;
-        $reformed['portrait']=$initial->portrait;
+        if(!empty($initial->portrait)){
+          $reformed['portrait']=$initial->portrait;
+        } else {
+          $reformed['portrait']='unisex_silhouette.png';
+        }
 
         foreach ($initial->questionnaire_answers as $answer) {
 
           if (!empty($answer->functiongroup_id)) {
 
+            //sort order field = key, to ensure correct order
             $sort_id = $answer->functiongroups->sort_order;
-
             $reformed['general_interests'][$sort_id]['name'] = $answer->functiongroups->questionnaire_name;
             $reformed['general_interests'][$sort_id]['color_hex'] = $answer->functiongroups->color_hex;
 
@@ -68,6 +72,7 @@ class PersonController extends Controller
 
           elseif (!empty($answer->function_id) && !empty($answer->has_experience) && $answer->interest==1) {
 
+            //sort order field = key, to ensure correct order
             $sort_id = $answer->functions->functiongroups->sort_order . "_" . $answer->functions->sort_order;
             $reformed['experience'][$sort_id]['name'] = $answer->functions->questionnaire_name;
             $reformed['experience'][$sort_id]['color_hex'] = $answer->functions->functiongroups->color_hex;
@@ -76,6 +81,7 @@ class PersonController extends Controller
 
           elseif (!empty($answer->function_id) && !empty($answer->wants_to_learn) && $answer->interest==1) {
 
+            //sort order field = key, to ensure correct order
             $sort_id = $answer->functions->functiongroups->sort_order . "_" . $answer->functions->sort_order;
             $reformed['wants_to_learn'][$sort_id]['name'] = $answer->functions->questionnaire_name;
             $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->functions->functiongroups->color_hex;
@@ -84,9 +90,18 @@ class PersonController extends Controller
 
         }
 
-        $reformed['general_interests']=array_values($reformed['general_interests']);
-        $reformed['wants_to_learn']=array_values($reformed['wants_to_learn']);
-        $reformed['experience']=array_values($reformed['experience']);
+        //remove keys here
+        if (!empty($reformed['general_interests'])) {
+          $reformed['general_interests']=array_values($reformed['general_interests']);
+        }
+
+        if (!empty($reformed['wants_to_learn'])){
+          $reformed['wants_to_learn']=array_values($reformed['wants_to_learn']);
+        }
+
+        if (!empty($reformed['experience'])){
+          $reformed['experience']=array_values($reformed['experience']);
+        }
 
         $person = $reformed;
 
