@@ -8,6 +8,14 @@
           <h1 class="display-4">{{$first_name}}</h1><h1 class="display-4">{{$last_name}}</h1>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <br/>
+          <blockquote class="blockquote" style="font-size: 16px;"><p>
+            {!! nl2br(e($biography)) !!}
+          </p></blockquote>
+        </div>
+      </div>
 
   </div>
 
