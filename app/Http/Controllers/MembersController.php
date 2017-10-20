@@ -34,7 +34,7 @@ class MembersController extends Controller
     } elseif (!empty($wherehas)) {
       $people = Person::with('questionnaire_answers')->whereHas('questionnaire_answers', function($q){
         if (!empty(request('g'))){$q->where('functiongroup_id',request('g'));}
-        elseif (!empty(request('f'))){$q->where('function_id',request('f'));}
+        elseif (!empty(request('f'))){$q->where(['interest'=>1,'function_id'=>request('f')]);}
       })->get();
     }
     else
