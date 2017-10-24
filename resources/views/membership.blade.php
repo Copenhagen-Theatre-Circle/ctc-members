@@ -1,40 +1,63 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-3">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
 
-                {{-- The Dropdown --}}
-                <form action="/membership" method="GET" style="display:inline;">
-                <label>General Interests:</label>
-                <select name="g" id="myselect" onchange="this.form.submit()">
-                  <option value="">all</option>
-                @foreach ($functiongroups as $functiongroup)
-                  <option value="{{$functiongroup->id}}" @if (app('request')->input('g')==$functiongroup->id){{ "selected"}}@endif>
-                    {{$functiongroup->questionnaire_name}}
-                  </option>
-                @endforeach
-                </select>
-                </form>
-                &nbsp;
-                <form action="/membership" method="GET" style="display:inline;">
-                <label>Speficic Interests:</label>
-                <select name="f" id="myselect" onchange="this.form.submit()">
-                  <option value="">all</option>
-                @foreach ($functions as $function)
-                  <option value="{{$function->id}}" @if (app('request')->input('f')==$function->id){{ "selected"}}@endif>
-                    {{$function->questionnaire_name}}
-                  </option>
-                @endforeach
-                </select>
-                </form>
+                {{-- The Dropdowns --}}
+
+                  <div class="form-row">
+                    <div class="col-md-4">
+                      <form action="/membership" method="GET">
+                      <label>Find by Name:</label>
+                      <input type="text" class="form-control" placeholder="Name" name="name">
+                    </form>
+                    </div>
+                    <div class="col-md-4">
+                      <form action="/membership" method="GET">
+                      <label>General Interests:</label>
+                      <select class="form-control" name="g" id="myselect" onchange="this.form.submit()">
+                        <option value="">all</option>
+                      @foreach ($functiongroups as $functiongroup)
+                        <option value="{{$functiongroup->id}}" @if (app('request')->input('g')==$functiongroup->id){{ "selected"}}@endif>
+                          {{$functiongroup->questionnaire_name}}
+                        </option>
+                      @endforeach
+                      </select>
+                    </form>
+                    </div>
+
+                    {{-- </form>
+                  </div>
+                  <div class="form-group">
+                    &nbsp;
+                    <form action="/membership" method="GET" style="display:inline;"> --}}
+                    <div class="col-md-4">
+                      <form action="/membership" method="GET">
+                      <label>Speficic Interests:</label>
+                      <select class="form-control" name="f" id="myselect" onchange="this.form.submit()">
+                        <option value="">all</option>
+                      @foreach ($functions as $function)
+                        <option value="{{$function->id}}" @if (app('request')->input('f')==$function->id){{ "selected"}}@endif>
+                          {{$function->questionnaire_name}}
+                        </option>
+                      @endforeach
+                      </select>
+                      </form>
+                    </div>
+
+                    <div class="col-md-4">
+
+                    </div>
+
+                  </div>
 
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
