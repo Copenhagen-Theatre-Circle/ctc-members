@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Person;
 use App\Crewfunction;
 use App\Functiongroup;
+use DB;
+
 
 
 class MembersController extends Controller
@@ -24,17 +26,15 @@ class MembersController extends Controller
   public function index()
   {
 
-    if (!empty(request('first_name'))){$where['first_name']=request('first_name');}
-    if (!empty(request('last_name'))){$where['last_name']=request('last_name');}
-    if (!empty(request('g'))){$wherehas['functiongroup_id']=request('g');}
-    if (!empty(request('f'))){$wherehas['function_id']=request('f');}
-
-    if (!empty($where)) {
-      $people = Person::with('questionnaire_answers')->where($where)->get();
-    } elseif (!empty($wherehas)) {
+    if (!empty(request('name'))) {
+      $people = Person::with('questionnaire_answers')->where(DB::raw('CONCAT(first_name, " ", last_name)'), 'like', '%' . request('name') . '%')->get();
+    } elseif (!empty(request('g'))) {
       $people = Person::with('questionnaire_answers')->whereHas('questionnaire_answers', function($q){
-        if (!empty(request('g'))){$q->where('functiongroup_id',request('g'));}
-        elseif (!empty(request('f'))){$q->where(['interest'=>1,'function_id'=>request('f')]);}
+        $q->where('functiongroup_id',request('g'));
+      })->get();
+    } elseif (!empty(request('f'))) {
+      $people = Person::with('questionnaire_answers')->whereHas('questionnaire_answers', function($q){
+        $q->where(['interest'=>1,'function_id'=>request('f')]);
       })->get();
     }
     else

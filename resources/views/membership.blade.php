@@ -13,7 +13,7 @@
                     <div class="col-md-4">
                       <form action="/membership" method="GET">
                       <label>Find by Name:</label>
-                      <input type="text" class="form-control" placeholder="Name" name="name">
+                      <input type="text" class="form-control" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
                     </form>
                     </div>
                     <div class="col-md-4">
