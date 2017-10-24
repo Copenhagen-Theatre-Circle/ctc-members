@@ -15,7 +15,101 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+
+
+        {{-- <a class="navbar-brand" href="#">CTC Members</a> --}}
+
+        <a class="navbar-brand" href="{{ url('/') }}">
+          <img src="/media/logo_dark.png" style="display: inline; width: 37px;"/>
+            &nbsp; {{ config('app.name', 'CTC Members') }}
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Authentication Links -->
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+              <li class="nav-item">
+                <a class="nav-link" href="/membership">
+                    Membership List
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Bulletin Board</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Handbook</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">CTCDB+</a>
+              </li>
+              <li class="nav-item dropdown">
+
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">
+                              Edit Profile
+                          </a>
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                              Logout
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              {{ csrf_field() }}
+                          </form>
+
+                  </div>
+              </li>
+
+              @endguest
+
+            </ul>
+          </div>
+
+          </div>
+
+        </nav>
+
+
+            {{-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            --}}
+
+
+        {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <div class="navbar-header">
 
@@ -41,7 +135,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="navbar-nav mr-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
@@ -69,6 +163,17 @@
                             </a>
                           </li>
                           <li>
+                              <a href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                  Logout
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                          </li>
+                          <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Accounts<span class="caret"></span>
                             </a>
@@ -83,6 +188,7 @@
                                       Shows
                                   </a>
                               </li>
+
                             </ul>
                           </li>
                             <li class="dropdown">
@@ -115,7 +221,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         @yield('content')
     </div>
