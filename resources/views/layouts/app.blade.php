@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div id="app">
@@ -22,7 +24,7 @@
 
         {{-- <a class="navbar-brand" href="#">CTC Members</a> --}}
 
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="@guest {{url('/home')}} @else {{url('/home') }} @endguest">
           <img src="/media/logo_dark.png" style="display: inline; width: 37px;"/>
             &nbsp; {{ config('app.name', 'CTC Members') }}
         </a>
