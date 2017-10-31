@@ -1,11 +1,15 @@
+{{-- @extends('layouts.app') --}}
 
-  <div class="container alert alert-secondary" style="max-width: 100%; background-color: #efefef; margin-bottom: 0px; padding: 30px;">
+{{-- @section('content') --}}
+
+
+  <div class="container-fluid mx-auto alert-secondary" style="width: 100%; background-color: #efefef; margin-bottom: 0px; padding: 30px;">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
           <img src="https://ctc-members.dk/media/{{$portrait}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
         </div>
         <div class="col-sm-8 col-xs-12">
-          <h1 class="display-4">{{$first_name}}</h1><h1 class="display-4">{{$last_name}}</h1>
+          <h1 class="display-5">{{$first_name}}</h1><h1 class="display-5">{{$last_name}}</h1>
         </div>
       </div>
 
@@ -20,11 +24,12 @@
           </blockquote>
         </div>
       </div>
+      <hr/>
       @endif
 
       @if (! empty($general_interests))
 
-        <div class="row">
+        <div class="row mt-3">
           <div class="col-xs-12">
 
                 <h3>General Interests:</h3>
@@ -44,7 +49,7 @@
 
       @if (! empty($experience))
 
-        <div class="row">
+        <div class="row mt-3">
           <div class="col-xs-12">
 
                 <h3>Experience:</h3>
@@ -64,7 +69,7 @@
 
       @if (! empty($wants_to_learn))
 
-        <div class="row">
+        <div class="row mt-3">
           <div class="col-xs-12">
 
                 <h3>Wants to Learn:</h3>
@@ -82,9 +87,8 @@
 
       @endif
 
-
   </div>
 
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  </div>
+
+
+{{-- @endsection --}}

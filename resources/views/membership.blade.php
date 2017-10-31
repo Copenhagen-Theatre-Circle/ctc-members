@@ -30,11 +30,6 @@
                     </form>
                     </div>
 
-                    {{-- </form>
-                  </div>
-                  <div class="form-group">
-                    &nbsp;
-                    <form action="/membership" method="GET" style="display:inline;"> --}}
                     <div class="col-md-4">
                       <form action="/membership" method="GET">
                       <label>Speficic Interests:</label>
@@ -56,6 +51,8 @@
                   </div>
 
                 </div>
+
+                {{-- The List --}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -101,7 +98,7 @@
                             </td>
 
                             <td style="vertical-align:middle;">
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}" >
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
                               More info
                               </button>
                             </td>
@@ -112,16 +109,22 @@
                           <div class="modal fade" id="Member_{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
+                                {{-- <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Profile Card: {{$person->first_name}} {{$person->last_name}}</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div> --}}
+                                <div class="modal-body p-0">
+                                  ...
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                </div>
                               </div>
                             </div>
                           </div>
-                            <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
-                            <script type="text/javascript">
-                            $('#Member_{{$person->id}}').on('click', function(e){
-                              e.preventDefault();
-                              $('#Member_{{$person->id}}').modal('show').find('.modal-body').load($(this).attr('href'));
-                            });
-                            </script>
+
 
                         @endforeach
 
@@ -135,4 +138,16 @@
         </div>
     </div>
 </div>
+
+<script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+$('body').on('click', '[data-toggle="modal"]', function(){
+  // alert ('Hello World!');
+  $($(this).data("target")+' .modal-body').load($(this).attr('href'));
+});
+
+
+
+</script>
 @endsection
