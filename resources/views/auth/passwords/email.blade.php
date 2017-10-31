@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="card panel-default">
+                <div class="card-header">
+                  <div class="col">
+                    Reset Password
+                  </div>
 
-                <div class="panel-body">
+                </div>
+
+                <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -18,9 +23,9 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
+                            <div class="col">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
@@ -32,7 +37,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col">
                                 <button type="submit" class="btn btn-primary">
                                     Send Password Reset Link
                                 </button>
