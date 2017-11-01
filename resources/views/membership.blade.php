@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container py-3">
-    <div class="row">
+    <div class="row" style="margin-top: 5vh;">
         <div class="col-md-12 col-md-offset-0">
-            <div class="card" style="height: 85vh;">
+            <div class="card" style="height: 80vh;">
                 <div class="card-header">
 
                 {{-- The Dropdowns --}}

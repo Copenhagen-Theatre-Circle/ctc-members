@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container py-3">
-    <div class="row">
+    <div class="row" style="margin-top: 5vh;">
         <div class="col-md-12 col-md-offset-2">
-            <div class="card">
+            <div class="card" style="height: 70vh; overflow: scroll;">
 
                 <div class="card-body">
                     @if (session('status'))
