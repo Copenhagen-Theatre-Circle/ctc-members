@@ -15,10 +15,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="background-color: black; background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/media/theatre-curtain.jpg') no-repeat center center fixed; background-size: cover;"
+{{-- style="background-color: #333333; background-image: url(http://ctcircle.dk/wordpress/wp-content/themes/Chameleon/images/body-bg16.png);" --}}
+>
     <div id="app">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #222;">
         <div class="container">
 
 

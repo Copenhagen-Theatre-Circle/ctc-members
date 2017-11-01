@@ -14,7 +14,7 @@
                     @endif
 
                     <div class="jumbotron pt-3 pb-2">
-                      <h1 class="display-5">Welcome, {{ explode(' ',trim(Auth::user()->name))[0]}}!</h1>
+                      <h1 class="display-5" style="animation: fadein 2s;">Welcome, {{ explode(' ',trim(Auth::user()->name))[0]}}!</h1>
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
                       <p>The first bits of functionality, like the membership list and the accounts, are set up and ready to use, but lots more is on its way!</p>
                       <p>Keep a lookout for added information in this box, where we will be introducing new features in the members' section and any other relevant news for members.</p>
