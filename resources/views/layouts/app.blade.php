@@ -17,14 +17,13 @@
 
     @media (min-width:641px) {
         .center-vertically {
-            height: 90vh;
+            height: 80vh;
 
             align-items: center;
             display: flex;
             justify-content: center;
 
             position: relative;
-            margin-top: 10vh;
         }
       }
     </style>
