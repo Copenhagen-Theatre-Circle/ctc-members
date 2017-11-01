@@ -60,7 +60,7 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" style="color:#999;">
 
                       <div class="col-6 col-md-4 col-xl-3">
 
