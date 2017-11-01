@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -46,17 +46,21 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 72px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+            }
+
+            .links > a:hover {
+                text-decoration: underline;
             }
 
             .m-b-md {
@@ -64,25 +68,27 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-color: black; background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/media/smoky-theatre.jpg') no-repeat center center fixed; background-size: cover;">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
               <img src="/media/logo_dark.png" style="display: inline; width: 120px;"/>
+              <br/><br/>
                 <div class="title m-b-md">
 
                     CTC Members
                 </div>
+
+                @if (Route::has('login'))
+                    <div class="links">
+                        @auth
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('register') }}">Register</a>
+                        @endauth
+                    </div>
+                @endif
             </div>
         </div>
     </body>

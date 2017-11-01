@@ -5,7 +5,7 @@
   <div class="container mt-5">
       <div class="row">
           <div class="col-lg-6 col-md-8 mx-auto">
-              <div class="card panel-default">
+              <div class="card">
                   <div class="card-header">
                     <div class="col">
                       Login
