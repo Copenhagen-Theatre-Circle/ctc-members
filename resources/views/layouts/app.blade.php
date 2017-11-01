@@ -13,6 +13,21 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
+    <style>
+
+    @media (min-width:641px) {
+        .center-vertically {
+            height: 90vh;
+
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+            margin-top: 10vh;
+        }
+      }
+    </style>
 
 </head>
 <body style="background-color: black; background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/media/smoky-theatre.jpg') no-repeat center center fixed; background-size: cover;"
