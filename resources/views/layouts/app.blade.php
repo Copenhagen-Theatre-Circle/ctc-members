@@ -63,6 +63,11 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/accounts">
+                    Accounts
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link disabled" href="#">Bulletin Board</a>
               </li>
               <li class="nav-item">

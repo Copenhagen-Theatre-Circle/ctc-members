@@ -3,7 +3,7 @@
 {{-- @section('content') --}}
 
 
-  <div class="container-fluid mx-auto alert-secondary" style="width: 100%; background-color: #efefef; margin-bottom: 0px; padding: 30px;">
+  <div class="container alert-secondary" style="width: 100%; background-color: #efefef; margin-bottom: 0px; padding: 30px; padding-left: 40px;">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
           <img src="https://ctc-members.dk/media/{{$portrait}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
