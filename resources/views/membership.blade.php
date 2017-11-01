@@ -4,7 +4,7 @@
 <div class="container py-3">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
-            <div class="card">
+            <div class="card" style="height: 85vh;">
                 <div class="card-header">
 
                 {{-- The Dropdowns --}}
@@ -54,7 +54,7 @@
 
                 {{-- The List --}}
 
-                <div class="card-body">
+                <div class="card-body" style="overflow: scroll;">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
