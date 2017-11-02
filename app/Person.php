@@ -24,7 +24,7 @@ class Person extends Model
 
   public function ismember()
     {
-    return $this->memberships()->where('season_id', '50')->first() ? true : false ;
+    return $this->memberships()->where('season_id', '>', '48')->first() ? true : false ;
     }
 
   public function main_portrait ()
