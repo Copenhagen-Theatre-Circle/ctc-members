@@ -137,7 +137,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/accounts">
+                <a class="nav-link" href="http://ctc-members.dk/a6de1850-21c1-4ca2-87e0-253c61bee591/seasons/" target="_blank">
                     Accounts
                 </a>
               </li>
@@ -157,7 +157,7 @@
                   </a>
 
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="/profile">
                               Edit Profile
                           </a>
                           <a class="dropdown-item" href="{{ route('logout') }}"

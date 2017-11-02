@@ -66,10 +66,13 @@
                       <table class="table table-striped">
 
                           <tr>
-                            <th class="hidden-xs-down">&nbsp;</th>
+                            <th class="hidden-xs-down"></th>
                             <th>Name</th>
                             <th class="hidden-xs-down">Member</th>
-                            <th>&nbsp;</th>
+                            {{-- <th class="hidden-md-down">Last Update</th> --}}
+                            <th></th>
+                            {{-- <th></th> --}}
+                            <th></th>
                           </tr>
 
                         @foreach ($people as $person)
@@ -94,7 +97,7 @@
 
                             {{-- Name --}}
 
-                            <td style="vertical-align:middle; width: 230px;">
+                            <td style="vertical-align:middle; width: 290px; ">
                               <span style="font-size: 18px;">{{$person->first_name}} {{$person->last_name}}</span>
                             </td>
 
@@ -104,13 +107,37 @@
                                 <img src="http://ctc-members.dev/media/star.png" alt="" style="object-fit: cover; height: 30px; width: 30px;  ">
                             </td>
 
+                            {{-- Last Update --}}
+
+                            {{-- <td class="hidden-md-down" style="vertical-align:middle; width: 120px;">
+                              <span style="font-size: 18px;">2017</span>
+                            </td> --}}
+
                             {{-- More Info Button --}}
 
-                            <td style="vertical-align:middle;">
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                            <td style="vertical-align:middle; width: 50px;">
+                              <button type="button" class="btn btn-primary hidden-sm-down" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
                               More info
                               </button>
+
+                              <button type="button" class="btn btn-primary hidden-md-up" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              ℹ︎
+                              </button>
                             </td>
+
+                            {{-- Contact Button --}}
+
+                            {{-- <td style="vertical-align:middle; width: 50px;">
+                              <button type="button" class="btn btn-outline-primary hidden-sm-down" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              contact
+                              </button>
+
+                              <button type="button" class="btn btn-outline-primary hidden-md-up" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              ✉︎
+                              </button>
+                            </td> --}}
+
+                            <td></td>
 
                           </tr>
 

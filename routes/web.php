@@ -28,3 +28,5 @@ Route::get('/nomember', function(){
 Route::get('/membership', 'MembersController@index');
 
 Route::resource('person','PersonController');
+
+Route::get('/profile','UserController@profile');

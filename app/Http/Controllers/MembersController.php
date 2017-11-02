@@ -45,6 +45,7 @@ class MembersController extends Controller
     $functiongroups = Functiongroup::orderBy('sort_order')->get();
     $functions = Crewfunction::orderBy('sort_order')->get();
 
+
     return view('membership', ['people' => $people, 'functiongroups' => $functiongroups, 'functions'=> $functions]);
 
   }

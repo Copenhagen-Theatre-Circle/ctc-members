@@ -45,8 +45,22 @@
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/pie-chart.png" alt="Card image cap">
                           <div class="card-body">
                             <h4 class="card-title">Accounts</h4>
-                            <p class="card-text">Browse through the CTC's accounts and get a transparent view of how we have been spending our money, both for shows and entire seasons.</p>
-                            <a href="#" class="btn btn-primary">Accounts</a>
+                            <p class="card-text">Browse through the CTC's accounts and get a transparent view of how we have been spending our money, both for shows and for entire seasons.</p>
+                            <a href="http://ctc-members.dk/a6de1850-21c1-4ca2-87e0-253c61bee591/seasons/" class="btn btn-primary" target="_blank">Accounts</a>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                        <div class="card">
+                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/user-pencil.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Your Profile</h4>
+                            <p class="card-text">Change what is shown on your personal profile page on the membership list by editing your biography and interests in the personal questionnaire.</p>
+                              {{-- Edit your biography and tick off what interests you in your personal questionnaire to change what is shown about you on the membership list.</p> --}}
+                            <a href="https://ctc-members.dk/questionnaire/?p={{$user->uniqid()}}" class="btn btn-primary" target="_blank">Edit Questionnaire</a>
                           </div>
                         </div>
 
@@ -92,7 +106,7 @@
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/book.png" alt="Card image cap">
                           <div class="card-body">
                             <h4 class="card-title">Production Handbook</h4>
-                            <p class="card-text">Years of experience in theatre-making has been written down in our production handbook. Want to learn more about Production Management. Read on here...</p>
+                            <p class="card-text">Years of experience in theatre-making has been written down in our production handbook. Want to learn more about Production Management? Read on here...</p>
                           </div>
                         </div>
 
