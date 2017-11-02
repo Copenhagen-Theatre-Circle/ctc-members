@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container py-3">
-    <div class="row" style="margin-top: 5vh;">
+    <div class="row scrollbox">
         <div class="col-md-12 col-md-offset-2">
-            <div class="card" style="height: 80vh; overflow: scroll;">
+            <div class="card">
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,7 +16,7 @@
                     <div class="jumbotron pt-3 pb-2">
                       <h1 class="display-5" style="animation: fadein 2s;">Welcome, {{ explode(' ',trim(Auth::user()->name))[0]}}!</h1>
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
-                      <p>The first bits of functionality, like the membership list and the accounts, are set up and ready to use, but lots more is on its way!</p>
+                      <p>The first features, like the membership list and the accounts, are set up and ready to use, but lots more is on its way!</p>
                       <p>Keep a lookout for added information in this box, where we will be introducing new features in the members' section and any other relevant news for members.</p>
                       {{-- <hr class="my-4">
                       <p class="lead">
@@ -26,7 +26,7 @@
 
                     <div class="row">
 
-                      <div class="col-6 col-md-4 col-xl-3">
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/list-user.png" alt="Card image cap">
@@ -39,7 +39,7 @@
 
                       </div>
 
-                      <div class="col-6 col-md-4 col-xl-3">
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/pie-chart.png" alt="Card image cap">
@@ -54,7 +54,7 @@
 
                     </div>
 
-                    <div class="row pt-5 pb-3">
+                    <div class="row pb-3">
                       <div class="col">
                         <h4>coming soon / in the pipeline:</h4>
                       </div>
@@ -62,7 +62,7 @@
 
                     <div class="row" style="color:#999;">
 
-                      <div class="col-6 col-md-4 col-xl-3">
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/note-pin.png" alt="Card image cap">
@@ -74,7 +74,7 @@
 
                       </div>
 
-                      <div class="col-6 col-md-4 col-xl-3">
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/envelope-open-letter-heart.png" alt="Card image cap">
@@ -86,7 +86,7 @@
 
                       </div>
 
-                      <div class="col-6 col-md-4 col-xl-3">
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/book.png" alt="Card image cap">
@@ -98,7 +98,7 @@
 
                       </div>
 
-                      <div class="col-6 col-md-4 col-xl-3">
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/monitor-arrow.png" alt="Card image cap">
