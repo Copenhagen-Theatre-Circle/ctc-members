@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CTC Members</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -43,45 +43,54 @@
 
             .content {
                 text-align: center;
+                padding: 20px;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 72px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
 
+            a {
+              color: #fff;
+              letter-spacing: .1rem;
+              text-decoration: underline;
+            }
+
+            .links > a:hover {
+                text-decoration: underline;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .lead {
+              font-size: 24px;
+            }
         </style>
     </head>
-    <body>
+    <body style="background-color: black; background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/media/smoky-theatre.jpg') no-repeat center center fixed; background-size: cover;">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
               <img src="/media/logo_dark.png" style="display: inline; width: 120px;"/>
+              <br/><br/>
                 <div class="title m-b-md">
 
-                    You are not a member!
+                    CTC Members - almost there...
+                </div>
+                <div class="lead">
+                <p>Unfortunately, our records don't show that you are an active member with the registered email address.</p> <p>Please contact <a href="mailto:membership@ctcircle.dk(CTC Membership)">membership@ctcircle.dk</a> to ask for help to access the members' section.</p>
                 </div>
             </div>
         </div>
