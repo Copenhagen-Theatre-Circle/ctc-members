@@ -66,16 +66,19 @@
                       <table class="table table-striped">
 
                           <tr>
-                            <th></th>
+                            <th class="hidden-xs-down">&nbsp;</th>
                             <th>Name</th>
-                            <th>Member</th>
-                            <th></th>
+                            <th class="hidden-xs-down">Member</th>
+                            <th>&nbsp;</th>
                           </tr>
 
                         @foreach ($people as $person)
 
                           <tr>
-                            <td style="width: 70px;">
+
+                            {{-- Portrait --}}
+
+                            <td class="hidden-xs-down" style="width: 70px;">
 
                             @if (!empty($person->main_portrait()))
 
@@ -89,13 +92,19 @@
 
                             </td>
 
+                            {{-- Name --}}
+
                             <td style="vertical-align:middle; width: 230px;">
                               <span style="font-size: 18px;">{{$person->first_name}} {{$person->last_name}}</span>
                             </td>
 
-                            <td style="vertical-align:middle; text-align: center; width: 50px;">
+                            {{-- Membership Star --}}
+
+                            <td class="hidden-xs-down" style="vertical-align:middle; text-align: center; width: 50px;">
                                 <img src="http://ctc-members.dev/media/star.png" alt="" style="object-fit: cover; height: 30px; width: 30px;  ">
                             </td>
+
+                            {{-- More Info Button --}}
 
                             <td style="vertical-align:middle;">
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
