@@ -39,7 +39,7 @@ class MembersController extends Controller
     }
     else
     {
-      $people=Person::orderBy('last_name', 'asc')->get();
+      $people=Person::orderBy('first_name', 'asc')->orderBy('last_name', 'asc')->get();
     }
 
     $functiongroups = Functiongroup::orderBy('sort_order')->get();
