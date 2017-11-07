@@ -36,7 +36,7 @@
 
         .scrollbox {
           height: 85vh;
-          overflow: scroll;
+          overflow-y: scroll;
           padding-top: 2vh;
         }
 
