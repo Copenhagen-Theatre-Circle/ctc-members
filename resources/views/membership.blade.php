@@ -85,11 +85,11 @@
 
                             @if (!empty($person->main_portrait()))
 
-                              <img src="http://ctc-members.dk/media/{{$person->main_portrait()}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
+                              <img src="https://ctc-members.dk/media/{{$person->main_portrait()}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
 
                             @else
 
-                              <img src="http://ctc-members.dk/media/unisex_silhouette.png" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
+                              <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
 
                             @endif
 
@@ -104,7 +104,7 @@
                             {{-- Membership Star --}}
 
                             <td class="hidden-xs-down" style="vertical-align:middle; text-align: center; width: 50px;">
-                                <img src="http://ctc-members.dev/media/star.png" alt="" style="object-fit: cover; height: 30px; width: 30px;  ">
+                                <img src="https://ctc-members.dev/media/star.png" alt="" style="object-fit: cover; height: 30px; width: 30px;  ">
                             </td>
 
                             {{-- Last Update --}}
