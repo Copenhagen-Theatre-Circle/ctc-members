@@ -31,11 +31,11 @@ class MembersController extends Controller
     } elseif (!empty(request('g'))) {
       $people = Person::with('questionnaire_answers')->whereHas('questionnaire_answers', function($q){
         $q->where('functiongroup_id',request('g'));
-      })->get();
+      })->orderBy('first_name', 'asc')->orderBy('last_name', 'asc')->get();
     } elseif (!empty(request('f'))) {
       $people = Person::with('questionnaire_answers')->whereHas('questionnaire_answers', function($q){
         $q->where(['interest'=>1,'function_id'=>request('f')]);
-      })->get();
+      })->orderBy('first_name', 'asc')->orderBy('last_name', 'asc')->get();
     }
     else
     {
