@@ -20,4 +20,9 @@ class Crewfunction extends Model
             return $this->functiongroups['questionnaire_name'];
         }
 
+    public function getFunctionGroupSortOrderAttribute()
+        {
+            return $this->functiongroups['sort_order'];
+        }
+
 }

@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
+  {{-- @foreach ($functionarray as $functiongroup=>$values)
+    functiongroup: {{$functiongroup}} <br/>
+      @foreach ($values as $key=>$value)
+      key: {{$key}}, value: {{$value['questionnaire_name']}} <br/>
+      @endforeach
+
+  @endforeach --}}
+
 <div class="container py-3">
     <div class="row scrollbox">
         <div class="col-md-12 col-md-offset-0">
@@ -35,10 +44,15 @@
                       <label>Speficic Interests:</label>
                       <select class="form-control" name="f" id="myselect" onchange="this.form.submit()">
                         <option value="">all</option>
-                      @foreach ($functions as $function)
-                        <option value="{{$function->id}}" @if (app('request')->input('f')==$function->id){{ "selected"}}@endif>
-                          {{$function->questionnaire_name}}
-                        </option>
+                      @foreach ($functionarray as $functiongroup=>$values)
+                        <optgroup label="{{$functiongroup}}">
+                          @foreach ($values as $id=>$value)
+                          <option value="{{$id}}" @if (app('request')->input('f')==$id){{ "selected"}}@endif>
+                            {{$value}}
+                          </option>
+                          @endforeach
+                        </optgroup>
+
                       @endforeach
                       </select>
                       </form>

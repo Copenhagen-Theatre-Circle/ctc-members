@@ -43,10 +43,14 @@ class MembersController extends Controller
     }
 
     $functiongroups = Functiongroup::orderBy('sort_order')->get();
-    $functions = Crewfunction::orderBy('sort_order')->get();
+    $functions = Crewfunction::get()->sortBy('sort_order')->sortBy('FunctionGroupSortOrder');
+
+    foreach ($functions as $function) {
+      $functionarray[$function->functiongroup][$function->id]=$function->questionnaire_name;
+    }
 
 
-    return view('membership', ['people' => $people, 'functiongroups' => $functiongroups, 'functions'=> $functions]);
+    return view('membership', ['people' => $people, 'functiongroups' => $functiongroups, 'functionarray'=> $functionarray]);
 
   }
 }
