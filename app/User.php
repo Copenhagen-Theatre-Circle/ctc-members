@@ -33,7 +33,12 @@ class User extends Authenticatable
     }
 
     public function ismember(){
-      return $this->person->ismember();
+      //member check only happens if person is set up in database, otherwise false
+      if ($this->person['id']){
+        return $this->person->ismember();
+      } else {
+        return false;
+      }
     }
 
     public function membershipid(){
