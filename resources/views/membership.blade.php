@@ -83,7 +83,7 @@
                             <th class="hidden-xs-down"></th>
                             <th>Name</th>
                             <th class="hidden-xs-down">Member</th>
-                            {{-- <th class="hidden-md-down">Last Update</th> --}}
+                            <th class="hidden-md-down">Last Update</th>
                             <th></th>
                             {{-- <th></th> --}}
                             <th></th>
@@ -125,9 +125,9 @@
 
                             {{-- Last Update --}}
 
-                            {{-- <td class="hidden-md-down" style="vertical-align:middle; width: 120px;">
-                              <span style="font-size: 18px;">2017</span>
-                            </td> --}}
+                            <td class="hidden-md-down" style="vertical-align:middle; width: 130px;">
+                              <span style="font-size: 18px;">{{$person->questionnaire_answered}}</span>
+                            </td>
 
                             {{-- More Info Button --}}
 

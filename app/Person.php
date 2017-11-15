@@ -46,6 +46,16 @@ class Person extends Model
      return $this->main_portrait();
    }
 
+   public function getQuestionnaireAnsweredAttribute() {
+     $created_at = $this->questionnaire_answers()->first()['created_at'];
+     if ($created_at) {
+       $created_date = date('d M Y', strtotime($created_at));
+       return $created_date;
+     } else {
+       return false;
+     }
+
+   }
 
 
 }
