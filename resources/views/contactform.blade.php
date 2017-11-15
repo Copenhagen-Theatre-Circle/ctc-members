@@ -90,6 +90,13 @@
                       <label for="body">Message</label>
                       <textarea class="form-control form-control-lg" id="body" rows="8" placeholder="Enter message"></textarea>
                     </div>
+
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        BCC message to {{$user->mail}}
+                      </label>
+                    </div>
                     <hr>
                     {{-- Buttons --}}
                       <input type="button" value="Cancel" onclick="history.back()" class="btn btn-lg btn-secondary float-left">
