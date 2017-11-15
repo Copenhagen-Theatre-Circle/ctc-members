@@ -143,15 +143,15 @@
 
                             {{-- Contact Button --}}
 
-                            {{-- <td style="vertical-align:middle; width: 50px;">
-                              <button type="button" class="btn btn-outline-primary hidden-sm-down" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                            <td style="vertical-align:middle; width: 50px;">
+                              <a class="btn btn-outline-primary hidden-sm-down" href="/message/{{$person->id}}">
                               contact
-                              </button>
+                              </a>
 
-                              <button type="button" class="btn btn-outline-primary hidden-md-up" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              <a class="btn btn-outline-primary hidden-md-up" href="/message/{{$person->id}}">
                               ✉︎
-                              </button>
-                            </td> --}}
+                              </a>
+                            </td>
 
                             <td></td>
 

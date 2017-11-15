@@ -29,4 +29,6 @@ Route::get('/membership', 'MembersController@index');
 
 Route::resource('person','PersonController');
 
+Route::resource('message','MessageController');
+
 Route::get('/profile','UserController@profile');
