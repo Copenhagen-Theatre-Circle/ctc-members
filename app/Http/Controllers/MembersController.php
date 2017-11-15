@@ -49,8 +49,10 @@ class MembersController extends Controller
       $functionarray[$function->functiongroup][$function->id]=$function->questionnaire_name;
     }
 
+    $peoplecount = $people->count();
 
-    return view('membership', ['people' => $people, 'functiongroups' => $functiongroups, 'functionarray'=> $functionarray]);
+
+    return view('membership', ['people' => $people, 'peoplecount' => $peoplecount, 'functiongroups' => $functiongroups, 'functionarray'=> $functionarray]);
 
   }
 }

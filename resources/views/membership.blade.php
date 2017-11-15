@@ -58,10 +58,12 @@
                       </form>
                     </div>
 
-                    <div class="col-md-4">
-
+                  </div>
+                    <hr>
+                  <div class="row mt-2 mb-0">
+                    <div class="col">
+                      <button type="button" class="btn btn-outline-success">{{$peoplecount}} results found</button>
                     </div>
-
                   </div>
 
                 </div>
@@ -69,11 +71,13 @@
                 {{-- The List --}}
 
                 <div class="card-body">
-                    @if (session('status'))
+                    {{-- @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif --}}
+
+
 
                     <div class="table-responsive">
 
