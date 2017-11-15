@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Person;
+use App\User;
 
 class MessageController extends Controller
 {
@@ -47,7 +48,11 @@ class MessageController extends Controller
     public function show($id)
     {
         $recipient = Person::find($id);
-        return view('contactform',['recipient' => $recipient]);
+        $user_id = \Auth::user()->id;
+        $user_model = User::find($user_id);
+        $user_person_id = $user_model->person->id;
+        $user = Person::find($user_person_id);
+        return view('contactform',['recipient' => $recipient,'user'=>$user]);
     }
 
     /**

@@ -34,10 +34,14 @@
                     <table style="width: 100%;">
                       <tr class="align-middle">
                         <td style="width: 60px;">
-                          <img class="img-fluid" src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 49px; width: 49px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                          @if (!empty($user->main_portrait()))
+                            <img src="https://ctc-members.dk/media/{{$user->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                          @else
+                            <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                          @endif
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="From Name" readonly>
+                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{$user['first_name']}} {{$user['last_name']}}" readonly>
                         </td>
                       </tr>
                     </table>
@@ -60,18 +64,13 @@
                       <tr class="align-middle">
                         <td style="width: 60px;">
                           @if (!empty($recipient->main_portrait()))
-
                             <img src="https://ctc-members.dk/media/{{$recipient->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
-
                           @else
-
                             <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
-
                           @endif
-                          {{-- <img class="img-fluid" src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 49px; width: 49px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; "> --}}
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{$recipient['first_name']}} {{$recipient['last_name']}}" readonly>
+                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="recipient" value="{{$recipient['first_name']}} {{$recipient['last_name']}}" readonly>
                         </td>
                       </tr>
                     </table>
@@ -93,7 +92,7 @@
                     </div>
                     <hr>
                     {{-- Buttons --}}
-                      <button type="button" class="btn btn-lg btn-secondary float-left">Cancel</button>
+                      <input type="button" value="Cancel" onclick="history.back()" class="btn btn-lg btn-secondary float-left">
                       <button type="submit" class="btn btn-lg btn-primary float-right">Send</button>
 
                   </form>
