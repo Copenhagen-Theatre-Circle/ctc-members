@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Person;
 
 class MessageController extends Controller
 {
@@ -45,7 +46,8 @@ class MessageController extends Controller
      */
     public function show($id)
     {
-        return view('contactform');
+        $recipient = Person::find($id);
+        return view('contactform',['recipient' => $recipient]);
     }
 
     /**

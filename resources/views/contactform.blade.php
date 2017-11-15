@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container py-3">
-    <div class="row scrollbox">
-        <div class="col-md-8 mx-auto">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
             <div class="card">
 
 
@@ -59,10 +59,19 @@
                     <table style="width: 100%;">
                       <tr class="align-middle">
                         <td style="width: 60px;">
-                          <img class="img-fluid" src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 49px; width: 49px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                          @if (!empty($recipient->main_portrait()))
+
+                            <img src="https://ctc-members.dk/media/{{$recipient->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+
+                          @else
+
+                            <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+
+                          @endif
+                          {{-- <img class="img-fluid" src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 49px; width: 49px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; "> --}}
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="To Name" readonly>
+                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{$recipient['first_name']}} {{$recipient['last_name']}}" readonly>
                         </td>
                       </tr>
                     </table>
