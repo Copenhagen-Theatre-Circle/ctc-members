@@ -5,7 +5,7 @@
 <div class="container py-3">
     <div class="row">
         <div class="col-lg-8 mx-auto">
-            <div class="card">
+            <div class="card light-transparency">
 
 
                 <div class="card-header">
@@ -77,21 +77,26 @@
                     </div>
                   </div>
 
-                  <form>
+                  <form action="{{ route('message.store') }}" method="post">
+
+                    {{ csrf_field() }}
+
+                    <input type="hidden" name="id_to" value="{{$recipient->id}}">
+                    <input type="hidden" name="id_from" value="{{$user->id}}">
 
                     {{-- Subject --}}
                     <div class="form-group">
                       <label for="subject">Subject</label>
-                      <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="Enter subject">
+                      <input type="text" name="subject" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="Enter subject" required>
                     </div>
 
                     {{-- Body --}}
                     <div class="form-group">
                       <label for="body">Message</label>
-                      <textarea class="form-control form-control-lg" id="body" rows="8" placeholder="Enter message"></textarea>
+                      <textarea name="body" class="form-control form-control-lg" id="body" rows="8" placeholder="Enter message" required></textarea>
                     </div>
 
-                  
+
                     <hr>
                     {{-- Buttons --}}
                       <input type="button" value="Cancel" onclick="history.back()" class="btn btn-lg btn-secondary float-left">

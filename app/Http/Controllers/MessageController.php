@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Person;
 use App\User;
+use App\Mail\ContactMessage;
 
 class MessageController extends Controller
 {
@@ -42,7 +44,17 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $to_person = Person::find(request('id_to'));
+        $from_person = Person::find(request('id_from'));
+        $mail_to = $to_person->mail;
+        $mail_from = $from_person->mail;
+        $name_from = $from_person->first_name . ' ' . $from_person->last_name;
+        $subject = $request->subject;
+        $body = $request->body;
+        $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body];
+        Mail::to('info@blackwell.dk')->send(new ContactMessage($attributes));
+        return redirect('message/confirmation');
+        return array ($mail_from, $mail_to, $subject, $body);//
     }
 
     /**
