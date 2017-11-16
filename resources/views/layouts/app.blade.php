@@ -40,6 +40,16 @@
           padding-top: 2vh;
         }
 
+        .dark-transparency {
+          background-color: rgba(0, 0, 0, 0.5);
+          color:white;
+        }
+
+        .light-transparency {
+          background-color: rgba(255, 255, 255, 0.9);
+          color:black;
+        }
+
       }
 
       /*\

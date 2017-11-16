@@ -13,7 +13,7 @@
 <div class="container py-3">
     <div class="row scrollbox">
         <div class="col-md-12 col-md-offset-0">
-            <div class="card">
+            <div class="card light-transparency">
                 <div class="card-header">
 
                 {{-- The Dropdowns --}}
@@ -58,10 +58,12 @@
                       </form>
                     </div>
 
-                    <div class="col-md-4">
-
+                  </div>
+                    <hr>
+                  <div class="row mt-2 mb-0">
+                    <div class="col">
+                      <button type="button" class="btn btn-outline-success">{{$peoplecount}} results found</button>
                     </div>
-
                   </div>
 
                 </div>
@@ -69,11 +71,13 @@
                 {{-- The List --}}
 
                 <div class="card-body">
-                    @if (session('status'))
+                    {{-- @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif --}}
+
+
 
                     <div class="table-responsive">
 
@@ -83,7 +87,7 @@
                             <th class="hidden-xs-down"></th>
                             <th>Name</th>
                             <th class="hidden-xs-down">Member</th>
-                            {{-- <th class="hidden-md-down">Last Update</th> --}}
+                            <th class="hidden-md-down">Last Update</th>
                             <th></th>
                             {{-- <th></th> --}}
                             <th></th>
@@ -125,9 +129,9 @@
 
                             {{-- Last Update --}}
 
-                            {{-- <td class="hidden-md-down" style="vertical-align:middle; width: 120px;">
-                              <span style="font-size: 18px;">2017</span>
-                            </td> --}}
+                            <td class="hidden-md-down" style="vertical-align:middle; width: 130px;">
+                              <span style="font-size: 18px;">{{$person->questionnaire_answered}}</span>
+                            </td>
 
                             {{-- More Info Button --}}
 
@@ -143,15 +147,15 @@
 
                             {{-- Contact Button --}}
 
-                            {{-- <td style="vertical-align:middle; width: 50px;">
-                              <button type="button" class="btn btn-outline-primary hidden-sm-down" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                            <td style="vertical-align:middle; width: 50px;">
+                              <a class="btn btn-outline-primary hidden-sm-down" href="/message/create?u={{$person->id}}">
                               contact
-                              </button>
+                              </a>
 
-                              <button type="button" class="btn btn-outline-primary hidden-md-up" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              <a class="btn btn-outline-primary hidden-md-up" href="/message/create?u={{$person->id}}">
                               ✉︎
-                              </button>
-                            </td> --}}
+                              </a>
+                            </td>
 
                             <td></td>
 

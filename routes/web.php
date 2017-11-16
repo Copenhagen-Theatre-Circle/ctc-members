@@ -29,4 +29,10 @@ Route::get('/membership', 'MembersController@index');
 
 Route::resource('person','PersonController');
 
+Route::get('message/confirmation',function(){
+  return view('contactconfirmation');
+});
+
+Route::resource('message','MessageController');
+
 Route::get('/profile','UserController@profile');
