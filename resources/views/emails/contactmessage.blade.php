@@ -2,4 +2,4 @@
 <br>You can respond directly by answering this mail.</span>
 <br>
 <br>
-{{nl2br($body)}}
+{!!nl2br($body)!!}
