@@ -46,13 +46,14 @@ class MessageController extends Controller
     {
         $to_person = Person::find(request('id_to'));
         $from_person = Person::find(request('id_from'));
+        $name_to = $to_person->first_name . ' ' . $to_person->last_name;
         $mail_to = $to_person->mail;
-        $mail_from = $from_person->mail;
         $name_from = $from_person->first_name . ' ' . $from_person->last_name;
+        $mail_from = $from_person->mail;
         $subject = $request->subject;
         $body = $request->body;
         $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body];
-        Mail::to('info@blackwell.dk')->send(new ContactMessage($attributes));
+        Mail::to($mail_to)->send(new ContactMessage($attributes));
         return redirect('message/confirmation');
         return array ($mail_from, $mail_to, $subject, $body);//
     }
