@@ -4,7 +4,7 @@
 <div class="container py-3">
     <div class="row scrollbox">
         <div class="col-md-12 col-md-offset-2">
-            <div class="card">
+            <div class="card light-transparency">
 
                 <div class="card-body">
                     @if (session('status'))
