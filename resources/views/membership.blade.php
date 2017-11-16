@@ -148,11 +148,11 @@
                             {{-- Contact Button --}}
 
                             <td style="vertical-align:middle; width: 50px;">
-                              <a class="btn btn-outline-primary hidden-sm-down" href="/message/{{$person->id}}">
+                              <a class="btn btn-outline-primary hidden-sm-down" href="/message/create?u={{$person->id}}">
                               contact
                               </a>
 
-                              <a class="btn btn-outline-primary hidden-md-up" href="/message/{{$person->id}}">
+                              <a class="btn btn-outline-primary hidden-md-up" href="/message/create?u={{$person->id}}">
                               ✉︎
                               </a>
                             </td>
