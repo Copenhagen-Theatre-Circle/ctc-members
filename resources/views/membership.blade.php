@@ -41,7 +41,7 @@
 
                     <div class="col-md-4">
                       <form action="/membership" method="GET">
-                      <label>Speficic Interests:</label>
+                      <label>Specific Interests:</label>
                       <select class="form-control" name="f" id="myselect" onchange="this.form.submit()">
                         <option value="">all</option>
                       @foreach ($functionarray as $functiongroup=>$values)
