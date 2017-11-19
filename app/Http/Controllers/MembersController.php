@@ -42,6 +42,10 @@ class MembersController extends Controller
       $people=Person::orderBy('first_name', 'asc')->orderBy('last_name', 'asc')->get();
     }
 
+    $people = $people->filter(function ($person) {
+    return $person->ismember();
+    });
+
     $functiongroups = Functiongroup::orderBy('sort_order')->get();
     $functions = Crewfunction::get()->sortBy('sort_order')->sortBy('FunctionGroupSortOrder');
 

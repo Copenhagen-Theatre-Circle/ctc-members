@@ -46,7 +46,7 @@ class Person extends Model
      return $this->main_portrait();
    }
 
-   public function getQuestionnaireAnsweredAttribute() {
+  public function getQuestionnaireAnsweredAttribute() {
      $created_at = $this->questionnaire_answers()->first()['created_at'];
      if ($created_at) {
        $created_date = date('d M Y', strtotime($created_at));
@@ -55,7 +55,11 @@ class Person extends Model
        return false;
      }
 
-   }
+  }
+
+  public function getMemberAttribute() {
+    return $this->ismember();
+  }
 
 
 }
