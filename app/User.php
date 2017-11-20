@@ -41,6 +41,15 @@ class User extends Authenticatable
       }
     }
 
+    public function canSeeAllPeople(){
+      //member check only happens if person is set up in database, otherwise false
+      if ($this->person['id']){
+        return $this->person['can_see_all_people'];
+      } else {
+        return false;
+      }
+    }
+
     public function membershipid(){
       return $this->person->membershipid();
     }

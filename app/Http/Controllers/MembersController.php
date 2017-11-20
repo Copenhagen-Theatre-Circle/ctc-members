@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Person;
 use App\Crewfunction;
 use App\Functiongroup;
+use App\User;
 use DB;
 
 
@@ -52,12 +53,19 @@ class MembersController extends Controller
       });
     }
 
-    // show only members
+    // show only members if not special rights
+
+    $user_id = \Auth::user()->id;
+    $user_model = User::find($user_id);
+
+    if ($user_model->canSeeAllPeople() == false){
 
     $people->whereHas('memberships', function($q){
       $minSeasonMembership = 48;
       $q->where('season_id', '>', $minSeasonMembership);
     });
+
+    }
 
     // order by
 
