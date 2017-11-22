@@ -63,7 +63,7 @@ class MembersController extends Controller
     $people->whereHas('memberships', function($q){
       $minSeasonMembership = 48;
       $q->where('season_id', '>', $minSeasonMembership);
-    });
+    })->orwhere('is_life_member','=','1');
 
     }
 
