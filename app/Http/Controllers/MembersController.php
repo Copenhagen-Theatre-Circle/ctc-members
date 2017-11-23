@@ -53,19 +53,6 @@ class MembersController extends Controller
       });
     }
 
-    // show only members if not special rights
-
-    $user_id = \Auth::user()->id;
-    $user_model = User::find($user_id);
-
-    if ($user_model->canSeeAllPeople() == false){
-
-    $people->whereHas('memberships', function($q){
-      $minSeasonMembership = 48;
-      $q->where('season_id', '>', $minSeasonMembership);
-    })->orwhere('is_life_member','=','1');
-
-    }
 
     // order by
 
@@ -74,6 +61,19 @@ class MembersController extends Controller
     // execute query
 
     $people = $people->get();
+
+    // filter only members if not special rights
+
+    $user_id = \Auth::user()->id;
+    $user_model = User::find($user_id);
+
+    if ($user_model->canSeeAllPeople() == false){
+
+      $people = $people->filter(function ($item) {
+      return $item->ismember();
+      })->values();
+
+    }
 
     // retrieve functiongroups and functions
 
