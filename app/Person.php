@@ -31,6 +31,15 @@ class Person extends Model
     return $member ;
     }
 
+  public function isPaidUpMember()
+    {
+
+    $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
+    $life_member = $this['is_life_member'] == 1;
+    $member = $paid_member || $life_member;
+    return $member ;
+    }
+
   public function main_portrait ()
   {
     $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];

@@ -122,7 +122,7 @@
                             {{-- Membership Star --}}
 
                             <td class="hidden-xs-down" style="vertical-align:middle; text-align: center; width: 50px;">
-                              @if ($person->ismember())
+                              @if ($person->isPaidUpMember())
                                   <img src="https://ctc-members.dk/media/star.png" alt="" style="object-fit: cover; height: 30px; width: 30px;  ">
                               @endif
                             </td>
