@@ -1,4 +1,7 @@
 .filtered {
-  color: white;
-  background-color: #17a2b8;
+  color: #28a745;
+  border-color: #28a745;
+  /* -webkit-appearance: none; */
+  /* background: none; */
+  /* background-color: #28a745; */
 }

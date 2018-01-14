@@ -23,14 +23,14 @@
                     <div class="col-md-3">
                       <form action="/membership" method="GET">
                         <label>Find by Name:</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
+                        <input type="text" class="form-control @if (!empty ($request['name'])) filtered  @endif" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
                       </form>
                     </div>
 
                     <div class="col-md-3">
                       <form action="/membership" method="GET">
                         <label>General Interests:</label>
-                        <select class="form-control" name="g" onchange="this.form.submit()">
+                        <select class="form-control @if (!empty ($request['g'])) filtered  @endif" name="g" onchange="this.form.submit()">
                           <option value="">all</option>
                         @foreach ($functiongroups as $functiongroup)
                           <option value="{{$functiongroup->id}}" @if (app('request')->input('g')==$functiongroup->id){{ "selected"}}@endif>
@@ -45,7 +45,7 @@
                     <div class="col-md-3">
                       <form action="/membership" method="GET">
                         <label>Specific Interests:</label>
-                        <select class="form-control" name="f" onchange="this.form.submit()">
+                        <select class="form-control @if (!empty ($request['f'])) filtered  @endif" name="f" onchange="this.form.submit()">
                           <option value="">all</option>
                           <option disabled>––––––––––––</option>
                           @foreach ($functionarray as $functiongroup=>$values)
@@ -66,7 +66,7 @@
                     <div class="col-md-2">
                       <form action="/membership" method="GET">
                         <label>experience:</label>
-                        <select class="form-control" name="e" onchange="this.form.submit()">
+                        <select class="form-control @if (!empty ($request['e'])) filtered  @endif" name="e" onchange="this.form.submit()">
                           @if (empty($request['f']))
                             <option value="">all</option>
                             <option disabled>––––––––––––</option>
@@ -88,11 +88,11 @@
                     <div class="col-md-1">
                       <form action="/membership" method="GET">
                         <label>Member:</label>
-                        <select class="form-control" name="c" onchange="this.form.submit()">
+                        <select class="form-control @if (!empty ($request['c'])) filtered  @endif" name="c" onchange="this.form.submit()">
                           <option value="">all</option>
                           <option disabled>––––––</option>
-                          <option value="1" @if ( app('request')->input('c')==1 ) {{"selected"}}@endif>yes</option>
-                          <option value="2" @if ( app('request')->input('c')==2 ) {{"selected"}}@endif>no</option>
+                          <option value="1" @if ( $request['c']==1 ) {{"selected"}}@endif>yes</option>
+                          <option value="2" @if ( $request['c']==2 ) {{"selected"}}@endif>no</option>
                         </select>
                         <input type="hidden" name="f" value="{{$request['f']}}">
                         <input type="hidden" name="g" value="{{$request['g']}}">
@@ -105,8 +105,12 @@
                     <hr>
                   <div class="row mt-2 mb-0">
                     <div class="col">
-                      <button type="button" class="btn btn-outline-success">{{$peoplecount}} results found</button>
+
+                      <button type="button" class="btn btn-outline-success mr-5">{{$peoplecount}} results found</button>
+
+
                     </div>
+
                   </div>
 
                 </div>
