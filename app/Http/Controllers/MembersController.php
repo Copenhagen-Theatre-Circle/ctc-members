@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Person;
+use App\Settings;
 use App\Crewfunction;
 use App\Functiongroup;
 use App\User;
@@ -37,6 +38,7 @@ class MembersController extends Controller
       $people->where(DB::raw('CONCAT(first_name, " ", last_name)'), 'like', '%' . request('name') . '%');
     }
 
+
     // query if general interest search
 
     if (!empty(request('g'))) {
@@ -50,6 +52,31 @@ class MembersController extends Controller
     if (!empty(request('f'))) {
       $people->whereHas('questionnaire_answers', function($q){
         $q->where(['interest'=>1,'function_id'=>request('f')]);
+        if (request('e')==1) {
+            $q->where(['has_experience'=>1]);
+        } elseif (request('e')==2) {
+            $q->where(['has_experience'=>0]);
+            $q->where(['wants_to_learn'=>1]);
+        }
+        elseif (request('e')==3) {
+            $q->where(['wants_to_learn'=>1]);
+        }
+      });
+    }
+
+    $season_id = 50;
+
+    // query if CTC Member search
+
+    if (request('c')==1) {
+      $people->whereHas('memberships', function($q){
+        $q->where('season_id',Settings::find(1)->active_season_id);
+      });
+    }
+
+    if (request('c')==2) {
+      $people->whereDoesntHave('memberships', function($q){
+        $q->where('season_id',Settings::find(1)->active_season_id);
       });
     }
 
@@ -88,9 +115,17 @@ class MembersController extends Controller
 
     $peoplecount = $people->count();
 
+    // pass on request params for c and e
+
+    $request['name'] = request('name');
+    $request['f'] = request('f');
+    $request['g'] = request('g');
+    $request['c'] = request('c');
+    $request['e'] = request('e');
+
     // return view with data
 
-    return view('membership', ['people' => $people, 'peoplecount' => $peoplecount, 'functiongroups' => $functiongroups, 'functionarray'=> $functionarray]);
+    return view('membership', Compact ('people', 'peoplecount', 'functiongroups', 'functionarray', 'request'));
 
   }
 }

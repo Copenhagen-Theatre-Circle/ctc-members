@@ -19,42 +19,85 @@
                 {{-- The Dropdowns --}}
 
                   <div class="form-row">
-                    <div class="col-md-4">
+
+                    <div class="col-md-3">
                       <form action="/membership" method="GET">
-                      <label>Find by Name:</label>
-                      <input type="text" class="form-control" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
-                    </form>
-                    </div>
-                    <div class="col-md-4">
-                      <form action="/membership" method="GET">
-                      <label>General Interests:</label>
-                      <select class="form-control" name="g" id="myselect" onchange="this.form.submit()">
-                        <option value="">all</option>
-                      @foreach ($functiongroups as $functiongroup)
-                        <option value="{{$functiongroup->id}}" @if (app('request')->input('g')==$functiongroup->id){{ "selected"}}@endif>
-                          {{$functiongroup->questionnaire_name}}
-                        </option>
-                      @endforeach
-                      </select>
-                    </form>
+                        <label>Find by Name:</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
+                      </form>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <form action="/membership" method="GET">
-                      <label>Specific Interests:</label>
-                      <select class="form-control" name="f" id="myselect" onchange="this.form.submit()">
-                        <option value="">all</option>
-                      @foreach ($functionarray as $functiongroup=>$values)
-                        <optgroup label="{{$functiongroup}}">
-                          @foreach ($values as $id=>$value)
-                          <option value="{{$id}}" @if (app('request')->input('f')==$id){{ "selected"}}@endif>
-                            {{$value}}
+                        <label>General Interests:</label>
+                        <select class="form-control" name="g" onchange="this.form.submit()">
+                          <option value="">all</option>
+                        @foreach ($functiongroups as $functiongroup)
+                          <option value="{{$functiongroup->id}}" @if (app('request')->input('g')==$functiongroup->id){{ "selected"}}@endif>
+                            {{$functiongroup->questionnaire_name}}
                           </option>
-                          @endforeach
-                        </optgroup>
+                        @endforeach
+                        </select>
+                        <input type="hidden" name="c" value="{{$request['c']}}">
+                      </form>
+                    </div>
 
-                      @endforeach
-                      </select>
+                    <div class="col-md-3">
+                      <form action="/membership" method="GET">
+                        <label>Specific Interests:</label>
+                        <select class="form-control" name="f" onchange="this.form.submit()">
+                          <option value="">all</option>
+                          <option disabled>––––––––––––</option>
+                          @foreach ($functionarray as $functiongroup=>$values)
+                            <optgroup label="{{$functiongroup}}">
+                              @foreach ($values as $id=>$value)
+                                <option value="{{$id}}" @if (app('request')->input('f')==$id){{ "selected"}}@endif>
+                                  {{$value}}
+                                </option>
+                              @endforeach
+                            </optgroup>
+                          @endforeach
+                        </select>
+                        <input type="hidden" name="e" value="{{$request['e']}}">
+                        <input type="hidden" name="c" value="{{$request['c']}}">
+                      </form>
+                    </div>
+
+                    <div class="col-md-2">
+                      <form action="/membership" method="GET">
+                        <label>experience:</label>
+                        <select class="form-control" name="e" onchange="this.form.submit()">
+                          @if (empty($request['f']))
+                            <option value="">all</option>
+                            <option disabled>––––––––––––</option>
+                            <option disabled>please select specific interest first</option>
+                          @else
+                            <option value="">all</option>
+                            <option disabled>––––––––––––</option>
+                            <option value="1" @if ( $request['e']==1 and !empty($request['f']) ) {{"selected"}} @endif >experience</option>
+                            <option value="2" @if ( $request['e']==2 and !empty($request['f']) ) {{"selected"}} @endif >no experience</option>
+                            <option disabled>––––––––––––</option>
+                            <option value="3" @if ( $request['e']==3 and !empty($request['f']) ) {{"selected"}} @endif >wants to learn</option>
+                          @endif
+                        </select>
+                        <input type="hidden" name="f" value="{{$request['f']}}">
+                        <input type="hidden" name="c" value="{{$request['c']}}">
+                      </form>
+                    </div>
+
+                    <div class="col-md-1">
+                      <form action="/membership" method="GET">
+                        <label>Member:</label>
+                        <select class="form-control" name="c" onchange="this.form.submit()">
+                          <option value="">all</option>
+                          <option disabled>––––––</option>
+                          <option value="1" @if ( app('request')->input('c')==1 ) {{"selected"}}@endif>yes</option>
+                          <option value="2" @if ( app('request')->input('c')==2 ) {{"selected"}}@endif>no</option>
+                        </select>
+                        <input type="hidden" name="f" value="{{$request['f']}}">
+                        <input type="hidden" name="g" value="{{$request['g']}}">
+                        <input type="hidden" name="name" value="{{$request['name']}}">
+                        <input type="hidden" name="e" value="{{$request['e']}}">
                       </form>
                     </div>
 
