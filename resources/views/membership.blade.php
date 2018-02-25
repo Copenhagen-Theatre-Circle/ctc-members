@@ -150,7 +150,7 @@
 
                             @if (!empty($person->main_portrait()))
 
-                              <img src="https://ctc-members.dk/media/{{$person->main_portrait()}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
+                              <img src="https://ctc-members.dk/media/thumb_200/{{$person->main_portrait()}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
 
                             @else
 
