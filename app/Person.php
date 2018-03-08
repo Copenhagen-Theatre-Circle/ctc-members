@@ -25,7 +25,7 @@ class Person extends Model
   public function ismember()
     {
 
-    $paid_member = $this->memberships()->where('season_id', '>', '48')->first() ? true : false;
+    $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
     $life_member = $this['is_life_member'] == 1;
     $member = $paid_member || $life_member;
     return $member ;
