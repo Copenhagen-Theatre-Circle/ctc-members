@@ -6,7 +6,8 @@
   <div class="container alert-secondary" style="width: 100%; background-color: #efefef; margin-bottom: 0px; padding: 30px; padding-left: 40px;">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
-          <img src="https://ctc-members.dk/media/{{$portrait}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
+          <img src="https://ctc-members-balmec.imgix.net/{{$portrait}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
+          {{-- <img src="https://ctc-members.dk/media/thumb_200/{{$portrait}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;"> --}}
         </div>
         <div class="col-sm-8 col-xs-12">
           <h1 class="display-5">{{$first_name}}</h1><h1 class="display-5">{{$last_name}}</h1>
