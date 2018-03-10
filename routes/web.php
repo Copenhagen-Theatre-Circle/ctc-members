@@ -35,4 +35,6 @@ Route::get('message/confirmation',function(){
 
 Route::resource('message','MessageController');
 
+Route::resource('groupmessage','GroupMessageController');
+
 Route::get('/profile','UserController@profile');

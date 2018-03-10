@@ -10,6 +10,12 @@ use App\Mail\ContactMessage;
 
 class MessageController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('member');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -55,7 +61,7 @@ class MessageController extends Controller
         $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body];
         Mail::to($mail_to)->send(new ContactMessage($attributes));
         return redirect('message/confirmation');
-        return array ($mail_from, $mail_to, $subject, $body);//
+        // return array ($mail_from, $mail_to, $subject, $body);
     }
 
     /**
