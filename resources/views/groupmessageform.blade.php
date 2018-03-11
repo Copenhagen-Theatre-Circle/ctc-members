@@ -21,43 +21,44 @@
 
                 <div class="card-body">
 
-                  {{-- From --}}
-
-                  <div class="row">
-                    <div class="col-2">
-                      <label>From</label>
-                    </div>
-                  </div>
-
-                  <div class="form-row mb-3">
-                    <div class="col">
-                    <table style="width: 100%;">
-                      <tr class="align-middle">
-                        <td style="width: 60px;">
-                          @if (!empty($user->main_portrait()))
-                            <img src="https://ctc-members.dk/media/{{$user->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
-                          @else
-                            <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
-                          @endif
-                        </td>
-                        <td>
-                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{$user['first_name']}} {{$user['last_name']}}" readonly>
-                        </td>
-                      </tr>
-                    </table>
-                    </div>
-                  </div>
-
                   <form action="{{ route('groupmessage.store') }}" method="post">
 
                     {{ csrf_field() }}
 
+                    {{-- From --}}
 
-                    <input type="hidden" name="id_from" value="{{$user->id}}">
+                    <div class="row mb-3">
+
+                      <div class="col-2 pt-2">
+                        <label>From</label>
+                      </div>
+
+                      <div class="col">
+                      <table style="width: 100%;">
+                        <tr class="align-middle">
+                          <td style="width: 60px;">
+                            @if (!empty($user->main_portrait()))
+                              <img src="https://ctc-members.dk/media/{{$user->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                            @else
+                              <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                            @endif
+                          </td>
+                          <td>
+                              <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{$user['first_name']}} {{$user['last_name']}}" readonly>
+                          </td>
+                        </tr>
+                      </table>
+                      </div>
+
+                      <input type="hidden" name="id_from" value="{{$user->id}}">
+
+                    </div>
+
+                    <hr>
 
                     {{-- To --}}
 
-                    <div class="row mb-3">
+                    <div class="row">
 
                       <div class="col-2">
                         <label >To (activities)</label>
@@ -66,13 +67,13 @@
                       <div class="col">
 
                         @foreach ($crewfunctions as $key=>$functiongroup)
-                          <div class="row mb-2" style="border-bottom: solid 1px #bbbbbb;">
+                          <div class="row mb-2">
                             <div class="col-3">
                               <label>{{$key}}</label>
                             </div>
                             <div class="col">
                               @foreach ($functiongroup as $key => $value)
-                                <div class="form-check">
+                                <div class="form-check pl-3">
                                   <input type="checkbox" class="form-check-input" id="function_{{$key}}" value="{{$key}}" name="crewfunction[]">
                                   <label class="form-check-label pl-1" for="function_{{$key}}">{{$value}}</label>
                                 </div>
@@ -81,6 +82,10 @@
 
                           </div>
 
+                          @if(!($loop->last))
+                               <hr>
+                          @endif
+
 
                         @endforeach
 
@@ -88,6 +93,7 @@
 
                     </div>
 
+                    <hr>
 
                     {{-- experience --}}
 
@@ -123,19 +129,29 @@
                       </div>
                     </div>
 
+                    <hr>
+
 
                     {{-- Subject --}}
-                    <div class="form-group">
-                      <label for="subject">Subject</label>
-                      <input type="text" name="subject" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="Enter subject" required>
+                    <div class="row mb-3">
+                      <div class="col-2 pt-2">
+                        <label for="subject">Subject</label>
+                      </div>
+                      <div class="col">
+                        <input type="text" name="subject" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="Enter subject" required>
+                      </div>
                     </div>
 
 
 
                     {{-- Body --}}
-                    <div class="form-group">
-                      <label for="body">Message</label>
-                      <textarea name="body" class="form-control form-control-lg" id="body" rows="8" placeholder="Enter message" required></textarea>
+                    <div class="row mb-3">
+                      <div class="col-2 pt-2">
+                        <label for="body">Message</label>
+                      </div>
+                      <div class="col">
+                        <textarea name="body" class="form-control form-control-lg" id="body" rows="15" placeholder="Enter message" required></textarea>
+                      </div>
                     </div>
 
 

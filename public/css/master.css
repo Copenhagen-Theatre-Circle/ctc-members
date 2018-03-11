@@ -2,3 +2,11 @@
   color: #28a745;
   border-color: #28a745;
 }
+
+.dotted-border-bottom {
+  border-bottom: dotted 1px #bbbbbb;
+}
+
+hr {
+  margin-top: 0;
+}
