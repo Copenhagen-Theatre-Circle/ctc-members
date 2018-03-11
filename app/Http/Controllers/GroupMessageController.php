@@ -54,35 +54,27 @@ class GroupMessageController extends Controller
      */
     public function store(Request $request)
     {
-        // return Response::json($_POST);
+        // return $_POST;
         $crewfunctions = $_POST['crewfunction'];
         $experience = $_POST['experience'];
 
         $people = Person::select('first_name','last_name','mail')
                   ->whereHas('questionnaire_answers', function ($query) use ($crewfunctions, $experience) {
-                      // $query->Where('function_id', $crewfunctions[0]);
-                      $query->where( function ($query) use ($crewfunctions, $experience){
-                        $query->where('function_id', $crewfunctions[0]);
+
+                      $query->where(function ($query) use ($crewfunctions, $experience) {
+
+                        $query->whereIn('function_id', $crewfunctions);
                         if($experience=="experience"){
                           $query->where('has_experience', 1);
                         } elseif ($experience=="learn") {
                           $query->where('wants_to_learn', 1);
                         }
+
                       } );
-                      foreach ($crewfunctions as $crewfunction) {
-                        // $query->orWhere('function_id', $crewfunction);
-                        $query->orWhere( function ($query) use ($crewfunction, $experience) {
-                          $query->where('function_id', $crewfunction);
-                          if($experience=="experience"){
-                            $query->where('has_experience', 1);
-                          } elseif ($experience=="learn") {
-                            $query->where('wants_to_learn', 1);
-                          }
-                        });
-                      }
+
                   })->get();
 
-        $count = count ($people);
+        // $count = count ($people);
 
         foreach ($people as $to_person) {
           $from_person = Person::find(request('id_from'));
@@ -99,7 +91,8 @@ class GroupMessageController extends Controller
         }
 
         return redirect('message/confirmation');
-        return array ($mail_from, $mail_to, $subject, $body);
+        
+        // return array ($count, $people);
 
     }
 
