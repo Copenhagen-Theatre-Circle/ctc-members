@@ -68,6 +68,33 @@
 
                     </div>
 
+                    @if ($user_is_admin)
+
+                      <div class="row pb-3">
+                        <div class="col">
+                          <h4>Admin only:</h4>
+                        </div>
+                      </div>
+
+                      <div class="row">
+
+                        <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                          <div class="card">
+                            <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/group-mail.png" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Group Mail</h4>
+                              <p class="card-text">Write a mail to a group of people with specific interests</p>
+                              <a href="/groupmessage/create" class="btn btn-primary">Write Message</a>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    @endif
+
                     <div class="row pb-3">
                       <div class="col">
                         <h4>coming soon / in the pipeline:</h4>
