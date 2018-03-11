@@ -151,6 +151,7 @@
                       </div>
                       <div class="col">
                         <textarea name="body" class="form-control form-control-lg" id="body" rows="15" placeholder="Enter message" required></textarea>
+                        <small class="form-text text-muted">NB: You can use &lt;&lt;FIRST_NAME&gt;&gt; as a merge variable, e.g. 'Dear &lt;&lt;FIRST_NAME&gt;&gt;'</small>
                       </div>
                     </div>
 
