@@ -43,7 +43,7 @@ class ContactMessage extends Mailable
           $body = $this->attributes['body'];
         } else {$body = "";}
 
-        return $this->from('noreply@ctc-members.dk', $fromName . ' via CTC Members')
+        return $this->from('noreply@ctc-members.dk', $fromName . ' via ctc-members.dk')
                     ->subject($subject)
                     ->view('emails.contactmessage')
                     ->with(['body'=>$body, 'fromName'=>$fromName]);
