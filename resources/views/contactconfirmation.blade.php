@@ -26,7 +26,12 @@
 
                   <hr>
                   {{-- Buttons --}}
-                  <a class="btn btn-lg btn-primary float-right" href="/membership">OK</a>
+                  @if (app('request')->input('origin')=="home")
+                    <a class="btn btn-lg btn-primary float-right" href="/home">OK</a>
+                  @else
+                    <a class="btn btn-lg btn-primary float-right" href="/membership">OK</a>
+                  @endif
+
 
 
                 </div>

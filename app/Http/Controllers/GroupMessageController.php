@@ -79,19 +79,20 @@ class GroupMessageController extends Controller
         foreach ($people as $to_person) {
           $from_person = Person::find(request('id_from'));
           $name_to = $to_person->first_name . ' ' . $to_person->last_name;
-          // $mail_to = $to_person->mail;
-          $mail_to = "andrew@blackwell.dk";
+          $mail_to = $to_person->mail;
+          // $mail_to = "membership@ctcircle.dk";
+          $bcc = "andrew@blackwell.dk";
           $name_from = $from_person->first_name . ' ' . $from_person->last_name;
           $mail_from = $from_person->mail;
           $subject = $request->subject;
           $body = $request->body;
           $body = str_replace('<<FIRST_NAME>>', $to_person->first_name, $body);
-          $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body];
+          $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body, 'bcc' => $bcc];
           Mail::to($mail_to)->send(new ContactMessage($attributes));
         }
 
-        return redirect('message/confirmation');
-        
+        return redirect('message/confirmation?origin=home');
+
         // return array ($count, $people);
 
     }

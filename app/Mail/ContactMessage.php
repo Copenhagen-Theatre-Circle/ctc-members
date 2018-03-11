@@ -39,12 +39,17 @@ class ContactMessage extends Mailable
           $subject = $this->attributes['subject'];
         } else {$subject = "";}
 
+        if (!empty($this->attributes['bcc'])) {
+          $bcc = $this->attributes['bcc'];
+        } else {$bcc = "";}
+
         if (!empty($this->attributes['body'])) {
           $body = $this->attributes['body'];
         } else {$body = "";}
 
         return $this->from('noreply@ctc-members.dk', $fromName . ' via ctc-members.dk')
                     ->subject($subject)
+                    ->bcc($bcc)
                     ->view('emails.contactmessage')
                     ->with(['body'=>$body, 'fromName'=>$fromName]);
     }
