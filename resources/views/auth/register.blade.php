@@ -65,6 +65,16 @@
                             </div>
                         </div>
 
+                        <div style="padding-left: 15px;" class="mb-3">
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                            @if ($errors->has('g-recaptcha-response'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
                         <div class="form-group">
                             <div class="col">
                                 <button type="submit" class="btn btn-primary">
