@@ -9,14 +9,21 @@
             <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
             <li class="breadcrumb-item"><a href="/projects/{{$auditionFormAnswer->project->id}}">{{$auditionFormAnswer->project->name}}</a></li>
             <li class="breadcrumb-item">{{$auditionFormAnswer->person->first_name}} {{$auditionFormAnswer->person->last_name}}</li>
+            <div class="float-right">
+                {{$currentrecord}}/{{$count}}
+            </div>
           </ol>
+
+
         </nav>
-        <div class="row scrollbox">
+
+        <div class="row">
             <div class="col-md-12 col-md-offset-0">
 
                 <div class="card light-transparency">
 
                     <div class="card-header">
+
                       <div class="row">
                         <div class="col-sm-2 col-xs-12 pr-0">
                           <img src="https://ctc-members-balmec.imgix.net/{{$auditionFormAnswer->person->portrait}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
@@ -166,8 +173,31 @@
 
                     </div>
                 </div>
+
+                <div class="card light-transparency mt-1 p-2">
+                    <div class="row">
+                        <div class="col pl-4">
+                            @if (!empty($previous))
+                                <a class="btn btn-outline-secondary btn-sm px-2 float-left" href="{{$previous}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif">Previous</a>
+                            @endif
+                        </div>
+                        <div class="col pr-4 text-center">
+                                <a class="btn btn-outline-secondary btn-sm px-2 text-center" href="/projects/{{$auditionFormAnswer->project->id}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif">Back to List</a>
+                        </div>
+                        <div class="col pr-4">
+                            @if (!empty($next))
+                                <a class="btn btn-outline-secondary btn-sm px-2 float-right" href="{{$next}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif">Next</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+
+
+
     </div>
 
 

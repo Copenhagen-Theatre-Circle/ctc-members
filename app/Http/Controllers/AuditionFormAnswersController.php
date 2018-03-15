@@ -45,7 +45,7 @@ class AuditionFormAnswersController extends Controller
      * @param  \App\AuditionFormAnswer  $auditionFormAnswer
      * @return \Illuminate\Http\Response
      */
-    public function show(AuditionFormAnswer $auditionFormAnswer)
+    public function show(AuditionFormAnswer $auditionFormAnswer, Request $request)
     {
 
       $person_id = $auditionFormAnswer->person_id;
@@ -109,7 +109,40 @@ class AuditionFormAnswersController extends Controller
 
       $person = $reformed;
 
-      return view ('auditionformanswers.show',compact('auditionFormAnswer', 'person'));
+      $answers = AuditionFormAnswer::where('project_id', $auditionFormAnswer->project_id);
+      $sort = $request->input('sort');
+      if ($sort == 'first_name'){
+          $answers = $answers->orderByJoin('person.first_name');
+      } elseif ($sort == 'last_name') {
+          $answers = $answers->orderByJoin('person.last_name');
+      } elseif ($sort == 'last_update') {
+          $answers = $answers->orderBy('created_at');
+      }
+      $answers = $answers->get();
+
+      foreach ($answers as $answer) {
+          $answer_id_array[] = $answer->id;
+      }
+
+      $all_answers = $answer_id_array;
+
+      $current = $auditionFormAnswer->id;
+      $currentkey = array_search($current, $all_answers);
+      $currentrecord = $currentkey + 1;
+      $count = count($all_answers);
+      if ($currentkey + 1 < $count) {
+          $next = $all_answers[$currentkey + 1];
+      } else {
+          $next = "";
+      }
+      if ($currentkey > 0) {
+          $previous = $all_answers[$currentkey - 1];
+      } else {
+          $previous = "";
+      }
+      $nav_array = array ($next, $previous);
+
+      return view ('auditionformanswers.show',compact('auditionFormAnswer', 'person','current','next','previous','all_answers','count','currentrecord'));
     }
 
     /**

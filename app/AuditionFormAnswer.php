@@ -18,7 +18,7 @@ class AuditionFormAnswer extends BaseModel
 
     public function getFirstNameAttribute()
     {
-        return $this->person->first_name;
+        return $this->person['first_name'];
     }
 
     protected $appends = ['first_name'];

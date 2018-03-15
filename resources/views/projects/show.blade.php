@@ -61,7 +61,7 @@
                                     <td>{{$audition_form_answer->person->mail}}</td>
                                     <td>{{$audition_form_answer->person->mobile}}</td>
                                     {{-- <td>{{$audition_form_answer->not_available_dates}}</td> --}}
-                                    <td><a href="/audition_form_answers/{{$audition_form_answer->id}}" class="btn btn-primary">Details</a></td>
+                                    <td><a href="/audition_form_answers/{{$audition_form_answer->id}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif" class="btn btn-primary">Details</a></td>
                                 </tr>
                             @endforeach
 
