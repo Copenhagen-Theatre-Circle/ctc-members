@@ -26,6 +26,10 @@ hr {
   border: 1pt solid #ccc;
 }
 
+.sorted {
+    text-decoration: underline;
+}
+
 @media (min-width:641px) {
 
     .center-vertically {

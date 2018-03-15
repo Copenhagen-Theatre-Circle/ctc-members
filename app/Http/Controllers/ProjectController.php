@@ -48,22 +48,20 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Project $project, Request $request)
     {
-        $project_id = $project->id;
+        $answers = AuditionFormAnswer::with('person');
+        $sort = $request->input('sort');
+        if ($sort == 'first_name'){
+            $answers = $answers->orderByJoin('person.first_name');
+        } elseif ($sort == 'last_name') {
+            $answers = $answers->orderByJoin('person.last_name');
+        } elseif ($sort == 'last_update') {
+            $answers = $answers->orderBy('created_at');
+        }
+        $answers = $answers->where('project_id',$project->id);
+        $answers = $answers->get();
 
-        // $project = Project::with('audition_form_answers')->orderByJoin('audition_form_answers.person.first_name')->where('id',$project_id)->get();
-        // $project->sortBy('first_name');
-        // return $project;
-
-        $answers = AuditionFormAnswer::with('person')->orderByJoin('person.first_name')->where('project_id',$project_id)->get();
-        // $answers_sorted = $answers->sortBy('person_id');
-        // $answers_sorted->all();
-
-        // $answers = $answers->sortBy(function($item) {
-        //   return $item->person_id;
-        // });
-        // return $answers;
         return view ('projects.show', compact('project','answers'));
     }
 

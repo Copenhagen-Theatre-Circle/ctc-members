@@ -21,9 +21,27 @@
 
                             <tr>
                                 <th style="width: 7%;"></th>
-                                <th >First Name</th>
-                                <th >Last Name</th>
-                                <th >Last Update</th>
+                                <th @if (app('request')->input('sort')=="first_name")
+                                    class="sorted"
+                                    @endif >
+                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=first_name">
+                                    First Name
+                                    </a>
+                                </th>
+                                <th @if (app('request')->input('sort')=="last_name")
+                                    class="sorted"
+                                    @endif >
+                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=last_name">
+                                    Last Name
+                                    </a>
+                                </th>
+                                <th @if (app('request')->input('sort')=="last_update")
+                                    class="sorted"
+                                    @endif >
+                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=last_update">
+                                    Applied
+                                    </a>
+                                </th>
                                 <th >can audition</th>
                                 <th >mail</th>
                                 <th >mobile</th>
@@ -38,7 +56,7 @@
                                     <td><img src="https://ctc-members-balmec.imgix.net/{{$audition_form_answer->person->main_portrait()}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "></td>
                                     <td>{{$audition_form_answer->person->first_name}}</td>
                                     <td>{{$audition_form_answer->person->last_name}}</td>
-                                    <td>{{$audition_form_answer->person->questionnaire_answered}}</td>
+                                    <td>{{date ('d M Y', strtotime($audition_form_answer->created_at))}}</td>
                                     <td>{!! nl2br($audition_form_answer->date_preferences) !!}</td>
                                     <td>{{$audition_form_answer->person->mail}}</td>
                                     <td>{{$audition_form_answer->person->mobile}}</td>
