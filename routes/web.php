@@ -31,6 +31,8 @@ Route::resource('person','PersonController');
 
 Route::resource('projects','ProjectController');
 
+Route::resource('audition_form_answers', 'AuditionFormAnswersController');
+
 Route::get('message/confirmation',function(){
   return view('contactconfirmation');
 });

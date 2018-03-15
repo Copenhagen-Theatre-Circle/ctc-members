@@ -2,14 +2,18 @@
 
 @section('content')
 
-    <div class="container py-3">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb my-1">
+            <li class="breadcrumb-item"><a href="/home">Home</a></li>
+            <li class="breadcrumb-item active">Projects</li>
+          </ol>
+        </nav>
+
         <div class="row scrollbox">
             <div class="col-md-12 col-md-offset-0">
                 <div class="card light-transparency">
-                    <div class="card-header">
-                        <h5>Audition Form Responses</h5>
 
-                    </div>
 
                     <div class="card-body">
 

@@ -11,6 +11,11 @@ class AuditionFormAnswer extends BaseModel
         return $this->belongsTo('App\Person');
     }
 
+    public function project()
+    {
+        return $this->belongsTo('App\Project');
+    }
+
     public function getFirstNameAttribute()
     {
         return $this->person->first_name;
