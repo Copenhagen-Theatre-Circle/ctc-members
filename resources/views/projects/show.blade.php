@@ -8,6 +8,9 @@
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{$project->name}}</li>
+            <div class="float-right">
+              <a class="btn btn-outline-success btn-sm mr-2" href="/export/auditions/{{$project->id}}?sort={{app('request')->input('sort')}}" download>Download .xlsx</a>
+            </div>
           </ol>
         </nav>
         <div class="row scrollbox">

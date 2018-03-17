@@ -27,6 +27,10 @@ Route::get('/nomember', function(){
 
 Route::get('/membership', 'MembersController@index');
 
+Route::get('/export/auditions/{project}', 'ExportController@auditions');
+
+// Route::get('/export', 'ExportController@auditions');
+
 Route::resource('person','PersonController');
 
 Route::resource('projects','ProjectController');
