@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Person;
+use App\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::where('is_anonymous','<>',1)->orderBy('created_at','desc')->get();
         // return $posts;
         return view ('posts.index',Compact ('posts'));
     }
@@ -26,7 +28,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $user_id = \Auth::user()->id;
+        $user_model = User::find($user_id);
+        $user_person_id = $user_model->person->id;
+        $user = Person::find($user_person_id);
+        return view ('posts.create', Compact('user'));
     }
 
     /**
@@ -37,7 +43,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create($request->all());
+        return redirect ('posts');
     }
 
     /**
@@ -48,7 +55,27 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+
+      $posts = Post::where('is_anonymous','<>',1)->orderBy('created_at','desc')->get();
+      foreach ($posts as $item) {
+          $id_array[] = $item->id;
+      }
+      $current = $post->id;
+      $currentkey = array_search($current, $id_array);
+      $currentrecord = $currentkey + 1;
+      $count = count($id_array);
+      if ($currentkey + 1 < $count) {
+          $next = $id_array[$currentkey + 1];
+      } else {
+          $next = "";
+      }
+      if ($currentkey > 0) {
+          $previous = $id_array[$currentkey - 1];
+      } else {
+          $previous = "";
+      }
+
+        return view ('posts.show', Compact('post','next','previous','count','currentrecord'));
     }
 
     /**

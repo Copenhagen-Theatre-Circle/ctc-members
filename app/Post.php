@@ -10,4 +10,7 @@ class Post extends BaseModel
     {
         return $this->belongsTo('App\Person');
     }
+
+    protected $fillable = ['posttype_id','person_id','title','body','is_anonymous'];
+
 }

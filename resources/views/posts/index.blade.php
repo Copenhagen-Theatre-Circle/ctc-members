@@ -17,18 +17,20 @@
 
                     <div class="card-body">
 
+                      <a href="/posts/create" class="btn btn-secondary mb-3">+ Enter New Suggestion</a>
+
 
                         <table class="table table-striped">
 
                             <tr>
-                                <th>Title</th>
                                 <th>Author</th>
+                                <th>Title</th>
+                                <th>Date</th>
                                 <th></th>
                             </tr>
 
                             @foreach ($posts as $post)
                                 <tr>
-                                    <td class="pt-3">{{$post->title}}</td>
                                     <td class="pt-3">
                                         @if (!empty($post->person->main_portrait()))
 
@@ -39,10 +41,12 @@
                                           <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
 
                                         @endif
-                                        {{$post->person->first_name}} 
+                                        &nbsp;&nbsp;{{$post->person->first_name}}
                                         {{$post->person->last_name}}
                                     </td>
-                                    <td></td>
+                                    <td class="pt-3">{{$post->title}}</td>
+                                    <td>{{date ('d M Y', strtotime($post->created_at))}}</td>
+                                    <td><a href="/posts/{{$post->id}}" class="btn btn-primary">read...</a></td>
                                 </tr>
                             @endforeach
 
