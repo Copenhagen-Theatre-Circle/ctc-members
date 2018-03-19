@@ -62,6 +62,12 @@
 
                     {{-- Body --}}
                     <div class="form-group">
+                      <label for="lead">Lead Paragraph</label>
+                      <textarea name="lead" class="form-control form-control-lg" id="lead" rows="5" placeholder="Enter lead paragraph or summary here" required></textarea>
+                    </div>
+
+                    {{-- Body --}}
+                    <div class="form-group">
                       <label for="body">Details</label>
                       <textarea name="body" class="form-control form-control-lg" id="body" rows="15" placeholder="Enter suggestion details" required></textarea>
                     </div>

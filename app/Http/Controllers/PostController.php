@@ -56,7 +56,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
 
-      $posts = Post::where('is_anonymous','<>',1)->orderBy('created_at','desc')->get();
+      $posts = Post::where('is_anonymous','<>',1)->with('comments')->orderBy('created_at','desc')->get();
       foreach ($posts as $item) {
           $id_array[] = $item->id;
       }
@@ -75,7 +75,12 @@ class PostController extends Controller
           $previous = "";
       }
 
-        return view ('posts.show', Compact('post','next','previous','count','currentrecord'));
+      $user_id = \Auth::user()->id;
+      $user_model = User::find($user_id);
+      $user_person_id = $user_model->person->id;
+      $user = Person::find($user_person_id);
+
+        return view ('posts.show', Compact('post','next','previous','count','currentrecord','user'));
     }
 
     /**

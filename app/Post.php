@@ -11,6 +11,11 @@ class Post extends BaseModel
         return $this->belongsTo('App\Person');
     }
 
-    protected $fillable = ['posttype_id','person_id','title','body','is_anonymous'];
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('created_at','desc');
+    }
+
+    protected $fillable = ['posttype_id','person_id','title', 'lead', 'body','is_anonymous'];
 
 }

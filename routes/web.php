@@ -35,6 +35,8 @@ Route::resource('person','PersonController');
 
 Route::resource('projects','ProjectController');
 
+Route::resource('comments','CommentsController');
+
 Route::resource('posts','PostController');
 
 Route::resource('audition_form_answers', 'AuditionFormAnswersController');
