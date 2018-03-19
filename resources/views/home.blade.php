@@ -31,9 +31,9 @@
                         <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/list-user.png" alt="Card image cap">
                           <div class="card-body">
-                            <h4 class="card-title">Membership List</h4>
+                            <h4 class="card-title">The Network</h4>
                             <p class="card-text">Browse a list of current members, plus other people who have filled in the questionnaire or who have been active in the CTC over the past 5 years.</p>
-                            <a href="/membership" class="btn btn-primary">Membership</a>
+                            <a href="/membership" class="btn btn-primary">CTC Network</a>
                           </div>
                         </div>
 
@@ -51,6 +51,23 @@
                         </div>
 
                       </div>
+
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                        <div class="card">
+                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/envelope-open-letter-heart-red.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Suggestion Box</h4>
+                            <p class="card-text">Could the CTC be doing things differently? Want to suggest a new activity? Any play you'd like to see produced? Let us know in the suggestion box.</p>
+                            <a href="/posts" class="btn btn-primary">Suggestions</a>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    {{-- </div>
+
+                    <div class="row"> --}}
 
                       <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
@@ -123,18 +140,6 @@
                           <div class="card-body">
                             <h4 class="card-title">Bulletin Board</h4>
                             <p class="card-text">Production help wanted, news from the committee, or anything else that might be of interest to members: read it on the bulletin board. Or even write your own post...</p>
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-
-                        <div class="card">
-                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/envelope-open-letter-heart.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h4 class="card-title">Suggestion Box</h4>
-                            <p class="card-text">Could things in the CTC be done differently? Want to suggest a new activity? Let the committee know in the suggestion box.</p>
                           </div>
                         </div>
 
