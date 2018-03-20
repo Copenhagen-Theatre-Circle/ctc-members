@@ -35,15 +35,11 @@ class GroupMessageController extends Controller
      */
     public function create()
     {
-      $user_id = \Auth::user()->id;
-      $user_model = User::find($user_id);
-      $user_person_id = $user_model->person->id;
-      $user = Person::find($user_person_id);
       $functions = Crewfunction::get()->sortBy('sort_order')->sortBy('FunctionGroupSortOrder');
       foreach ($functions as $function) {
         $functionarray[$function->functiongroup][$function->id]=$function->questionnaire_name;
       }
-      return view('groupmessageform',['user'=>$user, 'crewfunctions'=>$functionarray]);
+      return view('groupmessageform',['crewfunctions'=>$functionarray]);
     }
 
     /**
