@@ -25,7 +25,7 @@ Route::get('/nomember', function(){
   return view('nomember');
 });
 
-Route::get('/membership', 'MembersController@index');
+Route::get('/membership', 'MembersController@index')->name('membership');
 
 Route::get('/export/auditions/{project}', 'ExportController@auditions');
 
@@ -40,6 +40,8 @@ Route::resource('comments','CommentsController');
 Route::resource('posts','PostController');
 
 Route::resource('audition_form_answers', 'AuditionFormAnswersController');
+
+Route::resource('test', 'TestController');
 
 Route::get('message/confirmation',function(){
   return view('contactconfirmation');

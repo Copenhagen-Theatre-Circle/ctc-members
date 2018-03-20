@@ -11,3 +11,5 @@ npm-debug.log
 yarn-error.log
 .env
 .DS_Store
+/app/Http/Controllers/TestController.php
+/resources/views/test/*
