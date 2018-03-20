@@ -33,14 +33,14 @@
                     <table style="width: 100%;">
                       <tr class="align-middle">
                         <td style="width: 60px;">
-                          @if (!empty($user->main_portrait()))
-                            <img src="https://ctc-members.dk/media/{{$user->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                          @if (!empty(auth_person('portrait')))
+                            <img src="https://ctc-members.dk/media/{{auth_person('portrait')}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
                           @else
                             <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
                           @endif
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{$user['first_name']}} {{$user['last_name']}}" readonly>
+                            <input type="text" class="form-control form-control-lg" id="subject" aria-describedby="subject" value="{{auth_person('first_name')}} {{auth_person('last_name')}}" readonly>
                         </td>
                       </tr>
                     </table>
@@ -51,7 +51,7 @@
 
                     {{ csrf_field() }}
 
-                    <input type="hidden" name="person_id" value="{{$user->id}}">
+                    <input type="hidden" name="person_id" value="{{auth_person()}}">
                     <input type="hidden" name="posttype_id" value="5">
 
                     {{-- Subject --}}

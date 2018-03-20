@@ -28,11 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $user_id = \Auth::user()->id;
-        $user_model = User::find($user_id);
-        $user_person_id = $user_model->person->id;
-        $user = Person::find($user_person_id);
-        return view ('posts.create', Compact('user'));
+        return view ('posts.create');
     }
 
     /**
@@ -75,12 +71,7 @@ class PostController extends Controller
           $previous = "";
       }
 
-      $user_id = \Auth::user()->id;
-      $user_model = User::find($user_id);
-      $user_person_id = $user_model->person->id;
-      $user = Person::find($user_person_id);
-
-        return view ('posts.show', Compact('post','next','previous','count','currentrecord','user'));
+        return view ('posts.show', Compact('post','next','previous','count','currentrecord'));
     }
 
     /**
