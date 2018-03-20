@@ -35,11 +35,7 @@ class MessageController extends Controller
     {
       $id = request('u');
       $recipient = Person::find($id);
-      $user_id = \Auth::user()->id;
-      $user_model = User::find($user_id);
-      $user_person_id = $user_model->person->id;
-      $user = Person::find($user_person_id);
-      return view('contactform',['recipient' => $recipient,'user'=>$user]);
+      return view('contactform',['recipient' => $recipient]);
     }
 
     /**

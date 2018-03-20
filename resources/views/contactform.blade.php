@@ -57,7 +57,7 @@
                     {{ csrf_field() }}
 
                     <input type="hidden" name="id_to" value="{{$recipient->id}}">
-                    <input type="hidden" name="id_from" value="{{$user->id}}">
+                    <input type="hidden" name="id_from" value="{{auth_person()}}">
 
                     {{-- Subject --}}
                     <div class="form-group">
