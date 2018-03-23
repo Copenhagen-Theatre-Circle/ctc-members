@@ -47,9 +47,7 @@
                                     </a>
                                 </th>
                                 <th >can audition</th>
-                                <th >mail</th>
-                                <th >mobile</th>
-                                {{-- <th style="width: 15%;">not available</th> --}}
+                                <th >mail / mobile</th>
                                 <th></th>
                             </tr>
 
@@ -62,9 +60,10 @@
                                     <td>{{$audition_form_answer->person->last_name}}</td>
                                     <td>{{date ('d M Y', strtotime($audition_form_answer->created_at))}}</td>
                                     <td>{!! nl2br($audition_form_answer->date_preferences) !!}</td>
-                                    <td>{{$audition_form_answer->person->mail}}</td>
-                                    <td>{{$audition_form_answer->person->mobile}}</td>
-                                    {{-- <td>{{$audition_form_answer->not_available_dates}}</td> --}}
+                                    <td>{{$audition_form_answer->person->mail}}
+                                        <br/>
+                                        {{$audition_form_answer->person->mobile}}
+                                    </td>
                                     <td><a href="/audition_form_answers/{{$audition_form_answer->id}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif" class="btn btn-primary">Details</a></td>
                                 </tr>
                             @endforeach
