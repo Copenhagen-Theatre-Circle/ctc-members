@@ -83,6 +83,18 @@
                                 <hr/>
                               @endif
 
+                              @if (! empty($auditionFormAnswer->video_link))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Audition Video:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      {!!LaravelVideoEmbed::parse($auditionFormAnswer->video_link);!!}
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
                               @if (! empty($auditionFormAnswer->not_available_weekdays))
                                 <div class="row">
                                   <div class="col-2 pr-0">

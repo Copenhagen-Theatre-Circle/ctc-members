@@ -11,6 +11,7 @@
         "fideloper/proxy": "~4.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "merujan99/laravel-video-embed": "dev-master",
         "usmanhalalit/laracsv": "1.*@dev"
     },
     "require-dev": {
