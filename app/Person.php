@@ -17,6 +17,11 @@ class Person extends BaseModel
         return $this->hasMany('App\Photograph');
     }
 
+  public function rights()
+    {
+        return $this->hasMany('App\Right');
+    }
+
   public function questionnaire_answers()
     {
         return $this->hasMany('App\QuestionnaireAnswer');

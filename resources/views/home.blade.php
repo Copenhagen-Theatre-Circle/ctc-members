@@ -13,6 +13,8 @@
                         </div>
                     @endif
 
+
+
                     <div class="jumbotron pt-3 pb-2">
                       <h1 class="display-5" style="animation: fadein 2s;">Welcome, {{ explode(' ',trim(Auth::user()->name))[0]}}!</h1>
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
@@ -93,7 +95,11 @@
                         </div>
                       </div>
 
-                      <div class="row">
+                    @endif
+
+                    <div class="row">
+
+                    @if ($user_is_admin)
 
                         <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
@@ -108,6 +114,10 @@
 
                         </div>
 
+                    @endif
+
+                    @if (count($user->person->rights)>0)
+
                         <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                           <div class="card">
@@ -121,9 +131,9 @@
 
                         </div>
 
-                      </div>
-
                     @endif
+
+                    </div>
 
                     <div class="row pb-3">
                       <div class="col">

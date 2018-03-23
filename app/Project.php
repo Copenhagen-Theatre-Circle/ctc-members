@@ -10,4 +10,9 @@ class Project extends BaseModel
     {
         return $this->hasMany('App\AuditionFormAnswer');
     }
+
+    public function rights()
+    {
+        return $this->hasMany('App\Right');
+    }
 }

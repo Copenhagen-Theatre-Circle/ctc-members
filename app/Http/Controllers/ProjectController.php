@@ -15,9 +15,14 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::whereHas('audition_form_answers', function ($query) {
-                        $query->where('id', '>', 0);
-                    })->get();
+
+
+        $projects = Project::whereHas('rights', function ($query) {
+                        $query->where('person_id', auth_person());
+                        $query->where('rightstype_id', 1);
+                    });
+
+        $projects = $projects->get();
         return view ('projects.index', compact('projects'));
     }
 
