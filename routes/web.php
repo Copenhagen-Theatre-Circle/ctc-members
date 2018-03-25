@@ -37,7 +37,7 @@ Route::resource('projects','ProjectController');
 
 Route::resource('comments','CommentsController');
 
-Route::resource('preferences','UserPreferenceController');
+Route::resource('preferences','UserpreferenceController');
 
 Route::resource('posts','PostController');
 
