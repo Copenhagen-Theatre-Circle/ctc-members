@@ -44,7 +44,7 @@ class UserpreferenceController extends Controller
      * @param  \App\Userpreference  $userpreference
      * @return \Illuminate\Http\Response
      */
-    public function show($uniqid)
+    public function show($uniqid) 
     {
         $person = \App\Person::where('uniqid',$uniqid)->first();
         $person_id = $person->id;
