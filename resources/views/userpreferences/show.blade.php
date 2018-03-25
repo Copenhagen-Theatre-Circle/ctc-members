@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container" id="app">
+    <div class="container">
         <div class="row scrollbox">
             <div class="col-md-12 col-md-offset-0">
 
@@ -44,7 +44,6 @@
                             <p class="pt-3 mb-3">How frequently do you want to receive mails with the latest CTC Bulletin Board posts?</p>
 
                             <div class="form-check">
-                              <input type="text" name="" value="" v-model="frequency">
                               <input class="form-check-input ml-0" type="radio" name="bulletin_mail_frequency" id="immediately" v-model="frequency" value="immediately">
                               <label class="form-check-label" for="immediately">
                                 as soon as they are written
@@ -63,70 +62,56 @@
                               </label>
                             </div>
 
-                            @{{frequency}}
-
 
                             <div id="posttypes" v-if="frequency!=='never'">
                                 <p class="pt-4 mb-3">Which type of bulletin board posts do you want to receive per mail?</p>
 
                                 <div class="form-check">
-                                  <input class="form-check-input ml-0" type="checkbox" name="send_CTC_help_bulletins" id="send_CTC_help_bulletins" value="1" checked>
+                                  <input class="form-check-input ml-0" type="checkbox" name="send_CTC_help_bulletins" id="send_CTC_help_bulletins" value="1" v-model="send_CTC_help_bulletins">
                                   <label class="form-check-label" for="send_CTC_help_bulletins">
                                     Cast & crew wanted
                                   </label>
                                 </div>
 
-                                <div class="ml-4">
-                                    <div class="form-check">
-                                      <input class="form-check-input ml-0" type="radio" name="help_bulletin_scope" id="all areas" value="all areas" checked>
-                                      <label class="form-check-label" for="all areas">
-                                        all areas
-                                      </label>
-                                    </div>
+                                <div class="cast_crew" v-if="send_CTC_help_bulletins==1">
+                                  <div class="ml-4">
+                                      <div class="form-check">
+                                        <input class="form-check-input ml-0" type="radio" name="help_bulletin_scope" id="all areas" value="all areas" checked>
+                                        <label class="form-check-label" for="all areas">
+                                          all areas
+                                        </label>
+                                      </div>
+                                  </div>
+
+                                  <div class="ml-4">
+                                      <div class="form-check">
+                                        <input class="form-check-input ml-0" type="radio" name="help_bulletin_scope" id="interest only" value="interest only">
+                                        <label class="form-check-label" for="interest only">
+                                          only for areas where I indicated an interest in the questionnaire
+                                        </label>
+                                      </div>
+                                  </div>
                                 </div>
 
-                                <div class="ml-4">
-                                    <div class="form-check">
-                                      <input class="form-check-input ml-0" type="radio" name="help_bulletin_scope" id="interest only" value="interest only">
-                                      <label class="form-check-label" for="interest only">
-                                        only for areas where I indicated an interest in the questionnaire
-                                      </label>
-                                    </div>
+
+                                <div class="form-check">
+                                  <input class="form-check-input ml-0" type="checkbox" name="send_membership_news" id="send_membership_news" value="1">
+                                  <label class="form-check-label" for="send_membership_news">
+                                    Membership news bulletins (CTC members only)
+                                  </label>
                                 </div>
-                            </div>
 
+                                <div class="form-check">
+                                  <input class="form-check-input ml-0" type="checkbox" name="send_blog_posts" id="send_blog_posts" value="1">
+                                  <label class="form-check-label" for="send_blog_posts">
+                                    Blog posts
+                                  </label>
+                                </div>
 
-                              {{-- <div class="form-check">
-                                <input class="form-check-input ml-0" type="checkbox" name="bulletin_mail_frequency" id="weekly" value="weekly">
-                                <label class="form-check-label" for="weekly">
-                                  Production help wanted (non-CTC productions)
-                                </label>
-                              </div> --}}
-
-
-                              <div class="form-check">
-                                <input class="form-check-input ml-0" type="checkbox" name="send_membership_news" id="send_membership_news" value="1">
-                                <label class="form-check-label" for="send_membership_news">
-                                  Membership news bulletins (CTC members only)
-                                </label>
                               </div>
-                              <div class="form-check">
-                                <input class="form-check-input ml-0" type="checkbox" name="send_blog_posts" id="send_blog_posts" value="1">
-                                <label class="form-check-label" for="send_blog_posts">
-                                  Blog posts
-                                </label>
-                              </div>
-                              <div>
-                                <h3>radio buttons</h3>
-                                <input type="radio" v-model="color" value="0">red
-                                <input type="radio" v-model="color" value="1">blue
-                                <input type="radio" v-model="color" value="2">yellow
-                                <br />
-                                <span>value: @{{color}}</span>
-                              </div>
+
                                 <hr>
                                 <button type="submit" class="btn btn-primary col-1">Save</button>
-
 
 
                             </form>
@@ -143,13 +128,13 @@
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script>
 
     var app = new Vue({
           el: '#app',
           data: {
             frequency: 'immediately',
+            send_CTC_help_bulletins: 1,
           }
       })
 
