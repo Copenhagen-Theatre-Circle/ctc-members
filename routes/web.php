@@ -39,6 +39,8 @@ Route::resource('comments','CommentsController');
 
 Route::resource('preferences','UserpreferenceController');
 
+Route::resource('memberbenefits','MemberbenefitController');
+
 Route::resource('posts','PostController');
 
 Route::resource('audition_form_answers', 'AuditionFormAnswersController');
