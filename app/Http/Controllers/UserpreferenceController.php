@@ -35,7 +35,13 @@ class UserpreferenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Userpreference::where('person_id', $_POST['person_id'])->delete();
+      Userpreference::create($request->all());
+      // Userpreference::updateOrCreate(
+      //   ['person_id'=>$_POST['person_id']],
+      //   $request->all()
+      // );
+      return redirect ('preferences/'. $_POST['uniqid'] .'?msg=ok');
     }
 
     /**
@@ -44,7 +50,7 @@ class UserpreferenceController extends Controller
      * @param  \App\Userpreference  $userpreference
      * @return \Illuminate\Http\Response
      */
-    public function show($uniqid) 
+    public function show($uniqid)
     {
         $person = \App\Person::where('uniqid',$uniqid)->first();
         $person_id = $person->id;
