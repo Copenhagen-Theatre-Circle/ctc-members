@@ -19,6 +19,7 @@ class MemberbenefitController extends Controller
           // $array[]=$benefit;
             $array[$benefit->memberbenefitgroup->id]['groupname']=$benefit->memberbenefitgroup->name;
             $array[$benefit->memberbenefitgroup->id]['benefits'][$benefit->id]['name']=$benefit->name;
+            $array[$benefit->memberbenefitgroup->id]['benefits'][$benefit->id]['comment']=$benefit->comment;
             $array[$benefit->memberbenefitgroup->id]['benefits'][$benefit->id]['sort_order']=$benefit->sort_order;
             $array[$benefit->memberbenefitgroup->id]['benefits'][$benefit->id]['member']=$benefit->member;
             $array[$benefit->memberbenefitgroup->id]['benefits'][$benefit->id]['member_comment']=$benefit->member_comment;
