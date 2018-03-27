@@ -55,9 +55,13 @@ class MessageController extends Controller
         $subject = $request->subject;
         $body = $request->body;
         $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body];
-        Mail::to($mail_to)->send(new ContactMessage($attributes));
+        $message = new ContactMessage($attributes);
+        Mail::to($mail_to)->send($message);
+        if (request('self_copy')==1){
+          Mail::to($mail_from)->send($message);
+        }
         return redirect('message/confirmation');
-        // return array ($mail_from, $mail_to, $subject, $body);
+
     }
 
     /**

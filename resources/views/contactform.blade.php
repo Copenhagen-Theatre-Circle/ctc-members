@@ -14,6 +14,7 @@
                   <p class="mt-3">You can send the selected person a message with the following form.
                   <br>
                   Your email address will be revealed in the message, and the person can answer you directly.</p>
+                  <p class="text-danger">NB: We will not store this message, to protect your privacy. If you want to receive a copy of the message, please check the box at the bottom of the form.</p>
 
                 </div>
 
@@ -69,6 +70,13 @@
                     <div class="form-group">
                       <label for="body">Message</label>
                       <textarea name="body" class="form-control form-control-lg" id="body" rows="8" placeholder="Enter message" required></textarea>
+                    </div>
+
+                    {{-- Copy to self --}}
+                    <div class="form-group">
+                      <input type="hidden" name="self_copy" value="0">
+                      <input type="checkbox" name="self_copy" class="form-check-input ml-0" id="self_copy" value="1">
+                      <label for="self_copy" class="form-check-label">send copy to {{auth_person('mail')}}</label>
                     </div>
 
 

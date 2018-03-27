@@ -28,8 +28,9 @@ class ContactMessage extends Mailable
      */
     public function build()
     {
-        if(!empty($this->attributes['replyTo']))
-          $this->replyTo($this->attributes['replyTo']);
+        if (!empty($this->attributes['replyTo'])) {
+          $replyTo = $this->attributes['replyTo'];
+        }
 
         if (!empty($this->attributes['fromName'])) {
           $fromName = $this->attributes['fromName'];
@@ -41,13 +42,14 @@ class ContactMessage extends Mailable
 
         if (!empty($this->attributes['bcc'])) {
           $bcc = $this->attributes['bcc'];
-        } else {$bcc = "";}
+        } else {$bcc = [];}
 
         if (!empty($this->attributes['body'])) {
           $body = $this->attributes['body'];
         } else {$body = "";}
 
         return $this->from('noreply@ctc-members.dk', $fromName . ' via ctc-members.dk')
+                    ->replyTo($replyTo, 'CTC Member')
                     ->subject($subject)
                     ->bcc($bcc)
                     ->view('emails.contactmessage')
