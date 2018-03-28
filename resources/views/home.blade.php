@@ -61,7 +61,7 @@
                           <div class="card-body">
                             <h4 class="card-title">Suggestion Box</h4>
                             <p class="card-text">Could the CTC be doing things differently? Want to suggest a new activity? Any play you'd like to see produced? Let us know in the suggestion box.</p>
-                            <a href="/posts" class="btn btn-primary">Suggestions</a>
+                            <a href="/suggestions" class="btn btn-primary">Suggestions</a>
                           </div>
                         </div>
 

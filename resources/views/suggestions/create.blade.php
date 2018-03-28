@@ -47,7 +47,7 @@
                     </div>
                   </div>
 
-                  <form action="{{ route('posts.store') }}" method="post">
+                  <form action="{{ route('suggestions.store') }}" method="post">
 
                     {{ csrf_field() }}
 

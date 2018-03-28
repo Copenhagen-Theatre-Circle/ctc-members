@@ -17,7 +17,7 @@
 
                     <div class="card-body">
 
-                      <a href="/posts/create" class="btn btn-secondary mb-3">+ Enter New Suggestion</a>
+                      <a href="/suggestions/create" class="btn btn-secondary mb-3">+ Enter New Suggestion</a>
 
 
                         <table class="table table-striped">
@@ -46,7 +46,7 @@
                                     </td>
                                     <td class="pt-3">{{$post->title}}</td>
                                     <td>{{date ('d M Y', strtotime($post->created_at))}}</td>
-                                    <td><a href="/posts/{{$post->id}}" class="btn btn-primary">read...</a></td>
+                                    <td><a href="/suggestions/{{$post->id}}" class="btn btn-primary">read...</a></td>
                                 </tr>
                             @endforeach
 

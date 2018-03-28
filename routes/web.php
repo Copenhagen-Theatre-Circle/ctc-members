@@ -41,7 +41,7 @@ Route::resource('preferences','UserpreferenceController');
 
 Route::resource('memberbenefits','MemberbenefitController');
 
-Route::resource('posts','PostController');
+Route::resource('suggestions','SuggestionController');
 
 Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 

@@ -7,7 +7,7 @@ use App\Person;
 use App\User;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class SuggestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('is_anonymous','<>',1)->orderBy('created_at','desc')->get();
+        $posts = Post::where('is_anonymous','<>',1)->where('posttype_id',5)->orderBy('created_at','desc')->get();
         // return $posts;
-        return view ('posts.index',Compact ('posts'));
+        return view ('suggestions.index', Compact ('posts'));
     }
 
     /**
@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view ('posts.create');
+        return view ('suggestions.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         Post::create($request->all());
-        return redirect ('posts');
+        return redirect ('suggestions');
     }
 
     /**
@@ -49,10 +49,10 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($post)
     {
-
-      $posts = Post::where('is_anonymous','<>',1)->with('comments')->orderBy('created_at','desc')->get();
+      $post = Post::where('id',$post)->first();
+      $posts = Post::where('is_anonymous','<>',1)->where('posttype_id',5)->with('comments')->orderBy('created_at','desc')->get();
       foreach ($posts as $item) {
           $id_array[] = $item->id;
       }
@@ -71,7 +71,7 @@ class PostController extends Controller
           $previous = "";
       }
 
-        return view ('posts.show', Compact('post','next','previous','count','currentrecord'));
+        return view ('suggestions.show', Compact('post','next','previous','count','currentrecord'));
     }
 
     /**

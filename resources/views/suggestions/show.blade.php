@@ -6,7 +6,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb my-1">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="/posts">Suggestions</a></li>
+            <li class="breadcrumb-item"><a href="/suggestions">Suggestions</a></li>
             <li class="breadcrumb-item">{{$post->title}}</li>
             <div class="float-right">
                 {{$currentrecord}}/{{$count}}
@@ -152,15 +152,15 @@
                     <div class="row">
                         <div class="col pl-4">
                             @if (!empty($previous))
-                                <a class="btn btn-outline-secondary btn-sm px-2 float-left" href="/posts/{{$previous}}">Previous</a>
+                                <a class="btn btn-outline-secondary btn-sm px-2 float-left" href="/suggestions/{{$previous}}">Previous</a>
                             @endif
                         </div>
                         <div class="col pr-4 text-center">
-                                <a class="btn btn-outline-secondary btn-sm px-2 text-center" href="/posts">Back to List</a>
+                                <a class="btn btn-outline-secondary btn-sm px-2 text-center" href="/suggestions">Back to List</a>
                         </div>
                         <div class="col pr-4">
                             @if (!empty($next))
-                                <a class="btn btn-outline-secondary btn-sm px-2 float-right" href="/posts/{{$next}}">Next</a>
+                                <a class="btn btn-outline-secondary btn-sm px-2 float-right" href="/suggestions/{{$next}}">Next</a>
                             @endif
                         </div>
                     </div>
