@@ -55,6 +55,16 @@
 
                     {{-- Subject --}}
                     <div class="form-group">
+                      <label for="posttype">Post Type</label>
+                        <select class="form-control" id="posttype" name="posttype_id">
+                            @foreach ($posttypes as $posttype)
+                                <option value="{{$posttype->id}}">{{$posttype->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    {{-- Subject --}}
+                    <div class="form-group">
                       <label for="subject">Title</label>
                       <input type="text" name="title" class="form-control form-control-lg" id="subject" aria-describedby="subject" placeholder="Enter post title" required>
                     </div>

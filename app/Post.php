@@ -11,6 +11,11 @@ class Post extends BaseModel
         return $this->belongsTo('App\Person');
     }
 
+    public function posttype()
+    {
+        return $this->belongsTo('App\Posttype');
+    }
+
     public function comments()
     {
         return $this->hasMany('App\Comment')->orderBy('created_at','desc');

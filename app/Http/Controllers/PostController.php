@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Person;
 use App\User;
+use App\Posttype;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -28,7 +29,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view ('posts.create');
+        $posttypes = Posttype::where('is_bulletin_board',1)->where('write_admin_only',null)->get();
+        return view ('posts.create', Compact('posttypes'));
     }
 
     /**

@@ -61,7 +61,7 @@
                           <div class="card-body">
                             <h4 class="card-title">Bulletin Board</h4>
                             <p class="card-text">Production help wanted, news from the committee, or anything else that might be of interest to you: read it here. Or even write your own post...</p>
-                            <a href="/posts" class="btn btn-primary" target="_blank">Bulletin Board</a>
+                            <a href="/posts" class="btn btn-primary">Bulletin Board</a>
                           </div>
                         </div>
 
