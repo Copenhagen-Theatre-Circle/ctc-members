@@ -57,6 +57,19 @@
                       <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
+                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/red-pin.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Bulletin Board</h4>
+                            <p class="card-text">Production help wanted, news from the committee, or anything else that might be of interest to you: read it here. Or even write your own post...</p>
+                            <a href="/posts" class="btn btn-primary" target="_blank">Bulletin Board</a>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                        <div class="card">
                           <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/envelope-open-letter-heart-red.png" alt="Card image cap">
                           <div class="card-body">
                             <h4 class="card-title">Suggestion Box</h4>
@@ -142,18 +155,6 @@
                     </div>
 
                     <div class="row" style="color:#999;">
-
-                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-
-                        <div class="card">
-                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/note-pin.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h4 class="card-title">Bulletin Board</h4>
-                            <p class="card-text">Production help wanted, news from the committee, or anything else that might be of interest to members: read it on the bulletin board. Or even write your own post...</p>
-                          </div>
-                        </div>
-
-                      </div>
 
                       <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 

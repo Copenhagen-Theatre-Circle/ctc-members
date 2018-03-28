@@ -43,6 +43,8 @@ Route::resource('memberbenefits','MemberbenefitController');
 
 Route::resource('suggestions','SuggestionController');
 
+Route::resource('posts','PostController');
+
 Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 
 Route::resource('test', 'TestController');
