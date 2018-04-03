@@ -27,8 +27,20 @@ hr {
 }
 
 .sorted {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+
+.thead-dark {
+  color: #fff;
+  background-color: #212529;
+}
+
+.thead-dark th {
+  border-color: #32383e;
+}
+
+
 
 @media (min-width:641px) {
 
