@@ -6,7 +6,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb my-1">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item active">Ticket Sales</li>
+            <li class="breadcrumb-item active">Ticket Sales: {{$output['project']}}</li>
           </ol>
         </nav>
 
@@ -38,7 +38,7 @@
                             </tr>
                           </thead>
 
-                          @foreach ($output as $event)
+                          @foreach ($output['events'] as $event)
                               <tr>
                                   <td>{{ date('d M Y', strtotime($event['date']))}}</td>
                                   <td>{{ date('H:i', strtotime($event['time']))}}</td>
@@ -52,10 +52,24 @@
                                   <td>{{ $event['membership_child'] }}</td>
                                   <td>{{ $event['comp'] }}</td>
                                   <td>
-                                    <a href="" class="btn btn-outline-primary btn-sm">Details</a>
+                                    <a href="/events/{{$event['id']}}" class="btn btn-outline-primary btn-sm">Details</a>
                                   </td>
                               </tr>
                           @endforeach
+                            <tr>
+                                <td colspan="2">Total:</td>
+                                <td><strong>{{$output['total_sold']}}</strong></td>
+                                <td><strong>{{$output['total_available']}}</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
 
                       </table>
 

@@ -37,6 +37,8 @@ Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 
 Route::resource('comments','CommentsController');
 
+Route::resource('events','EventController');
+
 Route::resource('groupmessage','GroupMessageController');
 
 Route::resource('message','MessageController');

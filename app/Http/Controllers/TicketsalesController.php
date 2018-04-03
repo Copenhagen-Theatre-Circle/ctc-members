@@ -47,18 +47,26 @@ class TicketsalesController extends Controller
     public function show($id)
     {
       $events = Event::where('project_id', $id)->orderBy('date')->orderBy('time')->get();
+      $array['total_sold'] = 0;
+      $array['total_available'] = 0;
+
+      $project = \App\Project::where('id',$id)->first();
+      $array['project'] = $project['name'];
+
       foreach ($events as $event) {
         $subarray['id']=$event['id'];
         $subarray['date']=$event['date'];
         $subarray['time']=$event['time'];
         $seccode=$event['place2book_seccode'];
+        $subarray['seccode']=$seccode;
         $orders = place2bookShowStats ($seccode);
         $orders_array = json_decode($orders, TRUE);
         $orders_array = $orders_array['event']['tickets']['ticket'];
 
         //initialise ticket amounts
         $subarray['sold'] = 0;
-        $subarray['available'] = (int)$orders_array[0]['available'];
+        $available = (int)$orders_array[0]['available'];
+        $subarray['available'] = $available;
         $subarray['standard'] = 0;
         $subarray['child'] = 0;
         $subarray['group_10_to_19'] = 0;
@@ -66,12 +74,16 @@ class TicketsalesController extends Controller
         $subarray['membership_adult'] = 0;
         $subarray['membership_child'] = 0;
         $subarray['comp'] = 0;
+
+        $array['total_available'] += $available;
+
         //map each ticket type and add to sum
         foreach ($orders_array as $orders_detail) {
 
           $tickettype = $orders_detail['name'];
           $sold = $orders_detail['sold'];
           $subarray['sold'] += $sold;
+          $array['total_sold'] += $sold;
 
           switch ($tickettype) {
             //standard tickets
@@ -119,9 +131,10 @@ class TicketsalesController extends Controller
 
         }
 
-        $array[]=$subarray;
+        $array['events'][]=$subarray;
       }
       $output = $array;
+      // return $output;
       return view ('ticketsales.show', Compact('output'));
 
     }
