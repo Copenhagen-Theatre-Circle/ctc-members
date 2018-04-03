@@ -68,7 +68,7 @@ class EventController extends Controller
           if (!is_array($pr)){
             $subarray['pr']=$pr;
           } else {
-            $subarray['pr']="n/a";
+            $subarray['pr']="";
           }
           // $subarray['pr']=$order['custom_fields']['custom_field'][1]['value'];
           $tickets = $order['tickets']['ticket'];

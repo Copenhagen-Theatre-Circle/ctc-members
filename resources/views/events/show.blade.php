@@ -7,7 +7,7 @@
           <ol class="breadcrumb my-1">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item"><a href="/ticketsales/{{$output['project_id']}}">Ticket Sales: {{$output['project']}}</a></li>
-            <li class="breadcrumb-item active">{{$output['date']}} {{$output['time']}}</li>
+            <li class="breadcrumb-item active">{{$output['date']}} @ {{$output['time']}}</li>
           </ol>
         </nav>
 
@@ -24,8 +24,8 @@
 
                             <tr>
                                 <th>Client</th>
-                                <th>Nr of Tickets</th>
-                                <th>Sum</th>
+                                <th style="text-align:center">Nr of Tickets</th>
+                                <th style="text-align:right">Sum</th>
                                 <th>Purchased</th>
                                 <th>Heard About Us</th>
                                 <th></th>
@@ -36,8 +36,8 @@
                                     <td class="pt-3">
                                         {{$sale['name']}}
                                     </td>
-                                    <td>{{$sale['tickets_sold']}}</td>
-                                    <td>{{$sale['sum']}}</td>
+                                    <td style="text-align:center">{{$sale['tickets_sold']}}</td>
+                                    <td style="text-align:right">{{$sale['sum']}} kr</td>
                                     <td>{{$sale['created_at']}}</td>
                                     <td>{{$sale['pr']}}</td>
                                     {{-- <td>{{date ('d M Y H:i', strtotime($sale['created_at']))}}</td> --}}
