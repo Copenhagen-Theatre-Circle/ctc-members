@@ -62,7 +62,12 @@ class EventController extends Controller
         $orders = $place2bookData['event']['purchases']['purchase'];
         // return $orders;
         foreach ($orders as $order) {
-          $subarray['name']=$order['customer']['name'];
+          $name = $order['customer']['name'];
+          if (!is_array($name)){
+            $subarray['name']=$name;
+          } else {
+            $subarray['name']="";
+          }
           $subarray['created_at']= date ('d M Y', strtotime ($order['created_at']));
           $pr = $order['custom_fields']['custom_field'][1]['value'];
           if (!is_array($pr)){
