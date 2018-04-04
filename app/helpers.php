@@ -5,8 +5,28 @@ function auth_person ($field='id') {
   return $person->$field;
 }
 
+function user_can_see_all_people () {
+  $person = \Auth::user()->person;
+  return $person->can_see_all_people == 1;
+}
+
+function user_is_admin () {
+  $person = \Auth::user()->person;
+  return $person->is_admin == 1;
+}
+
+function user_is_superuser () {
+  $person = \Auth::user()->person;
+  return $person->is_superuser == 1;
+}
+
+function user_is_admin_or_superuser () {
+  $person = \Auth::user()->person;
+  return ($person->is_superuser == 1) || ($person->is_admin == 1) ;
+}
+
 function place2bookAPI ($endpoint) {
-  
+
   $uri = 'https://place2book.com/da/' . $endpoint;
   $header_key = "X-PLACE2BOOK-API-TOKEN";
   $header_value = env('PLACE2BOOK_API_TOKEN');

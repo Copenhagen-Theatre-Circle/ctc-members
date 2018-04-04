@@ -25,7 +25,9 @@
                                 <th rowspan="2">Sold</th>
                                 <th rowspan="2">Available</th>
                                 <th colspan="7" class="border-bottom-0">Breakdown by Ticket Types</th>
-                                <th rowspan="2"></th>
+                                @if (user_is_admin_or_superuser())
+                                  <th rowspan="2"></th>
+                                @endif
                             </tr>
                             <tr>
                                 <th>Standard</th>
@@ -51,9 +53,11 @@
                                   <td>{{ $event['membership_adult'] }}</td>
                                   <td>{{ $event['membership_child'] }}</td>
                                   <td>{{ $event['comp'] }}</td>
-                                  <td>
-                                    <a href="/events/{{$event['id']}}" class="btn btn-outline-primary btn-sm">Details</a>
-                                  </td>
+                                  @if (user_is_admin_or_superuser())
+                                    <td>
+                                      <a href="/events/{{$event['id']}}" class="btn btn-outline-primary btn-sm">Details</a>
+                                    </td>
+                                  @endif
                               </tr>
                           @endforeach
                             <tr>
