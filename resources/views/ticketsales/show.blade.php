@@ -17,7 +17,9 @@
 
                     <div class="card-body">
 
-                      <table class="table table-striped table-bordered">
+                      <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                      <hr>
+                      <table class="table table-striped table-bordered rounded">
                           <thead class="thead-dark">
                             <tr>
                                 <th rowspan="2">Date</th>
@@ -77,6 +79,8 @@
 
                       </table>
 
+
+
                     </div>
                 </div>
             </div>
@@ -84,4 +88,63 @@
     </div>
 
 
+@endsection
+
+@section('scripts')
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script>
+
+
+Highcharts.chart('container2', {
+chart: {
+  type: 'column'
+},
+title: {
+  text: 'Ticket Sales {{$output['project']}}'
+},
+xAxis: {
+  categories: [
+    @foreach ($output['events'] as $event)
+    '{{ date('d M Y', strtotime($event['date']))}} {{ date('H:i', strtotime($event['time']))}}',
+    @endforeach
+  ]
+},
+yAxis: {
+  min: 0,
+  title: {
+      text: '% tickets sold'
+  }
+},
+credits: {
+  enabled: false
+  },
+exporting: {
+  enabled: false
+  },
+tooltip: {
+  pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+  shared: true
+},
+plotOptions: {
+  column: {
+      stacking: 'percent'
+  }
+},
+series: [{
+  name: 'available',
+  data: [
+    @foreach ($output['events'] as $event)
+    {{ $event['available'] }},
+    @endforeach
+  ]
+}, {
+  name: 'sold',
+  data: [@foreach ($output['events'] as $event)
+  {{ $event['sold'] }},
+  @endforeach]
+}]
+});
+
+  </script>
 @endsection
