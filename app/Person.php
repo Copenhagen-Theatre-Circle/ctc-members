@@ -29,27 +29,31 @@ class Person extends BaseModel
 
   public function ismember()
     {
+        $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
+        $life_member = $this['is_life_member'] == 1;
+        $member = $paid_member || $life_member;
+        return $member ;
+    }
 
-    $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
-    $life_member = $this['is_life_member'] == 1;
-    $member = $paid_member || $life_member;
-    return $member ;
+  public function answeredQuestionnaire()
+    {
+        $answered = $this->questionnaire_answers()->where('id', '>', '0')->first() ? true : false;
+        return $answered ;
     }
 
   public function isPaidUpMember()
     {
-
-    $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
-    $life_member = $this['is_life_member'] == 1;
-    $member = $paid_member || $life_member;
-    return $member ;
+        $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
+        $life_member = $this['is_life_member'] == 1;
+        $member = $paid_member || $life_member;
+        return $member ;
     }
 
   public function main_portrait ()
-  {
-    $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
-    return $portrait;
-  }
+    {
+        $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
+        return $portrait;
+    }
 
 
   protected $appends = array('portrait');

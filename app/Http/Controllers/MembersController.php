@@ -28,9 +28,10 @@ class MembersController extends Controller
   public function index()
   {
 
-    // query people with questionnaire_answers
+    // eager load questionnaire_answers
 
     $people = Person::with('questionnaire_answers');
+
 
     // query if name search
 
@@ -89,15 +90,24 @@ class MembersController extends Controller
 
     $people = $people->get();
 
-    // filter only members if not special rights
+    // TODO: refactor this into query (scope?)
+    // filter only members if not special rights, else members and people who answered questionnaire
 
     $user_id = \Auth::user()->id;
     $user_model = User::find($user_id);
 
-    if ($user_model->canSeeAllPeople() == false){
+    if ($user_model->canSeeAllPeople() == false)
+
+    {
 
       $people = $people->filter(function ($item) {
       return $item->ismember();
+      })->values();
+
+    } else {
+
+      $people = $people->filter(function ($item) {
+      return ($item->answeredQuestionnaire() || $item->ismember());
       })->values();
 
     }
