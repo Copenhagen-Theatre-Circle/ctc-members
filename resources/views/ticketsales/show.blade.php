@@ -16,8 +16,31 @@
 
 
                     <div class="card-body">
-
-                      <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                      <div class="card-header">
+                        <h2>Ticket Sales: {{$output['project']}}</h2>
+                        <hr>
+                        <div class="col-xl-4 col-lg-6 col-md-6 pl-0">
+                          <div class="row">
+                            <div class="col">
+                              <p class="lead mb-1">Performances:</p>
+                              <p class="lead mb-1">Tickets sold:</p>
+                              <p class="lead mb-1">% sold:</p>
+                            </div>
+                            <div class="col">
+                              <p class="lead mb-1">
+                                {{ count($output['events']) }}
+                              </p>
+                              <p class="lead mb-1">
+                                {{ $output['total_sold'] }} <br>
+                              </p>
+                              <p class="lead mb-1">
+                                {{ number_format ( $output['total_sold'] / ( $output['total_sold'] + $output['total_available'] )  * 100 , 2, '.', '') }}%
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-4" id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                       <hr>
                       <table class="table table-striped table-bordered rounded">
                           <thead class="thead-dark">
@@ -101,13 +124,14 @@ chart: {
   type: 'column'
 },
 title: {
-  text: 'Ticket Sales {{$output['project']}}'
+  text: ''
 },
 xAxis: {
   categories: [
     @foreach ($output['events'] as $event)
-    '{{ date('d M Y', strtotime($event['date']))}} {{ date('H:i', strtotime($event['time']))}}',
+    '{{ date('D d M', strtotime($event['date']))}} {{ date('ga', strtotime($event['time']))}}',
     @endforeach
+    'all performances'
   ]
 },
 yAxis: {
@@ -137,12 +161,16 @@ series: [{
     @foreach ($output['events'] as $event)
     {{ $event['available'] }},
     @endforeach
+    {{$output['total_available']}}
   ]
 }, {
   name: 'sold',
-  data: [@foreach ($output['events'] as $event)
-  {{ $event['sold'] }},
-  @endforeach]
+  data: [
+    @foreach ($output['events'] as $event)
+    {{ $event['sold'] }},
+    @endforeach
+    {{$output['total_sold']}}
+]
 }]
 });
 
