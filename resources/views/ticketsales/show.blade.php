@@ -132,13 +132,14 @@ xAxis: {
     '{{ date('D d M', strtotime($event['date']))}} {{ date('ga', strtotime($event['time']))}}',
     @endforeach
     'all performances'
-  ]
+  ],
 },
 yAxis: {
   min: 0,
   title: {
       text: '% tickets sold'
-  }
+  },
+  tickInterval: 25
 },
 credits: {
   enabled: false
@@ -158,6 +159,7 @@ plotOptions: {
 },
 series: [{
   name: 'available',
+  showInLegend: false,
   color: '#888',
   data: [
     @foreach ($output['events'] as $event)
@@ -167,6 +169,7 @@ series: [{
   ]
 }, {
   name: 'sold',
+  showInLegend: false,
   data: [
     @foreach ($output['events'] as $event)
     {{ $event['sold'] }},
@@ -182,13 +185,17 @@ series: [{
   },{
       value: 63,
       color: 'lightgreen' // Values from 10 (including) and up have the color red
-  },{ value: 86,
+  },{
+      value: 86,
       color: 'darkgreen' // Values from 10 (including) and up have the color red
-  },{ value: 255,
+  },{
+      value: 255,
       color: 'red' // Values from 10 (including) and up have the color red
-  },{ value: 510,
+  },{
+      value: 510,
       color: 'orange' // Values from 10 (including) and up have the color red
-  },{ value: 765,
+  },{
+      value: 765,
       color: 'lightgreen' // Values from 10 (including) and up have the color red
   },{
       color: 'darkgreen' // Values from 10 (including) and up have the color red
