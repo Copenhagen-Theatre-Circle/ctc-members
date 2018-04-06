@@ -153,10 +153,12 @@ tooltip: {
 plotOptions: {
   column: {
       stacking: 'percent'
+
   }
 },
 series: [{
   name: 'available',
+  color: '#888',
   data: [
     @foreach ($output['events'] as $event)
     {{ $event['available'] }},
@@ -170,7 +172,27 @@ series: [{
     {{ $event['sold'] }},
     @endforeach
     {{$output['total_sold']}}
-]
+  ],
+  zones: [{
+      value: 21, // Values up to 10 (not including) ...
+      color: 'red' // ... have the color blue.
+  },{
+      value: 42,
+      color: 'orange' // Values from 10 (including) and up have the color red
+  },{
+      value: 63,
+      color: 'lightgreen' // Values from 10 (including) and up have the color red
+  },{ value: 86,
+      color: 'darkgreen' // Values from 10 (including) and up have the color red
+  },{ value: 255,
+      color: 'red' // Values from 10 (including) and up have the color red
+  },{ value: 510,
+      color: 'orange' // Values from 10 (including) and up have the color red
+  },{ value: 765,
+      color: 'lightgreen' // Values from 10 (including) and up have the color red
+  },{
+      color: 'darkgreen' // Values from 10 (including) and up have the color red
+  }]
 }]
 });
 
