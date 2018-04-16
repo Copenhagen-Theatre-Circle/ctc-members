@@ -89,15 +89,37 @@
                                 <td colspan="2">Total:</td>
                                 <td><strong>{{$output['total_sold']}}</strong></td>
                                 <td><strong>{{$output['total_available']}}</strong></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$output['total_standard']}}</td>
+                                <td>{{$output['total_child']}}</td>
+                                <td>{{$output['total_group_10_to_19']}}</td>
+                                <td>{{$output['total_group_20_or_more']}}</td>
+                                <td>{{$output['total_membership_adult']}}</td>
+                                <td>{{$output['total_membership_child']}}</td>
+                                <td>{{$output['total_comp']}}</td>
                                 <td></td>
                             </tr>
+                            @if (user_is_admin_or_superuser())
+                                <tr>
+                                    <td colspan="2">Total:</td>
+                                    <td></strong></td>
+                                    <td></strong></td>
+                                    <td>{{$output['total_standard']*140}}</td>
+                                    <td>{{$output['total_child']*70}}</td>
+                                    <td>{{$output['total_group_10_to_19']*125}}</td>
+                                    <td>{{$output['total_group_20_or_more']*110}}</td>
+                                    <td>{{$output['total_membership_adult']*110}}</td>
+                                    <td>{{$output['total_membership_child']*55}}</td>
+                                    <td>0</td>
+                                    <td>{{
+                                        $output['total_standard']*140
+                                        + $output['total_child']*70
+                                        + $output['total_group_10_to_19']*125
+                                        + $output['total_group_20_or_more']*110
+                                        + $output['total_membership_adult']*110
+                                        + $output['total_membership_child']*55
+                                    }}</td>
+                                </tr>
+                            @endif
 
 
                       </table>

@@ -55,6 +55,13 @@ class TicketsalesController extends Controller
       $events = Event::where('project_id', $id)->orderBy('date')->orderBy('time')->get();
       $array['total_sold'] = 0;
       $array['total_available'] = 0;
+      $array['total_standard'] = 0;
+      $array['total_child'] = 0;
+      $array['total_group_10_to_19'] = 0;
+      $array['total_group_20_or_more'] = 0;
+      $array['total_membership_adult'] = 0;
+      $array['total_membership_child'] = 0;
+      $array['total_comp'] = 0;
 
       $project = \App\Project::where('id',$id)->first();
       $array['project'] = $project['name'];
@@ -104,6 +111,7 @@ class TicketsalesController extends Controller
               break;
             //group 10-19
             case 'Group 10-19 adults';
+            case 'Split Group 10-19';
             case 'Group 10-19 (reserved)';
               $tickettype = "group_10_to_19";
               break;
@@ -134,6 +142,7 @@ class TicketsalesController extends Controller
 
           $subarray[$tickettype] = $subarray[$tickettype] ?? 0;
           $subarray[$tickettype] += $sold;
+          $array['total_' . $tickettype] += $sold;
 
         }
 
