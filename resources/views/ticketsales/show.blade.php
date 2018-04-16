@@ -110,14 +110,18 @@
                                     <td>{{$output['total_membership_adult']*110}} kr</td>
                                     <td>{{$output['total_membership_child']*55}} kr</td>
                                     <td>0</td>
-                                    <td>{{
+                                    <td>
+                                        <strong>
+                                        {{
                                         $output['total_standard']*140
                                         + $output['total_child']*70
                                         + $output['total_group_10_to_19']*125
                                         + $output['total_group_20_or_more']*110
                                         + $output['total_membership_adult']*110
                                         + $output['total_membership_child']*55
-                                    }} kr</td>
+                                        }} kr
+                                        </strong>
+                                    </td>
                                 </tr>
                             @endif
 
