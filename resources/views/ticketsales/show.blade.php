@@ -101,16 +101,7 @@
                             @if (user_is_admin_or_superuser())
                                 <tr>
                                     <td colspan="2">Total Revenues:</td>
-                                    <td></strong></td>
-                                    <td></strong></td>
-                                    <td>{{$output['total_standard']*140}} kr</td>
-                                    <td>{{$output['total_child']*70}} kr</td>
-                                    <td>{{$output['total_group_10_to_19']*125}} kr</td>
-                                    <td>{{$output['total_group_20_or_more']*110}} kr</td>
-                                    <td>{{$output['total_membership_adult']*110}} kr</td>
-                                    <td>{{$output['total_membership_child']*55}} kr</td>
-                                    <td>0</td>
-                                    <td>
+                                    <td colspan="2">
                                         <strong>
                                         {{
                                         $output['total_standard']*140
@@ -122,6 +113,14 @@
                                         }} kr
                                         </strong>
                                     </td>
+                                    <td>{{$output['total_standard']*140}} kr</td>
+                                    <td>{{$output['total_child']*70}} kr</td>
+                                    <td>{{$output['total_group_10_to_19']*125}} kr</td>
+                                    <td>{{$output['total_group_20_or_more']*110}} kr</td>
+                                    <td>{{$output['total_membership_adult']*110}} kr</td>
+                                    <td>{{$output['total_membership_child']*55}} kr</td>
+                                    <td>0</td>
+                                    <td></td>
                                 </tr>
                             @endif
 
