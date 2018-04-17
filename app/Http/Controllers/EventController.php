@@ -66,6 +66,12 @@ class EventController extends Controller
         $place2bookData = json_decode($place2bookData, TRUE);
         // return $place2bookData;
         $orders = $place2bookData['event']['purchases']['purchase'];
+        //wrap in array if only one value
+        if (isset($orders['purchase_id'])){
+          $extended_array = array();
+          $extended_array[0]=$orders;
+          $orders = $extended_array;
+        }
         // return $orders;
         foreach ($orders as $order) {
           $name = $order['customer']['name'];

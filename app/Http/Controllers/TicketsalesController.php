@@ -74,11 +74,23 @@ class TicketsalesController extends Controller
         $subarray['seccode']=$seccode;
         $orders = place2bookShowStats ($seccode);
         $orders_array = json_decode($orders, TRUE);
-        $orders_array = $orders_array['event']['tickets']['ticket'];
 
+        $orders_array = $orders_array['event']['tickets']['ticket'];
+        //wrap in array if only one value
+        if (isset($orders_array['name'])){
+          $extended_array = array();
+          $extended_array[0]=$orders_array;
+          $orders_array = $extended_array;
+        }
+        // return $orders_array;
         //initialise ticket amounts
         $subarray['sold'] = 0;
-        $available = (int)$orders_array[0]['available'];
+
+        if (isset($orders_array[0]['available'])){
+          $available = (int)$orders_array[0]['available'];
+        } else {
+          $available = (int)$orders_array['available'];
+        }
         $subarray['available'] = $available;
         $subarray['standard'] = 0;
         $subarray['child'] = 0;
