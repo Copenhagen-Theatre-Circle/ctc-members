@@ -211,8 +211,11 @@ series: [{
       value: 63,
       color: 'lightgreen' // Values from 10 (including) and up have the color red
   },{
-      value: 86,
+      value: 85,
       color: 'darkgreen' // Values from 10 (including) and up have the color red
+  },{
+      value: 86,
+      color: '#D4AF37' // Values from 10 (including) and up have the color red
   },{
       value: 255,
       color: 'red' // Values from 10 (including) and up have the color red
