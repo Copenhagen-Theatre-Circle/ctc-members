@@ -29,35 +29,57 @@ Route::get('/membership', 'MembersController@index')->name('membership');
 
 Route::get('/export/auditions/{project}', 'ExportController@auditions');
 
+Route::get('/ticketsales/import/{project}', 'TicketsalesController@import');
+
 Route::get('/profile','UserController@profile');
 
 // Route::get('/export', 'ExportController@auditions');
 
-Route::resource('audition_form_answers', 'AuditionFormAnswersController');
+Route::resources([
+    'audition_form_answers' => 'AuditionFormAnswersController',
+    'auditions'=>'AuditionController',
+    'comments'=>'CommentsController',
+    'events'=>'EventController',
+    'groupmessage'=>'GroupMessageController',
+    'memberbenefits'=>'MemberbenefitController',
+    'message'=>'MessageController',
+    'person'=>'PersonController',
+    'people'=>'PersonController',
+    'preferences'=>'UserpreferenceController',
+    'posts'=>'PostController',
+    'projects'=>'ProjectController',
+    'suggestions'=>'SuggestionController',
+    'test'=>'TestController',
+    'ticketsales' => 'TicketsalesController'
+]);
 
-Route::resource('comments','CommentsController');
+// Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 
-Route::resource('events','EventController');
+// Route::resource('comments','CommentsController');
 
-Route::resource('groupmessage','GroupMessageController');
+// Route::resource('events','EventController');
 
-Route::resource('message','MessageController');
+// Route::resource('groupmessage','GroupMessageController');
 
-Route::resource('person','PersonController');
+// Route::resource('message','MessageController');
 
-Route::resource('posts','PostController');
+// Route::resource('person','PersonController');
 
-Route::resource('projects','ProjectController');
+// Route::resource('posts','PostController');
 
-Route::resource('preferences','UserpreferenceController');
+// Route::resource('auditions','AuditionController');
 
-Route::resource('memberbenefits','MemberbenefitController');
+// Route::resource('projects','ProjectController');
 
-Route::resource('suggestions','SuggestionController');
+// Route::resource('preferences','UserpreferenceController');
 
-Route::resource('ticketsales','TicketsalesController');
+// Route::resource('memberbenefits','MemberbenefitController');
 
-Route::resource('test', 'TestController');
+// Route::resource('suggestions','SuggestionController');
+
+// Route::resource('ticketsales','TicketsalesController');
+
+// Route::resource('test', 'TestController');
 
 Route::get('message/confirmation',function(){
   return view('contactconfirmation');
