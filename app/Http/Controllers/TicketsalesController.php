@@ -199,4 +199,111 @@ class TicketsalesController extends Controller
     {
         //
     }
+
+    /**
+     * Import ticket sales data
+     */
+    public function import($id)
+    {
+      $events = Event::where('project_id', $id)->orderBy('date')->orderBy('time')->get();
+      // return $events;
+
+      //for debugging only:
+      // foreach ($events as $event) {
+      //   $seccode = $event['place2book_seccode'];
+      //   $api_data = place2bookShowOrders ($seccode);
+      //   $api_data = json_decode($api_data, TRUE);
+      //   $orders[] = $api_data['event']['purchases']['purchase'];
+      //
+      // }
+      // return $orders;
+
+      //production:
+      foreach ($events as $event) {
+
+        //store event_id
+        $event_id = $event['id'];
+
+        // retrieve orders for each event
+        $seccode = $event['place2book_seccode'];
+        $api_data = place2bookShowOrders ($seccode);
+        $api_data = json_decode($api_data, TRUE);
+        $orders = $api_data['event']['purchases']['purchase'];
+        // return $orders;
+
+        // make sure ticket orders are always in array
+        $orderarray = array();
+        if (isset($orders['purchase_id'])){
+          $orderarray[0]=$orders;
+        } else {
+          foreach ($orders as $order) {
+            $orderarray[]=$order;
+          }
+        }
+
+        // reorganise array
+        foreach ($orderarray as $order) {
+
+          //initialise order_array
+          $order_array = array();
+
+          //store purchase id
+          $purchase_id = $order['purchase_id'];
+
+          // make sure tickets are always in array
+          $tickets = $order['tickets']['ticket'];
+          $ticketarray = array();
+          if (isset($tickets['id'])){
+            $ticketarray[0]=$tickets;
+          } else {
+            foreach ($tickets as $ticket) {
+              $ticketarray[]=$ticket;
+            }
+          }
+
+          //store values for each order
+          $order_array['event_id']=$event_id;
+          $order_array['id']=$order['purchase_id'];
+          $order_array['purchase_timestamp']=$order['created_at'];
+          $order_array['customer_name']=$order['customer']['name'];
+          $order_array['customer_mail']=$order['customer']['email'];
+          if (isset ($order['custom_fields']['custom_field'][0]['value'])){
+            $pr = $order['custom_fields']['custom_field'][1]['value'];
+            if (!is_array($pr)){
+              $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
+              if ($order_array['ticketprtype_id']==10){
+                $order_array['ticketprtype_name']=$pr;
+              }
+            } else {
+              $order_array['ticketprtype_id']="";
+            }
+          } else {
+            $order_array['ticketprtype_id']="";
+          }
+
+          //store values for each ticket nested in orders
+          foreach ($ticketarray as $ticket) {
+            $ticket_array = array();
+            $ticket_array['purchase_id']=$purchase_id;
+            $ticket_array['id']=$ticket['id'];
+            $ticket_array['price']=$ticket['price']/100;
+            $ticket_array['tickettype_id']=mapTicketTypeID($ticket['type']);
+            if ($ticket_array['tickettype_id']==8){
+              $ticket_array['tickettype_name']=$ticket['type'];
+            }
+            // $ticket_array['credited']=$ticket['credited'];
+            if ($ticket['credited']!='true'){
+              $order_array['tickets'][]=$ticket_array;
+            }
+          }
+          if (isset($order_array['tickets'])){
+            $output[] = $order_array;
+          }
+
+        }
+        // return $output;
+      }
+      return $output;
+    }
+
 }

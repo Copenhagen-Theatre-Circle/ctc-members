@@ -61,3 +61,150 @@ function place2bookShowOrders ($event_id) {
     $endpoint = 'event_api/event_orders?seccode=' . $event_id . '&secure=true';
     return place2bookAPI ($endpoint);
 }
+
+function mapTicketType ($tickettype) {
+  switch ($tickettype) {
+    //standard tickets
+    case 'Standard (reserved)';
+    case 'Standard';
+    case 'Adults';
+    case 'Adult';
+    case 'voksen';
+      $tickettype = "standard";
+      break;
+    //child tickets
+    case 'Child (reserved)';
+    case 'Child';
+      $tickettype = "child";
+      break;
+    //group 10-19
+    case 'Group 10-19 adults';
+    case 'Split Group 10-19';
+    case 'Group 10-19 (reserved)';
+      $tickettype = "group_10_to_19";
+      break;
+    //group 20+
+    case 'Group 20+';
+    case 'Group 20+ (reserved)';
+    case 'Extra group tickets (over 20)';
+      $tickettype = "group_20_or_more";
+      break;
+    //membership
+    case 'Membership Ticket';
+      $tickettype = "membership_adult";
+      break;
+    //membership child
+    case 'Membership Ticket (child)';
+    case 'Membership ticket (child)';
+      $tickettype = "membership_child";
+      break;
+    //membership child
+    case 'Complimentary';
+      $tickettype = "comp";
+      break;
+    //default: list ticket type
+    default;
+      $tickettype = "other";
+      break;
+  }
+  return $tickettype;
+}
+
+function mapTicketTypeID ($tickettype) {
+  switch ($tickettype) {
+    //standard tickets
+    case 'Standard (reserved)';
+    case 'Standard';
+    case 'Adults';
+    case 'Adult';
+    case 'voksen';
+      $tickettype = 1;
+      break;
+    //child tickets
+    case 'Child (reserved)';
+    case 'Child';
+      $tickettype = 2;
+      break;
+    //group 10-19
+    case 'Group 10-19 adults';
+    case 'Split Group 10-19';
+    case 'Group 10-19 (reserved)';
+      $tickettype = 3;
+      break;
+    //group 20+
+    case 'Group 20+';
+    case 'Group 20+ (reserved)';
+    case 'Extra group tickets (over 20)';
+      $tickettype = 4;
+      break;
+    //membership
+    case 'Membership Ticket';
+      $tickettype = 5;
+      break;
+    //membership child
+    case 'Membership Ticket (child)';
+    case 'Membership ticket (child)';
+      $tickettype = 6;
+      break;
+    //membership child
+    case 'Complimentary';
+      $tickettype = 7;
+      break;
+    case 'Club Lorry';
+    case 'Discount';
+      $tickettype = 9;
+      break;
+    //default: list ticket type
+    default;
+      $tickettype = 8;
+      break;
+  }
+  return $tickettype;
+}
+
+function mapTicketPRTypeID ($ticketprtype) {
+  $ticketprtype = trim($ticketprtype);
+  switch ($ticketprtype) {
+    case 'Via a CTC member';
+      $id = 1;
+      break;
+    case 'Via a cast member';
+      $id = 2;
+      break;
+    case 'On a poster or postcard';
+      $id = 3;
+      break;
+    case 'By word of mouth';
+    case 'Through a friend';
+      $id = 4;
+      break;
+    case 'On Facebook';
+      $id = 5;
+      break;
+    case 'In the Copenhagen Post';
+      $id = 6;
+      break;
+    case 'In Østerbro Avis';
+      $id = 7;
+      break;
+    case 'Other';
+      $id = 8;
+      break;
+    case 'Via e-mail';
+      $id = 9;
+      break;
+    case 'On Internations';
+      $id = 11;
+      break;
+    case 'Via Meet-up';
+      $id = 12;
+      break;
+    case 'Through Zangenbergs Teater';
+      $id = 13;
+      break;
+    default;
+      $id = 10;
+      break;
+  }
+  return $id;
+}
