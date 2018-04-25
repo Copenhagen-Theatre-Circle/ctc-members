@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Ticketorder;
+use App\Ticket;
 
 class TicketsalesController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('member');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    //     $this->middleware('member');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -56,6 +58,7 @@ class TicketsalesController extends Controller
       $array['total_sold'] = 0;
       $array['total_available'] = 0;
       $array['total_standard'] = 0;
+      $array['total_discount'] = 0;
       $array['total_child'] = 0;
       $array['total_group_10_to_19'] = 0;
       $array['total_group_20_or_more'] = 0;
@@ -93,6 +96,7 @@ class TicketsalesController extends Controller
         }
         $subarray['available'] = $available;
         $subarray['standard'] = 0;
+        $subarray['discount'] = 0;
         $subarray['child'] = 0;
         $subarray['group_10_to_19'] = 0;
         $subarray['group_20_or_more'] = 0;
@@ -114,7 +118,16 @@ class TicketsalesController extends Controller
             //standard tickets
             case 'Standard (reserved)';
             case 'Standard';
+            case 'Adult';
+            case 'Adults';
+            case 'voksen';
+            case 'Unnumbered seats';
               $tickettype = "standard";
+              break;
+            //discount tickets
+            case 'Club Lorry';
+            case 'Discount';
+              $tickettype = "discount";
               break;
             //child tickets
             case 'Child (reserved)';
@@ -206,6 +219,8 @@ class TicketsalesController extends Controller
     public function import($id)
     {
       $events = Event::where('project_id', $id)->orderBy('date')->orderBy('time')->get();
+
+      // uncomment here to return json of event data from database
       // return $events;
 
       //for debugging only:
@@ -218,17 +233,28 @@ class TicketsalesController extends Controller
       // }
       // return $orders;
 
-      //production:
+
       foreach ($events as $event) {
 
         //store event_id
         $event_id = $event['id'];
 
-        // retrieve orders for each event
+        // retrieve seccode for each event from database
         $seccode = $event['place2book_seccode'];
+
+        // retrieve orders from place2book API
         $api_data = place2bookShowOrders ($seccode);
+
+        // json_decode
         $api_data = json_decode($api_data, TRUE);
+
+        // uncomment here to return json of ALL api_data as returned by place2book
+        // return $api_data;
+
+        // return $api_data;
         $orders = $api_data['event']['purchases']['purchase'];
+
+        // uncomment here to return json of only purchase data as returned by place2book
         // return $orders;
 
         // make sure ticket orders are always in array
@@ -301,9 +327,50 @@ class TicketsalesController extends Controller
           }
 
         }
+        // uncomment here to return json of orders for first event in array
         // return $output;
       }
-      return $output;
+
+      // uncomment here to return json of orders for all events in array
+      // return $output;
+
+      foreach ($output as $order) {
+
+        $save_order = Ticketorder::updateOrCreate(
+            ['id' => $order['id']],
+            [
+                'event_id' => $order['event_id'],
+                'ticketprtype_id' => $order['ticketprtype_id'],
+                'customer_name' => $order['customer_name'] ?: '',
+                'customer_mail' => $order['customer_mail'] ?: '',
+                'purchase_timestamp' => $order['purchase_timestamp'],
+            ]
+        );
+
+        // uncomment here to return json of first saved order
+        // return $save_order;
+
+        foreach ($order['tickets'] as $ticket) {
+            $save_ticket = Ticket::updateOrCreate(
+                ['id'=>$ticket['id']],
+                [
+                    'ticketorder_id'=>$ticket['purchase_id'],
+                    'price'=>$ticket['price'],
+                    'tickettype_id'=>$ticket['tickettype_id'],
+                ]
+            );
+
+            // uncomment here to return json of first saved ticket
+            // return $save_ticket;
+
+        }
+
+
+
+      }
+
+      // return $output;
+      return "import complete";
     }
 
 }
