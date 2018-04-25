@@ -214,7 +214,7 @@ series: [{
       value: 85,
       color: 'darkgreen' // Values from 10 (including) and up have the color red
   },{
-      value: 86,
+      value: 88,
       color: '#D4AF37' // Values from 10 (including) and up have the color red
   },{
       value: 255,

@@ -132,17 +132,20 @@ class TicketsalesController extends Controller
             //child tickets
             case 'Child (reserved)';
             case 'Child';
+            case 'Child (12 yrs and under)';
               $tickettype = "child";
               break;
             //group 10-19
             case 'Group 10-19 adults';
             case 'Split Group 10-19';
             case 'Group 10-19 (reserved)';
+            case 'Group (10 - 19 adults)';
               $tickettype = "group_10_to_19";
               break;
             //group 20+
             case 'Group 20+';
             case 'Group 20+ (reserved)';
+            case 'Group (20 or more adults)';
             case 'Extra group tickets (over 20)';
               $tickettype = "group_20_or_more";
               break;
@@ -157,6 +160,7 @@ class TicketsalesController extends Controller
               break;
             //membership child
             case 'Complimentary';
+            case 'Complimentary Ticket';
               $tickettype = "comp";
               break;
             //default: list ticket type
