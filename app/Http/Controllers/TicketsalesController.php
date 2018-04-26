@@ -297,19 +297,79 @@ class TicketsalesController extends Controller
           $order_array['purchase_timestamp']=$order['created_at'];
           $order_array['customer_name']=$order['customer']['name'];
           $order_array['customer_mail']=$order['customer']['email'];
-          if (isset ($order['custom_fields']['custom_field'][0]['value'])){
-            $pr = $order['custom_fields']['custom_field'][1]['value'];
-            if (!is_array($pr)){
+
+
+          //initialise pr and $newsletter
+          $order_array['ticketprtype_id']="";
+          $order_array['newsletter']="";
+
+          // parse custom field 1
+
+          if (!empty ($order['custom_fields']['custom_field'][0]['value'])){
+
+            $custom_field_1_name = $order['custom_fields']['custom_field'][0]['name'];
+            $custom_field_1_value = $order['custom_fields']['custom_field'][0]['value'];
+            $order_array['question_1']=$custom_field_1_name;
+            $order_array['answer_1']=$custom_field_1_value;
+
+            //pr
+            if (strpos($custom_field_1_name,'How')!==false) {
+              $pr = $custom_field_1_value;
               $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
+              $order_array['ticketprtype_name']=$pr;
               if ($order_array['ticketprtype_id']==10){
-                $order_array['ticketprtype_name']=$pr;
-              }
-            } else {
-              $order_array['ticketprtype_id']="";
+                  return "unmapped ticketprtype: " . $pr;
+                }
             }
-          } else {
-            $order_array['ticketprtype_id']="";
+
+            //newsletter
+            elseif (strpos($custom_field_1_name,'newsletter')!==false
+                    ||
+                    strpos($custom_field_1_name,'Newsletter')!==false
+                  ) {
+              $newsletter = trim ($custom_field_1_value);
+              if (strpos($newsletter, "Yes")!==false){
+                $newsletter = "Yes";
+              } else {
+                $newsletter = "";
+              }
+              $order_array['newsletter']=$newsletter;
+            }
+
           }
+
+          // parse custom field 2
+
+          if (!empty ($order['custom_fields']['custom_field'][1]['value'])){
+
+            $custom_field_2_name = $order['custom_fields']['custom_field'][1]['name'];
+            $custom_field_2_value = $order['custom_fields']['custom_field'][1]['value'];
+            $order_array['question_2']=$custom_field_2_name;
+            $order_array['answer_2']=$custom_field_2_value;
+
+            //pr
+            if (strpos($custom_field_2_name, 'How ')!==false) {
+              $pr = $custom_field_2_value;
+              $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
+              $order_array['ticketprtype_name']=$pr;
+              if ($order_array['ticketprtype_id']==10){
+                  return "unmapped ticketprtype: " . $pr;
+                }
+            }
+
+            //newsletter
+            elseif (strpos($custom_field_2_name, ' newsletter')!==false) {
+              $newsletter = trim ($custom_field_2_value);
+              if (strpos($newsletter, "Yes")!==false){
+                $newsletter = "Yes";
+              } else {
+                $newsletter = "";
+              }
+              $order_array['newsletter']=$newsletter;
+            }
+
+          }
+
 
           //store values for each ticket nested in orders
           foreach ($ticketarray as $ticket) {
@@ -319,7 +379,8 @@ class TicketsalesController extends Controller
             $ticket_array['price']=$ticket['price']/100;
             $ticket_array['tickettype_id']=mapTicketTypeID($ticket['type']);
             if ($ticket_array['tickettype_id']==8){
-              $ticket_array['tickettype_name']=$ticket['type'];
+              return "unmapped tickettype: " . $ticket['type'];
+              // $ticket_array['tickettype_name']=$ticket['type'];
             }
             // $ticket_array['credited']=$ticket['credited'];
             if ($ticket['credited']!='true'){
@@ -345,6 +406,7 @@ class TicketsalesController extends Controller
             [
                 'event_id' => $order['event_id'],
                 'ticketprtype_id' => $order['ticketprtype_id'],
+                'newsletter' => $order['newsletter'],
                 'customer_name' => $order['customer_name'] ?: '',
                 'customer_mail' => $order['customer_mail'] ?: '',
                 'purchase_timestamp' => $order['purchase_timestamp'],
