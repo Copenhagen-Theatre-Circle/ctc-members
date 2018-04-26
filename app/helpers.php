@@ -136,6 +136,7 @@ function mapTicketTypeID ($tickettype) {
     //group 20+
     case 'Group 20+';
     case 'Group 20+ (reserved)';
+    case 'LINK Group ticket adult';
     case 'Extra group tickets (over 20)';
       $tickettype = 4;
       break;
