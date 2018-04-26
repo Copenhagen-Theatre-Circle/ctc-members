@@ -117,6 +117,7 @@ function mapTicketTypeID ($tickettype) {
     case 'Standard';
     case 'Adults';
     case 'Adult';
+    case 'Adult (reserved)';
     case 'voksen';
       $tickettype = 1;
       break;
