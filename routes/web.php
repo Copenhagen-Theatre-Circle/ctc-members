@@ -33,6 +33,8 @@ Route::get('/ticketsales/import/{project}', 'TicketsalesController@import');
 
 Route::get('/profile','UserController@profile');
 
+Route::get('/handbooks','UserController@handbooks');
+
 // Route::get('/export', 'ExportController@auditions');
 
 Route::resources([

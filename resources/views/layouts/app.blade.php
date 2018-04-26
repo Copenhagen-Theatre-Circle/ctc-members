@@ -44,7 +44,7 @@
             @else
               <li class="nav-item">
                 <a class="nav-link" href="/membership">
-                    Membership List
+                    The Network
                 </a>
               </li>
               <li class="nav-item">
@@ -56,7 +56,7 @@
                 <a class="nav-link disabled" href="#">Bulletin Board</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Handbook</a>
+                <a class="nav-link" href="/handbooks">Handbooks</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">CTCDB+</a>
@@ -101,6 +101,6 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('scripts')
-    
+
 </body>
 </html>

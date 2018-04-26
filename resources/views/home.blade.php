@@ -61,7 +61,7 @@
                           <div class="card-body">
                             <h4 class="card-title">The Network</h4>
                             <p class="card-text">Browse a list of current members, plus other people who have filled in the questionnaire or who have been active in the CTC over the past 5 years.</p>
-                            <a href="/membership" class="btn btn-primary">CTC Network</a>
+                            <a href="/people" class="btn btn-primary">CTC Network</a>
                           </div>
                         </div>
 
@@ -76,6 +76,19 @@
                             <p class="card-text">Browse through the CTC's accounts and get a transparent view of how we have been spending our money, both for shows and for entire seasons.</p>
                             <a href="http://ctc-members.dk/a6de1850-21c1-4ca2-87e0-253c61bee591/seasons/" class="btn btn-primary" target="_blank">Accounts</a>
                           </div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                        <div class="card">
+                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/red-book.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">Handbooks</h4>
+                            <p class="card-text">Years of experience in theatre-making has been written down in our handbooks. Want to do production management? Read on here...</p>
+                            <a href="/handbooks" class="btn btn-primary">Handbook</a>
+                         </div>
                         </div>
 
                       </div>
@@ -120,7 +133,7 @@
                               <div class="card-body">
                                 <h4 class="card-title">Audition Form Responses</h4>
                                 <p class="card-text">Audition Form Responses for shows</p>
-                                <a href="/projects" class="btn btn-primary">Form Responses</a>
+                                <a href="/auditions" class="btn btn-primary">Form Responses</a>
                               </div>
                             </div>
 
@@ -177,18 +190,6 @@
                             <h4 class="card-title">Bulletin Board</h4>
                             <p class="card-text">Production help wanted, news from the committee, or anything else that might be of interest to you: read it here. Or even write your own post...</p>
                             {{-- <a href="/posts" class="btn btn-primary">Bulletin Board</a> --}}
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-
-                        <div class="card">
-                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/book.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h4 class="card-title">Production Handbook</h4>
-                            <p class="card-text">Years of experience in theatre-making has been written down in our production handbook. Want to learn more about Production Management? Read on here...</p>
                           </div>
                         </div>
 
