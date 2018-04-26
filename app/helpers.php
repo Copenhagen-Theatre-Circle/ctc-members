@@ -123,6 +123,7 @@ function mapTicketTypeID ($tickettype) {
     //child tickets
     case 'Child (reserved)';
     case 'Child';
+    case 'Child (12 yrs and under)';
       $tickettype = 2;
       break;
     //group 10-19
@@ -172,6 +173,7 @@ function mapTicketPRTypeID ($ticketprtype) {
       $id = 2;
       break;
     case 'On a poster or postcard';
+    case 'I saw a poster or postcard';
       $id = 3;
       break;
     case 'By word of mouth';
@@ -182,15 +184,18 @@ function mapTicketPRTypeID ($ticketprtype) {
       $id = 5;
       break;
     case 'In the Copenhagen Post';
+    case 'The Copenhagen Post';
       $id = 6;
       break;
     case 'In Østerbro Avis';
       $id = 7;
       break;
     case 'Other';
+    case 'A combination of the above';
       $id = 8;
       break;
     case 'Via e-mail';
+    case 'I received information via email';
       $id = 9;
       break;
     case 'On Internations';
