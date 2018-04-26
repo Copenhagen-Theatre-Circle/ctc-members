@@ -25,6 +25,14 @@ function user_is_admin_or_superuser () {
   return ($person->is_superuser == 1) || ($person->is_admin == 1) ;
 }
 
+function string_or_empty($variable) {
+  if (is_string($variable)){
+    return $variable;
+  } else {
+    return '';
+  }
+}
+
 function place2bookAPI ($endpoint) {
 
   $uri = 'https://place2book.com/da/' . $endpoint;

@@ -295,9 +295,9 @@ class TicketsalesController extends Controller
           $order_array['event_id']=$event_id;
           $order_array['id']=$order['purchase_id'];
           $order_array['purchase_timestamp']=$order['created_at'];
-          $order_array['customer_name']=$order['customer']['name'];
-          $order_array['customer_mail']=$order['customer']['email'];
-
+          $order_array['customer_name']=string_or_empty($order['customer']['name']);
+          $order_array['customer_mail']=string_or_empty($order['customer']['email']);
+          
 
           //initialise pr and $newsletter
           $order_array['ticketprtype_id']="";
@@ -397,7 +397,7 @@ class TicketsalesController extends Controller
       }
 
       // uncomment here to return json of orders for all events in array
-      // return $output;
+      return $output;
 
       foreach ($output as $order) {
 
