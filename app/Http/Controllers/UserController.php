@@ -24,4 +24,10 @@ class UserController extends Controller
         $user = \Auth::user()->id;
         return view('userprofile', ['user' => User::find($user)]);
     }  //
+
+    public function handbooks()
+    {
+        $user = \Auth::user()->id;
+        return view('various.handbooks', ['user' => User::find($user)]);
+    }  //
 }
