@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="jumbotron pt-3 pb-2" style="min-height: 300px; background: no-repeat url('https://ctcircle.dk/wordpress/wp-content/uploads/2017/11/pride-prejudice-960x332.jpg'); background-size: cover; background-position: 0% 80%; ">
-                      <div class="row">
+                      {{-- <div class="row">
                         <div class="col-xs-1 col-sm-3 col-md-5 col-lg-6 col-xl-7">
                         </div>
                         <div class="col mx-3 rounded" style="background-color:rgba(0, 0, 0, 0.5);">
@@ -35,8 +35,8 @@
                           <a href="ticketsales/89" class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check Ticket Sales Stats</a>
                         </div>
 
-                      </div>
-                      {{-- <img src="https://ctcircle.dk/wordpress/wp-content/uploads/2017/11/pride-prejudice-960x332.jpg" class="img-fluid" alt="Responsive image"> --}}
+                      </div> --}}
+                      <img src="https://ctcircle.dk/wordpress/wp-content/uploads/2017/11/pride-prejudice-960x332.jpg" class="img-fluid" alt="Responsive image"> --}}
                       {{-- <h1 class="display-5" style="animation: fadein 2s;">Welcome, {{ explode(' ',trim(Auth::user()->name))[0]}}!</h1>
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
                       <div class="row">
@@ -49,7 +49,7 @@
                       {{-- <hr class="my-4">
                       <p class="lead">
                         <a class="btn btn-primary btn-lg" href="#" role="button">edit profile</a>
-                      </p> --}}
+                      </p>
                     </div>
 
                     <div class="row">
