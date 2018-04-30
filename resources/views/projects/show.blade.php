@@ -20,56 +20,24 @@
                 <div class="card light-transparency">
 
                     <div class="card-body">
-
-                        <table class="table table-striped">
-
-                            <tr>
-                                <th style="width: 7%;"></th>
-                                <th @if (app('request')->input('sort')=="first_name")
-                                    class="sorted"
-                                    @endif >
-                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=first_name">
-                                    First Name
-                                    </a>
-                                </th>
-                                <th @if (app('request')->input('sort')=="last_name")
-                                    class="sorted"
-                                    @endif >
-                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=last_name">
-                                    Last Name
-                                    </a>
-                                </th>
-                                <th @if (app('request')->input('sort')=="last_update")
-                                    class="sorted"
-                                    @endif >
-                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=last_update">
-                                    Applied
-                                    </a>
-                                </th>
-                                <th >can audition</th>
-                                <th >mail / mobile</th>
-                                <th></th>
-                            </tr>
-
-
-
-                            @foreach ($answers as $audition_form_answer)
-                                <tr>
-                                    <td><img src="https://ctc-members-balmec.imgix.net/{{$audition_form_answer->person->main_portrait()}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "></td>
-                                    <td>{{$audition_form_answer->person->first_name}}</td>
-                                    <td>{{$audition_form_answer->person->last_name}}</td>
-                                    <td>{{date ('d M Y', strtotime($audition_form_answer->created_at))}}</td>
-                                    <td>{!! nl2br($audition_form_answer->date_preferences) !!}</td>
-                                    <td>{{$audition_form_answer->person->mail}}
-                                        <br/>
-                                        {{$audition_form_answer->person->mobile}}
-                                    </td>
-                                    <td><a href="/audition_form_answers/{{$audition_form_answer->id}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif" class="btn btn-primary">Details</a></td>
-                                </tr>
-                            @endforeach
-
-                        </table>
-
+                      <div class="row">
+                        <div class="col-2">
+                          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab">Home</a>
+                            <a class="nav-link" id="v-pills-auditions-tab" data-toggle="pill" href="#auditions" role="tab">Auditions</a>
+                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab">Messages</a>
+                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab">Settings</a>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">...</div>
+                            <div class="tab-pane fade" id="auditions" role="tabpanel">@include('projects.show_auditions')</div>
+                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel">...</div>
+                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel">...</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ use App\Project;
 use App\AuditionFormAnswer;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class AuditionController extends Controller
 {
 
     public function __construct()
@@ -22,8 +22,15 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::where('accounting_only',null)->orderBy('id','desc')->get();
-        return view ('projects.index', compact('projects'));
+
+        $projects = Project::whereHas('rights', function ($query) {
+                        $query->where('person_id', auth_person());
+                        $query->where('rightstype_id', 1);
+                    });
+
+        $projects = $projects->get();
+        return view ('auditions.index', compact('projects'));
+
     }
 
     /**
@@ -53,31 +60,10 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project, Request $request)
+    public function show($project, Request $request)
     {
-
-        $rights = \App\Right::where('project_id',$project->id)
-                  ->where ('person_id',auth_person())
-                  ->get();
-
-        // return $rights;
-
-        $project->load(
-          'projects_plays.play',
-          'projects_plays.actors.character',
-          'projects_plays.actors.person',
-          'projects_plays.crewmembers.crewtype',
-          'projects_plays.crewmembers.person'
-          );
-
-        if(count($rights)>0){
-          $project->load(
-            'audition_form_answers.person');
-        }
-
-        return $project;
-
-
+        $project = Project::find($project);
+        // return $project;
         $answers = AuditionFormAnswer::with('person');
         $sort = $request->input('sort');
         if ($sort == 'first_name'){
@@ -90,7 +76,8 @@ class ProjectController extends Controller
         $answers = $answers->where('project_id',$project->id);
         $answers = $answers->get();
 
-        return view ('projects.show', compact('project','answers'));
+        return view ('auditions.show', compact('project','answers'));
+
 
 
     }

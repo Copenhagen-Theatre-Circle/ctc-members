@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Event;
 use App\Ticketorder;
 use App\Ticket;
+use App\Mapping;
+use App\Ticketprtype;
+use Illuminate\Support\Facades\DB;
 
 class TicketsalesController extends Controller
 {
@@ -314,12 +317,23 @@ class TicketsalesController extends Controller
 
             //pr
             if (strpos($custom_field_1_name,'How')!==false) {
-              $pr = $custom_field_1_value;
-              $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
-              $order_array['ticketprtype_name']=$pr;
-              if ($order_array['ticketprtype_id']==10){
-                  return "unmapped ticketprtype: " . $pr;
-                }
+              $pr = (string)trim($custom_field_1_value);
+              $mapping = Mapping::where('from',$pr)->pluck('to')->toArray();
+              if (!empty ($mapping)){
+                return $mapping;
+                $pr_id = $mapping;
+                $order_array['ticketprtype_id']=$pr_id;
+              } else {
+                $ticketprtypes = Ticketprtype::all()->toArray();
+                // return "unmapped ticketprtype: " . $pr;
+                return view('mappings.prtypes', Compact('pr', 'ticketprtypes'));
+
+              }
+              // $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
+              // $order_array['ticketprtype_name']=$pr;
+              // if ($order_array['ticketprtype_id']==10){
+              //     return "unmapped ticketprtype: " . $pr;
+              //   }
             }
 
             //newsletter
@@ -349,12 +363,25 @@ class TicketsalesController extends Controller
 
             //pr
             if (strpos($custom_field_2_name, 'How ')!==false) {
-              $pr = $custom_field_2_value;
-              $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
-              $order_array['ticketprtype_name']=$pr;
-              if ($order_array['ticketprtype_id']==10){
-                  return "unmapped ticketprtype: " . $pr;
-                }
+              $pr = (string)trim($custom_field_2_value);
+              $mapping = Mapping::where('from_name','=',$pr)->pluck('to_id')->toArray();
+              // $mapping = DB::table('mappings')->where('from', '=', 'On Facbeook')->get();
+              // return array ($mapping,$pr);
+              if (!empty ($mapping)){
+                // return $mapping;
+                $pr_id = $mapping;
+                $order_array['ticketprtype_id']=$pr_id;
+              } else {
+                $ticketprtypes = Ticketprtype::all()->toArray();
+                // return "unmapped ticketprtype: " . $pr;
+                return view('mappings.prtypes', Compact('pr', 'ticketprtypes'));
+              }
+
+              // $order_array['ticketprtype_id']=mapTicketPRTypeID($pr);
+              // $order_array['ticketprtype_name']=$pr;
+              // if ($order_array['ticketprtype_id']==10){
+              //     return "unmapped ticketprtype: " . $pr;
+              //   }
             }
 
             //newsletter
@@ -397,7 +424,7 @@ class TicketsalesController extends Controller
       }
 
       // uncomment here to return json of orders for all events in array
-      // return $output;
+      return $output;
 
       foreach ($output as $order) {
 
@@ -435,7 +462,7 @@ class TicketsalesController extends Controller
 
       }
 
-      // return $output;
+      return $output;
       return "import complete";
     }
 

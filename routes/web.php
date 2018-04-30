@@ -43,6 +43,7 @@ Route::resources([
     'comments'=>'CommentsController',
     'events'=>'EventController',
     'groupmessage'=>'GroupMessageController',
+    'mappings'=>'MappingController',
     'memberbenefits'=>'MemberbenefitController',
     'message'=>'MessageController',
     'person'=>'PersonController',

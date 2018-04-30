@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends BaseModel
 {
 
+  protected $visible = ['first_name','last_name','portrait','roles','crewjobs','questionnaire_answers','member_bio'];
+
   public function memberships()
      {
          return $this->hasMany('App\Membership');
@@ -25,6 +27,16 @@ class Person extends BaseModel
   public function questionnaire_answers()
     {
         return $this->hasMany('App\QuestionnaireAnswer');
+    }
+
+  public function roles()
+    {
+        return $this->hasMany('App\Actor');
+    }
+
+  public function crewjobs()
+    {
+        return $this->hasMany('App\Crewmember');
     }
 
   public function ismember()

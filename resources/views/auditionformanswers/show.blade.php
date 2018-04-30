@@ -6,8 +6,8 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb my-1">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="/projects">Projects</a></li>
-            <li class="breadcrumb-item"><a href="/projects/{{$auditionFormAnswer->project->id}}">{{$auditionFormAnswer->project->name}}</a></li>
+            <li class="breadcrumb-item"><a href="/auditions">Projects</a></li>
+            <li class="breadcrumb-item"><a href="/auditions/{{$auditionFormAnswer->project->id}}">{{$auditionFormAnswer->project->name}}</a></li>
             <li class="breadcrumb-item">{{$auditionFormAnswer->person->first_name}} {{$auditionFormAnswer->person->last_name}}</li>
             <div class="float-right">
                 {{$currentrecord}}/{{$count}}

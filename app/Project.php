@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends BaseModel
 {
+    protected $hidden = ['created_at', 'updated_at', 'season_id', 'venue_id', 'uuid', 'publish_online_flag', 'accounting_only'];
+
     public function audition_form_answers()
     {
         return $this->hasMany('App\AuditionFormAnswer');
@@ -15,4 +17,10 @@ class Project extends BaseModel
     {
         return $this->hasMany('App\Right');
     }
+
+    public function projects_plays()
+    {
+        return $this->hasMany('App\ProjectsPlay');
+    }
+
 }

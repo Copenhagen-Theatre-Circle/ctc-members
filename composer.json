@@ -7,7 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "anhskohbo/no-captcha": "^3.0",
-        "fico7489/laravel-eloquent-join": "*",
+        "fico7489/laravel-eloquent-join": "^2.1",
         "fideloper/proxy": "~4.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",

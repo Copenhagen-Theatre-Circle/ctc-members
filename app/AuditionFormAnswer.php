@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class AuditionFormAnswer extends BaseModel
 {
+    protected $hidden = ['id', 'created_at', 'updated_at', 'person_id','project_id'];
+
     public function person()
     {
         return $this->belongsTo('App\Person');

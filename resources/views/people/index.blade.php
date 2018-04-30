@@ -184,13 +184,13 @@
                             {{-- More Info Button --}}
 
                             <td style="vertical-align:middle; width: 50px;">
-                              <button type="button" class="btn btn-primary hidden-sm-down" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              <a class="btn btn-primary hidden-sm-down" href="/person/{{$person->id}}">
                               More info
-                              </button>
+                              </a>
 
-                              <button type="button" class="btn btn-primary hidden-md-up" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
+                              <a class="btn btn-primary hidden-md-up" data-toggle="modal" data-target="#Member_{{$person->id}}" href="/person/{{$person->id}}">
                               ℹ︎
-                              </button>
+                              </a>
                             </td>
 
                             {{-- Contact Button --}}
@@ -212,15 +212,9 @@
                           </tr>
 
                           <!-- Modal -->
-                          <div class="modal fade" id="Member_{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          {{-- <div class="modal fade" id="Member_{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
-                                {{-- <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Profile Card: {{$person->first_name}} {{$person->last_name}}</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div> --}}
                                 <div class="modal-body p-0">
                                   ...
                                 </div>
@@ -229,7 +223,7 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div> --}}
 
 
                         @endforeach
@@ -246,7 +240,7 @@
 </div>
 
 <script   src="https://code.jquery.com/jquery-3.2.1.js"   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
 
 $('body').on('click', '[data-toggle="modal"]', function(){
   // alert ('Hello World!');
@@ -255,5 +249,5 @@ $('body').on('click', '[data-toggle="modal"]', function(){
 
 
 
-</script>
+</script> --}}
 @endsection
