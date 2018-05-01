@@ -232,7 +232,9 @@ class PersonController extends Controller
             $reformed['roles'][$sort_order]['character']=$role->character->name;
         }
 
-        ksort($reformed['roles']);
+        if (isset ($reformed['roles'])){
+          ksort($reformed['roles']);
+        }
 
 
         foreach ($person->crewjobs as $crewjob) {
@@ -251,7 +253,9 @@ class PersonController extends Controller
 
         }
 
-        ksort($reformed['crewjobs']);
+        if (isset ($reformed['crewjobs'])){
+          ksort($reformed['crewjobs']);
+        }
 
         //remove keys here
         if (!empty($reformed['general_interests'])) {

@@ -135,7 +135,7 @@ class MembersController extends Controller
 
     // return view with data
 
-    return view('membership', Compact ('people', 'peoplecount', 'functiongroups', 'functionarray', 'request'));
+    return view('people.index', Compact ('people', 'peoplecount', 'functiongroups', 'functionarray', 'request'));
 
   }
 }
