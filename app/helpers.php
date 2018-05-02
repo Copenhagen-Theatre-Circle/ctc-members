@@ -108,6 +108,7 @@ function mapTicketType ($tickettype) {
       break;
     //membership child
     case 'Complimentary';
+    case 'Comp';
       $tickettype = "comp";
       break;
     //default: list ticket type
@@ -160,6 +161,7 @@ function mapTicketTypeID ($tickettype) {
       break;
     //membership child
     case 'Complimentary';
+    case 'Comp';
       $tickettype = 7;
       break;
     case 'Club Lorry';

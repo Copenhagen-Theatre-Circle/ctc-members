@@ -164,6 +164,7 @@ class TicketsalesController extends Controller
               break;
             //membership child
             case 'Complimentary';
+            case 'Comp';
             case 'Complimentary Ticket';
               $tickettype = "comp";
               break;
