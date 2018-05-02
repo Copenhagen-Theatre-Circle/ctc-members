@@ -98,7 +98,7 @@
                                 <td>{{$output['total_comp']}}</td>
                                 <td></td>
                             </tr>
-                            @if (user_is_admin_or_superuser())
+                            @if (user_is_admin_or_superuser() and $output['project_id']==89)
                                 <tr>
                                     <td colspan="2">Total Revenues:</td>
                                     <td colspan="2">
@@ -114,6 +114,31 @@
                                         </strong>
                                     </td>
                                     <td>{{$output['total_standard']*140}} kr</td>
+                                    <td>{{$output['total_child']*70}} kr</td>
+                                    <td>{{$output['total_group_10_to_19']*125}} kr</td>
+                                    <td>{{$output['total_group_20_or_more']*110}} kr</td>
+                                    <td>{{$output['total_membership_adult']*110}} kr</td>
+                                    <td>{{$output['total_membership_child']*55}} kr</td>
+                                    <td>0 kr</td>
+                                    <td></td>
+                                </tr>
+                            @endif
+                            @if (user_is_admin_or_superuser() and $output['project_id']==92)
+                                <tr>
+                                    <td colspan="2">Total Revenues:</td>
+                                    <td colspan="2">
+                                        <strong>
+                                        {{
+                                        $output['total_standard']*85
+                                        + $output['total_child']*70
+                                        + $output['total_group_10_to_19']*125
+                                        + $output['total_group_20_or_more']*110
+                                        + $output['total_membership_adult']*110
+                                        + $output['total_membership_child']*55
+                                        }} kr
+                                        </strong>
+                                    </td>
+                                    <td>{{$output['total_standard']*85}} kr</td>
                                     <td>{{$output['total_child']*70}} kr</td>
                                     <td>{{$output['total_group_10_to_19']*125}} kr</td>
                                     <td>{{$output['total_group_20_or_more']*110}} kr</td>

@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\DB;
 class TicketsalesController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    //     $this->middleware('member');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('member');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -71,6 +71,7 @@ class TicketsalesController extends Controller
 
       $project = \App\Project::where('id',$id)->first();
       $array['project'] = $project['name'];
+      $array['project_id'] = $project['id'];
 
       foreach ($events as $event) {
         $subarray['id']=$event['id'];

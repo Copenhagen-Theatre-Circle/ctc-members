@@ -21,6 +21,19 @@
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
                     </div>
 
+                    <div class="jumbotron pt-3 pb-2" style="min-height: 300px; background: no-repeat url('https://ctcircle.dk/wordpress/wp-content/uploads/2017/11/fring-featured3.jpg'); background-size: cover; background-position: 0% 80%; ">
+                      <div class="row">
+                        <div class="col-xs-1 col-sm-3 col-md-5 col-lg-6 col-xl-7">
+                        </div>
+                        <div class="col mx-3 rounded" style="background-color:rgba(0, 0, 0, 0.5);">
+                          <h3 class="text-light pt-3 mb-4">Tickets on Sale Now!</h3>
+                          <a href="https://place2book.com/en/19541/list/EM175?event_detail=c8c17281ab" target="_blank" class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Buy Tickets</a>
+                          <a href="ticketsales/92" class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check Ticket Sales Stats</a>
+                        </div>
+
+                      </div>
+                    </div>
+
                     <div class="row">
 
                       <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
