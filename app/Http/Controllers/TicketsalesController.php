@@ -61,6 +61,7 @@ class TicketsalesController extends Controller
       $array['total_sold'] = 0;
       $array['total_available'] = 0;
       $array['total_standard'] = 0;
+      $array['total_vip'] = 0;
       $array['total_discount'] = 0;
       $array['total_child'] = 0;
       $array['total_group_10_to_19'] = 0;
@@ -82,6 +83,8 @@ class TicketsalesController extends Controller
         $orders = place2bookShowStats ($seccode);
         $orders_array = json_decode($orders, TRUE);
 
+        // return $orders_array;
+
         $orders_array = $orders_array['event']['tickets']['ticket'];
         //wrap in array if only one value
         if (isset($orders_array['name'])){
@@ -93,13 +96,9 @@ class TicketsalesController extends Controller
         //initialise ticket amounts
         $subarray['sold'] = 0;
 
-        if (isset($orders_array[0]['available'])){
-          $available = (int)$orders_array[0]['available'];
-        } else {
-          $available = (int)$orders_array['available'];
-        }
-        $subarray['available'] = $available;
+        $subarray['available'] = 0;
         $subarray['standard'] = 0;
+        $subarray['vip'] = 0;
         $subarray['discount'] = 0;
         $subarray['child'] = 0;
         $subarray['group_10_to_19'] = 0;
@@ -108,10 +107,22 @@ class TicketsalesController extends Controller
         $subarray['membership_child'] = 0;
         $subarray['comp'] = 0;
 
-        $array['total_available'] += $available;
+
 
         //map each ticket type and add to sum
         foreach ($orders_array as $orders_detail) {
+
+          if (isset($orders_detail['available'])){
+            $available_iteration = (int)$orders_detail['available'];
+            if ($available_iteration > $subarray['available']) {
+              $subarray['available'] = $available_iteration;
+            }
+          } else {
+            $available_iteration = (int)$orders_array['available'];
+            if ($available_iteration > $subarray['available']) {
+              $subarray['available'] = $available_iteration;
+            }
+          }
 
           $tickettype = $orders_detail['name'];
           $sold = $orders_detail['sold'];
@@ -122,11 +133,19 @@ class TicketsalesController extends Controller
             //standard tickets
             case 'Standard (reserved)';
             case 'Standard';
+            case 'Standard overbooking';
             case 'Adult';
             case 'Adults';
             case 'voksen';
             case 'Unnumbered seats';
               $tickettype = "standard";
+              break;
+            //discount tickets
+            case 'VIP Table 1A';
+            case 'VIP Table 1B';
+            case 'VIP Table 2A';
+            case 'VIP Table 2B';
+              $tickettype = "vip";
               break;
             //discount tickets
             case 'Club Lorry';
@@ -148,6 +167,7 @@ class TicketsalesController extends Controller
               break;
             //group 20+
             case 'Group 20+';
+            case 'Group 20+ adults';
             case 'Group 20+ (reserved)';
             case 'Group (20 or more adults)';
             case 'Extra group tickets (over 20)';
@@ -155,6 +175,7 @@ class TicketsalesController extends Controller
               break;
             //membership
             case 'Membership Ticket';
+            case 'Membership';
               $tickettype = "membership_adult";
               break;
             //membership child
@@ -180,6 +201,7 @@ class TicketsalesController extends Controller
 
         }
 
+        $array['total_available'] += $subarray['available'];
         $array['events'][]=$subarray;
       }
       $output = $array;
@@ -320,11 +342,12 @@ class TicketsalesController extends Controller
             //pr
             if (strpos($custom_field_1_name,'How')!==false) {
               $pr = (string)trim($custom_field_1_value);
-              $mapping = Mapping::where('from',$pr)->pluck('to')->toArray();
+              $mapping = Mapping::where('from_name',$pr)->pluck('to_id')->toArray();
               if (!empty ($mapping)){
-                return $mapping;
-                $pr_id = $mapping;
-                $order_array['ticketprtype_id']=$pr_id;
+                // return $mapping;
+                $pr_id = $mapping[0] ?? $mapping;
+
+                $order_array['ticketprtype_id']= $pr_id;
               } else {
                 $ticketprtypes = Ticketprtype::all()->toArray();
                 // return "unmapped ticketprtype: " . $pr;
@@ -371,8 +394,8 @@ class TicketsalesController extends Controller
               // return array ($mapping,$pr);
               if (!empty ($mapping)){
                 // return $mapping;
-                $pr_id = $mapping;
-                $order_array['ticketprtype_id']=$pr_id;
+                $pr_id = $mapping[0] ?? $mapping;
+                $order_array['ticketprtype_id']=(int)$pr_id;
               } else {
                 $ticketprtypes = Ticketprtype::all()->toArray();
                 // return "unmapped ticketprtype: " . $pr;
@@ -426,7 +449,7 @@ class TicketsalesController extends Controller
       }
 
       // uncomment here to return json of orders for all events in array
-      return $output;
+      // return $output;
 
       foreach ($output as $order) {
 
@@ -464,7 +487,7 @@ class TicketsalesController extends Controller
 
       }
 
-      return $output;
+      // return $output;
       return "import complete";
     }
 

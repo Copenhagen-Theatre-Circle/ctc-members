@@ -49,13 +49,14 @@
                                 <th rowspan="2">Time</th>
                                 <th rowspan="2">Sold</th>
                                 <th rowspan="2">Available</th>
-                                <th colspan="7" class="border-bottom-0">Breakdown by Ticket Types</th>
+                                <th colspan="8" class="border-bottom-0">Breakdown by Ticket Types</th>
                                 @if (user_is_admin_or_superuser())
                                   <th rowspan="2"></th>
                                 @endif
                             </tr>
                             <tr>
                                 <th>Standard</th>
+                                <th>VIP</th>
                                 <th>Child</th>
                                 <th>Group<br>10 to 19</th>
                                 <th>Group<br>20+</th>
@@ -72,6 +73,7 @@
                                   <td>{{ $event['sold'] }}</td>
                                   <td>{{ $event['available'] }}</td>
                                   <td>{{ $event['standard'] }}</td>
+                                  <td>{{ $event['vip'] }}</td>
                                   <td>{{ $event['child'] }}</td>
                                   <td>{{ $event['group_10_to_19'] }}</td>
                                   <td>{{ $event['group_20_or_more'] }}</td>
@@ -90,6 +92,7 @@
                                 <td><strong>{{$output['total_sold']}}</strong></td>
                                 <td><strong>{{$output['total_available']}}</strong></td>
                                 <td>{{$output['total_standard']}}</td>
+                                <td>{{$output['total_vip']}}</td>
                                 <td>{{$output['total_child']}}</td>
                                 <td>{{$output['total_group_10_to_19']}}</td>
                                 <td>{{$output['total_group_20_or_more']}}</td>
@@ -119,6 +122,31 @@
                                     <td>{{$output['total_group_20_or_more']*110}} kr</td>
                                     <td>{{$output['total_membership_adult']*110}} kr</td>
                                     <td>{{$output['total_membership_child']*55}} kr</td>
+                                    <td>0 kr</td>
+                                    <td></td>
+                                </tr>
+                            @endif
+                            @if (user_is_admin_or_superuser() and $output['project_id']==93)
+                                <tr>
+                                    <td colspan="2">Total Revenues:</td>
+                                    <td colspan="2">
+                                        <strong>
+                                        {{
+                                        $output['total_standard']*220
+                                        + $output['total_vip']*220
+                                        + $output['total_group_10_to_19']*200
+                                        + $output['total_group_20_or_more']*175
+                                        + $output['total_membership_adult']*175
+                                        }} kr
+                                        </strong>
+                                    </td>
+                                    <td>{{$output['total_standard']*220}} kr</td>
+                                    <td>{{$output['total_vip']*220}} kr</td>
+                                    <td></td>
+                                    <td>{{$output['total_group_10_to_19']*200}} kr</td>
+                                    <td>{{$output['total_group_20_or_more']*175}} kr</td>
+                                    <td>{{$output['total_membership_adult']*175}} kr</td>
+                                    <td></td>
                                     <td>0 kr</td>
                                     <td></td>
                                 </tr>
