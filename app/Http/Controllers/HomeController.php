@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -28,6 +29,40 @@ class HomeController extends Controller
         $user_id = \Auth::user()->id;
         $user = User::find($user_id);
         $user_is_admin = $user->canSeeAllPeople();
-        return view('home', Compact ('user','user_is_admin'));
+
+        // $person_id = $user->person->id;
+        $project_id = 93;
+        $person_id = 8;
+
+        $codes = DB::select( DB::raw("
+
+            SELECT code, rebate, first_name, last_name, r.person_id
+            FROM people p
+            INNER JOIN rebatecodes r
+            ON p.id = r.`person_id`
+            WHERE p.id = $person_id
+            AND r.project_id = $project_id
+
+            UNION
+
+            SELECT code, rebate, p2.first_name, p2.last_name, r.person_id
+            FROM people p
+            INNER JOIN memberships m
+            ON p.id = m.`person_purchaser_id`
+            INNER JOIN people p2
+            ON p2.id = m.person_id
+            INNER JOIN rebatecodes r
+            ON r.`person_id` = m.`person_id`
+            WHERE p.id = $person_id
+            AND r.project_id = $project_id
+            ORDER BY person_id
+
+            ") );
+
+
+        // return $result;
+
+
+        return view('home', Compact ('user','user_is_admin','codes'));
     }
 }
