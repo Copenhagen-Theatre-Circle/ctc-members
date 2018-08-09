@@ -194,7 +194,7 @@
                             @endif
                         </div>
                         <div class="col pr-4 text-center">
-                                <a class="btn btn-outline-secondary btn-sm px-2 text-center" href="/projects/{{$auditionFormAnswer->project->id}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif">Back to List</a>
+                                <a class="btn btn-outline-secondary btn-sm px-2 text-center" href="/auditions/{{$auditionFormAnswer->project->id}}@if(!empty(app('request')->input('sort')))?sort={{app('request')->input('sort')}}@endif">Back to List</a>
                         </div>
                         <div class="col pr-4">
                             @if (!empty($next))

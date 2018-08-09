@@ -34,7 +34,7 @@
                               <p class="mb-0 @if ( count($codes) < 4 ) lead @endif">
                               <b>{{$code->code}}</b>
                                @if ($code->person_id <> $user->person->id) &nbsp; ({{$code->first_name}}) @endif
-                              @if ($code->rebate == 100) (comp) @endif
+                               @if ($code->rebate == 100) (comp) @endif
                               </p>
                             @endforeach
                           </div>

@@ -28,21 +28,21 @@
                                 <th @if (app('request')->input('sort')=="first_name")
                                     class="sorted"
                                     @endif >
-                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=first_name">
+                                    <a class="text-dark" href="/auditions/{{$project->id}}?sort=first_name">
                                     First Name
                                     </a>
                                 </th>
                                 <th @if (app('request')->input('sort')=="last_name")
                                     class="sorted"
                                     @endif >
-                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=last_name">
+                                    <a class="text-dark" href="/auditions/{{$project->id}}?sort=last_name">
                                     Last Name
                                     </a>
                                 </th>
                                 <th @if (app('request')->input('sort')=="last_update")
                                     class="sorted"
                                     @endif >
-                                    <a class="text-dark" href="/projects/{{$project->id}}?sort=last_update">
+                                    <a class="text-dark" href="/auditions/{{$project->id}}?sort=last_update">
                                     Applied
                                     </a>
                                 </th>
