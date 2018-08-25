@@ -8,21 +8,21 @@ class Crewfunction extends Model
 {
     protected $table = 'functions';//
 
-    protected $appends = array('functiongroup');
+    // protected $appends = array('functiongroup');
 
-    protected function functiongroups()
+    public function functiongroup()
       {
           return $this->hasOne('App\Functiongroup', 'id', 'functiongroup_id');
       }
 
-    public function getFunctiongroupAttribute()
-        {
-            return $this->functiongroups['questionnaire_name'];
-        }
-
-    public function getFunctionGroupSortOrderAttribute()
-        {
-            return $this->functiongroups['sort_order'];
-        }
+    // public function getFunctiongroupAttribute()
+    //     {
+    //         return $this->functiongroups['questionnaire_name'];
+    //     }
+    //
+    // public function getFunctionGroupSortOrderAttribute()
+    //     {
+    //         return $this->functiongroups['sort_order'];
+    //     }
 
 }

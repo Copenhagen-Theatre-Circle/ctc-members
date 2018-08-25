@@ -23,13 +23,21 @@ class PersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
 
-      // eager load questionnaire_answers
+      $people = Person::select('first_name','last_name','id');
 
-      $people = Person::with('questionnaire_answers');
+      $people->orderBy('first_name', 'asc')->orderBy('last_name', 'asc');
 
+      // scope: people who answered questionnaire or are members if special rights, else only members
+      if (user_is_admin_or_superuser()){
+        $people->answeredQuestionnaireOrIsMember();
+      } else {
+        $people->isMember();
+      }
+
+      // queries here
+      // TODO: refactor this into scopes
 
       // query if name search
 
@@ -63,8 +71,6 @@ class PersonController extends Controller
         });
       }
 
-      $season_id = 50;
-
       // query if CTC Member search
 
       if (request('c')==1) {
@@ -79,61 +85,26 @@ class PersonController extends Controller
         });
       }
 
-
-      // order by
-
-      $people->orderBy('first_name', 'asc')->orderBy('last_name', 'asc');
-
       // execute query
 
       $people = $people->get();
 
-      // TODO: refactor this into query (scope?)
-      // filter only members if not special rights, else members and people who answered questionnaire
+      // eager load required related data
 
-      $user_id = \Auth::user()->id;
-      $user_model = User::find($user_id);
-
-      if ($user_model->canSeeAllPeople() == false)
-
-      {
-
-        $people = $people->filter(function ($item) {
-        return $item->ismember();
-        })->values();
-
-      } else {
-
-        $people = $people->filter(function ($item) {
-        return ($item->answeredQuestionnaire() || $item->ismember());
-        })->values();
-
-      }
+      $people->load(
+        'portraits',
+        'membership_this_season',
+        'questionnaire_answers'
+      );
 
       // retrieve functiongroups and functions
 
       $functiongroups = Functiongroup::orderBy('sort_order')->get();
-      $functions = Crewfunction::get()->sortBy('sort_order')->sortBy('FunctionGroupSortOrder');
-
-      foreach ($functions as $function) {
-        $functionarray[$function->functiongroup][$function->id]=$function->questionnaire_name;
-      }
-
-      // count people to pass result
-
-      $peoplecount = $people->count();
-
-      // pass on request params for c and e
-
-      $request['name'] = request('name');
-      $request['f'] = request('f');
-      $request['g'] = request('g');
-      $request['c'] = request('c');
-      $request['e'] = request('e');
+      $functiongroups->load('crewfunctions');
 
       // return view with data
 
-      return view('people.index', Compact ('people', 'peoplecount', 'functiongroups', 'functionarray', 'request'));
+      return view('people.index', Compact ('people', 'functiongroups'));
 
     }
 
@@ -153,7 +124,7 @@ class PersonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function 
     {
         //
     }
@@ -200,27 +171,27 @@ class PersonController extends Controller
           if (!empty($answer->functiongroup_id)) {
 
             //sort order field = key, to ensure correct order
-            $sort_id = $answer->functiongroups->sort_order;
-            $reformed['general_interests'][$sort_id]['name'] = $answer->functiongroups->questionnaire_name;
-            $reformed['general_interests'][$sort_id]['color_hex'] = $answer->functiongroups->color_hex;
+            $sort_id = $answer->functiongroup['sort_order'];
+            $reformed['general_interests'][$sort_id]['name'] = $answer->functiongroup->questionnaire_name;
+            $reformed['general_interests'][$sort_id]['color_hex'] = $answer->functiongroup->color_hex;
 
           }
 
           elseif (!empty($answer->function_id) && !empty($answer->has_experience) && $answer->interest==1) {
 
             //sort order field = key, to ensure correct order
-            $sort_id = $answer->functions->functiongroups->sort_order . "_" . $answer->functions->sort_order;
-            $reformed['experience'][$sort_id]['name'] = $answer->functions->questionnaire_name;
-            $reformed['experience'][$sort_id]['color_hex'] = $answer->functions->functiongroups->color_hex;
+            $sort_id = $answer->crewfunction->functiongroup->sort_order . "_" . $answer->crewfunction->sort_order;
+            $reformed['experience'][$sort_id]['name'] = $answer->crewfunction->questionnaire_name;
+            $reformed['experience'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
 
           }
 
           elseif (!empty($answer->function_id) && !empty($answer->wants_to_learn) && $answer->interest==1) {
 
             //sort order field = key, to ensure correct order
-            $sort_id = $answer->functions->functiongroups->sort_order . "_" . $answer->functions->sort_order;
-            $reformed['wants_to_learn'][$sort_id]['name'] = $answer->functions->questionnaire_name;
-            $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->functions->functiongroups->color_hex;
+            $sort_id = $answer->crewfunction->functiongroup->sort_order . "_" . $answer->crewfunction->sort_order;
+            $reformed['wants_to_learn'][$sort_id]['name'] = $answer->crewfunction->questionnaire_name;
+            $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
 
           }
 

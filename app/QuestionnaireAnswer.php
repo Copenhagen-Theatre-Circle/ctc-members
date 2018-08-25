@@ -7,27 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 class QuestionnaireAnswer extends Model
 {
 
-  protected $appends = array('functiongroup','function');
+  // protected $visible = ['functiongroups','functions'];
 
-  protected function functiongroups()
+
+  public function functiongroup()
     {
         return $this->hasOne('App\Functiongroup', 'id', 'functiongroup_id');
     }
 
-  protected function functions()
+  public function crewfunction()
     {
         return $this->hasOne('App\Crewfunction', 'id', 'function_id');
     }
 
-  public function getFunctiongroupAttribute()
-      {
-          return $this->functiongroups['questionnaire_name'];
-      }
-
-  public function getFunctionAttribute()
-      {
-          return $this->functions['questionnaire_name'];
-      }    //
+  // public function getFunctiongroupAttribute()
+  //     {
+  //         return $this->functiongroups['questionnaire_name'];
+  //     }
+  //
+  // public function getFunctionAttribute()
+  //     {
+  //         return $this->functions['questionnaire_name'];
+  //     }    //
 
 
 }

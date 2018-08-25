@@ -7,89 +7,125 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends BaseModel
 {
 
-  protected $visible = ['first_name','last_name','portrait','roles','crewjobs','questionnaire_answers','member_bio'];
+    public function myMethod()
+    {
 
-  public function memberships()
-     {
-         return $this->hasMany('App\Membership');
-     }
+    }
 
-  public function portraits()
+    protected $visible = ['first_name','last_name','portraits','roles','crewjobs','questionnaire_answers','member_bio'];
+
+    // model relationships
+
+    public function memberships()
+    {
+        return $this->hasMany('App\Membership');
+    }
+
+    public function membership_this_season()
+    {
+        return $this->hasMany('App\Membership')->where('season_id', '50');
+    }
+
+    public function portraits()
     {
         return $this->hasMany('App\Photograph');
     }
 
-  public function rights()
+    public function rights()
     {
         return $this->hasMany('App\Right');
     }
 
-  public function questionnaire_answers()
+    public function questionnaire_answers()
     {
         return $this->hasMany('App\QuestionnaireAnswer');
     }
 
-  public function roles()
+    public function roles()
     {
         return $this->hasMany('App\Actor');
     }
 
-  public function crewjobs()
+    public function crewjobs()
     {
         return $this->hasMany('App\Crewmember');
     }
 
-  public function ismember()
+    //custom methods
+
+    public function ismember()
     {
-        $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
+        $paid_member = $this->membership_this_season()->exists();
         $life_member = $this['is_life_member'] == 1;
         $member = $paid_member || $life_member;
         return $member ;
     }
 
-  public function answeredQuestionnaire()
+    // protected $appends = array('is_current_member');
+
+    //scopes
+
+    public function scopeIsMember($query)
     {
-        $answered = $this->questionnaire_answers()->where('id', '>', '0')->first() ? true : false;
-        return $answered ;
+        return $query->whereHas('membership_this_season');
     }
 
-  public function isPaidUpMember()
+    public function scopeAnsweredQuestionnaire($query)
     {
-        $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
-        $life_member = $this['is_life_member'] == 1;
-        $member = $paid_member || $life_member;
-        return $member ;
+        return $query->whereHas('questionnaire_answers');
     }
 
-  public function main_portrait ()
+    public function scopeAnsweredQuestionnaireOrIsMember($query)
     {
-        $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
-        return $portrait;
+        return $query->whereHas('membership_this_season')
+      ->orWhereHas('questionnaire_answers');
     }
 
 
-  protected $appends = array('portrait');
-
-  public function getPortraitAttribute()
-
-   {
-     return $this->main_portrait();
-   }
-
-  public function getQuestionnaireAnsweredAttribute() {
-     $created_at = $this->questionnaire_answers()->first()['created_at'];
-     if ($created_at) {
-       $created_date = date('d M Y', strtotime($created_at));
-       return $created_date;
-     } else {
-       return false;
-     }
-
-  }
-
-  public function getMemberAttribute() {
-    return $this->ismember();
-  }
 
 
+    // public function answeredQuestionnaire()
+    //   {
+    //       $answered = $this->questionnaire_answers()->where('id', '>', '0')->first() ? true : false;
+    //       return $answered ;
+    //   }
+
+    // public function isPaidUpMember()
+    //   {
+    //       $paid_member = $this->memberships()->where('season_id', '>', '49')->first() ? true : false;
+    //       $life_member = $this['is_life_member'] == 1;
+    //       $member = $paid_member || $life_member;
+    //       return $member ;
+    //   }
+
+    // public function getMainPortraitAttribute ()
+    //   {
+    //       $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
+    //       return $portrait;
+    //   }
+
+
+    // protected $appends = array('main_portrait');
+
+    // public function getPortraitAttribute()
+    //
+    //  {
+    //    $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
+    //    return $portrait;
+    //  }
+
+    public function getQuestionnaireAnsweredAttribute()
+    {
+        $created_at = $this->questionnaire_answers()->first()['created_at'];
+        if ($created_at) {
+            $created_date = date('d M Y', strtotime($created_at));
+            return $created_date;
+        } else {
+            return false;
+        }
+    }
+
+    // public function getMemberAttribute() {
+  //   return $this->ismember();
+  // }
 }

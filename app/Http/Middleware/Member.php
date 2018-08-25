@@ -18,7 +18,7 @@ class Member
     {
       $user = \Auth::user()->id;
 
-      if ( User::find($user)->ismember() )
+      if ( User::find($user)->is_member )
         {
             return $next($request);
         }

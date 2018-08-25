@@ -30,9 +30,9 @@ class HomeController extends Controller
         $user = User::find($user_id);
         $user_is_admin = $user->canSeeAllPeople();
 
-        $person_id = $user->person->id;
+        $person_id = $_GET['person'] ?? $user->person->id;
         $project_id = 93;
-        // $person_id = ;
+        // $person_id = 9;
 
         $codes = DB::select( DB::raw("
 
