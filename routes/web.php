@@ -56,6 +56,13 @@ Route::resources([
     'ticketsales' => 'TicketsalesController'
 ]);
 
+Route::get('/jubilee-book/{person_id}','JubileeBook@page1');
+Route::get('/jubilee-book/{person_id}/step-1','JubileeBook@step_1');
+Route::get('/jubilee-book/{person_id}/step-2','JubileeBook@step_2');
+Route::get('/jubilee-book/{person_id}/step-3/','JubileeBook@step_3_index');
+Route::get('/jubilee-book/{person_id}/step-3/{show_id}','JubileeBook@step_3_show');
+Route::get('/jubilee-book/{person_id}/step-3/{show_id}/edit','JubileeBook@step_3_edit');
+
 // Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 
 // Route::resource('comments','CommentsController');
