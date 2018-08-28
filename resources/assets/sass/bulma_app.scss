@@ -1,3 +1,14 @@
+//variables
+$ctc-red: #d10f22;
+$steps-completed-color: $ctc-red;
+$steps-active-color: $ctc-red;
+
+//custom css
+.is-ctc {
+    background-color: $ctc-red !important;
+    color: white !important;
+}
+
 //Bulma
 @import './node_modules/bulma/bulma.sass';
 

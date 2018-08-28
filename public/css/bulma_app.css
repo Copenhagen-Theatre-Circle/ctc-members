@@ -1,3 +1,8 @@
+.is-ctc {
+  background-color: #d10f22 !important;
+  color: white !important;
+}
+
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 
 @-webkit-keyframes spinAround {
@@ -11553,8 +11558,8 @@ label.panel-block:hover {
 }
 
 .steps .step-item::before {
-  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #dbdbdb), color-stop(50%, #00d1b2));
-  background: linear-gradient(to left, #dbdbdb 50%, #00d1b2 50%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #dbdbdb), color-stop(50%, #d10f22));
+  background: linear-gradient(to left, #dbdbdb 50%, #d10f22 50%);
   background-size: 200% 100%;
   background-position: right bottom;
 }
@@ -11569,8 +11574,8 @@ label.panel-block:hover {
 
 .steps .step-item.is-active .step-marker {
   background-color: white;
-  border-color: #00d1b2;
-  color: #00d1b2;
+  border-color: #d10f22;
+  color: #d10f22;
 }
 
 .steps .step-item.is-completed::before {
@@ -11579,7 +11584,7 @@ label.panel-block:hover {
 
 .steps .step-item.is-completed .step-marker {
   color: white;
-  background-color: #00d1b2;
+  background-color: #d10f22;
 }
 
 .steps .step-item .step-marker {
