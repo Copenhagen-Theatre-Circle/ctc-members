@@ -56,14 +56,14 @@ Route::resources([
     'ticketsales' => 'TicketsalesController'
 ]);
 
-Route::get('/jubilee-book/{person_id}','JubileeBook@step_1');
-Route::get('/jubilee-book/{person_id}/step-1','JubileeBook@step_1');
-Route::post('/jubilee-book/{person_id}/step-1','JubileeBook@step_1_store')->name('jubilee.step1.store');
-Route::get('/jubilee-book/{person_id}/step-2','JubileeBook@step_2');
-Route::post('/jubilee-book/{person_id}/step-2','JubileeBook@step_2_store')->name('jubilee.step2.store');
-Route::get('/jubilee-book/{person_id}/step-3/','JubileeBook@step_3_index');
-Route::get('/jubilee-book/{person_id}/step-3/{show_id}','JubileeBook@step_3_show');
-Route::get('/jubilee-book/{person_id}/step-3/{show_id}/edit','JubileeBook@step_3_edit');
+Route::get('/jubilee-book/{person_id}','JubileeBookController@step_1');
+Route::get('/jubilee-book/{person_id}/step-1','JubileeBookController@step_1');
+Route::post('/jubilee-book/{person_id}/step-1','JubileeBookController@step_1_store')->name('jubilee.step1.store');
+Route::get('/jubilee-book/{person_id}/step-2','JubileeBookController@step_2');
+Route::post('/jubilee-book/{person_id}/step-2','JubileeBookController@step_2_store')->name('jubilee.step2.store');
+Route::get('/jubilee-book/{person_id}/step-3/','JubileeBookController@step_3_index');
+Route::get('/jubilee-book/{person_id}/step-3/{show_id}','JubileeBookController@step_3_show');
+Route::get('/jubilee-book/{person_id}/step-3/{show_id}/edit','JubileeBookController@step_3_edit');
 
 // Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 

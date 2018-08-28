@@ -7,7 +7,7 @@ use App\Person;
 use App\JubileeBookAnswer;
 use App\Project;
 
-class JubileeBook extends Controller
+class JubileeBookController extends Controller
 {
     public function step_1($person_id)
     {
@@ -64,12 +64,19 @@ class JubileeBook extends Controller
     public function step_3_index($person_id)
     {
         $person = Person::where('uniqid',$person_id)->first();
-        return view ('jubilee_book/step_3_index',Compact('person'));
+        $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
+        $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+        return view ('jubilee_book/step_3_index',Compact('person','projects'));
     }
 
     public function step_3_show($person_id, $show_id)
     {
-        return view ('jubilee_book/step_3_show');
+        $person = Person::where('uniqid',$person_id)->first();
+        $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
+        $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+        $this_project = Project::where('id',$show_id)->first();
+        // return $this_project;
+        return view ('jubilee_book/step_3_show', Compact('person','projects','this_project'));
     }
 
     public function step_3_edit($person_id, $show_id)
