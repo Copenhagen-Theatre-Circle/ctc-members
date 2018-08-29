@@ -1,5 +1,7 @@
 @extends('layouts.app_simple_bulma')
 
+@section('title','CTC Jubilee Book')
+
 @section('content')
 
 <div class="container">
@@ -11,22 +13,23 @@
 
      <form action="{{ route ('jubilee.step2.store', $person->uniqid) }}" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
-       <div class="columns">
-         <div class="column is-half is-offset-one-quarter">
+       <div class="columns is-centered">
+         <div class="column is-three-quarters">
           <div class="card">
             <div class="card-content">
               <h3 class="title is-5">Please select the shows you were active in from the selected decades:</h3>
-
-              @foreach ($projects as $project)
-                <div class="field">
-                  <div class="control">
-                    <label class="checkbox">
-                      <input type="checkbox" name="shows[]" value="{{$project->id}}" @if( in_array ( $project->id , $shows_selected )) checked @endif>
-                      {{$project->name}}
-                    </label>
+              <div style="column-count: 2;">
+                @foreach ($projects as $project)
+                  <div class="field">
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox" name="shows[]" value="{{$project->id}}" @if( in_array ( $project->id , $shows_selected )) checked @endif>
+                        {{$project->name}}
+                      </label>
+                    </div>
                   </div>
-                </div>
-              @endforeach
+                @endforeach
+              </div>
 
             </div>
           </div>

@@ -1,5 +1,7 @@
 @extends('layouts.app_simple_bulma')
 
+@section('title','CTC Jubilee Book')
+
 @section('content')
 
 <div class="container">
@@ -35,7 +37,7 @@
                                         <span class="icon">
                                             <i class="fas fa-align-justify"></i>
                                         </span>
-                                        instructions step 3
+                                        Instructions for Step 3
                                     </a>
                                 </li>
                             </ul>
@@ -44,8 +46,28 @@
                     <div class="column">
                     <h3 class="title is-3">{{$this_project->name}}</h3>
                     <h4 class="subtitle is-4">{{$this_project->year}}</h4>
-                    <p> Bla bla bla here </p>
+                    <hr>
+
+                    @if ($projectmemory->participation_level)
+                    <h5 class="title is-5">What was your level of participation in this show (cast, crew, audience, other)?</h5>
+                    <p>{{$projectmemory->participation_level}}</p>
+                    <hr>
+                    @endif
+
+                    @if ($projectmemory->production_memories)
                     <br>
+                    <h5 class="title is-5">What do you remember most about putting this production together? Why did we choose to do this show? What was it like backstage? What were some challenges the production faced?</h5>
+                    <p>{{$projectmemory->production_memories}}</p>
+                    <hr>
+                    @endif
+
+                    @if ($projectmemory->performance_memories)
+                    <br>
+                    <h5 class="title is-5">What do you remember most about the performance(s)? Do any particular performers, scenes, songs, etc. stand out to you now and why? How did you feel on opening night? What about on closing night?</h5>
+                    <p>{{$projectmemory->performance_memories}}</p>
+                    <hr>
+                    @endif
+
                     <a href='{{$this_project->id}}/edit' class="button is-danger is-pulled-left">
                         <span class="icon">
                             <i class="fas fa-pencil-alt"></i>

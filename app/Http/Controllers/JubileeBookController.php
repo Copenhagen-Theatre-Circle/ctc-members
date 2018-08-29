@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Person;
 use App\JubileeBookAnswer;
 use App\Project;
+use App\Projectmemory;
 
 class JubileeBookController extends Controller
 {
@@ -75,8 +76,12 @@ class JubileeBookController extends Controller
         $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
         $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
         $this_project = Project::where('id',$show_id)->first();
-        // return $this_project;
-        return view ('jubilee_book/step_3_show', Compact('person','projects','this_project'));
+        $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$this_project->id)->first();
+        if (empty($projectmemory)){
+            return redirect('jubilee-book/'.$person_id.'/step-3/'.$this_project->id . '/edit');
+        } else {
+            return view ('jubilee_book/step_3_show', Compact('person','projects','this_project','projectmemory'));
+        }
     }
 
     public function step_3_edit($person_id, $show_id)
@@ -85,11 +90,18 @@ class JubileeBookController extends Controller
         $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
         $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
         $this_project = Project::where('id',$show_id)->first();
-        return view ('jubilee_book/step_3_edit', Compact('person','projects','this_project'));
+        $projectmemory = Projectmemory::firstOrCreate(['person_id'=>$person->id, 'project_id' => $this_project->id]);
+        return view ('jubilee_book/step_3_edit', Compact('person','projects','this_project','projectmemory'));
     }
 
     public function step_3_store(Request $request, $person_uniqid, $project_id)
     {
-        return redirect('jubilee-book/'.$person_uniqid.'/step-3/'.$project_id);
+        $person = Person::where('uniqid',$person_uniqid)->first();
+        $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project_id)->first();
+        $projectmemory->participation_level = $request->input('participation_level');
+        $projectmemory->production_memories = $request->input('production_memories');
+        $projectmemory->performance_memories = $request->input('performance_memories');
+        $projectmemory->save();
+        return redirect('jubilee-book/'.$person_uniqid.'/step-3/'.$project_id.'/edit');
     }
 }

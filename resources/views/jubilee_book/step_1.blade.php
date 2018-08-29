@@ -1,5 +1,7 @@
 @extends('layouts.app_simple_bulma')
 
+@section('title','CTC Jubilee Book')
+
 @section('content')
 
 <div class="container">

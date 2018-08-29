@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{-- <title>{{ config('app.name', 'CTC Members') }}</title> --}}
+    <title>@yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/bulma_app.css') }}" rel="stylesheet">
