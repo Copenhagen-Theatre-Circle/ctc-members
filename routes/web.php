@@ -64,6 +64,7 @@ Route::post('/jubilee-book/{person_id}/step-2','JubileeBookController@step_2_sto
 Route::get('/jubilee-book/{person_id}/step-3/','JubileeBookController@step_3_index');
 Route::get('/jubilee-book/{person_id}/step-3/{show_id}','JubileeBookController@step_3_show');
 Route::get('/jubilee-book/{person_id}/step-3/{show_id}/edit','JubileeBookController@step_3_edit');
+Route::post('/jubilee-book/{person_id}/step-3/{show_id}/store','JubileeBookController@step_3_store')->name('jubilee.step3.store');
 
 // Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 

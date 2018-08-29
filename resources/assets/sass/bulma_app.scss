@@ -5,12 +5,6 @@ $steps-active-color: $ctc-red;
 $link: $ctc-red;
 $danger: $ctc-red;
 
-//custom css
-.is-ctc {
-    background-color: $ctc-red !important;
-    color: white !important;
-}
-
 //Bulma
 @import './node_modules/bulma/bulma.sass';
 

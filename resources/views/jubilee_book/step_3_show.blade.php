@@ -6,17 +6,17 @@
 
   @include('jubilee_book/navbar')
 
-  <div class="section" style="padding-top: 20px;">
-     @include ('jubilee_book/step_counter', ['step'=>3])
+  <div class="section" style="padding: 10px; padding-top: 20px;">
+    @include ('jubilee_book/step_counter', ['step'=>3])
 
-      <section class="section" style="padding-top: 20px;">
+    <section class="section" style="padding: 0px; padding-top: 0px;">
         <div class="card">
             <div class="card-content">
                 <div class="columns">
                     <div class="column is-3">
                         <nav class="menu">
                             <p class="menu-label">
-                                Your Shows
+                                Select a Show
                             </p>
                             <ul class="menu-list">
                                 @foreach ($projects as $project)
@@ -29,23 +29,35 @@
                                         </a>
                                     </li>
                                 @endforeach
+                                <hr>
+                                <li>
+                                    <a href="../step-3">
+                                        <span class="icon">
+                                            <i class="fas fa-align-justify"></i>
+                                        </span>
+                                        instructions step 3
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="column">
                     <h3 class="title is-3">{{$this_project->name}}</h3>
                     <h4 class="subtitle is-4">{{$this_project->year}}</h4>
+                    <p> Bla bla bla here </p>
+                    <br>
+                    <a href='{{$this_project->id}}/edit' class="button is-danger is-pulled-left">
+                        <span class="icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </span>
+                        &nbsp; edit
+                    </a>
+                    <br>
                 </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="field">
-            <div class="control">
-              <a href="/jubilee-book/{{$person->uniqid}}/step-2" type="submit" class="button is-outlined is-danger is-pulled-left">back to step 2</a>
-            </div>
-        </div>
-     </section>
+    </section>
   </div>
 
 </div>

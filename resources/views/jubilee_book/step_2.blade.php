@@ -36,7 +36,7 @@
               <button type="submit" class="button is-danger is-pulled-right">Continue</button>
             </div>
             <div class="control">
-              <a href="step-1" type="submit" class="button is-outlined is-danger is-pulled-left">back</a>
+              <a href="step-1" type="submit" class="button is-outlined is-danger is-pulled-left">back to step 1</a>
             </div>
           </div>
          </div>

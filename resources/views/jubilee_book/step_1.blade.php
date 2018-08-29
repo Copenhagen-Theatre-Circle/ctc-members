@@ -32,7 +32,7 @@
           <br>
           <div class="field">
             <div class="control">
-              <button type="submit" class="button is-ctc is-pulled-right">Continue</button>
+              <button type="submit" class="button is-danger is-pulled-right">Continue</button>
             </div>
           </div>
          </div>
