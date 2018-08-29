@@ -51,30 +51,32 @@
                                     <span class="icon" style="margin-top:1rem;margin-left: 1rem;"> <i class="fas fa-arrow-left fa-2x"></i> </span>
                                 </div>
                                 <div class="column">
-                                    <p> Your shows are are listed on the menu to the left.<br>By clicking on each individual show, you can enter your thoughts and recollections.</p>
+                                    <p> Your shows are are listed on the menu to the left.<br>By clicking on each individual show, you can enter your thoughts and recollections for each show.</p>
                                 </div>
                             </div>
                             <hr>
                             <div class="columns">
                                 <div class="column is-narrow">
-                                    <span class="icon has-text-danger" style="margin-top:1rem;margin-left: 1rem;"> <i class="fas fa-exclamation-triangle fa-2x"></i> </span>
+                                    <span class="icon" style="margin-top:0.5rem;margin-left: 1rem;"> <i class="fas fa-info-circle fa-2x"></i> </span>
                                 </div>
+                                <hr>
                                 <div class="column">
+                                    Please note that:
                                     <ul style="margin-top: 0; margin-left: 1rem;">
-                                        <li>You do not need to complete your notes for the show in any specific order.</li>
-                                        <li>You can return to this form at any time to complete it. </li>
+                                        <li>you do not need to complete your notes for the show in any specific order.</li>
+                                        <li>you can return to this form at any time to complete it. </li>
                                     </ul>
-                                </div>
+                                    <p>The icon next to each show indicates the level of completion:</p>
+                                    <span class="icon has-text-danger fa-lg"> <i class="fas fa-times-circle"></i> </span>&nbsp; indicates that you have not yet written any text for this show.
+                                    <br>
+                                    <br>
+                                    <span class="icon has-text-warning fa-lg"> <i class="fas fa-pencil-alt"></i> </span>&nbsp; indicates that you have written something but not yet marked your entry as complete (i.e. it is still work in progress).
+                                    <br>
+                                    <br>
+                                    <span class="icon has-text-success fa-lg"> <i class="fas fa-check-circle"></i> </span>&nbsp; indicates that you have finished writing your thoughts and recollections about this show.
+                                        </div>
                             </div>
-                            <hr>
-                            <p>The icon next to each show indicates the level of completion:</p>
-                            <span class="icon has-text-danger fa-lg"> <i class="fas fa-times-circle"></i> </span>&nbsp; indicates that you have not yet written any text for this show.
-                            <br>
-                            <br>
-                            <span class="icon has-text-warning fa-lg"> <i class="fas fa-pencil-alt"></i> </span>&nbsp; indicates that you have written something but not yet marked your entry as complete (i.e. it is still work in progress).
-                            <br>
-                            <br>
-                            <span class="icon has-text-success fa-lg"> <i class="fas fa-check-circle"></i> </span>&nbsp; indicates that you have finished writing your thoughts and recollections about this show.
+
                             <hr>
                             <p>Happy Recollections!</p>
                             <br>
