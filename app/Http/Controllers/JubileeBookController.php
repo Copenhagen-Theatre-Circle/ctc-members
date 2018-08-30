@@ -67,28 +67,57 @@ class JubileeBookController extends Controller
         $person = Person::where('uniqid',$person_id)->first();
         $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
         $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+        //completion status is added to each project here
+        foreach ($projects as $project) {
+            $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project->id)->first();
+            if ($projectmemory->completed == 1) {
+                $project->completion = "complete";
+            } elseif ($projectmemory->participation_level or $projectmemory->production_memories or $projectmemory->performance_memories){
+                $project->completion = "in progress";
+            } else {
+                $project->completion = "empty";
+            }
+            $new_project_array[]=$project;
+        }
+        $projects = $new_project_array;
         return view ('jubilee_book/step_3_index',Compact('person','projects'));
     }
 
     public function step_3_show($person_id, $show_id)
     {
-        $person = Person::where('uniqid',$person_id)->first();
-        $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
-        $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
-        $this_project = Project::where('id',$show_id)->first();
-        $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$this_project->id)->first();
-        if (empty($projectmemory)){
-            return redirect('jubilee-book/'.$person_id.'/step-3/'.$this_project->id . '/edit');
-        } else {
-            return view ('jubilee_book/step_3_show', Compact('person','projects','this_project','projectmemory'));
-        }
+        //show gets redirected to edit
+        return redirect('jubilee-book/'.$person_id.'/step-3/'.$show_id . '/edit');
+        //actual show view disabled
+        // $person = Person::where('uniqid',$person_id)->first();
+        // $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
+        // $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+        // $this_project = Project::where('id',$show_id)->first();
+        // $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$this_project->id)->first();
+        // if (empty($projectmemory)){
+        //     return redirect('jubilee-book/'.$person_id.'/step-3/'.$this_project->id . '/edit');
+        // } else {
+        //     return view ('jubilee_book/step_3_show', Compact('person','projects','this_project','projectmemory'));
+        // }
     }
 
-    public function step_3_edit($person_id, $show_id)
+    public function step_3_edit($person_uniqid, $show_id)
     {
-        $person = Person::where('uniqid',$person_id)->first();
+        $person = Person::where('uniqid',$person_uniqid)->first();
         $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
         $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+        //completion status is added to each project here
+        foreach ($projects as $project) {
+            $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project->id)->first();
+            if ($projectmemory->completed == 1) {
+                $project->completion = "complete";
+            } elseif ($projectmemory->participation_level or $projectmemory->production_memories or $projectmemory->performance_memories){
+                $project->completion = "in progress";
+            } else {
+                $project->completion = "empty";
+            }
+            $new_project_array[]=$project;
+        }
+        $projects = $new_project_array;
         $this_project = Project::where('id',$show_id)->first();
         $projectmemory = Projectmemory::firstOrCreate(['person_id'=>$person->id, 'project_id' => $this_project->id]);
         return view ('jubilee_book/step_3_edit', Compact('person','projects','this_project','projectmemory'));
@@ -101,6 +130,7 @@ class JubileeBookController extends Controller
         $projectmemory->participation_level = $request->input('participation_level');
         $projectmemory->production_memories = $request->input('production_memories');
         $projectmemory->performance_memories = $request->input('performance_memories');
+        $projectmemory->completed = $request->input('completed');
         $projectmemory->save();
         return redirect('jubilee-book/'.$person_uniqid.'/step-3/'.$project_id.'/edit');
     }

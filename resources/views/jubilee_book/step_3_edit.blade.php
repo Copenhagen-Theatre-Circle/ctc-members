@@ -33,14 +33,46 @@
                                 @foreach ($projects as $project)
                                     <li>
                                         <a href="../{{$project->id}}/edit" @if ($project->id == $this_project->id) class='is-active' @endif v-if="!save">
-                                            <span class="icon @if ($project->id != $this_project->id) has-text-success @endif ">
-                                                <i class="fas fa-check-circle"></i>
+                                            <span class="icon
+                                                @if ($project->id == $this_project->id)
+                                                    has-text-white
+                                                @elseif ($project->completion=='complete')
+                                                    has-text-success
+                                                @elseif ($project->completion=='in progress')
+                                                    has-text-warning
+                                                @elseif ($project->completion=='empty')
+                                                    has-text-danger
+                                                @endif
+                                                ">
+                                                @if ($project->completion =='complete')
+                                                   <i class="fas fa-check-circle"></i>
+                                                @elseif ($project->completion == 'in progress')
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                @elseif ($project->completion == 'empty')
+                                                    <i class="fas fa-times-circle"></i>
+                                                @endif
                                             </span>
                                             {{$project->name}}
                                         </a>
-                                        <a @if ($project->id == $this_project->id) class='is-active' @endif v-if="save" @click="modal()">
-                                            <span class="icon @if ($project->id != $this_project->id) has-text-success @endif ">
-                                                <i class="fas fa-check-circle"></i>
+                                        <a @if ($project->id == $this_project->id) class='is-active' @endif v-if="save" @click="modal()" v-cloak>
+                                            <span class="icon
+                                                @if ($project->id == $this_project->id)
+                                                    has-text-white
+                                                @elseif ($project->completion=='complete')
+                                                    has-text-success
+                                                @elseif ($project->completion=='in progress')
+                                                    has-text-warning
+                                                @elseif ($project->completion=='empty')
+                                                    has-text-danger
+                                                @endif
+                                                ">
+                                                @if ($project->completion =='complete')
+                                                   <i class="fas fa-check-circle"></i>
+                                                @elseif ($project->completion == 'in progress')
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                @elseif ($project->completion == 'empty')
+                                                    <i class="fas fa-times-circle"></i>
+                                                @endif
                                             </span>
                                             {{$project->name}}
                                         </a>
@@ -58,7 +90,7 @@
                                 <h4 class="subtitle is-4">{{$this_project->year}}</h4>
                             </div>
                             <div class="column">
-                                <h3 class="title is-4 is-pulled-right has-text-danger" style="margin-bottom: 0.5rem;" v-if="save">Remember to save when done!</h3>
+                                <h3 class="title is-4 is-pulled-right has-text-danger" style="margin-bottom: 0.5rem;" v-if="save" v-cloak>Remember to save when done!</h3>
                                 <p class="is-pulled-right">last changes saved: {{$projectmemory->updated_at}}</p>
                             </div>
                         </div>
@@ -96,7 +128,7 @@
                         <label class="label">You can return to the form to edit your entry later on. However, if your entry is complete, please indicate so here.</label>
                           <div class="control">
                             <label class="checkbox">
-                              <input type="checkbox" name="completed" @if($projectmemory->completed == 1) checked @endif >
+                              <input type="checkbox" value="1" name="completed" @if($projectmemory->completed == 1) checked @endif @click="changed()">
                               My entry for this show is complete.
                             </label>
                           </div>
@@ -104,9 +136,9 @@
 
                         <hr>
 
-                        <a href="javascript:window.location.href=window.location.href" class="button is-outlined is-danger is-pulled-left" v-if="save">
+                        <a href="javascript:window.location.href=window.location.href" class="button is-outlined is-danger is-pulled-left" v-if="save" v-cloak>
                             <span class="icon">
-                                <i class="far fa-ban"></i>
+                                <i class="fas fa-ban"></i>
                             </span>
                             &nbsp; cancel changes
                         </a>
@@ -131,7 +163,7 @@
 
 </div>
 
-<div class="modal is-active" v-if="showmodal">
+<div class="modal" v-bind:class="{'is-active': showmodal}">
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="message">

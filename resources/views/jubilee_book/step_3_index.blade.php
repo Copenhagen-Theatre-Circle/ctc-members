@@ -33,8 +33,22 @@
                                 @foreach ($projects as $project)
                                     <li>
                                         <a href="step-3/{{$project->id}}/edit">
-                                            <span class="icon has-text-success">
-                                                <i class="fas fa-check-circle"></i>
+                                            <span class="icon
+                                                @if ($project->completion=='complete')
+                                                    has-text-success
+                                                @elseif ($project->completion=='in progress')
+                                                    has-text-warning
+                                                @elseif ($project->completion=='empty')
+                                                    has-text-danger
+                                                @endif
+                                                ">
+                                                @if ($project->completion =='complete')
+                                                   <i class="fas fa-check-circle"></i>
+                                                @elseif ($project->completion == 'in progress')
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                @elseif ($project->completion == 'empty')
+                                                    <i class="fas fa-times-circle"></i>
+                                                @endif
                                             </span>
                                             {{$project->name}}
                                         </a>
