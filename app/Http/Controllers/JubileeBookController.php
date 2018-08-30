@@ -70,9 +70,9 @@ class JubileeBookController extends Controller
         //completion status is added to each project here
         foreach ($projects as $project) {
             $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project->id)->first();
-            if ($projectmemory->completed == 1) {
+            if ($projectmemory and $projectmemory->completed == 1) {
                 $project->completion = "complete";
-            } elseif ($projectmemory->participation_level or $projectmemory->production_memories or $projectmemory->performance_memories){
+            } elseif ($projectmemory and ($projectmemory->participation_level or $projectmemory->production_memories or $projectmemory->performance_memories)){
                 $project->completion = "in progress";
             } else {
                 $project->completion = "empty";
@@ -108,9 +108,9 @@ class JubileeBookController extends Controller
         //completion status is added to each project here
         foreach ($projects as $project) {
             $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project->id)->first();
-            if ($projectmemory->completed == 1) {
+            if ($projectmemory and $projectmemory->completed == 1) {
                 $project->completion = "complete";
-            } elseif ($projectmemory->participation_level or $projectmemory->production_memories or $projectmemory->performance_memories){
+            } elseif ($projectmemory and ($projectmemory->participation_level or $projectmemory->production_memories or $projectmemory->performance_memories)){
                 $project->completion = "in progress";
             } else {
                 $project->completion = "empty";
