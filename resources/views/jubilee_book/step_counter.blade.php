@@ -2,9 +2,9 @@
 
   @php (
     $step_text_array = array(
-              'Select the decades you were active.',
-              'Select the shows you were active in.',
-              'Tell us about your experiences in each show.'
+              'Select your decades, series and essay topics.',
+              'Select the shows you would like to talk about.',
+              'Tell us your thoughts and memories.'
             )
   )
 

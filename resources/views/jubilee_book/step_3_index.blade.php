@@ -28,7 +28,7 @@
                                 </li>
                                 <hr>
                                 <p class="menu-label">
-                                    Select a Show:
+                                    Shows:
                                 </p>
                                 @foreach ($projects as $project)
                                     <li>
@@ -55,6 +55,62 @@
                                     </li>
                                 @endforeach
                                 <hr>
+                                <p class="menu-label">
+                                    Series:
+                                </p>
+                                @foreach ($series as $serie)
+                                    <li>
+                                        <a href="step-3/{{$serie->id}}/edit">
+                                            {{-- <span class="icon
+                                                @if ($serie->completion=='complete')
+                                                    has-text-success
+                                                @elseif ($serie->completion=='in progress')
+                                                    has-text-warning
+                                                @elseif ($serie->completion=='empty')
+                                                    has-text-danger
+                                                @endif
+                                                ">
+                                                @if ($serie->completion =='complete')
+                                                   <i class="fas fa-check-circle"></i>
+                                                @elseif ($serie->completion == 'in progress')
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                @elseif ($serie->completion == 'empty')
+                                                    <i class="fas fa-times-circle"></i>
+                                                @endif
+                                            </span> --}}
+                                            {{$serie->name}}
+                                        </a>
+                                    </li>
+                                @endforeach
+                                <hr>
+                                <p class="menu-label">
+                                    Essays:
+                                </p>
+                                @foreach ($essays as $essay)
+                                    <li>
+                                        <a href="step-3/{{$serie->id}}/edit">
+                                            {{-- <span class="icon
+                                                @if ($serie->completion=='complete')
+                                                    has-text-success
+                                                @elseif ($serie->completion=='in progress')
+                                                    has-text-warning
+                                                @elseif ($serie->completion=='empty')
+                                                    has-text-danger
+                                                @endif
+                                                ">
+                                                @if ($serie->completion =='complete')
+                                                   <i class="fas fa-check-circle"></i>
+                                                @elseif ($serie->completion == 'in progress')
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                @elseif ($serie->completion == 'empty')
+                                                    <i class="fas fa-times-circle"></i>
+                                                @endif
+                                            </span> --}}
+                                            {{$essay->name}}
+                                        </a>
+                                    </li>
+                                @endforeach
+                                <hr>
                                 <li>
                                     <a href="/jubilee-book/{{$person->uniqid}}/step-2">
                                         <span class="icon">
@@ -76,7 +132,7 @@
                                     <span class="icon" style="margin-top:1rem; margin-left: 0.3rem;"> <i class="fas fa-arrow-left fa-2x"></i> </span>
                                 </div>
                                 <div class="column">
-                                    <p> Your shows are are listed on the menu to the left.<br>By clicking on each individual show, you can enter your thoughts and recollections for each show.</p>
+                                    <p> Your shows, series and essay topics (if chosen) are are listed on the menu to the left.<br>By clicking on each individual show, you can enter your thoughts and recollections for each show.</p>
                                 </div>
                             </div>
                             <br>

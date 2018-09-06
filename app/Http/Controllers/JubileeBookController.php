@@ -7,6 +7,8 @@ use App\Person;
 use App\JubileeBookAnswer;
 use App\Project;
 use App\Projectmemory;
+use App\Essaytopic;
+use App\Essaytopicanswer;
 
 class JubileeBookController extends Controller
 {
@@ -16,22 +18,31 @@ class JubileeBookController extends Controller
         $jubilee_book_answer = JubileeBookAnswer::where('person_id',$person->id)->first();
         if ($jubilee_book_answer){
                 $decades_selected = explode(';', $jubilee_book_answer->decades);
+                $series_selected = explode(';', $jubilee_book_answer->series);
+                $essays_selected = explode(';', $jubilee_book_answer->essays);
             } else {
                 $decades_selected = array();
+                $series_selected = array();
+                $essays_selected = array();
             }
         $decades_selectable = array('1969-1978','1979-1988','1989-1998','1999-2008','2009-2018');
+        $series = Essaytopic::where('type','series')->get();
+        $essaytopics = Essaytopic::where('type','essays')->get();
         // return $decades;
         // return $person;
-        return view ('jubilee_book/step_1', Compact('person','decades_selected','decades_selectable'));
+        return view ('jubilee_book/step_1', Compact('person','decades_selected','series_selected','essays_selected','decades_selectable','series','essaytopics'));
     }
 
     public function step_1_store(Request $request, $person_uniqid)
     {
-        $decade = $request->input('decade');
+        $decades = $request->input('decades');
+        $series = $request->input('series');
+        $essays = $request->input('essays');
         $person_id = Person::where('uniqid',$person_uniqid)->pluck('id')->first();
-        // return $person_id;
         $jubileeEntry = JubileeBookAnswer::firstOrNew(['person_id' => $person_id]);
-        $jubileeEntry->decades = implode(';', $decade);
+        $jubileeEntry->decades = implode(';', $decades);
+        $jubileeEntry->series = implode(';', $series);
+        $jubileeEntry->essays = implode(';', $essays);
         $jubileeEntry->person_id = $person_id;
         $jubileeEntry->save();
         return redirect('jubilee-book/'.$person_uniqid.'/step-2');
@@ -65,8 +76,16 @@ class JubileeBookController extends Controller
     public function step_3_index($person_id)
     {
         $person = Person::where('uniqid',$person_id)->first();
+
         $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
         $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+
+        $series_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('series')->first());
+        $series = Essaytopic::whereIn('id',$series_ids)->get();
+
+        $essay_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('essays')->first());
+        $essays = Essaytopic::whereIn('id',$essay_ids)->get();
+
         //completion status is added to each project here
         foreach ($projects as $project) {
             $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project->id)->first();
@@ -79,8 +98,9 @@ class JubileeBookController extends Controller
             }
             $new_project_array[]=$project;
         }
+
         $projects = $new_project_array;
-        return view ('jubilee_book/step_3_index',Compact('person','projects'));
+        return view ('jubilee_book/step_3_index',Compact('person','projects','series','essays'));
     }
 
     public function step_3_show($person_id, $show_id)
