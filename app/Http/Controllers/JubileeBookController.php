@@ -94,7 +94,7 @@ class JubileeBookController extends Controller
         $sidebardata = $sidebar->generate();
         $person = Person::where('uniqid',$person_uniqid)->first();
         $this_project = Project::where('id',$show_id)->first();
-        $projectmemory = Projectmemory::firstOrCreate(['person_id'=>$person->id, 'project_id' => $this_project->id]);
+        $projectmemory = Projectmemory::firstOrNew(['person_id'=>$person->id, 'project_id' => $this_project->id]);
         return view ('jubilee_book/step_3_edit', Compact('person','sidebardata','this_project','projectmemory'));
     }
 
@@ -104,14 +104,14 @@ class JubileeBookController extends Controller
         $sidebardata = $sidebar->generate();
         $person = Person::where('uniqid',$person_uniqid)->first();
         $this_essay = Essaytopic::where('id',$essay_id)->first();
-        $essaytopicanswer = Essaytopicanswer::firstOrCreate(['person_id'=>$person->id, 'essaytopic_id' => $this_essay->id]);
+        $essaytopicanswer = Essaytopicanswer::firstOrNew(['person_id'=>$person->id, 'essaytopic_id' => $this_essay->id]);
         return view ('jubilee_book/step_3_edit_essay', Compact('person','sidebardata','this_essay','essaytopicanswer'));
     }
 
     public function step_3_store(Request $request, $person_uniqid, $project_id)
     {
         $person = Person::where('uniqid',$person_uniqid)->first();
-        $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project_id)->first();
+        $projectmemory = Projectmemory::firstOrNew(['person_id'=>$person->id, 'project_id' => $project_id]);
         $projectmemory->participation_level = $request->input('participation_level');
         $projectmemory->production_memories = $request->input('production_memories');
         $projectmemory->performance_memories = $request->input('performance_memories');
@@ -123,7 +123,7 @@ class JubileeBookController extends Controller
     public function step_3_essay_store(Request $request, $person_uniqid, $essay_id)
     {
         $person = Person::where('uniqid',$person_uniqid)->first();
-        $essaytopicanswer = Essaytopicanswer::where('person_id',$person->id)->where('essaytopic_id',$essay_id)->first();
+        $essaytopicanswer = Essaytopicanswer::firstOrNew(['person_id'=>$person->id, 'essaytopic_id' => $essay_id]);
         if (is_array($request->input('answer_question_1'))) {
             $essaytopicanswer->answer_question_1 = implode (';', $request->input('answer_question_1'));
         } else {

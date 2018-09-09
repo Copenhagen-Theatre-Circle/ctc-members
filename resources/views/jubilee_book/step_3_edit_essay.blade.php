@@ -112,7 +112,7 @@
                               <div class="control">
                                 <label class="checkbox">
                                   <input type="checkbox" value="1" name="completed" @if($essaytopicanswer->completed == 1) checked @endif @click="changed()">
-                                  My entry for this show is complete.
+                                  My entry for this essay is complete.
                                 </label>
                               </div>
                             </div>
