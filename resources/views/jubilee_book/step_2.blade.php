@@ -17,7 +17,7 @@
          <div class="column is-three-quarters">
           <div class="card">
             <div class="card-content">
-              <h3 class="title is-5">Please select the shows you were active in from the selected decades:</h3>
+              <h3 class="title is-5">Please select the shows you were active in from the selected decades or that you watched as an audience member, and would like to talk about:</h3>
               <div style="column-count: 2;">
                 @foreach ($projects as $project)
                   <div class="field">

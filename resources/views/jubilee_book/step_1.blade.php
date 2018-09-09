@@ -18,7 +18,9 @@
             <div class="card-content">
               <div class="columns">
                 <div class="column">
-                  <h3 class="title is-5">Please select the decades you were active in the CTC.</h3>
+                  <h3 class="title is-5">Please select your decades.</h3>
+                   <p class="is-size-7">In step 2 you will be able to select the shows you would like to talk about. To narrow this list down, please select the decades you were active in the CTC (be it as a cast or crew member or audience member):</p>
+                    <br>
                   @foreach ($decades_selectable as $decade_checkbox)
                     <div class="field">
                       <div class="control">

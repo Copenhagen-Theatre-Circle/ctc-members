@@ -15,73 +15,11 @@
         <div class="card">
             <div class="card-content">
                 <div class="columns">
-                    <div class="column is-3 has-background-white-bis">
-                        <nav class="menu">
-                            <ul class="menu-list">
-                                <li>
-                                    <a href="../../step-3">
-                                        <span class="icon">
-                                            <i class="fas fa-align-justify"></i>
-                                        </span>
-                                        Instructions for Step 3
-                                    </a>
-                                </li>
-                                <hr>
-                                <p class="menu-label">
-                                    Select a Show:
-                                </p>
-                                @foreach ($projects as $project)
-                                    <li>
-                                        <a href="../{{$project->id}}/edit" @if ($project->id == $this_project->id) class='is-active' @endif v-if="!save">
-                                            <span class="icon
-                                                @if ($project->id == $this_project->id)
-                                                    has-text-white
-                                                @elseif ($project->completion=='complete')
-                                                    has-text-success
-                                                @elseif ($project->completion=='in progress')
-                                                    has-text-warning
-                                                @elseif ($project->completion=='empty')
-                                                    has-text-danger
-                                                @endif
-                                                ">
-                                                @if ($project->completion =='complete')
-                                                   <i class="fas fa-check-circle"></i>
-                                                @elseif ($project->completion == 'in progress')
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                @elseif ($project->completion == 'empty')
-                                                    <i class="fas fa-times-circle"></i>
-                                                @endif
-                                            </span>
-                                            {{$project->name}}
-                                        </a>
-                                        <a @if ($project->id == $this_project->id) class='is-active' @endif v-if="save" @click="modal()" v-cloak>
-                                            <span class="icon
-                                                @if ($project->id == $this_project->id)
-                                                    has-text-white
-                                                @elseif ($project->completion=='complete')
-                                                    has-text-success
-                                                @elseif ($project->completion=='in progress')
-                                                    has-text-warning
-                                                @elseif ($project->completion=='empty')
-                                                    has-text-danger
-                                                @endif
-                                                ">
-                                                @if ($project->completion =='complete')
-                                                   <i class="fas fa-check-circle"></i>
-                                                @elseif ($project->completion == 'in progress')
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                @elseif ($project->completion == 'empty')
-                                                    <i class="fas fa-times-circle"></i>
-                                                @endif
-                                            </span>
-                                            {{$project->name}}
-                                        </a>
-                                    </li>
-                                @endforeach
-                                <hr>
-
-                            </ul>
-                        </nav>
+                    <div class="column is-3 has-background-white-bis" v-if="!save">
+                        @include('jubilee_book/sidebar', ['person' => $person, 'sidebardata' => $sidebardata, 'type' => 'show', 'id'=>$this_project->id])
+                    </div>
+                    <div class="column is-3 has-background-white-bis" v-if="save" v-cloak>
+                        @include('jubilee_book/sidebar_deactivated', ['person' => $person, 'sidebardata' => $sidebardata, 'type' => 'show', 'id'=>$this_project->id])
                     </div>
                     <div class="column" style="padding-left:2rem;padding-right:2rem;">
                         <div class="columns">
@@ -95,64 +33,64 @@
                             </div>
                         </div>
 
-                    <form action="{{ route ('jubilee.step3.store', [$person->uniqid,$this_project->id]) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route ('jubilee.step3.store', [$person->uniqid,$this_project->id]) }}" method="post" enctype="multipart/form-data">
 
-                        {{csrf_field()}}
+                            {{csrf_field()}}
 
-                        <div class="field">
-                          <label class="label">What was your level of participation in this show (cast, crew, audience, other)?</label>
-                          <div class="control">
-                            <textarea class="textarea" placeholder="your answer" name="participation_level" @keydown="changed()">{{$projectmemory->participation_level}}</textarea>
-                          </div>
-                        </div>
+                            <div class="field">
+                              <label class="label">What was your level of participation in this show (cast, crew, audience, other)?</label>
+                              <div class="control">
+                                <textarea class="textarea" placeholder="your answer" name="participation_level" @keydown="changed()">{{$projectmemory->participation_level}}</textarea>
+                              </div>
+                            </div>
+                            <br>
+
+                            <div class="field">
+                              <label class="label">What do you remember most about putting this production together? Why did we choose to do this show? What was it like backstage? What were some challenges the production faced?</label>
+                              <p class="help">(Please be specific and share detailed stories.)</p>
+                              <div class="control">
+                                <textarea class="textarea" placeholder="your answer" name="production_memories" @keydown="changed()">{{$projectmemory->production_memories}}</textarea>
+                              </div>
+                            </div>
+                            <br>
+
+                            <div class="field">
+                              <label class="label">What do you remember most about the performance(s)? Do any particular performers, scenes, songs, etc. stand out to you now and why? How did you feel on opening night? What about on closing night?</label>
+                              <div class="control">
+                                <textarea class="textarea" placeholder="your answer" name="performance_memories" @keydown="changed()">{{$projectmemory->performance_memories}}</textarea>
+                              </div>
+                            </div>
+                            <br>
+
+                            <div class="field">
+                            <label class="label">You can return to the form to edit your entry later on. However, if your entry is complete, please indicate so here.</label>
+                              <div class="control">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="1" name="completed" @if($projectmemory->completed == 1) checked @endif @click="changed()">
+                                  My entry for this show is complete.
+                                </label>
+                              </div>
+                            </div>
+
+                            <hr>
+
+                            <a href="javascript:window.location.href=window.location.href" class="button is-outlined is-danger is-pulled-left" v-if="save" v-cloak>
+                                <span class="icon">
+                                    <i class="fas fa-ban"></i>
+                                </span>
+                                &nbsp; cancel changes
+                            </a>
+
+                            <button type="submit" class="button is-danger is-pulled-right">
+                                <span class="icon">
+                                    <i class="far fa-save"></i>
+                                </span>
+                                &nbsp; save
+                            </button>
+
+                        </form>
                         <br>
-
-                        <div class="field">
-                          <label class="label">What do you remember most about putting this production together? Why did we choose to do this show? What was it like backstage? What were some challenges the production faced?</label>
-                          <p class="help">(Please be specific and share detailed stories.)</p>
-                          <div class="control">
-                            <textarea class="textarea" placeholder="your answer" name="production_memories" @keydown="changed()">{{$projectmemory->production_memories}}</textarea>
-                          </div>
-                        </div>
-                        <br>
-
-                        <div class="field">
-                          <label class="label">What do you remember most about the performance(s)? Do any particular performers, scenes, songs, etc. stand out to you now and why? How did you feel on opening night? What about on closing night?</label>
-                          <div class="control">
-                            <textarea class="textarea" placeholder="your answer" name="performance_memories" @keydown="changed()">{{$projectmemory->performance_memories}}</textarea>
-                          </div>
-                        </div>
-                        <br>
-
-                        <div class="field">
-                        <label class="label">You can return to the form to edit your entry later on. However, if your entry is complete, please indicate so here.</label>
-                          <div class="control">
-                            <label class="checkbox">
-                              <input type="checkbox" value="1" name="completed" @if($projectmemory->completed == 1) checked @endif @click="changed()">
-                              My entry for this show is complete.
-                            </label>
-                          </div>
-                        </div>
-
-                        <hr>
-
-                        <a href="javascript:window.location.href=window.location.href" class="button is-outlined is-danger is-pulled-left" v-if="save" v-cloak>
-                            <span class="icon">
-                                <i class="fas fa-ban"></i>
-                            </span>
-                            &nbsp; cancel changes
-                        </a>
-
-                        <button type="submit" class="button is-danger is-pulled-right">
-                            <span class="icon">
-                                <i class="far fa-save"></i>
-                            </span>
-                            &nbsp; save
-                        </button>
-
-                    </form>
-                    <br>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
