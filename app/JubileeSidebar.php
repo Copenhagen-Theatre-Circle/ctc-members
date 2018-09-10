@@ -24,6 +24,7 @@ class JubileeSidebar
         //projects
         $project_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('shows')->first());
         $projects = Project::whereIn('id',$project_ids)->orderBy('year')->get();
+        $new_project_array = array();
         foreach ($projects as $project) {
             $projectmemory = Projectmemory::where('person_id',$person->id)->where('project_id',$project->id)->first();
             $project->completion = $projectmemory->completion ?? 'empty';
@@ -34,6 +35,7 @@ class JubileeSidebar
         //series
         $series_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('series')->first());
         $series = Essaytopic::whereIn('id',$series_ids)->get();
+        $new_series_array = array();
         foreach ($series as $serie) {
             $essaytopicanswer = Essaytopicanswer::where('person_id',$person->id)->where('essaytopic_id',$serie->id)->first();
             $serie->completion = $essaytopicanswer->completion ?? 'empty';
@@ -44,6 +46,7 @@ class JubileeSidebar
         //essays
         $essay_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('essays')->first());
         $essays = Essaytopic::whereIn('id',$essay_ids)->get();
+        $new_essays_array = array();
         foreach ($essays as $essay) {
             $essaytopicanswer = Essaytopicanswer::where('person_id',$person->id)->where('essaytopic_id',$essay->id)->first();
             $essay->completion = $essaytopicanswer->completion ?? 'empty';

@@ -41,9 +41,9 @@ class JubileeBookController extends Controller
         $essays = $request->input('essays');
         $person_id = Person::where('uniqid',$person_uniqid)->pluck('id')->first();
         $jubileeEntry = JubileeBookAnswer::firstOrNew(['person_id' => $person_id]);
-        $jubileeEntry->decades = implode(';', $decades);
-        $jubileeEntry->series = implode(';', $series);
-        $jubileeEntry->essays = implode(';', $essays);
+        if (is_array($decades)) { $jubileeEntry->decades = implode(';', $decades);} else { $jubileeEntry->decades = '';}
+        if (is_array($series)) { $jubileeEntry->series = implode(';', $series);} else { $jubileeEntry->series = '';}
+        if (is_array($essays)) { $jubileeEntry->essays = implode(';', $essays);} else { $jubileeEntry->essays = '';}
         $jubileeEntry->person_id = $person_id;
         $jubileeEntry->save();
         return redirect('jubilee-book/'.$person_uniqid.'/step-2');
