@@ -41,7 +41,7 @@ class JubileeSidebar
             $serie->completion = $essaytopicanswer->completion ?? 'empty';
             $new_series_array[]=$serie;
         }
-        $array['series'] = $new_series_array;
+        if ($new_series_array) {$array['series'] = $new_series_array;}
 
         //essays
         $essay_ids = explode (';',JubileeBookAnswer::where('person_id',$person->id)->pluck('essays')->first());
@@ -52,7 +52,7 @@ class JubileeSidebar
             $essay->completion = $essaytopicanswer->completion ?? 'empty';
             $new_essays_array[]=$essay;
         }
-        $array['essays'] = $new_essays_array;
+        if ($new_essays_array) {$array['essays'] = $new_essays_array;}
 
         return $array;
 

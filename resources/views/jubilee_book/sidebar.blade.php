@@ -14,7 +14,7 @@
         <hr>
         @foreach ($sidebardata as $key => $sidebargroup)
         <p class="menu-label">
-            {{array ('Shows:', 'Series:', 'Essays:')[$loop->index]}}
+            {{$key}}:
         </p>
             @foreach ($sidebargroup as $sidebaritem)
                 <li>
