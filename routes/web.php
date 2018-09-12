@@ -68,6 +68,9 @@ Route::post('/jubilee-book/{person_id}/step-3/{show_id}/store','JubileeBookContr
 Route::get('/jubilee-book/{person_id}/step-3/essays/{essay_id}/edit','JubileeBookController@step_3_essay_edit');
 Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeBookController@step_3_essay_store')->name('jubilee.step3_essay.store');
 
+Route::get('/upload-file','FilesController@create');
+Route::post('/upload-file','FilesController@uploadFile');
+
 // Route::resource('audition_form_answers', 'AuditionFormAnswersController');
 
 // Route::resource('comments','CommentsController');
