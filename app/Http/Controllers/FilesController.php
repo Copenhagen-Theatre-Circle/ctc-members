@@ -26,7 +26,7 @@ class FilesController extends Controller
         );
 
         if($validator->passes()){
-            Storage::disk('public')->put($file->getClientOriginalName(), $file);
+            Storage::disk('public')->put('images', $file);
             return 'File uploaded successfully.';
         }else{
             return response()->json([
