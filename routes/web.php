@@ -71,34 +71,25 @@ Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeB
 Route::get('/upload-file','FilesController@create');
 Route::post('/upload-file','FilesController@uploadFile');
 
-// Route::resource('audition_form_answers', 'AuditionFormAnswersController');
-
-// Route::resource('comments','CommentsController');
-
-// Route::resource('events','EventController');
-
-// Route::resource('groupmessage','GroupMessageController');
-
-// Route::resource('message','MessageController');
-
-// Route::resource('person','PersonController');
-
-// Route::resource('posts','PostController');
-
-// Route::resource('auditions','AuditionController');
-
-// Route::resource('projects','ProjectController');
-
-// Route::resource('preferences','UserpreferenceController');
-
-// Route::resource('memberbenefits','MemberbenefitController');
-
-// Route::resource('suggestions','SuggestionController');
-
-// Route::resource('ticketsales','TicketsalesController');
-
-// Route::resource('test', 'TestController');
 
 Route::get('message/confirmation',function(){
   return view('contactconfirmation');
 });
+
+Route::get('storage/{filename}', function ($filename)
+{
+    // Add folder path here instead of storing in the database.
+    $path = storage_path('app/public/' . $filename);
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
