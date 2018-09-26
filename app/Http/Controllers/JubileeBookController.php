@@ -7,6 +7,7 @@ use App\Person;
 use App\JubileeBookAnswer;
 use App\Project;
 use App\Projectmemory;
+use App\Photograph;
 use App\Essaytopic;
 use App\Essaytopicanswer;
 use App\JubileeSidebar;
@@ -95,7 +96,9 @@ class JubileeBookController extends Controller
         $person = Person::where('uniqid',$person_uniqid)->first();
         $this_project = Project::where('id',$show_id)->first();
         $projectmemory = Projectmemory::firstOrNew(['person_id'=>$person->id, 'project_id' => $this_project->id]);
-        return view ('jubilee_book/step_3_edit', Compact('person','sidebardata','this_project','projectmemory'));
+        $photographs = Photograph::where('uploader_person_id', $person->id)->whereHas('phototags', function ($query) use ($this_project) {$query->where('project_id', $this_project->id);})->get();
+        // return $photographs;
+        return view ('jubilee_book/step_3_edit', Compact('person','sidebardata','this_project','projectmemory', 'photographs'));
     }
 
     public function step_3_essay_edit($person_uniqid, $essay_id)

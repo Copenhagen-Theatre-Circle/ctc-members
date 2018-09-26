@@ -165,6 +165,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Merujan99\LaravelVideoEmbed\Providers\LaravelVideoEmbedServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         // Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'LaravelVideoEmbed' => Merujan99\LaravelVideoEmbed\Facades\LaravelVideoEmbed::class,
+        'Image' => Intervention\Image\Facades\Image::class,
         // 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],

@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/bulma_app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="/css/dropzone.css" rel="stylesheet">
     <style type="text/css">
         [v-cloak] {
           display: none !important;
@@ -21,6 +22,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/dropzone.js') }}"></script>
 
 </head>
 <body>

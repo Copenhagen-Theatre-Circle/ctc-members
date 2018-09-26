@@ -76,20 +76,10 @@ Route::get('message/confirmation',function(){
   return view('contactconfirmation');
 });
 
-Route::get('storage/{filename}', function ($filename)
-{
-    // Add folder path here instead of storing in the database.
-    $path = storage_path('app/public/' . $filename);
-    if (!File::exists($path)) {
-        abort(404);
-    }
+// Route::get('/storage', function (){
+//     return 'hello world';
+// });
 
-    $file = File::get($path);
-    $type = File::mimeType($path);
-
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
-
-    return $response;
-});
+Route::get('/files/thumb/{filename}', 'ImageController@showThumb')->name('thumbnail');
+Route::get('/files/{filename}', 'ImageController@show')->name('file');
 
