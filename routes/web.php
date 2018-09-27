@@ -80,6 +80,6 @@ Route::get('message/confirmation',function(){
 //     return 'hello world';
 // });
 
-Route::get('/files/thumb/{filename}', 'ImageController@showThumb')->name('thumbnail');
-Route::get('/files/{filename}', 'ImageController@show')->name('file');
+// Route::get('/files/thumb/{filename}', 'ImageController@showThumb')->name('thumbnail');
+// Route::get('/files/{filename}', 'ImageController@show')->name('file');
 

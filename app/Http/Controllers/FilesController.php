@@ -34,17 +34,18 @@ class FilesController extends Controller
         $phototag->save();
 
         //save original file
-        $request->file('file')->storeAs('public/originals', $filename );
+        move_uploaded_file($_FILES["file"]["tmp_name"], "files/" . $filename);
+        // $request->file('file')->storeAs('public/originals', $filename );
 
         //save thumbnail
-        $thumbnailable_formats = array ( 'jpg', 'jpeg', 'png', 'gif', 'bmp' );
-        if ( in_array($extension, $thumbnailable_formats ) ) {
-            $img = Image::make($request->file('file'));
-            $img->resize(100, null, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            $img->save(storage_path('app/public/thumbs/' . $filename));
-        }
+        // $thumbnailable_formats = array ( 'jpg', 'jpeg', 'png', 'gif', 'bmp' );
+        // if ( in_array($extension, $thumbnailable_formats ) ) {
+        //     $img = Image::make($request->file('file'));
+        //     $img->resize(100, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     });
+        //     $img->save(storage_path('app/public/thumbs/' . $filename));
+        // }
 
         // $img->save(storage_path('app/public/images/' . $photo->id . '.jpg'));
 

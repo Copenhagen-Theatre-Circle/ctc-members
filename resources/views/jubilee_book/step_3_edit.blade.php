@@ -101,14 +101,14 @@
                                   <td>{{$photograph->original_file_name}}</td>
                                   <td>
                                     @if (strpos($photograph->file_name, '.jpg') or strpos($photograph->file_name, '.png') or strpos($photograph->file_name, '.gif') or strpos($photograph->file_name, '.bmp') )
-                                      <img src="{{ route('thumbnail', $photograph->file_name ) }}">
+                                      <img src="https://res.cloudinary.com/dvkannauv/image/fetch/w_100,h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
                                       {{strpos($photograph->file_name, '.png')}}
                                     @else
                                       <img src="{{ route('thumbnail', 'fileicon.png' ) }}">
                                     @endif
                                   </td>
                                   <td>
-                                    <a class="button" href="{{ route ('file', $photograph->file_name) }}" target="_blank">view</a>
+                                    <a class="button" href="/files/{{$photograph->file_name}}" target="_blank">view</a>
                                   </td>
                                 </tr>
                               @endforeach
