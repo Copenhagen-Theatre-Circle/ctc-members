@@ -104,7 +104,7 @@
                                       <img src="https://res.cloudinary.com/dvkannauv/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
                                       {{strpos($photograph->file_name, '.png')}}
                                     @else
-                                      <img src="https://res.cloudinary.com/dvkannauv/image/fetch/h_110/https://ctc-members.dk/files/fileicon.png">
+                                      <img src="/files/fileicon.png">
                                     @endif
                                   </td>
                                   <td>
