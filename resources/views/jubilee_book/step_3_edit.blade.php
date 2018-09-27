@@ -101,7 +101,7 @@
                                   <td>{{$photograph->original_file_name}}</td>
                                   <td>
                                     @if (strpos($photograph->file_name, '.jpg') or strpos($photograph->file_name, '.png') or strpos($photograph->file_name, '.gif') or strpos($photograph->file_name, '.bmp') )
-                                      <img src="https://res.cloudinary.com/dvkannauv/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
+                                      <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
                                       {{strpos($photograph->file_name, '.png')}}
                                     @else
                                       <img src="/files/fileicon.png">
