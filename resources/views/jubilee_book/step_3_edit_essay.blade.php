@@ -26,7 +26,6 @@
                       <div class="columns">
                           <div class="column is-7">
                               <h3 class="title is-3">{{$this_essay->name}}</h3>
-                              {{-- <h4 class="subtitle is-4">{{$this_project->year}}</h4> --}}
                           </div>
                           <div class="column">
                               <h3 class="title is-4 is-pulled-right has-text-danger" style="margin-bottom: 0.5rem;" v-if="save" v-cloak>Remember to save when done!</h3>
@@ -117,7 +116,7 @@
                               </div>
                             </div>
 
-                            <hr>
+                            <br>
 
                             <a href="javascript:window.location.href=window.location.href" class="button is-outlined is-danger is-pulled-left" v-if="save" v-cloak>
                                 <span class="icon">
@@ -134,6 +133,47 @@
                             </button>
 
                         </form>
+
+                        <br><br>
+                        <hr>
+
+
+                        <div>
+                          <h4 class="subtitle is-4">Pictures, Documents and Scans</h4>
+                          @if ($photographs->count()>0)
+                          <div class="field">
+                            <label class="label">You have uploaded the following files:</label>
+                            <table class="table is-bordered">
+                              @foreach ($photographs as $photograph)
+                                <tr>
+                                  <td>{{$photograph->original_file_name}}</td>
+                                  <td>
+                                    @if (strpos($photograph->file_name, '.jpg') or strpos($photograph->file_name, '.png') or strpos($photograph->file_name, '.gif') or strpos($photograph->file_name, '.bmp') )
+                                      <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
+                                      {{strpos($photograph->file_name, '.png')}}
+                                    @else
+                                      <img src="/files/fileicon.png">
+                                    @endif
+                                  </td>
+                                  <td>
+                                    <a class="button" href="/files/{{$photograph->file_name}}" target="_blank">view</a>
+                                  </td>
+                                </tr>
+                              @endforeach
+                            </table>
+                          </div>
+                          <br>
+                          @endif
+                          <div class="field">
+                            <label class="label">Please upload any @if ($photographs->count()>0) other @endif relevant photographs, scans or documents here (max 10 MB).</label>
+                          </div>
+                          <form action="/upload-file" class="dropzone" id="upload-file-form" name="upload-file-form" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="person_id" value="{{$person->id}}">
+                            <input type="hidden" name="essaytopic_id" value="{{$this_essay->id}}">
+                              {{csrf_field()}}
+                              <div class="dz-message" data-dz-message><span>Drop files here or click to upload.</span></div>
+                          </form>
+                        </div>
 
                     </div>
                 </div>
@@ -181,6 +221,24 @@
           }
         }
     });
+</script>
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#upload-file-form', {
+            // paramName: "files",
+            url: '/upload-file',
+            method: 'post',
+            maxFilesize: 10,
+            maxFiles: 4,
+            parallelUploads: 4,
+            uploadMultiple: false,
+            autoProcessQueue: true,
+            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc",
+            addRemoveLinks: false,
+        });
+        $('#btnUpload').on('click', function(){
+            myDropzone.processQueue();
+        });
 </script>
 @endsection
 

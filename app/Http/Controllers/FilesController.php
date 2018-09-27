@@ -31,6 +31,7 @@ class FilesController extends Controller
         $phototag = new Phototag;
         $phototag->photograph_id = $photo->id;
         $phototag->project_id = $request->input('project_id');
+        $phototag->essaytopic_id = $request->input('essaytopic_id');
         $phototag->save();
 
         //save original file

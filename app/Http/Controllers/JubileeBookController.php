@@ -108,7 +108,8 @@ class JubileeBookController extends Controller
         $person = Person::where('uniqid',$person_uniqid)->first();
         $this_essay = Essaytopic::where('id',$essay_id)->first();
         $essaytopicanswer = Essaytopicanswer::firstOrNew(['person_id'=>$person->id, 'essaytopic_id' => $this_essay->id]);
-        return view ('jubilee_book/step_3_edit_essay', Compact('person','sidebardata','this_essay','essaytopicanswer'));
+        $photographs = Photograph::where('uploader_person_id', $person->id)->whereHas('phototags', function ($query) use ($this_essay) {$query->where('essaytopic_id', $this_essay->id);})->get();
+        return view ('jubilee_book/step_3_edit_essay', Compact('person','sidebardata','this_essay','essaytopicanswer', 'photographs'));
     }
 
     public function step_3_store(Request $request, $person_uniqid, $project_id)
