@@ -33,6 +33,13 @@ function string_or_empty($variable) {
   }
 }
 
+function is_thumbnailable($filename) {
+    $array = array ('jpg','gif','png','bmp','jpeg');
+    $extension = strtolower (pathinfo($filename)['extension']);
+    $is_thumbnailable = in_array ( $extension , $array );
+    return $is_thumbnailable;
+}
+
 function place2bookAPI ($endpoint) {
 
   $uri = 'https://place2book.com/da/' . $endpoint;

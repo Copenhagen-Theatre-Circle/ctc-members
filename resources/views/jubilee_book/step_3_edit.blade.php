@@ -94,15 +94,14 @@
                           <h4 class="subtitle is-4">Pictures, Documents and Scans</h4>
                           @if ($photographs->count()>0)
                           <div class="field">
-                            <label class="label">You have uploaded the following files:</label>
+                            <label class="label">The following files have already been uploaded for this show:</label>
                             <table class="table is-bordered">
                               @foreach ($photographs as $photograph)
                                 <tr>
                                   <td>{{$photograph->original_file_name}}</td>
                                   <td>
-                                    @if (strpos($photograph->file_name, '.jpg') or strpos($photograph->file_name, '.png') or strpos($photograph->file_name, '.gif') or strpos($photograph->file_name, '.bmp') )
+                                    @if ( is_thumbnailable ($photograph->file_name) )
                                       <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
-                                      {{strpos($photograph->file_name, '.png')}}
                                     @else
                                       <img src="/files/fileicon.png">
                                     @endif
@@ -117,7 +116,7 @@
                           <br>
                           @endif
                           <div class="field">
-                            <label class="label">Please upload any @if ($photographs->count()>0) other @endif relevant photographs, scans or documents here (max 5 MB).</label>
+                            <label class="label">Please upload any @if ($photographs->count()>0) other @endif relevant photographs, scans or documents here (max 10 MB).</label>
                           </div>
                           <form action="/upload-file" class="dropzone" id="upload-file-form" name="upload-file-form" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="person_id" value="{{$person->id}}">
@@ -179,12 +178,12 @@
             // paramName: "files",
             url: '/upload-file',
             method: 'post',
-            maxFilesize: 5,
-            maxFiles: 4,
+            maxFilesize: 10,
+            maxFiles: 10,
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc",
+            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
             addRemoveLinks: false,
         });
         $('#btnUpload').on('click', function(){
