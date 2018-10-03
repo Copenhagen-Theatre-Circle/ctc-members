@@ -160,8 +160,8 @@ class PersonController extends Controller
         $reformed['last_name']=$person->last_name;
         $reformed['biography']=$person->member_bio;
         // $reformed['roles']=$person->roles;
-        if(!empty($person->portrait)){
-          $reformed['portrait']=$person->portrait;
+        if(!empty($person->portraits[0])){
+          $reformed['portrait']=$person->portraits[0]['file_name'];
         } else {
           $reformed['portrait']='unisex_silhouette.png';
         }
