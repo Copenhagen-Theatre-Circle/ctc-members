@@ -150,7 +150,8 @@
 
                             @if (!empty($person->main_portrait()))
 
-                              <img src="https://ctc-members-balmec.imgix.net/{{$person->main_portrait()}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
+                              {{-- <img src="https://ctc-members-balmec.imgix.net/{{$person->main_portrait()}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "> --}}
+                              <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_123/https://ctc-members.dk/media/{{$person->main_portrait()}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; ">
                               {{-- <img src="https://ctc-members.dk/media/thumb_200/{{$person->main_portrait()}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "> --}}
 
                             @else
