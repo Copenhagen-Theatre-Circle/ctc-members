@@ -124,7 +124,7 @@ class PersonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function 
+    public function store()
     {
         //
     }

@@ -9,7 +9,7 @@
             <li class="breadcrumb-item"><a href="/auditions">Projects</a></li>
             <li class="breadcrumb-item"><a href="/auditions/{{$auditionFormAnswer->project->id}}">{{$auditionFormAnswer->project->name}}</a></li>
             <li class="breadcrumb-item">{{$auditionFormAnswer->person->first_name}} {{$auditionFormAnswer->person->last_name}}</li>
-            <div class="float-right">
+            <div class="pl-5 float-right">
                 {{$currentrecord}}/{{$count}}
             </div>
           </ol>
@@ -26,7 +26,7 @@
 
                       <div class="row">
                         <div class="col-sm-2 col-xs-12 pr-0">
-                          <img src="https://ctc-members-balmec.imgix.net/{{$auditionFormAnswer->person->portrait}}?fit=crop&w=123&h=123&crop=faces&facepad=1.7&fit=facearea" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
+                          <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_150,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$auditionFormAnswer->person->portraits[0]['file_name'] or ''}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
                         </div>
                         <div class="col-sm-8 col-xs-12 pl-0">
                           <h1 class="display-5">{{$auditionFormAnswer->person->first_name}} {{$auditionFormAnswer->person->last_name}}</h1>

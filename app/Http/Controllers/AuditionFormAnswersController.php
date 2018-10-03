@@ -74,27 +74,27 @@ class AuditionFormAnswersController extends Controller
         if (!empty($answer->functiongroup_id)) {
 
           //sort order field = key, to ensure correct order
-          $sort_id = $answer->functiongroups->sort_order;
-          $reformed['general_interests'][$sort_id]['name'] = $answer->functiongroups->questionnaire_name;
-          $reformed['general_interests'][$sort_id]['color_hex'] = $answer->functiongroups->color_hex;
+          $sort_id = $answer->functiongroup['sort_order'];
+          $reformed['general_interests'][$sort_id]['name'] = $answer->functiongroup->questionnaire_name;
+          $reformed['general_interests'][$sort_id]['color_hex'] = $answer->functiongroup->color_hex;
 
         }
 
         elseif (!empty($answer->function_id) && !empty($answer->has_experience) && $answer->interest==1) {
 
           //sort order field = key, to ensure correct order
-          $sort_id = $answer->functions->functiongroups->sort_order . "_" . $answer->functions->sort_order;
-          $reformed['experience'][$sort_id]['name'] = $answer->functions->questionnaire_name;
-          $reformed['experience'][$sort_id]['color_hex'] = $answer->functions->functiongroups->color_hex;
+          $sort_id = $answer->crewfunction->functiongroup->sort_order . "_" . $answer->crewfunction->sort_order;
+          $reformed['experience'][$sort_id]['name'] = $answer->crewfunction->questionnaire_name;
+          $reformed['experience'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
 
         }
 
         elseif (!empty($answer->function_id) && !empty($answer->wants_to_learn) && $answer->interest==1) {
 
           //sort order field = key, to ensure correct order
-          $sort_id = $answer->functions->functiongroups->sort_order . "_" . $answer->functions->sort_order;
-          $reformed['wants_to_learn'][$sort_id]['name'] = $answer->functions->questionnaire_name;
-          $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->functions->functiongroups->color_hex;
+          $sort_id = $answer->crewfunction->functiongroup->sort_order . "_" . $answer->crewfunction->sort_order;
+          $reformed['wants_to_learn'][$sort_id]['name'] = $answer->crewfunction->questionnaire_name;
+          $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
 
         }
 

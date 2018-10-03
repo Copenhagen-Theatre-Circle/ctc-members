@@ -69,7 +69,7 @@
                           <div class="card-body">
                             <h4 class="card-title">The Network</h4>
                             <p class="card-text">Browse a list of current members, plus other people who have filled in the questionnaire or who have been active in the CTC over the past 5 years.</p>
-                            <a href="/membership" class="btn btn-primary">CTC Network</a>
+                            <a href="/people" class="btn btn-primary">CTC Network</a>
                           </div>
                         </div>
 
