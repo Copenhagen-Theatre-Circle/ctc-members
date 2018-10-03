@@ -18,5 +18,10 @@
         "lodash": "^4.17.10",
         "popper.js": "^1.14.3",
         "vue": "^2.5.16"
+    },
+    "dependencies": {
+        "bulma": "^0.7.1",
+        "bulma-extensions": "^2.2.1",
+        "npm": "^6.4.0"
     }
 }

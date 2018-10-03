@@ -1,0 +1,14 @@
+//variables
+$ctc-red: #d10f22;
+$steps-completed-color: $ctc-red;
+$steps-active-color: $ctc-red;
+$link: $ctc-red;
+$danger: $ctc-red;
+$light-orange: hsl(28, 100%, 53%);
+$warning: $light-orange;
+
+//Bulma
+@import './node_modules/bulma/bulma.sass';
+
+// Import Extensions
+@import "./node_modules/bulma-extensions/bulma-steps/src/sass/index.sass"

@@ -33,6 +33,13 @@ function string_or_empty($variable) {
   }
 }
 
+function is_thumbnailable($filename) {
+    $array = array ('jpg','gif','png','bmp','jpeg');
+    $extension = strtolower (pathinfo($filename)['extension']);
+    $is_thumbnailable = in_array ( $extension , $array );
+    return $is_thumbnailable;
+}
+
 function place2bookAPI ($endpoint) {
 
   $uri = 'https://place2book.com/da/' . $endpoint;
@@ -75,9 +82,15 @@ function mapTicketType ($tickettype) {
     //standard tickets
     case 'Standard (reserved)';
     case 'Standard';
+    case 'Standard ticket';
+    case 'Standard overbooking';
     case 'Adults';
     case 'Adult';
     case 'voksen';
+    case 'VIP Table 1A';
+    case 'VIP Table 1B';
+    case 'VIP Table 2A';
+    case 'VIP Table 2B';
       $tickettype = "standard";
       break;
     //child tickets
@@ -89,16 +102,19 @@ function mapTicketType ($tickettype) {
     case 'Group 10-19 adults';
     case 'Split Group 10-19';
     case 'Group 10-19 (reserved)';
+    case 'Group (10-19 tickets)';
       $tickettype = "group_10_to_19";
       break;
     //group 20+
     case 'Group 20+';
     case 'Group 20+ (reserved)';
     case 'Extra group tickets (over 20)';
+    case 'Group (20 and up)';
       $tickettype = "group_20_or_more";
       break;
     //membership
     case 'Membership Ticket';
+    case 'Membership ticket';
       $tickettype = "membership_adult";
       break;
     //membership child
@@ -124,10 +140,16 @@ function mapTicketTypeID ($tickettype) {
     //standard tickets
     case 'Standard (reserved)';
     case 'Standard';
+    case 'Standard ticket';
+    case 'Standard overbooking';
     case 'Adults';
     case 'Adult';
     case 'Adult (reserved)';
     case 'voksen';
+    case 'VIP Table 1A';
+    case 'VIP Table 1B';
+    case 'VIP Table 2A';
+    case 'VIP Table 2B';
       $tickettype = 1;
       break;
     //child tickets
@@ -140,6 +162,7 @@ function mapTicketTypeID ($tickettype) {
     case 'Group 10-19 adults';
     case 'Split Group 10-19';
     case 'Group 10-19 (reserved)';
+    case 'Group (10-19 tickets)';
       $tickettype = 3;
       break;
     //group 20+
@@ -148,10 +171,12 @@ function mapTicketTypeID ($tickettype) {
     case 'LINK Group ticket adult';
     case 'LINK Group ticket child';
     case 'Extra group tickets (over 20)';
+    case 'Group (20 and up)';
       $tickettype = 4;
       break;
     //membership
     case 'Membership Ticket';
+    case 'Membership ticket';
       $tickettype = 5;
       break;
     //membership child

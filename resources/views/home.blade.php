@@ -15,10 +15,23 @@
 
 
 
-                    <div class="jumbotron pt-3 pb-2">
+                    <div class="jumbotron pt-3 pb-2 mb-3">
 
                       <h1 class="display-5" style="animation: fadein 2s;">Welcome, {{ explode(' ',trim(Auth::user()->name))[0]}}!</h1>
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
+                    </div>
+
+                    <div class="jumbotron bg-white p-3 mb-3" >
+                      <div class="row">
+                        <div class="col-auto">
+                          <img src="/media/book.jpg" style="height: 150px" class="img-fluid">
+                        </div>
+                        <div class="col">
+                          <h1 class="display-6">CTC 50th Anniversary Book Project</h1>
+                          <p class="lead">We are collecting memories, pictures and documentation from 50 years of activity, and need your help and input!</p>
+                          <a class="btn btn-outline-danger" href="jubilee-book/{{$user->uniqid()}}" target="_blank">Open the book form here!</a>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="jumbotron pt-3 pb-2 mb-4" style="min-height: 320px; background: no-repeat url('media/cabaret.jpg'); background-size: cover; background-position: 0% 80%; ">

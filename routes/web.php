@@ -56,34 +56,30 @@ Route::resources([
     'ticketsales' => 'TicketsalesController'
 ]);
 
-// Route::resource('audition_form_answers', 'AuditionFormAnswersController');
+Route::get('/jubilee-book/{person_id}','JubileeBookController@step_1');
+Route::get('/jubilee-book/{person_id}/step-1','JubileeBookController@step_1');
+Route::post('/jubilee-book/{person_id}/step-1','JubileeBookController@step_1_store')->name('jubilee.step1.store');
+Route::get('/jubilee-book/{person_id}/step-2','JubileeBookController@step_2');
+Route::post('/jubilee-book/{person_id}/step-2','JubileeBookController@step_2_store')->name('jubilee.step2.store');
+Route::get('/jubilee-book/{person_id}/step-3/','JubileeBookController@step_3_index');
+Route::get('/jubilee-book/{person_id}/step-3/{show_id}','JubileeBookController@step_3_show');
+Route::get('/jubilee-book/{person_id}/step-3/{show_id}/edit','JubileeBookController@step_3_edit');
+Route::post('/jubilee-book/{person_id}/step-3/{show_id}/store','JubileeBookController@step_3_store')->name('jubilee.step3.store');
+Route::get('/jubilee-book/{person_id}/step-3/essays/{essay_id}/edit','JubileeBookController@step_3_essay_edit');
+Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeBookController@step_3_essay_store')->name('jubilee.step3_essay.store');
 
-// Route::resource('comments','CommentsController');
+Route::get('/upload-file','FilesController@create');
+Route::post('/upload-file','FilesController@uploadFile');
 
-// Route::resource('events','EventController');
-
-// Route::resource('groupmessage','GroupMessageController');
-
-// Route::resource('message','MessageController');
-
-// Route::resource('person','PersonController');
-
-// Route::resource('posts','PostController');
-
-// Route::resource('auditions','AuditionController');
-
-// Route::resource('projects','ProjectController');
-
-// Route::resource('preferences','UserpreferenceController');
-
-// Route::resource('memberbenefits','MemberbenefitController');
-
-// Route::resource('suggestions','SuggestionController');
-
-// Route::resource('ticketsales','TicketsalesController');
-
-// Route::resource('test', 'TestController');
 
 Route::get('message/confirmation',function(){
   return view('contactconfirmation');
 });
+
+// Route::get('/storage', function (){
+//     return 'hello world';
+// });
+
+// Route::get('/files/thumb/{filename}', 'ImageController@showThumb')->name('thumbnail');
+// Route::get('/files/{filename}', 'ImageController@show')->name('file');
+
