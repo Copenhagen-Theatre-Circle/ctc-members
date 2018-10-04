@@ -102,10 +102,11 @@ class EventController extends Controller
           }
           // data extracted as needed
           foreach ($ticketarray as $ticket) {
-            if ($ticket['credited']=="false") {
-              $ticket_subarray['type'] = $ticket['type'];
-              $ticket_subarray['price'] = $ticket['price'];
-              $ticket_subarray['credited'] = $ticket['credited'];
+            if ($ticket['released']=="false" and $ticket['credited']=="false") {
+              $subarray['type'] = $ticket['type'];
+              $subarray['price'] = $ticket['price'];
+              $subarray['credited'] = $ticket['credited'];
+              $subarray['released'] = $ticket['released'];
               $ticket_amount += $ticket['price'];
               $ticket_count += 1;
             }
