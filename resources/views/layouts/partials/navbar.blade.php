@@ -1,4 +1,4 @@
-<nav class="navbar is-dark" style="background-color: #222; height: 75px;">
+<nav class="navbar is-dark is-fixed-top" style="background-color: #222; height: 75px;">
 
   <div class="container" style="max-width: 1140px; padding-left: 10px;">
 

@@ -18,7 +18,7 @@
           @include('layouts.partials.breadcrumb')
         @endif
         <!-- Content Box -->
-        <div class="row scrollbox">
+        <div class="row">
           <div class="col-md-12 col-md-offset-0">
             <div class="card light-transparency" style="border-radius: 5px;">
               @yield('content')

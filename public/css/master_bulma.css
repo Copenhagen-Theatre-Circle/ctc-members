@@ -2,6 +2,8 @@ body {
   background-color: black;
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../media/smoky-theatre.jpg') no-repeat center center fixed;
   background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 30px;
 }
 
 .navbar-item img {
@@ -65,7 +67,7 @@ hr {
     .scrollbox {
       height: 85vh;
       overflow-y: scroll;
-      padding-top: 1vh;
+      border-radius: 5px;
     }
 
     .dark-transparency {
