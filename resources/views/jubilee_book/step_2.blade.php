@@ -1,12 +1,8 @@
-@extends('layouts.app_simple_bulma')
+@extends('layouts.master')
 
-@section('title','CTC Jubilee Book')
+@section('title','50th Jubilee Book')
 
 @section('content')
-
-<div class="container">
-
-  @include('jubilee_book/navbar')
 
   <div class="section" style="padding-top: 20px;">
      @include ('jubilee_book/step_counter', ['step'=>2])
@@ -14,11 +10,11 @@
      <form action="{{ route ('jubilee.step2.store', $person->uniqid) }}" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
        <div class="columns is-centered">
-         <div class="column is-three-quarters">
+         <div class="column is-11">
           <div class="card">
             <div class="card-content">
               <h3 class="title is-5">Please select the shows you were active in from the selected decades or that you watched as an audience member, and would like to talk about:</h3>
-              <div style="column-count: 2;">
+              <div style="column-count: 3;">
                 @foreach ($projects as $project)
                   <div class="field">
                     <div class="control">
@@ -47,11 +43,6 @@
      </form>
 
   </div>
-
-
-
-
-</div>
 
 
 

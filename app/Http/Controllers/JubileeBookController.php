@@ -11,9 +11,17 @@ use App\Photograph;
 use App\Essaytopic;
 use App\Essaytopicanswer;
 use App\JubileeSidebar;
+use App\User;
 
 class JubileeBookController extends Controller
 {
+
+    public function redirect_to_user () {
+        $user_id = \Auth::user()->id;
+        $user = User::find($user_id);
+        return redirect ('jubilee-book/' . $user->uniqid());
+    }
+
     public function step_1($person_id)
     {
         $person = Person::where('uniqid',$person_id)->first();
@@ -30,9 +38,12 @@ class JubileeBookController extends Controller
         $decades_selectable = array('1969-1978','1979-1988','1989-1998','1999-2008','2009-2018');
         $series = Essaytopic::where('type','series')->get();
         $essaytopics = Essaytopic::where('type','essays')->get();
+        $suppress_breadcrumb = true;
+        $guest_name = $person->first_name . ' ' . $person->last_name;
+        $navbar_title = '50th Anniversary Book';
         // return $decades;
         // return $person;
-        return view ('jubilee_book/step_1', Compact('person','decades_selected','series_selected','essays_selected','decades_selectable','series','essaytopics'));
+        return view ('jubilee_book/step_1', Compact('person','decades_selected','series_selected','essays_selected','decades_selectable','series','essaytopics','guest_name', 'suppress_breadcrumb', 'navbar_title'));
     }
 
     public function step_1_store(Request $request, $person_uniqid)
@@ -62,7 +73,10 @@ class JubileeBookController extends Controller
                 $shows_selected = array();
             }
         $projects = Project::where('publish_book_flag',1)->whereIn('decade', $decades_selected)->orderBy('year')->get();
-        return view ('jubilee_book/step_2', Compact('person','projects','shows_selected'));
+        $suppress_breadcrumb = true;
+        $navbar_title = '50th Anniversary Book';
+        $guest_name = $person->first_name . ' ' . $person->last_name;
+        return view ('jubilee_book/step_2', Compact('person','projects','shows_selected','guest_name', 'suppress_breadcrumb', 'navbar_title'));
     }
 
     public function step_2_store(Request $request, $person_uniqid)
@@ -80,7 +94,10 @@ class JubileeBookController extends Controller
         $sidebar = new JubileeSidebar($person_id);
         $sidebardata = $sidebar->generate();
         $person = Person::where('uniqid',$person_id)->first();
-        return view ('jubilee_book/step_3_index',Compact('person','sidebardata'));
+        $suppress_breadcrumb = true;
+        $navbar_title = '50th Anniversary Book';
+        $guest_name = $person->first_name . ' ' . $person->last_name;
+        return view ('jubilee_book/step_3_index',Compact('person','sidebardata', 'guest_name', 'suppress_breadcrumb', 'navbar_title'));
     }
 
     public function step_3_show($person_id, $show_id)
@@ -99,8 +116,11 @@ class JubileeBookController extends Controller
         $photographs = Photograph::whereHas('phototags', function ($query) use ($this_project) {
             $query->where('project_id', $this_project->id);
             })->get();
+        $suppress_breadcrumb = true;
+        $navbar_title = '50th Anniversary Book';
+        $guest_name = $person->first_name . ' ' . $person->last_name;
         // return $photographs;
-        return view ('jubilee_book/step_3_edit', Compact('person','sidebardata','this_project','projectmemory', 'photographs'));
+        return view ('jubilee_book/step_3_edit', Compact('person','sidebardata','this_project','projectmemory', 'photographs', 'guest_name', 'suppress_breadcrumb', 'navbar_title'));
     }
 
     public function step_3_essay_edit($person_uniqid, $essay_id)
@@ -111,7 +131,10 @@ class JubileeBookController extends Controller
         $this_essay = Essaytopic::where('id',$essay_id)->first();
         $essaytopicanswer = Essaytopicanswer::firstOrNew(['person_id'=>$person->id, 'essaytopic_id' => $this_essay->id]);
         $photographs = Photograph::whereHas('phototags', function ($query) use ($this_essay) {$query->where('essaytopic_id', $this_essay->id);})->get();
-        return view ('jubilee_book/step_3_edit_essay', Compact('person','sidebardata','this_essay','essaytopicanswer', 'photographs'));
+        $suppress_breadcrumb = true;
+        $navbar_title = '50th Anniversary Book';
+        $guest_name = $person->first_name . ' ' . $person->last_name;
+        return view ('jubilee_book/step_3_edit_essay', Compact('person','sidebardata','this_essay','essaytopicanswer', 'photographs', 'guest_name', 'suppress_breadcrumb', 'navbar_title'));
     }
 
     public function step_3_store(Request $request, $person_uniqid, $project_id)

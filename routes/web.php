@@ -35,6 +35,8 @@ Route::get('/profile','UserController@profile');
 
 Route::get('/handbooks','UserController@handbooks');
 
+Route::get('/prototype','PrototypeController@index');
+
 // Route::get('/export', 'ExportController@auditions');
 
 Route::resources([
@@ -56,6 +58,7 @@ Route::resources([
     'ticketsales' => 'TicketsalesController'
 ]);
 
+Route::get('/jubilee-book/','JubileeBookController@redirect_to_user');
 Route::get('/jubilee-book/{person_id}','JubileeBookController@step_1');
 Route::get('/jubilee-book/{person_id}/step-1','JubileeBookController@step_1');
 Route::post('/jubilee-book/{person_id}/step-1','JubileeBookController@step_1_store')->name('jubilee.step1.store');
