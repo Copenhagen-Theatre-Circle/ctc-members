@@ -1,12 +1,8 @@
-@extends('layouts.app_simple_bulma')
+@extends('layouts.master')
 
 @section('title','CTC Jubilee Book')
 
 @section('content')
-
-<div class="container">
-
-  @include('jubilee_book/navbar')
 
   <div class="section" style="padding: 10px; padding-top: 20px;">
 
@@ -179,8 +175,6 @@
             </div>
         </div>
     </section>
-
-  </div>
 
 
 </div>

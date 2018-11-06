@@ -1,19 +1,17 @@
-@extends('layouts.app_simple_bulma')
+@extends('layouts.master')
 
-@section('title','CTC Jubilee Book')
+@section('title','50th Jubilee Book')
 
 @section('content')
 
-<div class="container">
 
-  @include('jubilee_book/navbar')
 
   <div class="section" style="padding-top: 20px;">
      @include ('jubilee_book/step_counter', ['step'=>1])
      <form action="{{ route ('jubilee.step1.store', $person->uniqid) }}" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
        <div class="columns">
-         <div class="column is-10 is-offset-1">
+         <div class="column">
           <div class="card">
             <div class="card-content">
               <div class="columns">
@@ -81,7 +79,7 @@
   </div>
 
 
-</div>
+
 
 
 

@@ -29,7 +29,7 @@
                         <div class="col">
                           <h1 class="display-6">CTC 50th Anniversary Book Project</h1>
                           <p class="lead">We are collecting memories, pictures and documentation from 50 years of activity, and need your help and input!</p>
-                          <a class="btn btn-outline-danger" href="jubilee-book/{{$user->uniqid()}}" target="_blank">Open the book form here!</a>
+                          <a class="btn btn-outline-danger" href="jubilee-book/{{$user->uniqid()}}">Open the book form here!</a>
                         </div>
                       </div>
                     </div>
