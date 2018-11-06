@@ -55,7 +55,7 @@
 
                             @foreach ($answers as $audition_form_answer)
                                 <tr>
-                                    <td><img src="https://res.cloudinary.com/ctcircle/image/fetch/h_120,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$audition_form_answer->person->portraits[0]['file_name'] or ''}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "></td>
+                                    <td><img src="https://res.cloudinary.com/ctcircle/image/fetch/h_120,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$audition_form_answer->person->portraits[0]['file_name'] ?? ''}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "></td>
                                     <td>{{$audition_form_answer->person->first_name}}</td>
                                     <td>{{$audition_form_answer->person->last_name}}</td>
                                     <td>{{date ('d M Y', strtotime($audition_form_answer->created_at))}}</td>

@@ -5,7 +5,7 @@
         @if(!empty($guest_name))
             <div class="navbar-start" style="padding-top: 5px;">
                 <a class="navbar-item">
-                  {{$navbar_title or ''}}
+                  {{$navbar_title ?? ''}}
                 </a>
             </div>
             <div class="navbar-end" style="padding-top: 5px;">

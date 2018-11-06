@@ -33,7 +33,7 @@
                           </option>
                         @endforeach
                         </select>
-                        <input type="hidden" name="c" value="{{request('c') or ''}}">
+                        <input type="hidden" name="c" value="{{request('c') ?? ''}}">
                       </form>
                     </div>
 

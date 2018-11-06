@@ -167,13 +167,13 @@
     var app = new Vue({
           el: '#app',
           data: {
-            visibility: '{{$userpreference->visibility or 'all'}}',
-            frequency: '{{$userpreference->bulletin_mail_frequency or 'immediately'}}',
-            send_CTC_help_bulletins: {{$userpreference->send_CTC_help_bulletins or 1}},
-            send_membership_news: {{$userpreference->send_membership_news or 1}},
-            send_blog_posts: {{$userpreference->send_blog_posts or 1}},
-            help_bulletin_scope: '{{$userpreference->help_bulletin_scope or 'interest only'}}',
-            remove_data: {{$userpreference->remove_data or 0}},
+            visibility: '{{$userpreference->visibility ?? 'all'}}',
+            frequency: '{{$userpreference->bulletin_mail_frequency ?? 'immediately'}}',
+            send_CTC_help_bulletins: {{$userpreference->send_CTC_help_bulletins ?? 1}},
+            send_membership_news: {{$userpreference->send_membership_news ?? 1}},
+            send_blog_posts: {{$userpreference->send_blog_posts ?? 1}},
+            help_bulletin_scope: '{{$userpreference->help_bulletin_scope ?? 'interest only'}}',
+            remove_data: {{$userpreference->remove_data ?? 0}},
           }
       })
 
