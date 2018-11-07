@@ -8,10 +8,10 @@
         "php": ">=7.0.0",
         "anhskohbo/no-captcha": "^3.0",
         "doctrine/dbal": "2.6.3",
-        "fico7489/laravel-eloquent-join": "^2.1",
+        "fico7489/laravel-eloquent-join": "4.*",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.4",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "5.8.*",
         "laravel/tinker": "~1.0",
         "merujan99/laravel-video-embed": "dev-master",
         "usmanhalalit/laracsv": "1.*@dev"
