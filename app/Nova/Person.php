@@ -3,9 +3,10 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Gravatar;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Person extends Resource
@@ -22,7 +23,7 @@ class Person extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'full_name';
 
     /**
      * The columns that should be searched.
@@ -31,6 +32,8 @@ class Person extends Resource
      */
     public static $search = [
         'id',
+        'first_name',
+        'last_name'
     ];
 
     /**
@@ -47,6 +50,7 @@ class Person extends Resource
             Text::make('First Name', 'first_name')->sortable(),
             Text::make('Last Name', 'last_name')->sortable(),
             Text::make('Mail', 'mail')->sortable(),
+            HasMany::make('Project Memories')
         ];
     }
 

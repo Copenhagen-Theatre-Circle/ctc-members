@@ -19,4 +19,15 @@ class Projectmemory extends Model
             return "empty";
         }
     }
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
+
+    public function project()
+    {
+        return $this->belongsTo('App\Project');
+    }
+
 }

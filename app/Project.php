@@ -23,4 +23,14 @@ class Project extends BaseModel
         return $this->hasMany('App\ProjectsPlay');
     }
 
+    public function projectmemories()
+    {
+        return $this->hasMany('App\Projectmemory');
+    }
+
+    public function audition_form_variables()
+    {
+        return $this->hasOne('App\AuditionFormVariable');
+    }
+
 }

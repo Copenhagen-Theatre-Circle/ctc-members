@@ -5,25 +5,27 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Project extends Resource
+class Projectmemory extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Project';
+    public static $model = 'App\Projectmemory';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -31,7 +33,7 @@ class Project extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
@@ -44,9 +46,14 @@ class Project extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('name')->sortable(),
-            HasOne::make('Audition Form Variables'),
-            HasMany::make('Project Memories','projectmemories'),
+            BelongsTo::make('Project')->nullable(),
+            BelongsTo::make('Person')->nullable(),
+            Textarea::make('Participation Level')->sortable(),
+            Textarea::make('Production Memories')->sortable(),
+            Textarea::make('Performance Memories')->sortable(),
+            Boolean::make('has more documents')->sortable(),
+            Boolean::make('completed')->sortable(),
+            DateTime::make('Created At')->hideFromIndex(),
         ];
     }
 
@@ -92,5 +99,9 @@ class Project extends Resource
     public function actions(Request $request)
     {
         return [];
+    }
+
+    public static function label() {
+        return 'Project Memories';
     }
 }

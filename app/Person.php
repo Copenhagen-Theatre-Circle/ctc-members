@@ -56,6 +56,11 @@ class Person extends BaseModel
         return $this->hasMany('App\Crewmember');
     }
 
+    public function project_memories()
+    {
+        return $this->hasMany('App\Projectmemory');
+    }
+
     //custom methods
 
     public function ismember()
@@ -128,6 +133,11 @@ class Person extends BaseModel
         } else {
             return false;
         }
+    }
+
+    public function getFullNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
     }
 
     // public function getMemberAttribute() {

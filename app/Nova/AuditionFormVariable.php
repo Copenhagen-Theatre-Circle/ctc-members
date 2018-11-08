@@ -5,25 +5,24 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Project extends Resource
+class AuditionFormVariable extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Project';
+    public static $model = 'App\AuditionFormVariable';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -31,8 +30,15 @@ class Project extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
+
+    /**
+     * Indicates if the resource should be displayed in the sidebar.
+     *
+     * @var bool
+     */
+    public static $displayInNavigation = false;
 
     /**
      * Get the fields displayed by the resource.
@@ -44,9 +50,15 @@ class Project extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('name')->sortable(),
-            HasOne::make('Audition Form Variables'),
-            HasMany::make('Project Memories','projectmemories'),
+            Textarea::make('Performance Dates'),
+            Text::make('Reply To Address'),
+            Textarea::make('Availability Text 1'),
+            Textarea::make('Availability Text 2'),
+            Textarea::make('Concluding Text'),
+            Textarea::make('Date Preferences'),
+            Text::make('Banner Max Width Px'),
+            Text::make('Banner Background Color'),
+            Text::make('Banner Filename'),
         ];
     }
 
