@@ -55,6 +55,21 @@
 
                           <div class="tab-content p-3 border-tab rounded-bottom rounded-right" id="myTabContent">
                             <div class="tab-pane fade show active" id="audition" role="tabpanel">
+
+                               @if (! empty($auditionFormAnswer->characters))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Auditioning for:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#39;',"'",$auditionFormAnswer->characters))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
                               @if (! empty($auditionFormAnswer->person->member_bio))
                                 <div class="row">
                                   <div class="col-2 pr-0">

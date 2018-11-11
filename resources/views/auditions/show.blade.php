@@ -39,6 +39,7 @@
                                     Last Name
                                     </a>
                                 </th>
+                                <th>Character(s)</th>
                                 <th @if (app('request')->input('sort')=="last_update")
                                     class="sorted"
                                     @endif >
@@ -46,7 +47,7 @@
                                     Applied
                                     </a>
                                 </th>
-                                <th >can audition</th>
+                                {{-- <th >can audition</th> --}}
                                 <th >mail / mobile</th>
                                 <th></th>
                             </tr>
@@ -58,8 +59,9 @@
                                     <td><img src="https://res.cloudinary.com/ctcircle/image/fetch/h_120,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$audition_form_answer->person->portraits[0]['file_name'] ?? ''}}" alt="" style="object-fit: cover; height: 50px; width: 50px; border-radius: 50%; border: solid grey 1px; "></td>
                                     <td>{{$audition_form_answer->person->first_name}}</td>
                                     <td>{{$audition_form_answer->person->last_name}}</td>
+                                    <td>{{$audition_form_answer->characters}}</td>
                                     <td>{{date ('d M Y', strtotime($audition_form_answer->created_at))}}</td>
-                                    <td>{!! nl2br($audition_form_answer->date_preferences) !!}</td>
+                                    {{-- <td>{!! nl2br($audition_form_answer->date_preferences) !!}</td> --}}
                                     <td>{{$audition_form_answer->person->mail}}
                                         <br/>
                                         {{$audition_form_answer->person->mobile}}
