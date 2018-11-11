@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -49,7 +50,7 @@ class Projectmemory extends Resource
             BelongsTo::make('Project')->nullable(),
             BelongsTo::make('Person')->nullable(),
             Textarea::make('Participation Level')->sortable(),
-            Textarea::make('Production Memories')->sortable(),
+            Markdown::make('Production Memories')->sortable(),
             Textarea::make('Performance Memories')->sortable(),
             Boolean::make('has more documents')->sortable(),
             Boolean::make('completed')->sortable(),

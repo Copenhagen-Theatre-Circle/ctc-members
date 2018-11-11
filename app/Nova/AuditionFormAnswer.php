@@ -4,26 +4,23 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Project extends Resource
+class AuditionFormAnswer extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Project';
+    public static $model = 'App\AuditionFormAnswer';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -31,7 +28,7 @@ class Project extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
@@ -44,10 +41,6 @@ class Project extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('name')->sortable(),
-            HasOne::make('Audition Form Variables'),
-            HasMany::make('Project Memories','projectmemories'),
-            HasMany::make('Audition Form Answers'),
         ];
     }
 
