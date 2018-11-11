@@ -19,6 +19,13 @@ class Project extends Resource
     public static $model = 'App\Project';
 
     /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = "CTCDB";
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
@@ -45,9 +52,10 @@ class Project extends Resource
         return [
             ID::make()->sortable(),
             Text::make('name')->sortable(),
+            HasMany::make('Rights'),
             HasOne::make('Audition Form Variables'),
-            HasMany::make('Project Memories','projectmemories'),
             HasMany::make('Audition Form Answers'),
+            HasMany::make('Project Memories','projectmemories'),
         ];
     }
 

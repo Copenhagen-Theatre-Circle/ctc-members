@@ -18,6 +18,8 @@ class Person extends Resource
      */
     public static $model = 'App\Person';
 
+    public static $group = "CTCDB";
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *

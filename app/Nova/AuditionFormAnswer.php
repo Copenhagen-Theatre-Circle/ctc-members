@@ -4,10 +4,21 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class AuditionFormAnswer extends Resource
 {
+
+    /**
+     * Indicates if the resource should be displayed in the sidebar.
+     *
+     * @var bool
+     */
+    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
@@ -40,7 +51,9 @@ class AuditionFormAnswer extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            BelongsTo::make('Person')->sortable(),
+            Text::make('Characters'),
+            DateTime::make('Created At')->sortable()
         ];
     }
 

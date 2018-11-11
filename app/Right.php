@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Right extends Model
 {
-    public function people()
+    public function person()
       {
           return $this->belongsTo('App\Person');
+      }
+
+   public function rightstype()
+      {
+          return $this->belongsTo('App\Rightstype');
       }
 }

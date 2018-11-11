@@ -3,20 +3,27 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Play extends Resource
+class Right extends Resource
 {
+
+    /**
+     * Indicates if the resource should be displayed in the sidebar.
+     *
+     * @var bool
+     */
+    public static $displayInNavigation = false;
+
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Play';
-
-    public static $group = "CTCDB";
+    public static $model = 'App\Right';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -44,7 +51,8 @@ class Play extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('title')->sortable(),
+            BelongsTo::make('Person')->sortable(),
+            BelongsTo::make('Rightstype')->sortable(),
         ];
     }
 
