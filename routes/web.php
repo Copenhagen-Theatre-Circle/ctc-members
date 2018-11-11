@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,7 +73,6 @@ Route::post('/jubilee-book/{person_id}/step-3/{show_id}/store','JubileeBookContr
 Route::get('/jubilee-book/{person_id}/step-3/essays/{essay_id}/edit','JubileeBookController@step_3_essay_edit');
 Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeBookController@step_3_essay_store')->name('jubilee.step3_essay.store');
 
-Route::get('/upload-file','FilesController@create');
 Route::post('/upload-file','FilesController@uploadFile');
 
 
@@ -85,4 +86,10 @@ Route::get('message/confirmation',function(){
 
 // Route::get('/files/thumb/{filename}', 'ImageController@showThumb')->name('thumbnail');
 // Route::get('/files/{filename}', 'ImageController@show')->name('file');
+
+Route::get('/upload-file','FilesController@create');
+Route::post('/process', function (Request $request) {
+    $path = $request->file('file')->store('public');
+    dd($path);
+});
 

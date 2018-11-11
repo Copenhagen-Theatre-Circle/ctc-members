@@ -7,7 +7,7 @@
 <div class="section">
     <div class="container">
         <h1 class="title">File Upload Test</h1>
-        <form action="/upload-file" method="post" enctype="multipart/form-data">
+        <form action="/process" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             {{-- <div class="field">
                 <label class="label">File Name</label>
