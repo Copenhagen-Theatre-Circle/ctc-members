@@ -23,7 +23,7 @@ class Person extends BaseModel
 
     public function membership_this_season()
     {
-        return $this->hasMany('App\Membership')->where('season_id', '50');
+        return $this->hasMany('App\Membership')->where('season_id', '>', '49');
     }
 
     public function portraits()
