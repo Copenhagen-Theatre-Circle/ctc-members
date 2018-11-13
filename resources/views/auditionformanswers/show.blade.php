@@ -26,7 +26,9 @@
 
                       <div class="row">
                         <div class="col-sm-2 col-xs-12 pr-0">
+                          <a href="https://ctc-members.dk/media/{{$auditionFormAnswer->person->portraits[0]['file_name'] ?? ''}}" target="_blank">
                           <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_150,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$auditionFormAnswer->person->portraits[0]['file_name'] ?? ''}}" alt="" style="max-width: 100%; border: lightgrey solid 2px; border-radius: 10px;">
+                          </a>
                         </div>
                         <div class="col-sm-8 col-xs-12 pl-0">
                           <h1 class="display-5">{{$auditionFormAnswer->person->first_name}} {{$auditionFormAnswer->person->last_name}}</h1>
