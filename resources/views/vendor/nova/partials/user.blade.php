@@ -13,5 +13,10 @@
                 {{ __('Logout') }}
             </a>
         </li>
+        <li>
+            <a href="/home" class="block no-underline text-90 hover:bg-30 p-3">
+                CTC Members Home
+            </a>
+        </li>
     </ul>
 </dropdown-menu>
