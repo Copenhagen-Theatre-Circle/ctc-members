@@ -1,5 +1,7 @@
 <?php
 
+use App\Person;
+
 function auth_person ($field='id') {
   $person = \Auth::user()->person;
   return $person->$field;
@@ -250,4 +252,45 @@ function mapTicketPRTypeID ($ticketprtype) {
       break;
   }
   return $id;
+}
+
+function split_name($name) {
+    $name = trim($name);
+    $explode = explode(' ', $name);
+    $count = count($explode);
+    if ( $count > 2 ){
+        $first_names = implode(' ', array_slice($explode, 0, 2));
+        $last_names = implode(' ', array_slice($explode, 2, $count - 2));
+    } else {
+        $first_names = implode(' ', array_slice($explode, 0, 1));
+        $last_names = implode(' ', array_slice($explode, 1, 1));
+    }
+    return array($first_names,$last_names);
+    // $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+    // $first_name = trim( preg_replace('#'.$last_name.'#', '', $name ) );
+    // return array($first_name, $last_name);
+}
+
+function lookup_or_create_person($mail, $first_name, $last_name){
+  //this function looks up a person by mail if set, by first name and last name if not
+  if (isset($mail)){
+    $person = Person::where('mail',$mail)->first();
+  } else {
+    $person = Person::where('first_name',$first_name)->where('last_name',$last_name)->first();
+  }
+  if (!isset($person)){
+    // return 0;
+    if(isset($first_name) && isset($last_name)){
+      $person = new Person;
+      $person->first_name = $first_name;
+      $person->last_name = $last_name;
+      $person->mail = $mail;
+      $person->uniqid = $uniqid = substr (bin2hex(random_bytes(16)),0,11);
+      $person->save();
+    } else {
+      return 0;
+    }
+  }
+  return $person->id;
+
 }

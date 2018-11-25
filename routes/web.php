@@ -1,5 +1,6 @@
 <?php
 
+use App\MembershipImporter;
 use Illuminate\Http\Request;
 
 /*
@@ -24,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'UserController@index');
 
 Route::get('/nomember', function(){
-  return view('nomember');
+  return redirect('home');
 });
 
 Route::get('/membership', 'MembersController@index')->name('membership');
@@ -93,3 +94,8 @@ Route::post('/process', function (Request $request) {
     dd($path);
 });
 
+Route::get('membershipimporter/{season}', function($season){
+    $importer = new MembershipImporter($season);
+    $import = $importer->importData();
+    return $import;
+});

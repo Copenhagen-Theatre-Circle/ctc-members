@@ -12,7 +12,7 @@ class Person extends BaseModel
 
     }
 
-    protected $visible = ['first_name','last_name','portraits','roles','crewjobs','questionnaire_answers','member_bio'];
+    protected $visible = ['id','first_name','last_name','portraits','roles','crewjobs','questionnaire_answers','member_bio'];
 
     // model relationships
 
@@ -23,7 +23,8 @@ class Person extends BaseModel
 
     public function membership_this_season()
     {
-        return $this->hasMany('App\Membership')->where('season_id', '>', '49');
+        $min_season = Settings::first()->active_season_id;
+        return $this->hasMany('App\Membership')->where('season_id', '>=', $min_season)->where('membershiptype_id', '<>', 8);
     }
 
     public function portraits()

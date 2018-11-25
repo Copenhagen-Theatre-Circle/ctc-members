@@ -80,17 +80,30 @@
         </style>
     </head>
     <body style="background-color: black; background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/media/smoky-theatre.jpg') no-repeat center center fixed; background-size: cover;">
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" style="max-width: 850px; margin-left: auto; margin-right: auto;">
 
             <div class="content">
               <img src="/media/logo_dark.png" style="display: inline; width: 120px;"/>
               <br/><br/>
                 <div class="title m-b-md">
-
-                    CTC Members - almost there...
+                    almost there...
                 </div>
                 <div class="lead">
-                <p>Unfortunately, our records don't show that you are an active member with the registered email address.</p> <p>Please contact <a href="mailto:membership@ctcircle.dk(CTC Membership)">membership@ctcircle.dk</a> to ask for help to access the members' section.</p>
+                    <p>
+                        Unfortunately, our records don't show that you have paid your membership fee for the {{$season->year_start}}/{{$season->year_start+1}} season with the registered email address.
+                    </p>
+                    <p>
+                        Please pay your membership fee
+                        <a href="https://place2book.com/en/choose_ticket_sales_workflow?seccode={{$season->seccode}}" target="_blank">here</a>
+                        and try to refresh this page.
+                    </p>
+                    <p>
+                        Or contact
+                        <a href="mailto:membership@ctcircle.dk(CTC Membership)">
+                            membership@ctcircle.dk
+                        </a>
+                        if you have paid and need help to access the members' section.
+                    </p>
                 </div>
             </div>
         </div>
