@@ -162,12 +162,14 @@ class TicketsalesController extends Controller
             case 'Group 10-19 adults';
             case 'Split Group 10-19';
             case 'Group 10-19 (reserved)';
+            case 'Group 10-19 Adults';
             case 'Group (10 - 19 adults)';
               $tickettype = "group_10_to_19";
               break;
             //group 20+
             case 'Group 20+';
             case 'Group 20+ adults';
+            case 'Group 20+ Adults';
             case 'Group 20+ (reserved)';
             case 'Group (20 or more adults)';
             case 'Extra group tickets (over 20)';

@@ -1,6 +1,7 @@
 <?php
 
 use App\MembershipImporter;
+use App\RebateCodeAllocator;
 use Illuminate\Http\Request;
 
 /*
@@ -97,5 +98,11 @@ Route::post('/process', function (Request $request) {
 Route::get('membershipimporter/{season}', function($season){
     $importer = new MembershipImporter($season);
     $import = $importer->importData();
+    return $import;
+});
+
+Route::get('rebatecodeallocator/{project}/{person}', function($project, $person){
+    $importer = new RebateCodeAllocator($project, $person);
+    $import = $importer->allocateCodes();
     return $import;
 });

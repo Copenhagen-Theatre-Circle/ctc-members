@@ -18,6 +18,11 @@ class Project extends BaseModel
         return $this->hasMany('App\Right');
     }
 
+    public function events()
+    {
+        return $this->hasMany('App\Event');
+    }
+
     public function projects_plays()
     {
         return $this->hasMany('App\ProjectsPlay');

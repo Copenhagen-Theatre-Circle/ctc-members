@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use App\User;
+use App\RebateCodeAllocator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -31,8 +32,11 @@ class HomeController extends Controller
         $user_is_admin = $user->canSeeAllPeople();
 
         $person_id = $_GET['person'] ?? $user->person->id;
-        $project_id = 93;
-        // $person_id = 9;
+
+        //generate rebate codes for selected show:
+        $project_id = 95;
+        $rebatecodeallocator = new RebateCodeAllocator($project_id, $person_id);
+        $import = $rebatecodeallocator->allocateCodes();
 
         $codes = DB::select( DB::raw("
 
