@@ -108,6 +108,10 @@ class ProjectController extends Controller
                     'name' => 'Ticket Stats',
                     'icon' => 'fas fa-ticket-alt'
                 ],
+                'testimonies' => [
+                    'name' => 'Testimonies',
+                    'icon' => 'fas fa-book'
+                ],
             ];
 
 

@@ -43,6 +43,8 @@ Route::get('/prototype','PrototypeController@index');
 
 // Route::get('/export', 'ExportController@auditions');
 
+// Route::get('/projects/{id}', 'ProjectController@show');
+
 Route::resources([
     'audition_form_answers' => 'AuditionFormAnswersController',
     'auditions'=>'AuditionController',

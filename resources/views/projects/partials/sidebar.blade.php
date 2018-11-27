@@ -12,6 +12,14 @@
             </li>
         @endforeach
         <hr>
+        <li>
+            <a href="#" @click="mode='edit'">
+                <span class="icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </span>
+                Edit
+            </a>
+        </li>
     </ul>
 </nav>
 

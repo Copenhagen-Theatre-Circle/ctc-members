@@ -52,6 +52,10 @@ hr {
 }
 
 
+.tinted-background{
+  background-color: #ffe5e8;
+}
+
 
 @media (min-width:641px) {
 

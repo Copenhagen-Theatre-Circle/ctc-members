@@ -5,7 +5,7 @@
 @section('breadcrumb')
     <li><a href="/home">Home</a></li>
     <li><a href="/projects">CTCDB+</a></li>
-    <li class="is-active"><a href="#">{{$project->name}}+</a></li>
+    <li class="is-active"><a href="#">{{$project->name}}</a></li>
 @endsection
 
 @section('content')
@@ -28,10 +28,10 @@
                     <div class="column is-2 has-background-white-bis">
                         @include('projects.partials.sidebar')
                     </div>
-                    <div class="column" style="padding-left:2rem;padding-right:2rem;">
+                    <div class="column" style="padding-left:2rem;padding-right:2rem;" :class="{ 'tinted-background': mode=='edit' }">
                       {{-- show panels --}}
                       @foreach ($panels as $key=>$panel)
-                        <div v-if="mode=='show' && activePanel=='{{$key}}'" @if($key!='basics') v-cloak @endif >@include('projects.partials.show.'.$key)</div>
+                        <div v-if="mode=='show' && activePanel=='{{$key}}'" v-cloak >@include('projects.partials.show.'.$key)</div>
                       @endforeach
                       {{-- edit panels --}}
                       <form action="{{$project->id}}" method="post">
@@ -57,7 +57,7 @@
         el: '#app',
         data:{
             mode: 'show',
-            activePanel: 'basics',
+            activePanel: '{{request()->input('panel') ?? 'basics'}}',
         },
         methods:{
           changeActivePanel(selection){
