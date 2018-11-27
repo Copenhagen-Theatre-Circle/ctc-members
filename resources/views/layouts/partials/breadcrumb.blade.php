@@ -1,7 +1,7 @@
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb my-1">
-        <li class="breadcrumb-item"><a href="/home">Home</a></li>
-        <li class="breadcrumb-item"><a href="/people">The Network</a></li>
-        <li class="breadcrumb-item">Andrew Blackwell</li>
-    </ol>
-</nav>
+<div class="card light-transparency" style="border-radius: 5px; padding: 10px; margin-bottom: 10px;">
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+     @yield('breadcrumb')
+    </ul>
+  </nav>
+</div>

@@ -3,7 +3,7 @@
   <div class="container" style="max-width: 1140px; padding-left: 10px;">
 
     {{-- Brand and Burger --}}
-    <div class="navbar-brand">
+    <div class="navbar-brand" style="margin-left: -25px; margin-right: 20px;">
       <a class="navbar-item" href="@guest {{url('/home')}} @else {{url('/home') }} @endguest">
         <img src="/media/logo_dark.png">
         <h2 class="subtitle is-4 has-text-white">&nbsp;&nbsp;CTC Members</h2>

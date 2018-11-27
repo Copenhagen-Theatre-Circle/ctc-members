@@ -22,7 +22,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::where('accounting_only',null)->orderBy('id','desc')->get();
+        $projects = Project::where('accounting_only',null)->orderBy('date_start','desc')->get();
         return view ('projects.index', compact('projects'));
     }
 
@@ -44,7 +44,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $_POST;
     }
 
     /**
@@ -75,7 +75,40 @@ class ProjectController extends Controller
             'audition_form_answers.person');
         }
 
-        return $project;
+        // return $project;
+
+        // panel array
+
+        $panels = [
+                'basics' => [
+                    'name' => 'Basics',
+                    'icon' => 'fas fa-align-justify'
+                ],
+                'cast' => [
+                    'name' => 'Cast',
+                    'icon' => 'fas fa-theater-masks'
+                ],
+                'crew' => [
+                    'name' => 'Crew',
+                    'icon' => 'fas fa-people-carry'
+                ],
+                'pictures' => [
+                    'name' => 'Pictures',
+                    'icon' => 'fas fa-images'
+                ],
+                'documents' => [
+                    'name' => 'Documents',
+                    'icon' => 'fas fa-file'
+                ],
+                'videos' => [
+                    'name' => 'Videos',
+                    'icon' => 'fas fa-video'
+                ],
+                'ticketstats' => [
+                    'name' => 'Ticket Stats',
+                    'icon' => 'fas fa-ticket-alt'
+                ],
+            ];
 
 
         $answers = AuditionFormAnswer::with('person');
@@ -90,7 +123,7 @@ class ProjectController extends Controller
         $answers = $answers->where('project_id',$project->id);
         $answers = $answers->get();
 
-        return view ('projects.show', compact('project','answers'));
+        return view ('projects.show', compact('project','answers', 'panels'));
 
 
     }
@@ -115,7 +148,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        return $_POST;
     }
 
     /**
