@@ -80,6 +80,7 @@ class ProjectController extends Controller
             'projects_plays.actors.person',
             'projects_plays.crewmembers.crewtype',
             'projects_plays.crewmembers.person',
+            'phototags.photograph.phototype',
             'videos.hyperlinktype',
             'projectmemories'
         );
@@ -96,6 +97,16 @@ class ProjectController extends Controller
                         })
                         ->sortBy('sort_order')
                         ->values();
+
+        $phototags = $project->phototags;
+
+        foreach ($phototags as $phototag) {
+            $type = strtolower(str_replace(' ', '_', $phototag->photograph->phototype->name));
+            $filename = $phototag->photograph->file_name;
+            $photographs[$type][]=$filename;
+        }
+
+        // return $photographs;
 
         if (count($rights)>0) {
           $project->load('audition_form_answers.person');
@@ -171,7 +182,7 @@ class ProjectController extends Controller
         // return $venues;
         // return $people;
         // return $crewmembers;
-        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes'));
+        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes', 'photographs'));
     }
 
     /**

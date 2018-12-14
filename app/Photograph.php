@@ -10,4 +10,9 @@ class Photograph extends Model
        {
            return $this->hasMany('App\Phototag');
        }
+
+    public function phototype()
+        {
+            return $this->belongsTo('App\Phototype');
+        }
 }

@@ -63,4 +63,9 @@ class Project extends BaseModel
     {
         return $this->belongsTo('App\Season');
     }
+
+    public function phototags()
+    {
+        return $this->hasMany('App\Phototag');
+    }
 }
