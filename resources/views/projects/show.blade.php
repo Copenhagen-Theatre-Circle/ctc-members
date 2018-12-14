@@ -124,7 +124,7 @@
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
             addRemoveLinks: false,
         });
         $('#btnUpload').on('click', function(){
@@ -142,7 +142,7 @@
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
             addRemoveLinks: false,
         });
         $('#btnUpload').on('click', function(){
@@ -160,7 +160,7 @@
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
             addRemoveLinks: false,
         });
         $('#btnUpload').on('click', function(){
@@ -178,7 +178,7 @@
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
             addRemoveLinks: false,
         });
         $('#btnUpload').on('click', function(){
