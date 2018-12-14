@@ -1,9 +1,11 @@
+
+
 <nav class="navbar is-dark is-fixed-top" style="background-color: #222; height: 75px;">
 
   <div class="container" style="max-width: 1140px; padding-left: 10px;">
 
     {{-- Brand and Burger --}}
-    <div class="navbar-brand" style="margin-left: -25px; margin-right: 20px;">
+    <div class="navbar-brand" style="margin-right: 20px;">
       <a class="navbar-item" href="@guest {{url('/home')}} @else {{url('/home') }} @endguest">
         <img src="/media/logo_dark.png">
         <h2 class="subtitle is-4 has-text-white">&nbsp;&nbsp;CTC Members</h2>
@@ -26,29 +28,6 @@
 
   </div>
 
-
-
-  {{-- <div class="container">
-
-    <a class="navbar-brand" href="@guest {{url('/home')}} @else {{url('/home') }} @endguest">
-      <img src="/media/logo_dark.png" style="display: inline; width: 37px;"/>
-        &nbsp; CTC Members
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        @guest
-          @include('layouts.partials.navbar_guest')
-        @else
-          @include('layouts.partials.navbar_user')
-        @endguest
-        </ul>
-    </div>
-
-  </div> --}}
-
 </nav>
+
+

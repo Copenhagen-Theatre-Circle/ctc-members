@@ -14,6 +14,11 @@ class ProjectsPlay extends BaseModel
       return $this->belongsTo('App\Play');
   }
 
+  public function characters()
+  {
+    return $this->hasMany('App\Character','play_id','play_id');
+  }
+
   public function actors()
   {
       return $this->hasMany('App\Actor')->orderBy('sort_value');

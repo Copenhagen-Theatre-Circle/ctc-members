@@ -12,8 +12,16 @@
             </li>
         @endforeach
         <hr>
-        <li>
-            <a href="#" @click="mode='edit'">
+        <li v-show="mode=='show'">
+            <a @click="mode='edit'">
+                <span class="icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </span>
+                Edit
+            </a>
+        </li>
+        <li v-show="mode=='edit'" v-cloak>
+            <a @click="submitForm" class="is-active">
                 <span class="icon">
                     <i class="fas fa-pencil-alt"></i>
                 </span>
