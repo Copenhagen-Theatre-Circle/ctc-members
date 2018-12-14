@@ -64,6 +64,7 @@
             mode: 'show',
             activePanel: '{{request()->input('panel') ?? 'basics'}}',
             new_castmembers: [],
+            new_crewmembers: [],
             new_videos: [],
         },
         methods:{
@@ -75,6 +76,17 @@
             $(document).ready(function() {
                     $('.js-basic-single').select2({
                         tags: true
+                    });
+                });
+          },
+          addCrewMember() {
+            this.new_crewmembers.push({});
+            $(document).ready(function() {
+                    $('.js-basic-single').select2({
+                        tags: true
+                    });
+                    $('.js-basic-single-notags').select2({
+                        tags: false
                     });
                 });
           },

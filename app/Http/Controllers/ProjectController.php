@@ -7,8 +7,10 @@ use App\Venue;
 use App\Person;
 use App\Season;
 use App\Project;
+use App\Crewtype;
 use App\Character;
 use App\Hyperlink;
+use App\Crewmember;
 use App\ProjectsPlay;
 use App\Hyperlinktype;
 use App\AuditionFormAnswer;
@@ -82,7 +84,18 @@ class ProjectController extends Controller
             'projectmemories'
         );
 
-        // return $project;
+        $crewmembers = $project->crewmembers
+                        ->map(function($crewmember){
+                            $array['crewtype'] = $crewmember->crewtype->name;
+                            $array['sort_order'] = $crewmember->crewtype->sort_order ?? (1000 + $crewmember->id);
+                            $array['last_name'] = $crewmember->person->last_name;
+                            $array['first_name'] = $crewmember->person->first_name;
+                            $array['person_id'] = $crewmember->person->id;
+                            $array['portrait'] = $crewmember->person->portraits[0]['file_name'] ?? null;
+                            return $array;
+                        })
+                        ->sortBy('sort_order')
+                        ->values();
 
         if (count($rights)>0) {
           $project->load('audition_form_answers.person');
@@ -154,10 +167,11 @@ class ProjectController extends Controller
         $people = Person::orderBy('last_name')->get();
         $seasons = Season::orderBy('year_start', 'desc')->get();
         $venues = Venue::get();
+        $crewtypes = Crewtype::get();
         // return $venues;
         // return $people;
-
-        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues'));
+        // return $crewmembers;
+        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes'));
     }
 
     /**
@@ -187,7 +201,7 @@ class ProjectController extends Controller
         if ($request->input('projects_plays') !== null) {
             foreach ($request->input('projects_plays') as $projects_play_id => $projects_play) {
                 // return $projects_play;
-                if ($projects_play['new_cast'] !== null) {
+                if ($projects_play['new_cast'] ?? null !== null) {
                     // return $projects_play['new_cast'];
                     foreach ($projects_play['new_cast'] as $new_cast) {
                         // return $new_cast['character'];
@@ -226,6 +240,31 @@ class ProjectController extends Controller
                         // return $actor->id;
                     }
                 }
+            }
+        }
+
+        if ($request->input('new_crew') !== null) {
+            // return $projects_play['new_cast'];
+            foreach ($request->input('new_crew') as $new_crew) {
+                //crewtype is always string
+                $crewtype_id = $new_crew['crewtype'];
+                // create person if string
+                if (is_numeric($new_crew['person'])) {
+                    $person_id = $new_crew['person'];
+                } else {
+                    $person = new Person;
+                    $person->first_name = split_name($new_crew['person'])[0];
+                    $person->last_name = split_name($new_crew['person'])[1];
+                    $person->save();
+                    $person_id = $person->id;
+                }
+                // store crewmember
+                $crewmember = new Crewmember;
+                $crewmember->project_id = $project_id;
+                $crewmember->crewtype_id = $crewtype_id;
+                $crewmember->person_id = $person_id;
+                $crewmember->save();
+                // return $actor->id;
             }
         }
 

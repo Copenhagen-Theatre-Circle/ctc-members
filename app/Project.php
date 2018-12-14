@@ -39,6 +39,11 @@ class Project extends BaseModel
         return $this->hasMany('App\ProjectsPlay');
     }
 
+    public function crewmembers()
+    {
+        return $this->hasMany('App\Crewmember');
+    }
+
     public function projectmemories()
     {
         return $this->hasMany('App\Projectmemory');
