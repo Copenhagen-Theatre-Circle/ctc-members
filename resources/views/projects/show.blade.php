@@ -15,7 +15,13 @@
      <section class="section" style="padding: 10px;">
         <div class="columns">
           <div class="column is-2" style="padding-left: 20px;">
-            <img src="http://balletmecanique.eu/ctc/media/145_medium.jpg" >
+            @if($photographs['poster']??null)
+                <a href="/files/{{$photographs['poster'][0]}}" target="_blank">
+                  <img src="https://res.cloudinary.com/ctcircle/image/fetch/w_200/https://ctc-members.dk/files/{{$photographs['poster'][0]}}">
+                </a>
+              <br>
+              <br>
+            @endif
           </div>
           <div class="column" >
             <h1 class="title is-1" style="margin-bottom: 10px;">{{$project->name}}</h1>
