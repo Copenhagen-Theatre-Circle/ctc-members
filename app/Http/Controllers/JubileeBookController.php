@@ -72,7 +72,7 @@ class JubileeBookController extends Controller
                 $decades_selected = array();
                 $shows_selected = array();
             }
-        $projects = Project::where('publish_book_flag',1)->whereIn('decade', $decades_selected)->orderBy('year')->get();
+        $projects = Project::where('publish_book',1)->whereIn('decade', $decades_selected)->orderBy('year')->get();
         $suppress_breadcrumb = true;
         $navbar_title = '50th Anniversary Book';
         $guest_name = $person->first_name . ' ' . $person->last_name;
