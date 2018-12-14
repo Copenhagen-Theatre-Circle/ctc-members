@@ -106,11 +106,79 @@
         });
     });
 </script>
-{{-- <script type="text/javascript">
-    $('.js-basic-single').select2({
-        tags: true
-    });
-</script> --}}
+<script src="{{ asset('js/dropzone.js') }}"></script>
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#upload-showpic-form', {
+            // paramName: "files",
+            url: '/upload-file',
+            method: 'post',
+            maxFilesize: 10,
+            maxFiles: 10,
+            parallelUploads: 4,
+            uploadMultiple: false,
+            autoProcessQueue: true,
+            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            addRemoveLinks: false,
+        });
+        $('#btnUpload').on('click', function(){
+            myDropzone.processQueue();
+        });
+</script>
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#upload-poster-form', {
+            // paramName: "files",
+            url: '/upload-file',
+            method: 'post',
+            maxFilesize: 10,
+            maxFiles: 10,
+            parallelUploads: 4,
+            uploadMultiple: false,
+            autoProcessQueue: true,
+            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            addRemoveLinks: false,
+        });
+        $('#btnUpload').on('click', function(){
+            myDropzone.processQueue();
+        });
+</script>
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#upload-behindscenes-form', {
+            // paramName: "files",
+            url: '/upload-file',
+            method: 'post',
+            maxFilesize: 10,
+            maxFiles: 10,
+            parallelUploads: 4,
+            uploadMultiple: false,
+            autoProcessQueue: true,
+            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            addRemoveLinks: false,
+        });
+        $('#btnUpload').on('click', function(){
+            myDropzone.processQueue();
+        });
+</script>
+<script type="text/javascript">
+    Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#upload-banner-form', {
+            // paramName: "files",
+            url: '/upload-file',
+            method: 'post',
+            maxFilesize: 10,
+            maxFiles: 10,
+            parallelUploads: 4,
+            uploadMultiple: false,
+            autoProcessQueue: true,
+            acceptedFiles: ".png, .jpg, .jpeg, .csv, .txt, .pdf, .doc, .bpm, .gif",
+            addRemoveLinks: false,
+        });
+        $('#btnUpload').on('click', function(){
+            myDropzone.processQueue();
+        });
+</script>
 
 @endsection
 

@@ -21,6 +21,7 @@ class FilesController extends Controller
         //enter file into photographs table
         $photo = new Photograph;
         $photo->uploader_person_id = $request->input('person_id');
+        $photo->phototype_id = $request->input('phototype_id');
         $extension = $request->file('file')->getClientOriginalExtension();
         $filename = uniqid() . '.' . $extension;
         $photo->file_name = $filename;
