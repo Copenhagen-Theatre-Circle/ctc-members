@@ -2,7 +2,7 @@
 <html lang="{{ app()->getLocale() }}" style="height: 100%;">
 <head>
     <!-- Title -->
-    <title>CTC Members @yield('title')</title>
+    <title>CTC Members – @yield('title')</title>
     <!-- Head -->
     @include('layouts.partials.head')
 </head>
@@ -18,13 +18,11 @@
           @include('layouts.partials.breadcrumb')
         @endif
         <!-- Content Box -->
-        <div class="row">
-          <div class="col-md-12 col-md-offset-0">
+        {{-- <div class="row"> --}}
             <div class="card light-transparency" style="border-radius: 5px;">
               @yield('content')
             </div>
-          </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
 

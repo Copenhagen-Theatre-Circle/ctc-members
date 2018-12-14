@@ -13,6 +13,17 @@ class Project extends BaseModel
         return $this->hasMany('App\AuditionFormAnswer');
     }
 
+    public function hyperlinks()
+    {
+        return $this->hasMany('App\Hyperlink');
+    }
+
+    public function videos()
+    {
+        $video_array = Hyperlinktype::where('hyperlinkcategory_id',2)->get()->pluck('id');
+        return $this->hasMany('App\Hyperlink')->whereIn('hyperlinktype_id',$video_array);
+    }
+
     public function rights()
     {
         return $this->hasMany('App\Right');
@@ -28,6 +39,11 @@ class Project extends BaseModel
         return $this->hasMany('App\ProjectsPlay');
     }
 
+    public function crewmembers()
+    {
+        return $this->hasMany('App\Crewmember');
+    }
+
     public function projectmemories()
     {
         return $this->hasMany('App\Projectmemory');
@@ -38,4 +54,13 @@ class Project extends BaseModel
         return $this->hasOne('App\AuditionFormVariable');
     }
 
+    public function venue()
+    {
+        return $this->belongsTo('App\Venue');
+    }
+
+    public function season()
+    {
+        return $this->belongsTo('App\Season');
+    }
 }

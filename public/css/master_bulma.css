@@ -52,6 +52,14 @@ hr {
 }
 
 
+.tinted-background{
+  background-color: #ffe5e8;
+}
+
+.select, .select2-container {
+  width: 100% !important;
+}
+
 
 @media (min-width:641px) {
 

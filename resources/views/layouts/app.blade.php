@@ -59,7 +59,7 @@
                 <a class="nav-link" href="/handbooks">Handbooks</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">CTCDB+</a>
+                <a class="nav-link" href="/projects">CTCDB+</a>
               </li>
               <li class="nav-item dropdown">
 

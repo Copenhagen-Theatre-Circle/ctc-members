@@ -2,6 +2,9 @@
     <a class="navbar-item is-tab {{ Request::segment(1) === 'people' ? 'is-active' : null }} " href="/people">
       The Network
     </a>
+    <a class="navbar-item is-tab {{ Request::segment(1) === 'projects' ? 'is-active' : null }} " href="/projects">
+      CTCDB+
+    </a>
     <a class="navbar-item is-tab {{ Request::segment(1) === 'accounts' ? 'is-active' : null }} " href="http://ctc-members.dk/a6de1850-21c1-4ca2-87e0-253c61bee591/seasons/" target="_blank">
       Accounts
     </a>
