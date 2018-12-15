@@ -140,14 +140,6 @@ class ProjectController extends Controller
                     'name' => 'Crew',
                     'icon' => 'fas fa-people-carry'
                 ],
-                'pictures' => [
-                    'name' => 'Pictures',
-                    'icon' => 'fas fa-images'
-                ],
-                'documents' => [
-                    'name' => 'Documents',
-                    'icon' => 'fas fa-file'
-                ],
                 'videos' => [
                     'name' => 'Videos',
                     'icon' => 'fas fa-video'
@@ -159,6 +151,14 @@ class ProjectController extends Controller
                 'testimonies' => [
                     'name' => 'Testimonies',
                     'icon' => 'fas fa-book'
+                ],
+                'pictures' => [
+                    'name' => 'Pictures',
+                    'icon' => 'fas fa-images'
+                ],
+                'documents' => [
+                    'name' => 'Documents',
+                    'icon' => 'fas fa-file'
                 ],
             ];
 
