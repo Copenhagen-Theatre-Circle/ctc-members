@@ -37,7 +37,8 @@ class GroupMessageController extends Controller
     {
       $functions = Crewfunction::get()->sortBy('sort_order')->sortBy('FunctionGroupSortOrder');
       foreach ($functions as $function) {
-        $functionarray[$function->functiongroup][$function->id]=$function->questionnaire_name;
+        // return $function->functiongroup;
+        $functionarray[$function->functiongroup->questionnaire_name][$function->id]=$function->questionnaire_name;
       }
       return view('groupmessageform',['crewfunctions'=>$functionarray]);
     }
