@@ -20,7 +20,7 @@
             Director:
         </td>
         <td>
-            Blabla
+            [DIRECTOR HERE]
         </td>
     </tr>
     <tr>
