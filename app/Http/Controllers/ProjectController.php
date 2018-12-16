@@ -148,10 +148,6 @@ class ProjectController extends Controller
                 //     'name' => 'Ticket Stats',
                 //     'icon' => 'fas fa-ticket-alt'
                 // ],
-                'testimonies' => [
-                    'name' => 'Testimonies',
-                    'icon' => 'fas fa-book'
-                ],
                 'pictures' => [
                     'name' => 'Pictures',
                     'icon' => 'fas fa-images'
@@ -161,6 +157,13 @@ class ProjectController extends Controller
                     'icon' => 'fas fa-file'
                 ],
             ];
+
+        if (user_is_ctcdb_editor()){
+            $panels['testimonies'] =  [
+                    'name' => 'Testimonies',
+                    'icon' => 'fas fa-book'
+                ];
+        }
 
 
         $answers = AuditionFormAnswer::with('person');

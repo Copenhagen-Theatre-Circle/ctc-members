@@ -11,6 +11,9 @@
                 </a>
             </li>
         @endforeach
+
+        {{-- edit function only for rights holders --}}
+        @if (user_can_edit_ctcdb())
         <hr>
         <li v-show="mode=='show'">
             <a @click="mode='edit'">
@@ -28,6 +31,7 @@
                 Edit
             </a>
         </li>
+        @endif
     </ul>
 </nav>
 

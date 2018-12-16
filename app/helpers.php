@@ -22,10 +22,34 @@ function user_is_superuser () {
   return $person->is_superuser == 1;
 }
 
+function user_is_committee_member () {
+    $person = \Auth::user()->person;
+    $rightstype_ids = $person->rights->pluck('rightstype_id')->toArray();
+    return in_array(2, $rightstype_ids);
+}
+
+function user_is_ctcdb_editor () {
+  $person = \Auth::user()->person;
+  $rightstype_ids = $person->rights->pluck('rightstype_id')->toArray();
+  return in_array(3, $rightstype_ids);
+}
+
+function user_is_jubilee_book_editor () {
+  $person = \Auth::user()->person;
+  $rightstype_ids = $person->rights->pluck('rightstype_id')->toArray();
+  return in_array(4, $rightstype_ids);
+}
+
 function user_is_admin_or_superuser () {
   $person = \Auth::user()->person;
   return ($person->is_superuser == 1) || ($person->is_admin == 1) ;
 }
+
+function user_can_edit_ctcdb() {
+  return user_is_ctcdb_editor() or user_is_committee_member() or user_is_jubilee_book_editor();
+}
+
+
 
 function string_or_empty($variable) {
   if (is_string($variable)){
