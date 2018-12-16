@@ -158,7 +158,7 @@ class ProjectController extends Controller
                 ],
             ];
 
-        if (user_is_ctcdb_editor()){
+        if (user_is_jubilee_book_editor()){
             $panels['testimonies'] =  [
                     'name' => 'Testimonies',
                     'icon' => 'fas fa-book'
