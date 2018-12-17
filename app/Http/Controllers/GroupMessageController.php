@@ -62,9 +62,9 @@ class GroupMessageController extends Controller
 
                         $query->whereIn('function_id', $crewfunctions);
                         if($experience=="experience"){
-                          $query->where('has_experience', 1);
+                          $query->where('has_experience', 1)->where('interest',1);
                         } elseif ($experience=="learn") {
-                          $query->where('wants_to_learn', 1);
+                          $query->where('wants_to_learn', 1)->where('interest',1);
                         }
 
                       } );
