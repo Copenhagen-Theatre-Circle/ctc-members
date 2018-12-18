@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user', 'UserController@index');
 
-Route::get('/nomember', function(){
+Route::get('/nomember', function () {
   return redirect('home');
 });
 
@@ -79,8 +79,10 @@ Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeB
 
 Route::post('/upload-file','FilesController@uploadFile');
 
+Route::get('/tributes/{slug}', 'TributeController@show');
 
-Route::get('message/confirmation',function(){
+
+Route::get('message/confirmation',function () {
   return view('contactconfirmation');
 });
 
@@ -97,13 +99,13 @@ Route::post('/process', function (Request $request) {
     dd($path);
 });
 
-Route::get('membershipimporter/{season}', function($season){
+Route::get('membershipimporter/{season}', function ($season) {
     $importer = new MembershipImporter($season);
     $import = $importer->importData();
     return $import;
 });
 
-Route::get('rebatecodeallocator/{project}/{person}', function($project, $person){
+Route::get('rebatecodeallocator/{project}/{person}', function ($project, $person) {
     $importer = new RebateCodeAllocator($project, $person);
     $import = $importer->allocateCodes();
     return $import;
