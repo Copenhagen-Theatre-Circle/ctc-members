@@ -86,7 +86,7 @@ class ProjectController extends Controller
         );
 
         $crewmembers = $project->crewmembers
-                        ->map(function($crewmember){
+                        ->map(function ($crewmember) {
                             $array['crewtype'] = $crewmember->crewtype->name;
                             $array['sort_order'] = $crewmember->crewtype->sort_order ?? (1000 + $crewmember->id);
                             $array['last_name'] = $crewmember->person->last_name;
@@ -156,15 +156,11 @@ class ProjectController extends Controller
                     'name' => 'Documents',
                     'icon' => 'fas fa-file'
                 ],
-            ];
-
-        if (user_is_jubilee_book_editor()){
-            $panels['testimonies'] =  [
+                'testimonies' =>[
                     'name' => 'Testimonies',
                     'icon' => 'fas fa-book'
-                ];
-        }
-
+                ],
+            ];
 
         $answers = AuditionFormAnswer::with('person');
         $sort = $request->input('sort');
