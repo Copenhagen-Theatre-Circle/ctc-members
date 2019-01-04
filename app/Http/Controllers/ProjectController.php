@@ -109,6 +109,7 @@ class ProjectController extends Controller
         }
 
         $documents = $project->documents;
+        $documents_array=array();
         foreach ($documents as $document) {
             $type = strtolower(str_replace(' ', '_', $document->documenttype->name));
             $subarray['file_name'] = $document->file_name;
