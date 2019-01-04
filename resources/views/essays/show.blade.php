@@ -27,22 +27,11 @@
                     <div class="column is-2-widescreen is-3-desktop is-3-tablet has-background-white-bis">
                         @include('essays.partials.sidebar')
                     </div>
-                    <div class="column" style="padding-left:2%;padding-right:2%;" {{-- :class="{ 'tinted-background': mode=='edit' }" --}}>
+                    <div class="column" style="padding-left:2%;padding-right:2%;">
                       {{-- show panels --}}
-                      {{-- <form action="{{$essay->id}}" method="post" id="form"> --}}
-                        @csrf
-                        {{-- <input name="_method" type="hidden" value="PATCH"> --}}
-                        {{-- <input name="project_id" type="hidden" value="{{$essay->id}}"> --}}
-                        @foreach ($panels as $key=>$panel)
-                          <div v-show="activePanel=='{{$key}}'" v-cloak >@include('essays.partials.show.'.$key)</div>
-                        @endforeach
-                      {{-- </form> --}}
-                      {{-- edit panels --}}
-
-{{--                         @foreach ($panels as $key=>$panel)
-                          <div v-show="mode=='edit' && activePanel=='{{$key}}'" v-cloak>@include('projects.partials.edit.'.$key)</div>
-                        @endforeach --}}
-
+                      @foreach ($panels as $key=>$panel)
+                        <div v-show="activePanel=='{{$key}}'" v-cloak >@include('essays.partials.show.'.$key)</div>
+                      @endforeach
                     </div>
                 </div>
             </div>
@@ -67,19 +56,11 @@
               this.activePanel = selection
             },
             submitForm(){
-              document.getElementById("form").submit();
+              this.mode = 'show';
             },
           }
       });
   </script>
-
-  {{-- <script type="text/javascript">
-      $(document).ready(function() {
-          $('.js-basic-single').select2({
-              tags: true
-          });
-      });
-  </script> --}}
 
   <script src="{{ asset('js/dropzone.js') }}"></script>
 
