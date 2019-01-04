@@ -29,14 +29,14 @@
                     </div>
                     <div class="column" style="padding-left:2%;padding-right:2%;" {{-- :class="{ 'tinted-background': mode=='edit' }" --}}>
                       {{-- show panels --}}
-                      <form action="{{$essay->id}}" method="post" id="form">
+                      {{-- <form action="{{$essay->id}}" method="post" id="form"> --}}
                         @csrf
-                        <input name="_method" type="hidden" value="PATCH">
-                        <input name="project_id" type="hidden" value="{{$essay->id}}">
+                        {{-- <input name="_method" type="hidden" value="PATCH"> --}}
+                        {{-- <input name="project_id" type="hidden" value="{{$essay->id}}"> --}}
                         @foreach ($panels as $key=>$panel)
                           <div v-show="activePanel=='{{$key}}'" v-cloak >@include('essays.partials.show.'.$key)</div>
                         @endforeach
-                      </form>
+                      {{-- </form> --}}
                       {{-- edit panels --}}
 
 {{--                         @foreach ($panels as $key=>$panel)
@@ -54,56 +54,44 @@
 @endsection
 
 @section('scripts')
-<script type="text/javascript">
-    const app = new Vue({
-        el: '#app',
-        data:{
-            mode: 'show',
-            activePanel: '{{request()->input('panel') ?? 'testimonies'}}',
-            new_castmembers: [],
-            new_crewmembers: [],
-            new_videos: [],
-        },
-        methods:{
-          changeActivePanel(selection){
-            this.activePanel = selection
+
+  <script type="text/javascript">
+      const app = new Vue({
+          el: '#app',
+          data:{
+              mode: 'show',
+              activePanel: '{{request()->input('panel') ?? 'testimonies'}}',
           },
-          addCastMember() {
-            this.new_castmembers.push({});
-            $(document).ready(function() {
-                    $('.js-basic-single').select2({
-                        tags: true
-                    });
-                });
-          },
-          addCrewMember() {
-            this.new_crewmembers.push({});
-            $(document).ready(function() {
-                    $('.js-basic-single').select2({
-                        tags: true
-                    });
-                    $('.js-basic-single-notags').select2({
-                        tags: false
-                    });
-                });
-          },
-          addVideo() {
-            this.new_videos.push({});
-          },
-          submitForm(){
-            document.getElementById("form").submit();
-          },
-        }
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-basic-single').select2({
-            tags: true
-        });
-    });
-</script>
-<script src="{{ asset('js/dropzone.js') }}"></script>
+          methods:{
+            changeActivePanel(selection){
+              this.activePanel = selection
+            },
+            submitForm(){
+              document.getElementById("form").submit();
+            },
+          }
+      });
+  </script>
+
+  {{-- <script type="text/javascript">
+      $(document).ready(function() {
+          $('.js-basic-single').select2({
+              tags: true
+          });
+      });
+  </script> --}}
+
+  <script src="{{ asset('js/dropzone.js') }}"></script>
+
+  {{-- include a Dropzone Instantiation for each image Dropzone --}}
+  @foreach($phototypes as $phototype)
+      @include('components.dropzone_image_scriptblock',['id'=>'upload-'.$phototype->slug])
+  @endforeach
+
+  {{-- include a Dropzone Instantiation for each document Dropzone --}}
+  @foreach($documenttypes as $documenttype)
+      @include('components.dropzone_document_scriptblock',['id'=>'upload-'.$documenttype->slug])
+  @endforeach
 
 @endsection
 

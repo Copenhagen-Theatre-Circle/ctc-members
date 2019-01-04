@@ -18,6 +18,7 @@ class DocumentUploadController extends Controller
         $document->person_id__uploader = $request->input('uploader_person_id');
         $document->documenttype_id = $request->input('documenttype_id');
         $document->project_id = $request->input('project_id');
+        $document->essaytopic_id = $request->input('essaytopic_id');
         $extension = $request->file('file')->getClientOriginalExtension();
         $filename = uniqid() . '.' . $extension;
         $document->file_name = $filename;

@@ -9,7 +9,7 @@
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
-            acceptedFiles: ".pdf, .doc",
+            acceptedFiles: ".pdf, .doc, .docx",
             addRemoveLinks: false,
         });
 </script>
