@@ -10,7 +10,9 @@ use App\Project;
 use App\Crewtype;
 use App\Character;
 use App\Hyperlink;
+use App\Phototype;
 use App\Crewmember;
+use App\Documenttype;
 use App\ProjectsPlay;
 use App\Hyperlinktype;
 use App\AuditionFormAnswer;
@@ -106,7 +108,18 @@ class ProjectController extends Controller
             $photographs[$type][]=$filename;
         }
 
-        // return $photographs;
+        $documents = $project->documents;
+        foreach ($documents as $document) {
+            $type = strtolower(str_replace(' ', '_', $document->documenttype->name));
+            $subarray['file_name'] = $document->file_name;
+            $subarray['original_file_name'] = $document->original_file_name;
+            $documents_array[$type][]=$subarray;
+        }
+
+        $documents = $documents_array;
+
+        // return $documents_array;
+
 
         if (count($rights)>0) {
           $project->load('audition_form_answers.person');
@@ -178,10 +191,13 @@ class ProjectController extends Controller
         $seasons = Season::orderBy('year_start', 'desc')->get();
         $venues = Venue::get();
         $crewtypes = Crewtype::get();
+        $phototypes = Phototype::get();
+        $documenttypes = Documenttype::get();
+        // return $phototypes;
         // return $venues;
         // return $people;
         // return $crewmembers;
-        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes', 'photographs'));
+        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes', 'photographs', 'phototypes', 'documents', 'documenttypes'));
     }
 
     /**

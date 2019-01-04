@@ -19,4 +19,9 @@ class Essaytopicanswer extends Model
             return "empty";
         }
     }
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
 }

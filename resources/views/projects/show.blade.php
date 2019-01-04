@@ -10,6 +10,8 @@
 
 @section('content')
 
+  <script src="{{ asset('js/dropzone.js') }}"></script>
+
   <div class="section" style="padding: 10px; padding-top: 20px;">
 
      <section class="section" style="padding: 10px;">
@@ -63,128 +65,66 @@
 @endsection
 
 @section('scripts')
-<script type="text/javascript">
-    const app = new Vue({
-        el: '#app',
-        data:{
-            mode: 'show',
-            activePanel: '{{request()->input('panel') ?? 'basics'}}',
-            new_castmembers: [],
-            new_crewmembers: [],
-            new_videos: [],
-        },
-        methods:{
-          changeActivePanel(selection){
-            this.activePanel = selection
-          },
-          addCastMember() {
-            this.new_castmembers.push({});
-            $(document).ready(function() {
-                    $('.js-basic-single').select2({
-                        tags: true
+
+    <script type="text/javascript">
+        const app = new Vue({
+            el: '#app',
+            data:{
+                mode: 'show',
+                activePanel: '{{request()->input('panel') ?? 'basics'}}',
+                new_castmembers: [],
+                new_crewmembers: [],
+                new_videos: [],
+            },
+            methods:{
+              changeActivePanel(selection){
+                this.activePanel = selection
+              },
+              addCastMember() {
+                this.new_castmembers.push({});
+                $(document).ready(function() {
+                        $('.js-basic-single').select2({
+                            tags: true
+                        });
                     });
-                });
-          },
-          addCrewMember() {
-            this.new_crewmembers.push({});
-            $(document).ready(function() {
-                    $('.js-basic-single').select2({
-                        tags: true
+              },
+              addCrewMember() {
+                this.new_crewmembers.push({});
+                $(document).ready(function() {
+                        $('.js-basic-single').select2({
+                            tags: true
+                        });
+                        $('.js-basic-single-notags').select2({
+                            tags: false
+                        });
                     });
-                    $('.js-basic-single-notags').select2({
-                        tags: false
-                    });
-                });
-          },
-          addVideo() {
-            this.new_videos.push({});
-          },
-          submitForm(){
-            document.getElementById("form").submit();
-          },
-        }
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-basic-single').select2({
-            tags: true
+              },
+              addVideo() {
+                this.new_videos.push({});
+              },
+              submitForm(){
+                document.getElementById("form").submit();
+              },
+            }
         });
-    });
-</script>
-<script src="{{ asset('js/dropzone.js') }}"></script>
-<script type="text/javascript">
-    Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone('#upload-showpic-form', {
-            // paramName: "files",
-            url: '/upload-file',
-            method: 'post',
-            maxFilesize: 10,
-            maxFiles: 10,
-            parallelUploads: 4,
-            uploadMultiple: false,
-            autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
-            addRemoveLinks: false,
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.js-basic-single').select2({
+                tags: true
+            });
         });
-        $('#btnUpload').on('click', function(){
-            myDropzone.processQueue();
-        });
-</script>
-<script type="text/javascript">
-    Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone('#upload-poster-form', {
-            // paramName: "files",
-            url: '/upload-file',
-            method: 'post',
-            maxFilesize: 10,
-            maxFiles: 1,
-            parallelUploads: 4,
-            uploadMultiple: false,
-            autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
-            addRemoveLinks: false,
-        });
-        $('#btnUpload').on('click', function(){
-            myDropzone.processQueue();
-        });
-</script>
-<script type="text/javascript">
-    Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone('#upload-behindscenes-form', {
-            // paramName: "files",
-            url: '/upload-file',
-            method: 'post',
-            maxFilesize: 10,
-            maxFiles: 10,
-            parallelUploads: 4,
-            uploadMultiple: false,
-            autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
-            addRemoveLinks: false,
-        });
-        $('#btnUpload').on('click', function(){
-            myDropzone.processQueue();
-        });
-</script>
-<script type="text/javascript">
-    Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone('#upload-banner-form', {
-            // paramName: "files",
-            url: '/upload-file',
-            method: 'post',
-            maxFilesize: 10,
-            maxFiles: 1,
-            parallelUploads: 4,
-            uploadMultiple: false,
-            autoProcessQueue: true,
-            acceptedFiles: ".png, .jpg, .jpeg, .bpm, .gif",
-            addRemoveLinks: false,
-        });
-        $('#btnUpload').on('click', function(){
-            myDropzone.processQueue();
-        });
-</script>
+    </script>
+
+    {{-- include a Dropzone Instantiation for each image Dropzone --}}
+    @foreach($phototypes as $phototype)
+        @include('components.dropzone_image_scriptblock',['id'=>'upload-'.$phototype->slug])
+    @endforeach
+
+    {{-- include a Dropzone Instantiation for each document Dropzone --}}
+    @foreach($documenttypes as $documenttype)
+        @include('components.dropzone_document_scriptblock',['id'=>'upload-'.$documenttype->slug])
+    @endforeach
 
 @endsection
 

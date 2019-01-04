@@ -115,6 +115,21 @@
 
                     <div class="row"> --}}
 
+                      {{-- CTCDB+ --}}
+
+                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                        <div class="card">
+                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/monitor-arrow.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">CTCDB+</h4>
+                            <p class="card-text">Explore members-only content of the <a href="http://www.ctcdb.dk" target="_blank">ctcdb</a> (our previous shows database) such as video recordings of the show or ticket sales statistics.</p>
+                            <a href="/projects" class="btn btn-primary">Browse The Shows</a>
+                          </div>
+                        </div>
+
+                      </div>
+
                       <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                         <div class="card">
@@ -128,6 +143,56 @@
                         </div>
 
                       </div>
+
+                    </div>
+
+                    @if (user_is_admin())
+
+                      <div class="row pb-3">
+                        <div class="col">
+                          <h4>Admin only:</h4>
+                        </div>
+                      </div>
+
+                    @endif
+
+                    <div class="row">
+
+                      @if (user_is_admin())
+
+                          <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                            <div class="card">
+                              <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/group-mail.png" alt="Card image cap">
+                              <div class="card-body">
+                                <h4 class="card-title">Group Mail</h4>
+                                <p class="card-text">Write a mail to a group of people with specific interests</p>
+                                <a href="/groupmessage/create" class="btn btn-primary">Write Message</a>
+                              </div>
+                            </div>
+
+                          </div>
+
+                      @endif
+
+                      {{-- Essays --}}
+
+                      @if(user_is_jubilee_book_editor())
+
+                        <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+                          <div class="card">
+                            <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="/media/book-text.png">
+                            <div class="card-body">
+                              <h4 class="card-title">Book Essays</h4>
+                              <p class="card-text">Answers to the essay topics for the 50th Anniversary Book (book editors only)</p>
+                              <a href="/essays" class="btn btn-primary">Browse The Essays</a>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      @endif
 
                       @if (count($user->person->rights)>0)
 
@@ -148,37 +213,6 @@
 
                     </div>
 
-                    @if (user_is_admin())
-
-                      <div class="row pb-3">
-                        <div class="col">
-                          <h4>Admin only:</h4>
-                        </div>
-                      </div>
-
-                    @endif
-
-                    <div class="row">
-
-                    @if (user_is_admin())
-
-                        <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-
-                          <div class="card">
-                            <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/group-mail.png" alt="Card image cap">
-                            <div class="card-body">
-                              <h4 class="card-title">Group Mail</h4>
-                              <p class="card-text">Write a mail to a group of people with specific interests</p>
-                              <a href="/groupmessage/create" class="btn btn-primary">Write Message</a>
-                            </div>
-                          </div>
-
-                        </div>
-
-                    @endif
-
-                    </div>
-
                     <div class="row pb-3">
                       <div class="col">
                         <h4>coming soon / in the pipeline:</h4>
@@ -195,18 +229,6 @@
                             <h4 class="card-title">Bulletin Board</h4>
                             <p class="card-text">Production help wanted, news from the committee, or anything else that might be of interest to you: read it here. Or even write your own post...</p>
                             {{-- <a href="/posts" class="btn btn-primary">Bulletin Board</a> --}}
-                          </div>
-                        </div>
-
-                      </div>
-
-                      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
-
-                        <div class="card">
-                          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/monitor-arrow.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h4 class="card-title">CTCDB+</h4>
-                            <p class="card-text">Explore members-only content of the <a href="http://www.ctcdb.dk" target="_blank">ctcdb</a> such as video recordings of the show or ticket sales statistics.</p>
                           </div>
                         </div>
 

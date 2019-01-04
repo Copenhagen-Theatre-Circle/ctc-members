@@ -68,4 +68,9 @@ class Project extends BaseModel
     {
         return $this->hasMany('App\Phototag');
     }
+
+    public function documents()
+    {
+        return $this->hasMany('App\Document');
+    }
 }

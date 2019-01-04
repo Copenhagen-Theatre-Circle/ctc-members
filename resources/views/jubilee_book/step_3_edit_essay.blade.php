@@ -162,7 +162,7 @@
                           <div class="field">
                             <label class="label">Please upload any @if ($photographs->count()>0) other @endif relevant photographs, scans or documents here (max 10 MB). Please note that you are restricted to uploading 10 documents. If you have more than 10 documents for this show that you would like to share, please let us know on membership@ctcircle.dk.</label>
                           </div>
-                          <form action="/upload-file" class="dropzone" id="upload-file-form" name="upload-file-form" method="POST" enctype="multipart/form-data">
+                          <form action="/upload-photo" class="dropzone" id="upload-file-form" name="upload-file-form" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="person_id" value="{{$person->id}}">
                             <input type="hidden" name="essaytopic_id" value="{{$this_essay->id}}">
                               {{csrf_field()}}
@@ -219,7 +219,7 @@
     Dropzone.autoDiscover = false;
         var myDropzone = new Dropzone('#upload-file-form', {
             // paramName: "files",
-            url: '/upload-file',
+            url: '/upload-photo',
             method: 'post',
             maxFilesize: 10,
             maxFiles: 10,
