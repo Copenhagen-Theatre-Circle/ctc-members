@@ -55,6 +55,7 @@ class Project extends Resource
             Text::make('name')->sortable(),
             Boolean::make('accounting_only'),
             BelongsTo::make('Season')->sortable(),
+            HasMany::make('ProjectsPlay'),
             HasMany::make('Events'),
             HasMany::make('Rights'),
             HasOne::make('Audition Form Variables'),

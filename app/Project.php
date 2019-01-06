@@ -73,4 +73,9 @@ class Project extends BaseModel
     {
         return $this->hasMany('App\Document');
     }
+
+    public function projectsplay()
+    {
+        return $this->hasMany('App\Projectsplay');
+    }
 }
