@@ -29,7 +29,7 @@
             <h1 class="title is-1" style="margin-bottom: 10px;">{{$project->name}}</h1>
             <h4 class="title is-5" style="margin-bottom: 10px;">by {{implode(', ', $all_authors)}}</h4>
             <h4 class="title is-5" style="margin-bottom: 10px;">{{date('d M Y',strtotime($project->date_start))}} to {{date('d M Y', strtotime($project->date_end))}}</h4>
-            <h4 class="title is-5" style="margin-bottom: 10px;">{{$project->venue->name}}</h4>
+            <h4 class="title is-5" style="margin-bottom: 10px;">{{$project->venue->name ?? ''}}</h4>
           </div>
         </div>
         <div class="card">
