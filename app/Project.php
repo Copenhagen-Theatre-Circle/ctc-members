@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends BaseModel
 {
-    protected $hidden = ['created_at', 'updated_at', 'season_id', 'venue_id', 'uuid', 'publish_online_flag', 'accounting_only'];
+    protected $hidden = ['created_at', 'updated_at', 'venue_id', 'uuid', 'publish_online_flag', 'accounting_only'];
+
+    protected $appends = ['season_year_start'];
 
     public function audition_form_answers()
     {
@@ -77,5 +79,10 @@ class Project extends BaseModel
     public function projectsplay()
     {
         return $this->hasMany('App\Projectsplay');
+    }
+
+    public function getSeasonYearStartAttribute()
+    {
+        return $this->season->year_start;
     }
 }

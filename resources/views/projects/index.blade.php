@@ -14,6 +14,7 @@
 
             <tr>
                 <th>Project Name</th>
+                <th>Season</th>
                 <th>Show Starts</th>
                 <th>Show Ends</th>
                 <th></th>
@@ -22,6 +23,7 @@
             @foreach ($projects as $project)
                 <tr>
                     <td class="pt-3">{{$project->name}}</td>
+                    <td class="pt-3">{{$project->season->year_start}}/{{$project->season->year_start+1}}</td>
                     <td class="pt-3">
                     @if ( !empty ($project->date_start) )
                         {{date ('d M Y', strtotime($project->date_start))}}
