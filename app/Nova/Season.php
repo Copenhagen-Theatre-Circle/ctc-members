@@ -4,35 +4,23 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Project extends Resource
+class Season extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Project';
-
-    /**
-     * The logical group associated with the resource.
-     *
-     * @var string
-     */
-    public static $group = "CTCDB";
+    public static $model = 'App\Season';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'year_start';
 
     /**
      * The columns that should be searched.
@@ -40,7 +28,7 @@ class Project extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'id',
     ];
 
     /**
@@ -52,14 +40,7 @@ class Project extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('name')->sortable(),
-            Boolean::make('accounting_only'),
-            BelongsTo::make('Season')->sortable(),
-            HasMany::make('Events'),
-            HasMany::make('Rights'),
-            HasOne::make('Audition Form Variables'),
-            HasMany::make('Audition Form Answers'),
-            HasMany::make('Project Memories','projectmemories'),
+            ID::make()->sortable(),
         ];
     }
 
