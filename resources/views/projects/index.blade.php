@@ -46,7 +46,7 @@
                         @endif
                     </td>
                     @if (user_can_edit_ctcdb())
-                        <td>
+                        <td class="has-text-centered">
                             @foreach ($project->documents as $document)
                                 @if($document->documenttype_id == 1) <i class="fas fa-check" style="color: green"></i> @endif
                             @endforeach
