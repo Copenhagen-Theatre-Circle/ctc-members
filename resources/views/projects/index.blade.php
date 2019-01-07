@@ -9,20 +9,28 @@
 
 @section('content')
 
-    <div class="section" style="padding-top: 0px; padding-left: 0px; padding-right: 0px;">
+    <div class="section" id="projects" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
+
+        <div class="columns" style="margin-bottom: 0px;">
+            <div class="column is-5 is-offset-1">
+                <input class="input search" type="text" placeholder="Search projects" />
+            </div>
+        </div>
+
         <table class="table is-striped is-bordered is-fullwidth">
 
-            <tr>
+            <thead>
                 <th></th>
-                <th>Project Name</th>
+                <th><span class="sort" data-sort="name">Project Name</span></th>
                 <th>Season</th>
                 <th>Show Starts</th>
                 <th>Show Ends</th>
                 @if (user_can_edit_ctcdb())
-                    <th>Programme</th>
+                    <th><span class="sort" data-sort="programme">Programme</span></th>
                 @endif
                 <th></th>
-            </tr>
+            </thead>
+            <tbody class="list">
 
             @foreach ($projects as $project)
                 <tr>
@@ -33,7 +41,7 @@
                             @endif
                         @endforeach
                     </td>
-                    <td class="pt-3">{{$project->name}}</td>
+                    <td class="pt-3 name">{{$project->name}}</td>
                     <td class="pt-3">{{$project->season->year_start}}/{{$project->season->year_start+1}}</td>
                     <td class="pt-3">
                     @if ( !empty ($project->date_start) )
@@ -46,7 +54,7 @@
                         @endif
                     </td>
                     @if (user_can_edit_ctcdb())
-                        <td class="has-text-centered">
+                        <td class="has-text-centered programme">
                             @foreach ($project->documents as $document)
                                 @if($document->documenttype_id == 1) <i class="fas fa-check" style="color: green"></i> @endif
                             @endforeach
@@ -55,13 +63,23 @@
                     <td><a href="/projects/{{$project->id}}" class="button btn-primary">Details</a></td>
                 </tr>
             @endforeach
-
+        </tbody>
         </table>
 
     </div>
 
 @endsection
 
+@section('scripts')
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script type="text/javascript">
+    var options = {
+      valueNames: [ 'name', 'programme']
+    };
+    var projectsList = new List('projects', options);
+</script>
+
+@endsection
 {{-- @extends('layouts.app')
 
 @section('content')
