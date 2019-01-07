@@ -34,7 +34,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::where('publish_online',1)->orderBy('year','desc')->get();
+        $projects = Project::where('publish_online',1)->orderBy('year','desc')->orderBy('date_start','desc')->get();
         // return $projects;
         return view('projects.index', compact('projects'));
     }

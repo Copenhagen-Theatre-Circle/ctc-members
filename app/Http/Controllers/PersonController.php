@@ -199,7 +199,7 @@ class PersonController extends Controller
 
         foreach ($person->roles as $role) {
             $sort_order = $role->projects_play->project->date_start . "_" . $role->id;
-            $reformed['roles'][$sort_order]['play']=$role->projects_play->play->title;
+            $reformed['roles'][$sort_order]['play']=$role->projects_play->play->title ?? '';
             $reformed['roles'][$sort_order]['character']=$role->character->name;
         }
 
