@@ -9,7 +9,7 @@
           <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_50/https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
         @endif
         </td>
-        <td>{{$actor->character->name}}</td>
+        <td>{{$actor->character->name ?? ''}}</td>
         <td><a href="/people/{{$actor->person->id}}">{{$actor->person->first_name}} {{$actor->person->last_name}}</a></td>
         <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right">delete</button></td>
     </tr>
