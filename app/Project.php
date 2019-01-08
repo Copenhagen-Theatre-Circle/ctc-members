@@ -81,6 +81,11 @@ class Project extends BaseModel
         return $this->hasMany('App\Projectsplay');
     }
 
+    public function directors()
+    {
+        return $this->hasMany('App\Crewmember')->where('crewtype_id',1);
+    }
+
     public function getSeasonYearStartAttribute()
     {
         return $this->season->year_start;

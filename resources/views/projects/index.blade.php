@@ -5,13 +5,17 @@
 @section('breadcrumb')
     <li><a href="/home">Home</a></li>
     <li class="is-active"><a href="#">CTCDB+</a></li>
+    @if (user_can_edit_ctcdb())
+        <a class="button is-small is-danger is-outlined" href="https://trello.com/b/XHtATnxU/ctcdb" target="_blank" style="margin-left: 65%;">report bugs / feature requests (Trello)</a>
+    @endif
+
 @endsection
 
 @section('content')
 
     <div class="section" id="projects" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
 
-        <div class="columns" style="margin-bottom: 0px;">
+        <div class="columns" style="margin-bottom: 0px; padding-left: 10px; padding-right: 10px; ">
             <div class="column is-5 is-offset-1">
                 <input class="input search" type="text" placeholder="Search projects" />
             </div>
@@ -38,6 +42,7 @@
                         @foreach ($project->phototags as $phototag)
                             @if($phototag->photograph->phototype_id == 3)
                                 <img src="https://res.cloudinary.com/ctcircle/image/fetch/w_70/https://ctc-members.dk/files/{{$phototag->photograph->file_name}}">
+                                @break
                             @endif
                         @endforeach
                     </td>
@@ -57,6 +62,7 @@
                         <td class="has-text-centered programme">
                             @foreach ($project->documents as $document)
                                 @if($document->documenttype_id == 1) <i class="fas fa-check" style="color: green"></i> @endif
+                                @break
                             @endforeach
                         </td>
                     @endif

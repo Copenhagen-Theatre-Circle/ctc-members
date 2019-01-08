@@ -17,19 +17,29 @@
     </tr>
     <tr>
         <td style="vertical-align: top">
+            @if(count($project->directors) > 1)
+            Directors:
+            @else
             Director:
+            @endif
         </td>
         <td>
-            [DIRECTOR HERE]
+            {{$directors}}
         </td>
     </tr>
     <tr>
         <td style="vertical-align: top">
             Synopsis:
         </td>
-        <td>
+        <td style="padding-top: 11px;">
             @foreach($project->projects_plays as $projects_play)
-                {!!nl2br($projects_play->synopsis_programme)!!}
+                @if(count($project->projects_plays)>1)
+                    <h5 class="title is-6"><u>{{$projects_play->play->title}}</u></h5>
+                @endif
+                <p>
+                    {!!nl2br($projects_play->synopsis_programme)!!}
+                </p>
+                <br/>
             @endforeach
         </td>
     </tr>
@@ -37,9 +47,15 @@
         <td style="vertical-align: top">
             Director's Statement:
         </td>
-        <td>
+        <td style="padding-top: 11px;">
             @foreach($project->projects_plays as $projects_play)
-                {!!nl2br($projects_play->directors_statement)!!}
+                @if(count($project->projects_plays)>1)
+                    <h5 class="title is-6"><u>{{$projects_play->play->title}}</u></h5>
+                @endif
+                <p>
+                    {!!nl2br($projects_play->directors_statement)!!}
+                </p>
+                <br/>
             @endforeach
         </td>
     </tr>

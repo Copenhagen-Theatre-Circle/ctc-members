@@ -6,6 +6,10 @@
     <li><a href="/home">Home</a></li>
     <li><a href="/projects">CTCDB+</a></li>
     <li class="is-active"><a href="#">{{$project->name}}</a></li>
+    @if (user_can_edit_ctcdb())
+        <a class="button is-small is-danger is-outlined" href="https://trello.com/b/XHtATnxU/ctcdb" target="_blank" style="margin-left: 35%;">report bugs / feature requests (Trello)</a>
+    @endif
+
 @endsection
 
 @section('content')
@@ -27,7 +31,9 @@
           </div>
           <div class="column" >
             <h1 class="title is-1" style="margin-bottom: 10px;">{{$project->name}}</h1>
-            <h4 class="title is-5" style="margin-bottom: 10px;">by {{implode(', ', $all_authors)}}</h4>
+            @if ($all_authors)
+              <h4 class="title is-5" style="margin-bottom: 10px;">by {{implode(', ', $all_authors)}}</h4>
+            @endif
             <h4 class="title is-5" style="margin-bottom: 10px;">{{date('d M Y',strtotime($project->date_start))}} to {{date('d M Y', strtotime($project->date_end))}}</h4>
             <h4 class="title is-5" style="margin-bottom: 10px;">{{$project->venue->name ?? ''}}</h4>
           </div>

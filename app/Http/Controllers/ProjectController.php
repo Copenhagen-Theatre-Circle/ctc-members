@@ -71,7 +71,6 @@ class ProjectController extends Controller
      */
     public function show(Project $project, Request $request)
     {
-
         $rights = \App\Right::where('project_id',$project->id)
                   ->where('person_id',auth_person())
                   ->get();
@@ -87,8 +86,15 @@ class ProjectController extends Controller
             'projects_plays.crewmembers.person',
             'phototags.photograph.phototype',
             'videos.hyperlinktype',
-            'projectmemories'
+            'projectmemories',
+            'directors.person'
         );
+
+        foreach ($project->directors as $director){
+            $directors[]=$director->person->full_name;
+        }
+
+        $directors = implode(', ', $directors);
 
         $crewmembers = $project->crewmembers
                         ->map(function ($crewmember) {
@@ -201,7 +207,7 @@ class ProjectController extends Controller
         // return $venues;
         // return $people;
         // return $crewmembers;
-        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes', 'photographs', 'phototypes', 'documents', 'documenttypes'));
+        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes', 'photographs', 'phototypes', 'documents', 'documenttypes', 'directors'));
     }
 
     /**

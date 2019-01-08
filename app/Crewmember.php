@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Crewmember extends Model
 {
-  protected $hidden = ['id', 'created_at', 'updated_at', 'crewfunction_id', 'play_id', 'crewtype_id','person_id','projects_play_id','project_id'];
+  // protected $hidden = ['id', 'created_at', 'updated_at', 'crewfunction_id', 'play_id', 'crewtype_id','person_id','projects_play_id','project_id'];
 
   public function crewtype()
   {
