@@ -90,6 +90,8 @@ class ProjectController extends Controller
             'directors.person'
         );
 
+        $directors = array();
+
         foreach ($project->directors as $director){
             $directors[]=$director->person->full_name;
         }
