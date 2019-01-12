@@ -78,7 +78,7 @@ class TestController extends Controller
             'projects_plays.actors.character',
             'projects_plays.actors.person',
             'projects_plays.crewmembers.crewtype',
-            'projects_plays.crewmembers.person',
+            'projects_plays.crewmembers.person'
         );
         foreach ($project->projects_plays as $projects_play) {
             foreach ($projects_play->actors as $actor){
