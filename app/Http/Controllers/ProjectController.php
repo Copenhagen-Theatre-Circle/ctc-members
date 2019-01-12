@@ -326,11 +326,11 @@ class ProjectController extends Controller
                 $hyperlink = new Hyperlink;
                 $hyperlink->project_id = $project_id;
                 $hyperlink->url = $video['url'];
-                $hyperlink->hyperlinktype_id = $video['hyperlinktype_id'];
-                $hyperlink->name = $video['name'];
-                $hyperlink->author = $video['author'];
-                $hyperlink->publish_online = $video['publish_online'];
-                $hyperlink->publish_members = $video['publish_members'];
+                $hyperlink->hyperlinktype_id = $video['hyperlinktype_id'] ?? null;
+                $hyperlink->name = $video['name'] ?? null;
+                $hyperlink->author = $video['author'] ?? null;
+                $hyperlink->publish_online = $video['publish_online'] ?? null;
+                $hyperlink->publish_members = $video['publish_members'] ?? null;
                 $hyperlink->save();
             }
         }
