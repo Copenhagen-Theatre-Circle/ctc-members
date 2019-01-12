@@ -201,7 +201,7 @@ class PersonController extends Controller
             $sort_order = $role->projects_play->project->date_start . "_" . $role->id;
             $reformed['roles'][$sort_order]['play']=$role->projects_play->play->title ?? '';
             $reformed['roles'][$sort_order]['character']=$role->character->name ?? '';
-            $reformed['roles'][$sort_order]['project_id']=$role->projects_plas->project_id ?? '';
+            $reformed['roles'][$sort_order]['project_id']=$role->projects_play->project_id ?? '';
         }
 
         if (isset ($reformed['roles'])){

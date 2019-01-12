@@ -76,7 +76,6 @@
                                           </thead>
                                           @foreach ($roles as $role)
                                               <tr>
-                                                  {{-- <td>{{dump($role)}}</td> --}}
                                                   <td style="width: 50%;"><a href="/projects/{{$role['project_id']}}" style="color: #d10f22">{{$role['play']}}</a></td>
                                                   <td style="width: 50%;">{{$role['character']}}</td>
                                               </tr>
