@@ -48,6 +48,7 @@ Route::get('/prototype','PrototypeController@index');
 Route::resources([
     'audition_form_answers' => 'AuditionFormAnswersController',
     'auditions'=>'AuditionController',
+    'actors'=>'ActorController',
     'comments'=>'CommentsController',
     'essays'=>'EssaysController',
     'events'=>'EventController',
