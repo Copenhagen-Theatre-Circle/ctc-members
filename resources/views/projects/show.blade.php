@@ -78,6 +78,8 @@
             data:{
                 mode: 'show',
                 activePanel: '{{request()->input('panel') ?? 'basics'}}',
+                actors: {!! json_encode($actors) !!},
+                crewmembers: {!! json_encode($crewmembers) !!},
                 new_castmembers: [],
                 new_crewmembers: [],
                 new_videos: [],
@@ -111,6 +113,23 @@
               submitForm(){
                 document.getElementById("form").submit();
               },
+              deleteActor: function(key){
+                axios
+                  .delete('/actors/'+key)
+                  .then(this.$delete(this.actors, key));
+
+              },
+              deleteNewActor: function(index){
+                this.$delete(this.new_castmembers, index);
+              },
+              deleteCrewmember: function(id, key){
+                axios
+                  .delete('/crewmembers/'+ id)
+                  .then(this.$delete(this.crewmembers, key));
+              },
+              deleteNewCrewmember: function(index){
+                this.$delete(this.new_crewmembers, index);
+              }
             }
         });
     </script>

@@ -1,5 +1,13 @@
 <table class="table is-striped is-bordered">
-    @foreach ($crewmembers as $crewmember)
+    <tr v-for="(crewmember, key) in crewmembers">
+        <td class="hidden-xs-down" style="width: 60px; padding:2px;">
+            <img :src="'https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/' + crewmember.portrait" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
+        </td>
+        <td>@{{ crewmember.crewtype }}</td>
+        <td><a :href="'/people/' + crewmember.person_id">@{{ crewmember.first_name + ' ' + crewmember.last_name }}</a></td>
+        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteCrewmember(crewmember.id, key)">delete</button></td>
+    </tr>
+{{--     @foreach ($crewmembers as $crewmember)
     <tr>
         <td class="hidden-xs-down" style="width: 60px; padding:2px;">
         @if (!empty($crewmember['portrait']))
@@ -12,7 +20,8 @@
         <td><a href="/people/{{$crewmember['person_id']}}">{{$crewmember['first_name']}} {{$crewmember['last_name']}}</a></td>
         <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right">delete</button></td>
     </tr>
-    @endforeach{{-- add new crew member --}}
+    @endforeach --}}
+    {{-- add new crew member --}}
     <tr v-for="(new_crewmember, index) in new_crewmembers" v-show="mode=='edit'" style="height: 65px;">
         <td class="has-text-centered hidden-xs-down"><i class="fas fa-plus"></i></td>
         <td>
@@ -35,7 +44,7 @@
                 </select>
             </div>
         </td>
-        <td></td>
+        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteNewCrewmember(index)">delete</button></td>
     </tr>
 </table>
 <a v-show="mode=='edit'" class="button is-medium" @click="addCrewMember" class="help">+ add crew member</a>

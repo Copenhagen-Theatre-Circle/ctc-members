@@ -1,19 +1,16 @@
 @foreach ($project->projects_plays as $project_play)
+
 <table class="table is-striped is-bordered">
-    @foreach ($project_play->actors as $actor)
-    <tr>
+    {{-- @foreach ($project_play->actors as $actor) --}}
+    <tr v-for="(actor, key) in actors">
         <td class="hidden-xs-down" style="width: 60px; padding:2px;">
-        @if (!empty($actor->person->portraits[0]))
-          <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$actor->person->portraits[0]['file_name']}}" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
-        @else
-          <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_50/https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
-        @endif
+          <img :src="'https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/' + actor.portrait " style="object-fit: cover; height: 55px; width: 55px; ">
         </td>
-        <td>{{$actor->character->name ?? ''}}</td>
-        <td><a href="/people/{{$actor->person->id ?? ''}}">{{$actor->person->first_name ?? ''}} {{$actor->person->last_name ?? ''}}</a></td>
-        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right">delete</button></td>
+        <td>@{{ actor.character }}</td>
+        <td><a href="/people/{{$actor->person->id ?? ''}}">@{{ actor.name }}</a></td>
+        <td v-if="mode=='edit'" style="width: 50px;"><button @click.prevent="deleteActor(key)" class="button is-danger is-pulled-right">delete</button></td>
     </tr>
-    @endforeach
+    {{-- @endforeach --}}
     {{-- add new cast member --}}
     <tr v-for="(new_castmember, index) in new_castmembers" v-show="mode=='edit'" style="height: 65px;">
         <td class="has-text-centered hidden-xs-down"><i class="fas fa-plus"></i></td>
@@ -37,7 +34,7 @@
                 </select>
             </div>
         </td>
-        <td></td>
+        <td v-if="mode=='edit'" style="width: 50px;"><button @click.prevent="deleteNewActor(index)" class="button is-danger is-pulled-right">delete</button></td>
     </tr>
 </table>
 <a v-show="mode=='edit'" class="button is-medium" @click="addCastMember" class="help">+ add cast member</a>

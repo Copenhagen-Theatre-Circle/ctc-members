@@ -92,11 +92,21 @@ class ProjectController extends Controller
 
         $directors = array();
 
-        foreach ($project->directors as $director){
+        foreach ($project->directors as $director) {
             $directors[]=$director->person->full_name;
         }
 
         $directors = implode(', ', $directors);
+
+        foreach ($project->projects_plays as $projects_play) {
+            foreach ($projects_play->actors as $actor) {
+                $actors[$actor->id]['person_id']=$actor->person_id;
+                $actors[$actor->id]['character_id']=$actor->character_id;
+                $actors[$actor->id]['character']=$actor->character->name;
+                $actors[$actor->id]['name']=$actor->person->full_name;
+                $actors[$actor->id]['portrait']=$actor->person->portraits[0]['file_name'] ?? "unisex_silhouette.png";
+            }
+        }
 
         $crewmembers = $project->crewmembers
                         ->map(function ($crewmember) {
@@ -105,7 +115,8 @@ class ProjectController extends Controller
                             $array['last_name'] = $crewmember->person->last_name;
                             $array['first_name'] = $crewmember->person->first_name;
                             $array['person_id'] = $crewmember->person->id;
-                            $array['portrait'] = $crewmember->person->portraits[0]['file_name'] ?? null;
+                            $array['id'] = $crewmember->id;
+                            $array['portrait'] = $crewmember->person->portraits[0]['file_name'] ?? "unisex_silhouette.png";
                             return $array;
                         })
                         ->sortBy('sort_order')
@@ -209,7 +220,7 @@ class ProjectController extends Controller
         // return $venues;
         // return $people;
         // return $crewmembers;
-        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'crewtypes', 'photographs', 'phototypes', 'documents', 'documenttypes', 'directors'));
+        return view('projects.show', compact('project','answers', 'panels', 'people', 'hyperlinktypes', 'all_authors', 'seasons', 'venues', 'crewmembers', 'actors', 'crewtypes', 'photographs', 'phototypes', 'documents', 'documenttypes', 'directors'));
     }
 
     /**

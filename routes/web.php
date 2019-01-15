@@ -49,6 +49,7 @@ Route::resources([
     'audition_form_answers' => 'AuditionFormAnswersController',
     'auditions'=>'AuditionController',
     'actors'=>'ActorController',
+    'crewmembers'=>'CrewmemberController',
     'comments'=>'CommentsController',
     'essays'=>'EssaysController',
     'events'=>'EventController',
