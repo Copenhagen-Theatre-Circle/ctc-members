@@ -98,6 +98,7 @@ class ProjectController extends Controller
 
         $directors = implode(', ', $directors);
 
+        $actors = array();
         foreach ($project->projects_plays as $projects_play) {
             foreach ($projects_play->actors as $actor) {
                 $actors[$actor->id]['person_id']=$actor->person_id;

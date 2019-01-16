@@ -104,7 +104,7 @@
                                             {{-- {{dd($job)}} --}}
 
                                               <tr>
-                                                <td style="width: 50%;">{{$job['project']}}</td>
+                                                <td style="width: 50%;"><a href="/projects/{{$job['project_id']}}" style="color: #d10f22">{{$job['project']}}</a></td>
                                                 <td style="width: 50%;">
                                                 {{implode (', ', $job['crewfunction'])}}
                                                 </td>

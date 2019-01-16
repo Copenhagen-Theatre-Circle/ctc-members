@@ -7,7 +7,7 @@
           <img :src="'https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/' + actor.portrait " style="object-fit: cover; height: 55px; width: 55px; ">
         </td>
         <td>@{{ actor.character }}</td>
-        <td><a href="/people/{{$actor->person->id ?? ''}}">@{{ actor.name }}</a></td>
+        <td><a :href="'/people/' + actor.person_id">@{{ actor.name }}</a></td>
         <td v-if="mode=='edit'" style="width: 50px;"><button @click.prevent="deleteActor(key)" class="button is-danger is-pulled-right">delete</button></td>
     </tr>
     {{-- @endforeach --}}
