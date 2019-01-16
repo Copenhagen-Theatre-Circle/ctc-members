@@ -208,7 +208,7 @@ class PersonController extends Controller
           ksort($reformed['roles']);
         }
 
-
+        // return $person->crewjobs;
         foreach ($person->crewjobs as $crewjob) {
 
             if (isset ($crewjob->projects_play->project->id)) {
@@ -216,7 +216,7 @@ class PersonController extends Controller
               $reformed['crewjobs'][$id]['crewfunction'][] = $crewjob->crewtype->name;
               $reformed['crewjobs'][$id]['project'] = $crewjob->projects_play->play->title;
               $reformed['crewjobs'][$id]['project_id'] = $crewjob->projects_play->project_id;
-            } elseif ($crewjob->project->id > 0) {
+            } elseif (isset ($crewjob->project->id )) {
               $id = $crewjob->project->date_start . '_pr_'. $crewjob->project->id;
               $reformed['crewjobs'][$id]['crewfunction'][] = $crewjob->crewtype->name;
               $reformed['crewjobs'][$id]['project'] = $crewjob->project->name;
