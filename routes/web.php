@@ -40,6 +40,9 @@ Route::get('/profile','UserController@profile');
 Route::get('/handbooks','UserController@handbooks');
 
 Route::get('/prototype','PrototypeController@index');
+Route::get('/signup', function(){
+    return view ('signup');
+});
 
 // Route::get('/export', 'ExportController@auditions');
 
