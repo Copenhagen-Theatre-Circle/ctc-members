@@ -241,7 +241,11 @@ series: [{
   color: '#888',
   data: [
     @foreach ($output['events'] as $event)
-    {{ $event['available'] }},
+      @if($event['id'] == 275)
+        0,
+      @else
+        {{ $event['available'] }},
+      @endif
     @endforeach
     {{$output['total_available']}}
   ]
@@ -250,7 +254,13 @@ series: [{
   showInLegend: false,
   data: [
     @foreach ($output['events'] as $event)
-    {{ $event['sold'] }},
+
+      @if($event['id'] == 275)
+        85,
+      @else
+        {{ $event['sold'] }},
+      @endif
+
     @endforeach
     {{$output['total_sold']}}
   ],
