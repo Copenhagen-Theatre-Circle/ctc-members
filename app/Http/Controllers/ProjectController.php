@@ -127,6 +127,7 @@ class ProjectController extends Controller
 
         $phototags = $project->phototags;
 
+        $photographs = array();
         foreach ($phototags as $phototag) {
             if ($phototag->photograph->phototype) {
                 $type = strtolower(str_replace(' ', '_', $phototag->photograph->phototype->name));
