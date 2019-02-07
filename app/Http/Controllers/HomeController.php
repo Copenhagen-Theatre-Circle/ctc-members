@@ -34,7 +34,7 @@ class HomeController extends Controller
         $person_id = $_GET['person'] ?? $user->person->id;
 
         //generate rebate codes for selected show:
-        $project_id = 95;
+        $project_id = 116;
         $rebatecodeallocator = new RebateCodeAllocator($project_id, $person_id);
         $import = $rebatecodeallocator->allocateCodes();
 
