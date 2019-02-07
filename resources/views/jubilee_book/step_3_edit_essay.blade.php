@@ -198,6 +198,7 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('js/dropzone.js') }}"></script>
 <script type="text/javascript">
     const app = new Vue({
         el: '#app',
