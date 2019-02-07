@@ -90,6 +90,8 @@ class ProjectController extends Controller
             'directors.person'
         );
 
+        // return $project;
+
         $directors = array();
 
         foreach ($project->directors as $director) {
@@ -126,7 +128,11 @@ class ProjectController extends Controller
         $phototags = $project->phototags;
 
         foreach ($phototags as $phototag) {
-            $type = strtolower(str_replace(' ', '_', $phototag->photograph->phototype->name));
+            if ($phototag->photograph->phototype) {
+                $type = strtolower(str_replace(' ', '_', $phototag->photograph->phototype->name));
+            } else {
+                $type = 'show_still';
+            }
             $filename = $phototag->photograph->file_name;
             $photographs[$type][]=$filename;
         }
