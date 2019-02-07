@@ -22,13 +22,17 @@ class EssaysController extends Controller
         // return $essay;
 
         $phototags = $essay->phototags;
+        $phototags->load('photograph.phototype');
         // return $phototags;
         foreach ($phototags as $phototag) {
-            $type = strtolower(str_replace(' ', '_', $phototag->photograph->phototype->name));
+            if ($phototag->photograph->phototype) {
+                $type = strtolower(str_replace(' ', '_', $phototag->photograph->phototype->name));
+            } else {
+                $type = 'show_still';
+            }
             $filename = $phototag->photograph->file_name;
             $photographs[$type][]=$filename;
         }
-
         $documents = $essay->documents;
         $documents_array=array();
         foreach ($documents as $document) {
