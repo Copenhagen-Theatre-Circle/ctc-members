@@ -79,7 +79,7 @@
                                   </div>
                                   <div class="col-6 pl-0">
                                       <p>
-                                      {!! nl2br(e(str_replace('&#39;',"'",$auditionFormAnswer->person->member_bio))) !!}
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->member_bio)))) !!}
                                       </p>
                                   </div>
                                 </div>
