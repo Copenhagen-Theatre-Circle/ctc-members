@@ -4,7 +4,7 @@
             // paramName: "files",
             url: '/upload-document',
             method: 'post',
-            maxFilesize: 30,
+            maxFilesize: 50,
             maxFiles: 10,
             parallelUploads: 4,
             uploadMultiple: false,
