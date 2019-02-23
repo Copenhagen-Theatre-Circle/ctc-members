@@ -26,6 +26,8 @@ class MembershipImporter
 
         //********* parse all place2book data into clean data for each member
 
+        // return $purchases;
+
         foreach ($purchases as $purchase) {
             //up to 4 members per purchase (2 adults, 2 children) - reset arrays:
             $purchaser = array();
@@ -37,10 +39,12 @@ class MembershipImporter
             $purchaser['first_name'] = split_name($purchaser['name'])[0];
             $purchaser['last_name'] = split_name($purchaser['name'])[1];
             $purchaser['mail'] = trim($purchase->customer->email);
-            $purchaser['type'] = $purchase->tickets->ticket->type;
-            $purchaser['type_id'] = array_flip($membershiptype_array)[$purchaser['type']];
+
+            //TO DO: clean up ?? in following logic -> needs to work for array of tickets too!!
+            $purchaser['type'] = $purchase->tickets->ticket->type ?? 1;
+            $purchaser['type_id'] = array_flip($membershiptype_array)[$purchaser['type']] ?? 1;
             //other members' (adult2, child1 & child2) details parsed from custom fields
-            $custom_fields=$purchase->tickets->ticket->custom_fields->custom_field;
+            $custom_fields=$purchase->tickets->ticket->custom_fields->custom_field ?? array();
             foreach($custom_fields as $custom_field) {
                 if (!empty((array)$custom_field->value)) {
                     // membership or renewal mapped here
