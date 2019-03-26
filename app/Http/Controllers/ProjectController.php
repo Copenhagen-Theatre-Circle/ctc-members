@@ -37,8 +37,12 @@ class ProjectController extends Controller
         $projects = Project::where('publish_online',1)->orderBy('year','desc')->orderBy('date_start','desc')->get();
         $projects->load('documents');
         $projects->load('phototags.photograph');
+        $projects->load('showpics');
+        $projects->load('backstagepics');
+        $projects->load('dataentryperson');
+        $user = auth_person();
         // return $projects;
-        return view('projects.index', compact('projects'));
+        return view('projects.index', compact('projects','user'));
     }
 
     /**
@@ -85,6 +89,7 @@ class ProjectController extends Controller
             'projects_plays.crewmembers.crewtype',
             'projects_plays.crewmembers.person',
             'phototags.photograph.phototype',
+            'showpics',
             'videos.hyperlinktype',
             'projectmemories',
             'directors.person'
@@ -95,7 +100,7 @@ class ProjectController extends Controller
         $directors = array();
 
         foreach ($project->directors as $director) {
-            $directors[]=$director->person->full_name;
+            $directors[]=$director->person->full_name ?? '';
         }
 
         $directors = implode(', ', $directors);

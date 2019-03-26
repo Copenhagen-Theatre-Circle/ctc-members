@@ -16,9 +16,23 @@
     <div class="section" id="projects" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
 
         <div class="columns" style="margin-bottom: 0px; padding-left: 10px; padding-right: 10px; ">
-            <div class="column is-5 is-offset-1">
-                <input class="input search" type="text" placeholder="Search projects" />
+            <div class="column">
+                <input v-model="showFilter" class="input search" type="text" placeholder="Search projects" />
             </div>
+            @if (user_can_edit_ctcdb())
+                <div class="column" style="padding-top: 15px;">
+                    <label class="checkbox">
+                      <input v-model="bookOnly" type="checkbox">
+                      display only productions featured in the book
+                    </label>
+                </div>
+                <div class="column" style="padding-top: 15px;">
+                    <label class="checkbox">
+                      <input v-model="mineOnly" type="checkbox">
+                      display only productions attributed to me
+                    </label>
+                </div>
+            @endif
         </div>
 
         <table class="table is-striped is-bordered is-fullwidth">
@@ -27,17 +41,43 @@
                 <th></th>
                 <th><span class="sort" data-sort="name">Project Name</span></th>
                 <th>Season</th>
-                <th>Show Starts</th>
-                <th>Show Ends</th>
                 @if (user_can_edit_ctcdb())
-                    <th><span class="sort" data-sort="programme">Programme</span></th>
+                    <th><span class="sort" data-sort="programme"><i class="fas fa-book"></i></span></th>
+                    <th><span class="sort" data-sort="programme"><i class="fas fa-book-reader"></i></span></th>
+                    <th><span class="sort" data-sort="programme"><i class="fas fa-theater-masks"></i></i></span></th>
+                    <th><span class="sort" data-sort="programme"><i class="fas fa-people-carry"></i></span></th>
+                    <th><span class="sort" data-sort="programme"><i class="fas fa-images"></i></span></th>
+                    <th><span class="sort" data-sort="programme">data&nbsp;entry</span></th>
+                @else
+                    <th>Show Starts</th>
+                    <th>Show Ends</th>
                 @endif
                 <th></th>
             </thead>
             <tbody class="list">
 
             @foreach ($projects as $project)
-                <tr>
+                <tr v-if=
+                "
+                (
+                    ((bookOnly == true) && ({{$project->publish_book ?? 0}}==1))
+                    ||
+                    bookOnly == false
+                )
+                &&
+                (
+                    showFilter == ''
+                    ||
+                    (showFilter !== '' && '{{str_replace("'", "", $project->name)}}'.toLowerCase().includes(showFilter.toLowerCase()))
+                    {{-- ('{{$project->name}}'.includes(showFilter)) --}}
+                )
+                &&
+                (
+                    mineOnly == false
+                    ||
+                    (myId == '{{$project->dataentryperson->id ?? ''}}')
+                )
+                ">
                     <td>
                         @foreach ($project->phototags as $phototag)
                             @if($phototag->photograph->phototype_id == 3)
@@ -48,21 +88,45 @@
                     </td>
                     <td class="pt-3 name">{{$project->name}}</td>
                     <td class="pt-3">{{$project->season->year_start}}/{{$project->season->year_start+1}}</td>
-                    <td class="pt-3">
-                    @if ( !empty ($project->date_start) )
-                        {{date ('d M Y', strtotime($project->date_start))}}
-                    @endif
-                    </td>
-                    <td class="pt-3">
-                        @if ( !empty ($project->date_end) )
-                            {{date ('d M Y', strtotime($project->date_end))}}
-                        @endif
-                    </td>
                     @if (user_can_edit_ctcdb())
+                        <td>
+                            @if($project->publish_book)
+                                <i class="fas fa-circle" style="color: #D4AF37"></i>
+                            @endif
+                        </td>
                         <td class="has-text-centered programme">
                             @foreach ($project->documents as $document)
                                 @if($document->documenttype_id == 1) <i class="fas fa-check" style="color: green"></i>@break @endif
                             @endforeach
+                        </td>
+                        <td>
+                            @if($project->cast_is_complete)
+                                <i class="fas fa-check" style="color: green"></i>
+                            @endif
+                        </td>
+                        <td>
+                            @if($project->crew_is_complete)
+                                <i class="fas fa-check" style="color: green"></i>
+                            @endif
+                        </td>
+                        <td>
+                            {{count($project->showpics)}}&nbsp;/&nbsp;{{count($project->backstagepics)}}
+                        </td>
+                        <td>
+                            @if ($project->dataentryperson)
+                                {{$project->dataentryperson->first_name}}
+                            @endif
+                        </td>
+                    @else
+                        <td class="pt-3">
+                        @if ( !empty ($project->date_start) )
+                            {{date ('d M Y', strtotime($project->date_start))}}
+                        @endif
+                        </td>
+                        <td class="pt-3">
+                            @if ( !empty ($project->date_end) )
+                                {{date ('d M Y', strtotime($project->date_end))}}
+                            @endif
                         </td>
                     @endif
                     <td><a href="/projects/{{$project->id}}" class="button btn-primary">Details</a></td>
@@ -82,6 +146,15 @@
       valueNames: [ 'name', 'programme']
     };
     var projectsList = new List('projects', options);
+    var vue = new Vue ({
+        el: '#app',
+        data: {
+            bookOnly: false,
+            showFilter: '',
+            mineOnly: false,
+            myId: {{$user}}
+        }
+    })
 </script>
 
 @endsection

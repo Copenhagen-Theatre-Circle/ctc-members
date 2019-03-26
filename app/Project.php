@@ -63,12 +63,31 @@ class Project extends BaseModel
 
     public function season()
     {
-        return $this->belongsTo('App\Season');
+        return $this->belongsTo('App\Season')->select('id','year_start');
     }
 
     public function phototags()
     {
         return $this->hasMany('App\Phototag');
+    }
+
+    public function dataentryperson()
+    {
+        return $this->belongsTo('App\Person', 'person_id_dataentry');
+    }
+
+    public function showpics()
+    {
+        return $this->hasMany('App\Phototag')->whereHas('photograph', function ($query) {
+                $query->where('phototype_id', 1);
+            });
+    }
+
+    public function backstagepics()
+    {
+        return $this->hasMany('App\Phototag')->whereHas('photograph', function ($query) {
+                $query->where('phototype_id', 2);
+            });
     }
 
     public function documents()
