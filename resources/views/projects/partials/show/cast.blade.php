@@ -38,7 +38,20 @@
     </tr>
 </table>
 <a v-show="mode=='edit'" class="button is-medium" @click="addCastMember" class="help">+ add cast member</a>
-<button v-show="mode=='edit'" type="submit" class="button is-medium is-danger is-pulled-right" style="margin-right: 15px;">Save</button>
+<br>
+<div class="columns">
+  <div class="column">
+    <div v-show="mode=='edit'" style="padding-top: 10px;">
+      <label class="checkbox">
+        <input type="checkbox" name="cast_is_complete" value=1 @if($project->cast_is_complete) checked @endif>
+        all cast members have been entered
+      </label>
+    </div>
+  </div>
+  <div class="column">
+    <button v-show="mode=='edit'" type="submit" class="button is-medium is-danger is-pulled-right" style="margin-right: 15px;">Save</button>
+  </div>
+</div>
 <div v-show="mode=='edit'" style="height: 200px;"></div>
 @endforeach
 

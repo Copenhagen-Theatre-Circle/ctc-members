@@ -305,6 +305,8 @@ class ProjectController extends Controller
             }
         }
 
+        // update crew
+
         if ($request->input('new_crew') !== null) {
             // return $projects_play['new_cast'];
             foreach ($request->input('new_crew') as $new_crew) {
@@ -332,6 +334,8 @@ class ProjectController extends Controller
 
         //update project details
         $project->year = $request->input('year');
+        $project->crew_is_complete = $request->input('crew_is_complete');
+        $project->cast_is_complete = $request->input('cast_is_complete');
         $project->number_of_performances = $request->input('number_of_performances');
         $project->date_start = $request->input('date_start');
         $project->date_end = $request->input('date_end');

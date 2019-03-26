@@ -47,6 +47,20 @@
         <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteNewCrewmember(index)">delete</button></td>
     </tr>
 </table>
-<a v-show="mode=='edit'" class="button is-medium" @click="addCrewMember" class="help">+ add crew member</a>
-<button v-show="mode=='edit'" type="submit" class="button is-medium is-danger is-pulled-right" style="margin-right: 15px;">Save</button>
+<a v-show="mode=='edit'" class="button is-medium" v-click="addCrewMember" class="help">+ add crew member</a>
+<br>
+<div class="columns">
+  <div class="column">
+    <div v-show="mode=='edit'" style="padding-top: 10px;">
+      <label class="checkbox">
+        <input type="checkbox" name="crew_is_complete" value=1 @if($project->crew_is_complete) checked @endif>
+        all crew members have been entered
+      </label>
+    </div>
+  </div>
+  <div class="column">
+    <button v-show="mode=='edit'" type="submit" class="button is-medium is-danger is-pulled-right" style="margin-right: 15px;">Save</button>
+  </div>
+</div>
+
 <div v-show="mode=='edit'" style="height: 200px;"></div>
