@@ -37,7 +37,7 @@
         <td v-if="mode=='edit'" style="width: 50px;"><button @click.prevent="deleteNewActor(index)" class="button is-danger is-pulled-right">delete</button></td>
     </tr>
 </table>
-<a v-show="mode=='edit'" class="button is-medium" @click="addCastMember" class="help">+ add cast member</a>
+<a v-show="mode=='edit'" class="button is-medium" v-on:click="addCastMember" class="help">+ add cast member</a>
 <br>
 <div class="columns">
   <div class="column">

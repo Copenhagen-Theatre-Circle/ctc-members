@@ -47,7 +47,7 @@
         <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteNewCrewmember(index)">delete</button></td>
     </tr>
 </table>
-<a v-show="mode=='edit'" class="button is-medium" v-click="addCrewMember" class="help">+ add crew member</a>
+<a v-show="mode=='edit'" class="button is-medium" v-on:click="addCrewMember" class="help">+ add crew member</a>
 <br>
 <div class="columns">
   <div class="column">
