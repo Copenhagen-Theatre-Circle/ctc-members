@@ -285,10 +285,9 @@ class ProjectController extends Controller
                         if (is_numeric($new_cast['person'])) {
                             $person_id = $new_cast['person'];
                         } else {
-                            $person = new Person;
-                            $person->first_name = split_name($new_cast['person'])[0];
-                            $person->last_name = split_name($new_cast['person'])[1];
-                            $person->save();
+                            $first_name = split_name($new_cast['person'])[0];
+                            $last_name = split_name($new_cast['person'])[1];
+                            $person = Person::firstOrCreate(['first_name'=>$first_name, 'last_Name'=>$last_name]);
                             $person_id = $person->id;
                         }
                         // store actor
@@ -316,10 +315,9 @@ class ProjectController extends Controller
                 if (is_numeric($new_crew['person'])) {
                     $person_id = $new_crew['person'];
                 } else {
-                    $person = new Person;
-                    $person->first_name = split_name($new_crew['person'])[0];
-                    $person->last_name = split_name($new_crew['person'])[1];
-                    $person->save();
+                    $first_name = split_name($new_crew['person'])[0];
+                    $last_name = split_name($new_crew['person'])[1];
+                    $person = Person::firstOrCreate(['first_name'=>$first_name, 'last_Name'=>$last_name]);
                     $person_id = $person->id;
                 }
                 // store crewmember

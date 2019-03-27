@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends BaseModel
 {
 
-    protected $visible = ['id','first_name','last_name','portraits','roles','crewjobs','questionnaire_answers','member_bio', 'obituary'];
+    protected $visible = ['id','first_name','last_name','full_name','portraits','roles','crewjobs','questionnaire_answers','member_bio', 'obituary'];
+
+    protected $appends = ['full_name'];
+
+    protected $guarded = [];
 
     // model relationships
 
