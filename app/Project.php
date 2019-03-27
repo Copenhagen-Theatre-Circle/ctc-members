@@ -79,7 +79,7 @@ class Project extends BaseModel
     public function showpics()
     {
         return $this->hasMany('App\Phototag')->whereHas('photograph', function ($query) {
-                $query->where('phototype_id', 1);
+                $query->where('phototype_id', 1)->orWhere('phototype_id', null);
             });
     }
 
