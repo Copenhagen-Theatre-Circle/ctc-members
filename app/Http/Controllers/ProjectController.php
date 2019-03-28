@@ -342,6 +342,7 @@ class ProjectController extends Controller
         $project->publish_online = $request->input('publish_online');
         $project->publish_members = $request->input('publish_members');
         $project->publish_book = $request->input('publish_book');
+        $project->special_thanks = $request->input('special_thanks');
         $project->save();
 
 

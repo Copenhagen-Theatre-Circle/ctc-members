@@ -48,7 +48,20 @@
     </tr>
 </table>
 <a v-show="mode=='edit'" class="button is-medium" v-on:click="addCrewMember" class="help">+ add crew member</a>
+@if($project->special_thanks)
+<div v-show="mode!=='edit'">
+  <label class="label">Special Thanks</label>
+  {{$project->special_thanks}}
+</div>
+@endif
 <br>
+<br>
+<div v-show="mode=='edit'" class="field">
+  <label class="label">Special Thanks</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Special Thanks" name="special_thanks">{{$project->special_thanks}}</textarea>
+  </div>
+</div>
 <div class="columns">
   <div class="column">
     <div v-show="mode=='edit'" style="padding-top: 10px;">
