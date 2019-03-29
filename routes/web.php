@@ -40,13 +40,15 @@ Route::get('/profile','UserController@profile');
 Route::get('/handbooks','UserController@handbooks');
 
 Route::get('/prototype','PrototypeController@index');
-Route::get('/signup', function(){
-    return view ('signup');
+Route::get('/signup', function () {
+    return view('signup');
 });
 
 // Route::get('/export', 'ExportController@auditions');
 
 // Route::get('/projects/{id}', 'ProjectController@show');
+
+Route::get('people/map', 'PersonController@map');
 
 Route::resources([
     'audition_form_answers' => 'AuditionFormAnswersController',
