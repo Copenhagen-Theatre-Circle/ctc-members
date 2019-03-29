@@ -23,14 +23,14 @@ class PersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
-
+    public function index()
+    {
       $people = Person::select('first_name','last_name','id');
 
       $people->orderBy('first_name', 'asc')->orderBy('last_name', 'asc');
 
       // scope: people who answered questionnaire or are members if special rights, else only members
-      if (user_is_admin_or_superuser()){
+      if (user_is_admin_or_superuser()) {
         $people->answeredQuestionnaireOrIsMember();
       } else {
         $people->isMember();
@@ -49,7 +49,7 @@ class PersonController extends Controller
       // query if general interest search
 
       if (!empty(request('g'))) {
-        $people->whereHas('questionnaire_answers', function($q){
+        $people->whereHas('questionnaire_answers', function ($q) {
           $q->where('functiongroup_id',request('g'));
         });
       }
@@ -57,15 +57,14 @@ class PersonController extends Controller
       // query if specific interest search
 
       if (!empty(request('f'))) {
-        $people->whereHas('questionnaire_answers', function($q){
+        $people->whereHas('questionnaire_answers', function ($q) {
           $q->where(['interest'=>1,'function_id'=>request('f')]);
           if (request('e')==1) {
               $q->where(['has_experience'=>1]);
           } elseif (request('e')==2) {
               $q->where(['has_experience'=>0]);
               $q->where(['wants_to_learn'=>1]);
-          }
-          elseif (request('e')==3) {
+          } elseif (request('e')==3) {
               $q->where(['wants_to_learn'=>1]);
           }
         });
@@ -74,13 +73,13 @@ class PersonController extends Controller
       // query if CTC Member search
 
       if (request('c')==1) {
-        $people->whereHas('memberships', function($q){
+        $people->whereHas('memberships', function ($q) {
           $q->where('season_id',Settings::find(1)->active_season_id);
         });
       }
 
       if (request('c')==2) {
-        $people->whereDoesntHave('memberships', function($q){
+        $people->whereDoesntHave('memberships', function ($q) {
           $q->where('season_id',Settings::find(1)->active_season_id);
         });
       }
@@ -92,9 +91,9 @@ class PersonController extends Controller
       // eager load required related data
 
       $people->load(
-        'portraits',
-        'membership_this_season',
-        'questionnaire_answers'
+          'portraits',
+          'membership_this_season',
+          'questionnaire_answers'
       );
 
       // retrieve functiongroups and functions
@@ -104,8 +103,7 @@ class PersonController extends Controller
 
       // return view with data
 
-      return view('people.index', Compact ('people', 'functiongroups'));
-
+      return view('people.index', Compact('people', 'functiongroups'));
     }
 
     /**
@@ -140,14 +138,14 @@ class PersonController extends Controller
         // return $id;
         // $person = Person::where('id',$id)->first;
         $person->load(
-          // 'questionnaire_answers',
-          // 'roles.character',
-          // 'roles.projects_play.play',
-          // 'roles.projects_play.project',
-          'crewjobs.crewtype',
-          'crewjobs.projects_play.play',
-          'crewjobs.projects_play.project',
-          'crewjobs.project'
+            // 'questionnaire_answers',
+            // 'roles.character',
+            // 'roles.projects_play.play',
+            // 'roles.projects_play.project',
+            'crewjobs.crewtype',
+            'crewjobs.projects_play.play',
+            'crewjobs.projects_play.project',
+            'crewjobs.project'
         );
 
 
@@ -160,41 +158,29 @@ class PersonController extends Controller
         $reformed['last_name']=$person->last_name;
         $reformed['biography']=$person->member_bio;
         // $reformed['roles']=$person->roles;
-        if(!empty($person->portraits[0])){
+        if (!empty($person->portraits[0])) {
           $reformed['portrait']=$person->portraits[0]['file_name'];
         } else {
           $reformed['portrait']='unisex_silhouette.png';
         }
 
         foreach ($person->questionnaire_answers as $answer) {
-
           if (!empty($answer->functiongroup_id)) {
-
             //sort order field = key, to ensure correct order
             $sort_id = $answer->functiongroup['sort_order'];
             $reformed['general_interests'][$sort_id]['name'] = $answer->functiongroup->questionnaire_name;
             $reformed['general_interests'][$sort_id]['color_hex'] = $answer->functiongroup->color_hex;
-
-          }
-
-          elseif (!empty($answer->function_id) && !empty($answer->has_experience) && $answer->interest==1) {
-
+          } elseif (!empty($answer->function_id) && !empty($answer->has_experience) && $answer->interest==1) {
             //sort order field = key, to ensure correct order
             $sort_id = $answer->crewfunction->functiongroup->sort_order . "_" . $answer->crewfunction->sort_order;
             $reformed['experience'][$sort_id]['name'] = $answer->crewfunction->questionnaire_name;
             $reformed['experience'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
-
-          }
-
-          elseif (!empty($answer->function_id) && !empty($answer->wants_to_learn) && $answer->interest==1) {
-
+          } elseif (!empty($answer->function_id) && !empty($answer->wants_to_learn) && $answer->interest==1) {
             //sort order field = key, to ensure correct order
             $sort_id = $answer->crewfunction->functiongroup->sort_order . "_" . $answer->crewfunction->sort_order;
             $reformed['wants_to_learn'][$sort_id]['name'] = $answer->crewfunction->questionnaire_name;
             $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
-
           }
-
         }
 
         foreach ($person->roles as $role) {
@@ -204,28 +190,26 @@ class PersonController extends Controller
             $reformed['roles'][$sort_order]['project_id']=$role->projects_play->project_id ?? '';
         }
 
-        if (isset ($reformed['roles'])){
+        if (isset($reformed['roles'])) {
           ksort($reformed['roles']);
         }
 
         // return $person->crewjobs;
         foreach ($person->crewjobs as $crewjob) {
-
-            if (isset ($crewjob->projects_play->project->id)) {
+            if (isset($crewjob->projects_play->project->id)) {
               $id = $crewjob->projects_play->project->date_start . '_pp_'. $crewjob->projects_play->id;
               $reformed['crewjobs'][$id]['crewfunction'][] = $crewjob->crewtype->name;
               $reformed['crewjobs'][$id]['project'] = $crewjob->projects_play->play->title;
               $reformed['crewjobs'][$id]['project_id'] = $crewjob->projects_play->project_id;
-            } elseif (isset ($crewjob->project->id )) {
+            } elseif (isset($crewjob->project->id)) {
               $id = $crewjob->project->date_start . '_pr_'. $crewjob->project->id;
               $reformed['crewjobs'][$id]['crewfunction'][] = $crewjob->crewtype->name;
               $reformed['crewjobs'][$id]['project'] = $crewjob->project->name;
               $reformed['crewjobs'][$id]['project_id'] = $crewjob->project->id;
             }
-
         }
 
-        if (isset ($reformed['crewjobs'])){
+        if (isset($reformed['crewjobs'])) {
           ksort($reformed['crewjobs']);
         }
 
@@ -234,11 +218,11 @@ class PersonController extends Controller
           $reformed['general_interests']=array_values($reformed['general_interests']);
         }
 
-        if (!empty($reformed['wants_to_learn'])){
+        if (!empty($reformed['wants_to_learn'])) {
           $reformed['wants_to_learn']=array_values($reformed['wants_to_learn']);
         }
 
-        if (!empty($reformed['experience'])){
+        if (!empty($reformed['experience'])) {
           $reformed['experience']=array_values($reformed['experience']);
         }
 
@@ -249,7 +233,6 @@ class PersonController extends Controller
         // return $person;
 
         return view('people.show')->with($person);
-
     }
 
     /**
@@ -284,5 +267,24 @@ class PersonController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function map()
+    {
+        $people = Person::orderBy('last_name')->get();
+        $people->load('roles.projects_play','crewjobs.project');
+        foreach ($people as $person) {
+          $subarray['name'] = $person->first_name . ' ' . $person->last_name;
+          $subarray['id'] = $person->id;
+          $subarray['count'] = $person->roles->count() + $person->crewjobs->count();
+          if ($subarray['count']>0) {
+              $array[] = $subarray;
+          }
+        }
+        // return $array;
+        shuffle($array);
+        $people = $array;
+        // return $people;
+        return view('people.personmap', Compact('people'));
     }
 }
