@@ -6,6 +6,7 @@
     <title>CTC Hall of Fame</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
         p {
             display: inline;
@@ -20,21 +21,26 @@
     </style>
   </head>
   <body>
-  <section class="section">
-    <div class="container">
-        @foreach($people as $person)
-          <a style="font-size: {{($person['count']/$max)*48+12}}px !important" href="/person/{{$person['id']}}">{{$person['name']}}</a>
-        @endforeach
+    <div id="app">
+      <section class="section">
+        <div class="container">
+              <a
+                :style="'font-size: ' + person.fontsize + 'px !important'"
+                :href="'/person/' + person.id "
+                v-for="person in people"
+                >
+              @{{person.name}}
+              </a>
+        </div>
+      </section>
     </div>
-  </section>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        people: {!!json_encode($people)!!}
+      }
+    })
+  </script>
   </body>
-</html>
-
-<html>
-<head>
-
-</head>
-<body>
-
-</body>
 </html>

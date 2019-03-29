@@ -273,20 +273,22 @@ class PersonController extends Controller
     {
         $people = Person::orderBy('last_name')->get();
         $people->load('roles.projects_play','crewjobs.project');
+        $max = 1;
         foreach ($people as $person) {
           $subarray['name'] = $person->first_name . ' ' . $person->last_name;
           $subarray['id'] = $person->id;
           $subarray['count'] = $person->roles->count() + $person->crewjobs->count();
-          if ($subarray['count']>0) {
+          $subarray['fontsize'] = ($subarray['count']/66)*48+12;
+          if ($subarray['count']>1) {
               $array[] = $subarray;
           }
         }
-        $max = max(array_column($array, 'count'));
+        // $max = max(array_column($array, 'count'));
         // return $max;
         // return $array;
         shuffle($array);
         $people = $array;
         // return $people;
-        return view('people.personmap', Compact('people', 'max'));
+        return view('people.personmap', Compact('people'));
     }
 }
