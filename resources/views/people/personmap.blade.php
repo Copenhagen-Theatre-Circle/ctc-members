@@ -23,7 +23,7 @@
   <section class="section">
     <div class="container">
         @foreach($people as $person)
-          <a style="font-size: {{$person['count']+9}}px !important" href="/person/{{$person['id']}}">{{$person['name']}}</a>
+          <a style="font-size: {{($person['count']/$max)*48+12}}px !important" href="/person/{{$person['id']}}">{{$person['name']}}</a>
         @endforeach
     </div>
   </section>

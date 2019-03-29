@@ -281,10 +281,12 @@ class PersonController extends Controller
               $array[] = $subarray;
           }
         }
+        $max = max(array_column($array, 'count'));
+        // return $max;
         // return $array;
         shuffle($array);
         $people = $array;
         // return $people;
-        return view('people.personmap', Compact('people'));
+        return view('people.personmap', Compact('people', 'max'));
     }
 }
