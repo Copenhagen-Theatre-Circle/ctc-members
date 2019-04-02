@@ -10,4 +10,9 @@ class Phototag extends Model
     {
         return $this->belongsTo('App\Photograph');
     }
+
+    public function person()
+    {
+        return $this->belongsTo('App\Person');
+    }
 }

@@ -31,10 +31,10 @@ class Person extends BaseModel
         return $this->hasMany('App\Photograph')->orderBy('created_at', 'desc');
     }
 
-    public function mainportrait ()
-      {
+    public function mainportrait()
+    {
           return $this->hasMany('App\Photograph')->orderBy('created_at', 'desc')->pluck('file_name')->first();
-      }
+    }
 
     public function rights()
     {
@@ -108,11 +108,11 @@ class Person extends BaseModel
     //       return $member ;
     //   }
 
-    public function getMainPortraitAttribute ()
-      {
-          $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
-          return $portrait;
-      }
+    public function getMainPortraitAttribute()
+    {
+        $portrait = $this->portraits()->orderBy('created_at', 'desc')->first()['file_name'];
+        return $portrait;
+    }
 
 
     // protected $appends = array('main_portrait');

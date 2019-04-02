@@ -107,6 +107,6 @@ class Project extends BaseModel
 
     public function getSeasonYearStartAttribute()
     {
-        return $this->season->year_start;
+        return $this->season->year_start ?? null;
     }
 }

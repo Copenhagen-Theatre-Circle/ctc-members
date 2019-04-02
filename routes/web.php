@@ -64,6 +64,8 @@ Route::resources([
     'message'=>'MessageController',
     'person'=>'PersonController',
     'people'=>'PersonController',
+    'photographs'=>'PhotographController',
+    'phototags'=>'PhototagController',
     'preferences'=>'UserpreferenceController',
     'posts'=>'PostController',
     'projects'=>'ProjectController',
