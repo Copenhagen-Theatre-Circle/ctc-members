@@ -89,8 +89,8 @@
                        <td>
                           @{{personTag.person.full_name}}
                           <button
-                                style="padding:0;border:none;background: none;"
-                                class="has-text-danger is-size-5 is-pulled-right"
+                                style="padding:0;border:none;background: none; padding-top: 2px;"
+                                class="has-text-danger is-size-6 is-pulled-right"
                                 v-on:click="deletePersonTag(personTag.id,key)"
                           >
                             <i class="fas fa-minus-circle"></i>
@@ -139,7 +139,6 @@
               </div>
             </div>
           </div>
-          <a class="button is-info" :href="'https://ctc-members.dk/files/' + photograph.file_name" target="_blank">download</a>
         </div>
       </section>
     </div>

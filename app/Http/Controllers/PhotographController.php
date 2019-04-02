@@ -11,8 +11,9 @@ use Illuminate\Http\Request;
 
 class PhotographController extends Controller
 {
-    public function show(Photograph $photograph)
+    public function show ($filename)
     {
+        $photograph = Photograph::where('file_name',$filename)->first();
         $phototags_people = Phototag::select('id','person_id')->where('photograph_id',$photograph->id)->where('person_id','<>',null)
                                     ->with(['person' => function ($q) {
                                             $q->select('id','first_name','last_name');

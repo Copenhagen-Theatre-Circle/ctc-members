@@ -8,7 +8,9 @@
     {{-- Gallery of Uploads --}}
     @if($photographs[$phototype->slug]??null)
         @foreach ($photographs[$phototype->slug] as $photograph)
+            <a href="/photographs/{{$photograph}}" target="_blank">
             <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph}}">
+            </a>
         @endforeach
         <br>
         <br>
