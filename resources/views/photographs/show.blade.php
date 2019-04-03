@@ -137,6 +137,14 @@
                       </div>
                     </div>
               </div>
+              <hr>
+              <div class="has-text-centered">
+                <button type="button" class="button is-danger"
+                        onclick="window.open('', '_self', ''); window.close();">
+                        Close Window
+                </button>
+                <p class="is-size-7">(changes are saved automatically)</p>
+              </div>
             </div>
           </div>
         </div>
