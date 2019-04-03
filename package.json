@@ -14,14 +14,19 @@
         "bootstrap": "^4.1.0",
         "cross-env": "^5.1.4",
         "jquery": "^3.3.1",
-        "laravel-mix": "^1.7.2",
-        "lodash": "^4.17.10",
+        "laravel-mix": "^4.0.15",
+        "lodash": "^4.17.11",
         "popper.js": "^1.14.3",
-        "vue": "^2.5.16"
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.17.4",
+        "sass-loader": "^7.1.0",
+        "vue": "^2.6.10",
+        "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "bulma": "^0.7.1",
+        "bulma": "^0.7.4",
         "bulma-extensions": "^2.2.1",
-        "npm": "^6.4.0"
+        "npm": "^6.4.0",
+        "vue-router": "^3.0.2"
     }
 }

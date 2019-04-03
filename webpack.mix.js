@@ -19,5 +19,6 @@ mix.autoload({
        'popper.js/dist/umd/popper.js': ['Popper']
    })
   .js('resources/assets/js/app.js', 'public/js')
+  .js('resources/assets/js/app_project_spa.js', 'public/js')
   .sass('resources/assets/sass/app.scss', 'public/css')
   .sass('resources/assets/sass/bulma_app.scss', 'public/css');
