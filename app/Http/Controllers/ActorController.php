@@ -48,6 +48,7 @@ class ActorController extends Controller
     public function show($id)
     {
         $actor = Actor::find($id);
+        return $actor;
         return $actor->character->name;
         return 'Hello World';
     }

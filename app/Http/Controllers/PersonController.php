@@ -182,7 +182,7 @@ class PersonController extends Controller
             $reformed['wants_to_learn'][$sort_id]['color_hex'] = $answer->crewfunction->functiongroup->color_hex;
           }
         }
-
+        // return $person->roles;
         foreach ($person->roles as $role) {
             $sort_order = $role->projects_play->project->date_start . "_" . $role->id;
             $reformed['roles'][$sort_order]['play']=$role->projects_play->play->title ?? '';
@@ -272,14 +272,22 @@ class PersonController extends Controller
     public function map()
     {
         $people = Person::orderBy('last_name')->get();
-        $people->load('roles.projects_play','crewjobs.project');
+        $people->load('roles.projects_play.project','crewjobs.project');
+        // return $people;
         $max = 1;
         foreach ($people as $person) {
+          $subarray = array();
           $subarray['name'] = $person->first_name . ' ' . $person->last_name;
           $subarray['id'] = $person->id;
+          $subarray['years'] = array();
+          foreach($person->roles as $role) {
+            if ($role->projects_play) {
+              $subarray['years'][] = $role->projects_play->project->year;
+            }
+          }
           $subarray['count'] = $person->roles->count() + $person->crewjobs->count();
           $subarray['fontsize'] = ($subarray['count']/66)*48+12;
-          if ($subarray['count']>1) {
+          if ($subarray['count']>0) {
               $array[] = $subarray;
           }
         }

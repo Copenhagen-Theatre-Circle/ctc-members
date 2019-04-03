@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Play;
+use App\Event;
+use App\Person;
+use App\Project;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ClientErrorResponseException;
-use GuzzleHttp\Client;
-use App\Event;
-use App\Project;
 
 class TestController extends Controller
 {
@@ -72,23 +74,35 @@ class TestController extends Controller
      */
     public function show($id)
     {
-        $project = Project::find($id);
+        $project = Project::select('id','name','season_id')->find($id);
             $project->load(
                 'projects_plays.play.author_play.author',
                 'projects_plays.actors.character',
                 'projects_plays.actors.person',
                 'projects_plays.crewmembers.crewtype',
-                'projects_plays.crewmembers.person'
+                'projects_plays.crewmembers.person',
+                'crewmembers.crewtype',
+                'crewmembers.person',
             );
+
+        // return $project;
+        $plays = Play::all('id','title');
+        $people = Person::select('id','first_name','last_name')->orderBy('last_name')->get();
+        // return $people;
+        // return $plays;
+        return view('test.show', Compact('project','plays','people'));
+
         foreach ($project->projects_plays as $projects_play) {
             foreach ($projects_play->actors as $actor) {
-                $actors[$actor->id]['person_id']=$actor->person_id;
-                $actors[$actor->id]['character_id']=$actor->character_id;
-                $actors[$actor->id]['character']=$actor->character->name;
-                $actors[$actor->id]['name']=$actor->person->full_name;
+                $subarray['id']=$actor->id;
+                $subarray['person_id']=$actor->person_id;
+                $subarray['character_id']=$actor->character_id;
+                $subarray['character']=$actor->character->name;
+                $subarray['name']=$actor->person->full_name;
+                $actors[] = $subarray;
             }
         }
-        // return $actors;
+        // return (array)$actors;
 
         $crewmembers = $project->crewmembers
                         ->map(function ($crewmember) {
@@ -106,7 +120,7 @@ class TestController extends Controller
 
         // return $crewmembers;
         // return $project;
-        return view('test.show', Compact('actors', 'crewmembers'));
+        return view('test.show', Compact('project', 'actors', 'crewmembers'));
     }
 
     /**
