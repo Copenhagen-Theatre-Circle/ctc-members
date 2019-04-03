@@ -14,28 +14,31 @@
       .vs__selected-options {
         width: 300px !important;
       }
-      /*.dropdown-toggle input {
-        width: 100% !important;
-      }*/
+      .dropdown-toggle {
+        background-color: white !important;
+      }
+      html, body, #app, .section {
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <div id="app">
-      <section class="section">
-        <div class="container">
+      <section class="section" style="background-color: grey;">
+        <div class="container" style="background-color: white;">
           <div class="columns">
-            <div class="column">
+            <div class="column" style="padding-top: 0px; padding-right: 0px;">
               <img :src="'https://ctc-members.dk/files/' + photograph.file_name">
               <div class="is-size-7" >
                 <span v-if="photograph.uploader > 0">uploaded by @{{photograph.uploader.full_name}}</span>
-                <span class="is-pulled-right">original file name: @{{photograph.original_file_name}}</span>
+                <span class="is-pulled-right" style="padding-right: 20px;">original file name: @{{photograph.original_file_name}}</span>
               </div>
             </div>
-            <div class="column is-5">
+            <div class="column is-5" style="background-color: #eeeeee;">
               <!-- Photo Type Selection Field -->
               <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                  <label class="label">Type</label>
+                  <label class="label has-text-left">Type</label>
                 </div>
                 <div class="field-body">
                   <div class="field is-narrow">
@@ -58,7 +61,7 @@
               <!-- Project Tag -->
               <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                  <label class="label">Project</label>
+                  <label class="label has-text-left">Project</label>
                 </div>
                 <div class="field-body">
                   <div class="field is-narrow">
@@ -81,10 +84,10 @@
               <!-- People Tags -->
               <div class="field is-horizontal">
                <div class="field-label is-normal">
-                 <label class="label">People</label>
+                 <label class="label has-text-left">People</label>
                </div>
                <div class="field-body">
-                 <table v-if="peopleTags.length > 0" class="table is-bordered" style="width: 322px;">
+                 <table v-if="peopleTags.length > 0" class="table is-bordered is-fullwidth" style="width: 322px;">
                      <tr v-for="(personTag,key) in peopleTags">
                        <td>
                           @{{personTag.person.full_name}}
@@ -129,7 +132,7 @@
               <!-- Photographer -->
               <div class="field is-horizontal">
                     <div class="field-label">
-                      <label class="label">Photo by</label>
+                      <label class="label has-text-left">Photo by</label>
                     </div>
                     <div class="field-body">
                       <div class="control">
@@ -138,11 +141,17 @@
                     </div>
               </div>
               <hr>
+              <!-- Deletion Button -->
+              <button type="button" class="button is-danger is-outlined" v-on:click="deletePhotograph">
+                Delete Photograph
+              </button>
+              <button type="button" class="button is-info is-pulled-right"
+                      onclick="window.open('', '_self', ''); window.close();">
+                      Close Window
+              </button>
+              <hr>
               <div class="has-text-centered">
-                <button type="button" class="button is-danger"
-                        onclick="window.open('', '_self', ''); window.close();">
-                        Close Window
-                </button>
+
                 <p class="is-size-7">(changes are saved automatically)</p>
               </div>
             </div>
@@ -201,6 +210,15 @@
             } else {
               axios.post('/phototags', payload)
               .then(response=>this.projectTag.id=response.data.id);
+            }
+          },
+          deletePhotograph(){
+            var txt;
+            var r = confirm("Please confirm with OK that you want to delete this picture.");
+            if (r == true) {
+              axios.delete('/photographs/'+this.photograph.id);
+              window.open('', '_self', '');
+              window.close();
             }
           }
         }

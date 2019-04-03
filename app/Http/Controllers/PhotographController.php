@@ -35,4 +35,14 @@ class PhotographController extends Controller
         $photograph->fill($request->except('id','file_name'))->save();
         return $photograph->only('id','file_name','phototype_id','is_tagged','photographer_person_id');
     }
+
+    public function destroy($id)
+    {
+        $photograph = Photograph::find($id);
+        $file_name = $photograph->file_name;
+        Phototag::where('photograph_id',$id)->delete();
+        Photograph::destroy($id);
+        unlink('files/'.$file_name);
+        return 'ok';
+    }
 }
