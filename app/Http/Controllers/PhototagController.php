@@ -52,7 +52,7 @@ class PhototagController extends Controller
         $phototag = new Phototag;
         $phototag->person_id = $person_id;
         $phototag->photograph_id = $input['photograph']['id'];
-        $phototag->project_id = $input['projectTag']['project_id'];
+        $phototag->project_id = $input['projectTag']['project_id'] ?? null;
         $phototag->save();
         return $phototag
         ->load(['person' => function ($q) {
