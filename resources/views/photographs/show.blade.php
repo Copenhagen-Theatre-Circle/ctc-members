@@ -27,11 +27,11 @@
             <div class="column">
               <img :src="'https://ctc-members.dk/files/' + photograph.file_name">
               <div class="is-size-7" >
-                <span v-if="photograph.uploader.full_name.length > 0">uploaded by @{{photograph.uploader.full_name}}</span>
+                <span v-if="photograph.uploader > 0">uploaded by @{{photograph.uploader.full_name}}</span>
                 <span class="is-pulled-right">original file name: @{{photograph.original_file_name}}</span>
               </div>
             </div>
-            <div class="column">
+            <div class="column is-5">
               <!-- Photo Type Selection Field -->
               <div class="field is-horizontal">
                 <div class="field-label is-normal">
@@ -64,7 +64,7 @@
                   <div class="field is-narrow">
                     <div class="control">
                       <div class="select is-fullwidth">
-                        <select v-model="projectTag.project_id">
+                        <select v-model="projectTag.project_id" v-on:change="submitProjectTag">
                             <option
                               v-for="project in projects"
                               :value="project.id"
@@ -99,7 +99,7 @@
                      </tr>
                  </table>
                  <div v-else>
-                   <v-select :options="people" label="full_name" taggable v-model="personSelected" placeholder="+ tag new person" v-on:change="addPersonTag"></v-select>
+                   <v-select ref="mySelect" :options="people" label="full_name" taggable v-model="personSelected" placeholder="+ tag new person" v-on:change="addPersonTag"></v-select>
                  </div>
                </div>
              </div>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="field-body">
                       <div class="control">
-                          <v-select :options="people" label="full_name" taggable v-model="photograph.photographer" placeholder="photographer" v-on:change="addPhotographer"></v-select>
+                          <v-select :options="people" label="full_name" taggable v-model="photograph.photographer" placeholder="photographer" v-on:input="addPhotographer"></v-select>
                       </div>
                     </div>
               </div>
@@ -185,6 +185,15 @@
             var id = this.photograph.photographer.id;
             this.photograph.photographer_person_id = id;
             this.submitPhotograph();
+          },
+          submitProjectTag(){
+            let payload = {'projectTag' : this.projectTag, 'photograph': this.photograph };
+            if(this.projectTag.id > 0){
+              axios.put('/phototags/' + this.projectTag.id, payload);
+            } else {
+              axios.post('/phototags', payload)
+              .then(response=>this.projectTag.id=response.data.id);
+            }
           }
         }
       })

@@ -39,19 +39,20 @@ class PhototagController extends Controller
         $input = $request->input();
 
         //create person if not yet set
-        if (!isset($input['person']['id'])) {
+        if (!isset($input['person']['id']) and isset($input['person']['full_name'])) {
             $full_name = $input['person']['full_name'];
             $first_name = split_name($full_name)[0];
             $last_name = split_name($full_name)[1];
             $person = Person::firstOrCreate(['first_name'=>$first_name, 'last_Name'=>$last_name]);
             $person_id = $person->id;
         } else {
-            $person_id = $input['person']['id'];
+            $person_id = $input['person']['id'] ?? null;
         }
 
         $phototag = new Phototag;
         $phototag->person_id = $person_id;
         $phototag->photograph_id = $input['photograph']['id'];
+        $phototag->project_id = $input['projectTag']['project_id'];
         $phototag->save();
         return $phototag
         ->load(['person' => function ($q) {
@@ -90,7 +91,13 @@ class PhototagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // only projects can get updated (people get destroyed and recreated)
+        $input = $request->input();
+        $phototag = Phototag::find($id);
+        $phototag->photograph_id = $input['photograph']['id'];
+        $phototag->project_id = $input['projectTag']['project_id'];
+        $phototag->save();
+        return $phototag;
     }
 
     /**

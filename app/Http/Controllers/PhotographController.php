@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class PhotographController extends Controller
 {
-    public function show ($filename)
+    public function show($filename)
     {
         $photograph = Photograph::where('file_name',$filename)->first();
         $phototags_people = Phototag::select('id','person_id')->where('photograph_id',$photograph->id)->where('person_id','<>',null)
@@ -19,7 +19,7 @@ class PhotographController extends Controller
                                             $q->select('id','first_name','last_name');
                                     }])
                             ->get();
-        $phototag_project = Phototag::select('id','project_id')->where('photograph_id',$photograph->id)->where('project_id','<>',null)->first();
+        $phototag_project = Phototag::select('id','project_id')->where('photograph_id',$photograph->id)->where('project_id','<>',null)->first() ?? (object)[];
         // $photograph = $photograph->except('id','file_name','phototype_id','is_tagged','uploader_person_id','photographer_person_id');
         $photograph->load('photographer','uploader');
         $phototypes = Phototype::select('id','name')->get();
