@@ -55,15 +55,30 @@
 </div>
 
 @foreach ($project->projects_plays as $projects_play)
+    @if(count($project->projects_plays)>1)
+        <h5 class="title is-4" style="padding-top:20px;"><u>{{$projects_play->play->title}}</u></h5>
+    @endif
     <div class="field">
-      <label class="label">Synopsis</label>
+      <label class="label">
+        @if(count($project->projects_plays)>1)
+          Synopsis: {{$projects_play->play->title}}
+        @else
+          Synopsis
+        @endif
+      </label>
       <div class="control">
         <textarea class="textarea" placeholder="Textarea" rows=10 name="projects_plays[{{$projects_play->id}}][synopsis_programme]">{{$projects_play->synopsis_programme}}</textarea>
       </div>
     </div>
 
     <div class="field">
-      <label class="label">Director's Statement</label>
+      <label class="label">
+        @if(count($project->projects_plays)>1)
+          Director's Statement: {{$projects_play->play->title}}
+        @else
+          Director's Statement
+        @endif
+      </label>
       <div class="control">
         <textarea class="textarea" placeholder="Textarea" rows=10 name="projects_plays[{{$projects_play->id}}][directors_statement]">{{$projects_play->directors_statement}}</textarea>
       </div>
