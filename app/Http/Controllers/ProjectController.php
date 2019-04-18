@@ -111,7 +111,7 @@ class ProjectController extends Controller
                 $actors[$actor->id]['person_id']=$actor->person_id;
                 $actors[$actor->id]['character_id']=$actor->character_id;
                 $actors[$actor->id]['character']=$actor->character->name;
-                $actors[$actor->id]['name']=$actor->person->full_name;
+                $actors[$actor->id]['name']=$actor->person->full_name ?? '';
                 $actors[$actor->id]['portrait']=$actor->person->portraits[0]['file_name'] ?? "unisex_silhouette.png";
             }
         }
@@ -210,7 +210,7 @@ class ProjectController extends Controller
                     'icon' => 'fas fa-book'
                 ],
             ];
-
+        // return $panels;
         $answers = AuditionFormAnswer::with('person');
         $sort = $request->input('sort');
         if ($sort == 'first_name') {

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Season extends Model
 {
-    //
+    protected $visible=['id','year_start'];
 }

@@ -87,7 +87,9 @@ Route::post('/jubilee-book/{person_id}/step-3/{show_id}/store','JubileeBookContr
 Route::get('/jubilee-book/{person_id}/step-3/essays/{essay_id}/edit','JubileeBookController@step_3_essay_edit');
 Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeBookController@step_3_essay_store')->name('jubilee.step3_essay.store');
 
-Route::get('/projects/{id}','ProjectSpaController@show')->where('any','.*');
+Route::get('/projects/{id}', function($id){
+            return redirect('/projects/'.$id.'/basics');
+        });
 Route::get('/projects/{id}/{any}','ProjectSpaController@show')->where('any','.*');
 
 Route::post('/upload-photo','PhotoUploadController@store');

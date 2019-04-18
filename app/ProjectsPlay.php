@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectsPlay extends BaseModel
 {
 
-  protected $hidden = ['id', 'created_at', 'updated_at', 'project_id', 'play_id'];
+  protected $hidden = ['created_at', 'updated_at', 'project_id'];
 
   public function play()
   {
@@ -32,6 +32,16 @@ class ProjectsPlay extends BaseModel
   public function project()
   {
       return $this->belongsTo('App\Project');
+  }
+
+  public function getDirectorsStatementAttribute($value)
+  {
+      return nl2br($value);
+  }
+
+  public function getSynopsisAttribute($value)
+  {
+      return nl2br($value);
   }
 
 }

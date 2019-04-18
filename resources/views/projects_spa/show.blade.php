@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-    <projects-sidebar></projects-sidebar>
+
+<project-base></project-base>
+
 @endsection
 
 

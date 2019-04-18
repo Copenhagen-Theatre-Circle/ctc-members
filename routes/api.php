@@ -21,6 +21,14 @@ Route::get('/members', function(){
     return App\Person::all();
 });
 
+Route::apiResources([
+    'projects' => 'API\ProjectController',
+    'people' => 'API\PersonController',
+    'characters' => 'API\CharacterController',
+    'seasons' => 'API\SeasonController',
+    'venues' => 'API\VenueController',
+]);
+
 Route::resource('person','PersonController');
 
 Route::resource('questionnaire_answers','QuestionnaireAnswerController');

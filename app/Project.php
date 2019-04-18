@@ -8,6 +8,8 @@ class Project extends BaseModel
 {
     protected $hidden = ['created_at', 'updated_at', 'venue_id', 'uuid', 'publish_online_flag', 'accounting_only'];
 
+    protected $guarded = [];
+
     protected $appends = ['season_year_start'];
 
     public function audition_form_answers()

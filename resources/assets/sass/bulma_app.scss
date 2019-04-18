@@ -1,3 +1,10 @@
+// Fonts
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+
 //variables
 $ctc-red: #d10f22;
 $steps-completed-color: $ctc-red;
@@ -9,6 +16,9 @@ $warning: $light-orange;
 
 //Bulma
 @import './node_modules/bulma/bulma.sass';
+
+//Buefy
+@import "./node_modules/buefy/src/scss/buefy.scss";
 
 // Import Extensions
 @import "./node_modules/bulma-extensions/bulma-steps/src/sass/index.sass"

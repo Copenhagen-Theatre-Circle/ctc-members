@@ -1,7 +1,7 @@
 <template>
-    <div>
-        This is the sidebar.
-    </div>
+  <div>
+      <h1>Pictures</h1>
+  </div>
 </template>
 <script>
   export default {

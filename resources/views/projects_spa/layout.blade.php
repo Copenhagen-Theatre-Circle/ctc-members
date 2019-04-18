@@ -4,9 +4,15 @@
     <!-- Title -->
     <title>CTC Members – @yield('title')</title>
     <!-- Head -->
-    <script src="{{ mix('/js/app_project_spa.js') }}" defer></script>
     <link href="{{ asset('css/bulma_app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/master_bulma.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+    <script src="{{ mix('/js/app_project_spa.js') }}" defer></script>
+    <style>
+      .vs__selected-options {
+            width: 250px !important;
+          }
+    </style>
 </head>
 <body>
     <!-- Wrap everything in 'app' for Vue -->
