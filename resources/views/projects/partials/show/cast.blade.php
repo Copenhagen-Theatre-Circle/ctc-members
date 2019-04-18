@@ -15,7 +15,7 @@
     <tr v-for="(new_castmember, index) in new_castmembers" v-show="mode=='edit'" style="height: 65px;">
         <td class="has-text-centered hidden-xs-down"><i class="fas fa-plus"></i></td>
         <td>
-            <div class="control">
+            <div class="control" style="min-width: 200px;">
                 <select :name="'projects_plays[{{$project_play->id}}][new_cast][' + index + '][character]'" class="js-basic-single" required>
                   <option></option>
                   @foreach($project_play->characters as $character)
@@ -25,7 +25,7 @@
             </div>
         </td>
         <td>
-            <div class="control">
+            <div class="control" style="min-width: 200px;">
                 <select :name="'projects_plays[{{$project_play->id}}][new_cast][' + index + '][person]'" class="js-basic-single" required>
                   <option></option>
                   @foreach($people as $person)
