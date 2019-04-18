@@ -22,6 +22,9 @@
     [v-cloak] {
       display: none !important;
     }
+    .select2 {
+        min-width: 200px !important;
+    }
 </style>
 
 <!-- Head-level scripts -->
