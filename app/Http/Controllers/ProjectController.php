@@ -330,6 +330,17 @@ class ProjectController extends Controller
             }
         }
 
+        // update synopsis and directors_statement
+
+        if ($request->input('projects_plays') !== null) {
+            foreach ($request->input('projects_plays') as $projects_play_id => $projects_play) {
+                $update = ProjectsPlay::find($projects_play_id);
+                $update->synopsis_programme = $projects_play['synopsis_programme'];
+                $update->directors_statement = $projects_play['directors_statement'];
+                $update->save();
+            }
+        }
+
         //update project details
         $project->year = $request->input('year');
         $project->crew_is_complete = $request->input('crew_is_complete');
