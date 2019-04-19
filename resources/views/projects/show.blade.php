@@ -80,7 +80,9 @@
                 activePanel: '{{request()->input('panel') ?? 'basics'}}',
                 actors: {!! json_encode($actors) !!},
                 crewmembers: {!! json_encode($crewmembers) !!},
-                new_castmembers: [],
+                @foreach ($project->projects_plays as $project_play)
+                  new_castmembers_{{$project_play->id}}: [],
+                @endforeach
                 new_crewmembers: [],
                 new_videos: [],
             },
@@ -88,8 +90,9 @@
               changeActivePanel(selection){
                 this.activePanel = selection
               },
-              addCastMember() {
-                this.new_castmembers.push({});
+              addCastMember(projectplay_id) {
+                objectName = 'new_castmembers_' + projectplay_id;
+                this[objectName].push({});
                 $(document).ready(function() {
                         $('.js-basic-single').select2({
                             tags: true
@@ -113,14 +116,14 @@
               submitForm(){
                 document.getElementById("form").submit();
               },
-              deleteActor: function(key){
+              deleteActor: function(project_play_id, actor_id, row){
                 axios
-                  .delete('/actors/'+key)
-                  .then(this.$delete(this.actors, key));
-
+                  .delete('/actors/'+actor_id)
+                  .then(document.getElementById(project_play_id).deleteRow(row-1));
               },
-              deleteNewActor: function(index){
-                this.$delete(this.new_castmembers, index);
+              deleteNewActor: function(projectplay_id, index){
+                objectName = 'new_castmembers_' + projectplay_id;
+                this.$delete(this[objectName], index);
               },
               deleteCrewmember: function(id, key){
                 axios

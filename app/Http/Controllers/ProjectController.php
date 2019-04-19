@@ -85,7 +85,7 @@ class ProjectController extends Controller
             'projects_plays.play.author_play.author',
             'projects_plays.characters',
             'projects_plays.actors.character',
-            'projects_plays.actors.person',
+            'projects_plays.actors.person.portraits',
             'projects_plays.crewmembers.crewtype',
             'projects_plays.crewmembers.person',
             'phototags.photograph.phototype',
@@ -223,7 +223,7 @@ class ProjectController extends Controller
         $answers = $answers->where('project_id',$project->id);
         $answers = $answers->get();
 
-        $people = Person::orderBy('last_name')->get();
+        $people = Person::where('last_name','<>','')->orderBy('last_name')->get();
         $seasons = Season::orderBy('year_start', 'desc')->get();
         $venues = Venue::get();
         $crewtypes = Crewtype::get();
