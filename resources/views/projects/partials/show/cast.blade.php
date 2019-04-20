@@ -2,7 +2,7 @@
 @if(count($project->projects_plays)>1)
     <h5 class="title is-4" style="padding-top:20px;"><u>{{$project_play->play->title}}</u></h5>
 @endif
-<table class="table is-striped is-bordered" id={{$project_play->id}}>
+<table class="table is-striped is-bordered" id='actor_{{$project_play->id}}'>
     @foreach ($project_play->actors as $actor)
     <tr
     {{-- v-for="(actor, key) in actors" --}}

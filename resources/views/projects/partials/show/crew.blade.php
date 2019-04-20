@@ -1,32 +1,39 @@
-<table class="table is-striped is-bordered">
-    <tr v-for="(crewmember, key) in crewmembers">
-        <td class="hidden-xs-down" style="width: 60px; padding:2px;">
-            <img :src="'https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/' + crewmember.portrait" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
-        </td>
-        <td>@{{ crewmember.crewtype }}</td>
-        <td><a :href="'/people/' + crewmember.person_id">@{{ crewmember.first_name + ' ' + crewmember.last_name }}</a></td>
-        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteCrewmember(crewmember.id, key)">delete</button></td>
-    </tr>
-{{--     @foreach ($crewmembers as $crewmember)
+@foreach ($project->projects_plays as $project_play)
+@if(count($project->projects_plays)>1)
+    <h5 class="title is-4" style="padding-top:20px;"><u>{{$project_play->play->title}}</u></h5>
+@endif
+<table class="table is-striped is-bordered" id='crewmember_{{$project_play->id}}'>
+    @foreach ($project_play->crewmembers as $crewmember)
     <tr>
         <td class="hidden-xs-down" style="width: 60px; padding:2px;">
-        @if (!empty($crewmember['portrait']))
-          <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$crewmember['portrait']}}" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
-        @else
-          <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_50/https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="object-fit: cover; height: 55px; width: 55px; ">
-        @endif
+          @if (count($crewmember->person->portraits)>0)
+            @foreach ($crewmember->person->portraits as $portrait)
+            <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$portrait->file_name}}" style="object-fit: cover; height: 55px; width: 55px; ">
+            @break
+            @endforeach
+          @else
+            <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/unisex_silhouette.png" style="object-fit: cover; height: 55px; width: 55px; ">
+          @endif
         </td>
-        <td>{{$crewmember['crewtype']}}</td>
-        <td><a href="/people/{{$crewmember['person_id']}}">{{$crewmember['first_name']}} {{$crewmember['last_name']}}</a></td>
-        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right">delete</button></td>
+        <td>{{$crewmember->crewtype->name }}</td>
+        <td>
+          <a href="/people/{{$crewmember->person_id}}">{{$crewmember->person->full_name }}</a>
+        </td>
+        <td v-if="mode=='edit'" style="width: 50px;">
+          <button class="button is-danger is-pulled-right" @click.prevent="deleteCrewmember({{$project_play->id}}, {{$crewmember->id}}, {{$loop->iteration}})">
+            delete
+          </button>
+        </td>
     </tr>
-    @endforeach --}}
+    @endforeach
+
     {{-- add new crew member --}}
-    <tr v-for="(new_crewmember, index) in new_crewmembers" v-show="mode=='edit'" style="height: 65px;">
+    <tr v-for="(new_crewmember, index) in new_crewmembers_{{$project_play->id}}" v-show="mode=='edit'" style="height: 65px;">
         <td class="has-text-centered hidden-xs-down"><i class="fas fa-plus"></i></td>
         <td>
             <div class="control">
-                <select :name="'new_crew[' + index + '][crewtype]'" class="js-basic-single-notags" required>
+
+                <select :name="'projects_plays[{{$project_play->id}}][new_crew][' + index + '][crewtype]'" class="js-basic-single-notags" required>
                   <option></option>
                   @foreach($crewtypes as $crewtype)
                       <option value={{$crewtype->id}}>{{$crewtype->name}}</option>
@@ -36,7 +43,7 @@
         </td>
         <td>
             <div class="control">
-                <select :name="'new_crew[' + index + '][person]'" class="js-basic-single" required>
+                <select :name="'projects_plays[{{$project_play->id}}][new_crew][' + index + '][person]'" class="js-basic-single" required>
                   <option></option>
                   @foreach($people as $person)
                       <option value={{$person->id}}>{{$person->first_name}} {{$person->last_name}}</option>
@@ -44,10 +51,11 @@
                 </select>
             </div>
         </td>
-        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteNewCrewmember(index)">delete</button></td>
+        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteNewCrewmember({{$project_play->id}}, index)">delete</button></td>
     </tr>
 </table>
-<a v-show="mode=='edit'" class="button is-medium" v-on:click="addCrewMember" class="help">+ add crew member</a>
+<a v-show="mode=='edit'" class="button is-medium" v-on:click="addCrewMember({{$project_play->id}})" class="help">+ add crew member</a>
+@endforeach
 @if($project->special_thanks)
 <div v-show="mode!=='edit'">
   <label class="label">Special Thanks</label>

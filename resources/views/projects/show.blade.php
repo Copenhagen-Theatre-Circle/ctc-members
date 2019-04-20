@@ -83,7 +83,9 @@
                 @foreach ($project->projects_plays as $project_play)
                   new_castmembers_{{$project_play->id}}: [],
                 @endforeach
-                new_crewmembers: [],
+                @foreach ($project->projects_plays as $project_play)
+                  new_crewmembers_{{$project_play->id}}: [],
+                @endforeach
                 new_videos: [],
             },
             methods:{
@@ -99,8 +101,9 @@
                         });
                     });
               },
-              addCrewMember() {
-                this.new_crewmembers.push({});
+              addCrewMember(projectplay_id) {
+                objectName = 'new_crewmembers_' + projectplay_id;
+                this[objectName].push({});
                 $(document).ready(function() {
                         $('.js-basic-single').select2({
                             tags: true
@@ -119,19 +122,20 @@
               deleteActor: function(project_play_id, actor_id, row){
                 axios
                   .delete('/actors/'+actor_id)
-                  .then(document.getElementById(project_play_id).deleteRow(row-1));
+                  .then(document.getElementById('actor_' + project_play_id).deleteRow(row-1));
               },
               deleteNewActor: function(projectplay_id, index){
                 objectName = 'new_castmembers_' + projectplay_id;
                 this.$delete(this[objectName], index);
               },
-              deleteCrewmember: function(id, key){
+              deleteCrewmember: function(project_play_id, crewmember_id, row){
                 axios
-                  .delete('/crewmembers/'+ id)
-                  .then(this.$delete(this.crewmembers, key));
+                  .delete('/crewmembers/'+ crewmember_id)
+                  .then(document.getElementById('crewmember_' + project_play_id).deleteRow(row-1));
               },
-              deleteNewCrewmember: function(index){
-                this.$delete(this.new_crewmembers, index);
+              deleteNewCrewmember: function(projectplay_id, index){
+                objectName = 'new_crewmembers_' + projectplay_id;
+                this.$delete(this[objectName], index);
               }
             }
         });

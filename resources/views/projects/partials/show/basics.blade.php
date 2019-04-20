@@ -33,13 +33,15 @@
         </td>
         <td style="padding-top: 11px;">
             @foreach($project->projects_plays as $projects_play)
-                @if(count($project->projects_plays)>1)
-                    <h5 class="title is-6"><u>{{$projects_play->play->title}}</u></h5>
+                @if($projects_play->synopsis_programme)
+                    @if(count($project->projects_plays)>1)
+                        <h5 class="title is-6"><u>{{$projects_play->play->title}}</u></h5>
+                    @endif
+                    <p>
+                        {!!nl2br($projects_play->synopsis_programme)!!}
+                    </p>
+                    <br/>
                 @endif
-                <p>
-                    {!!nl2br($projects_play->synopsis_programme)!!}
-                </p>
-                <br/>
             @endforeach
         </td>
     </tr>
@@ -49,13 +51,15 @@
         </td>
         <td style="padding-top: 11px;">
             @foreach($project->projects_plays as $projects_play)
-                @if(count($project->projects_plays)>1)
-                    <h5 class="title is-6"><u>{{$projects_play->play->title}}</u></h5>
+                @if($projects_play->synopsis_programme)
+                    @if(count($project->projects_plays)>1)
+                        <h5 class="title is-6"><u>{{$projects_play->play->title}}</u></h5>
+                    @endif
+                    <p>
+                        {!!nl2br($projects_play->directors_statement)!!}
+                    </p>
+                    <br/>
                 @endif
-                <p>
-                    {!!nl2br($projects_play->directors_statement)!!}
-                </p>
-                <br/>
             @endforeach
         </td>
     </tr>

@@ -259,10 +259,12 @@ class ProjectController extends Controller
         // return $_POST;
         $project_id = $request->input('project_id');
 
-        // update cast
+        // update cast and crew for each projects_play
         if ($request->input('projects_plays') !== null) {
             foreach ($request->input('projects_plays') as $projects_play_id => $projects_play) {
                 // return $projects_play;
+
+                //cast
                 if ($projects_play['new_cast'] ?? null !== null) {
                     // return $projects_play['new_cast'];
                     foreach ($projects_play['new_cast'] as $new_cast) {
@@ -298,6 +300,31 @@ class ProjectController extends Controller
                         $actor->person_id = $person_id;
                         $actor->sort_value = $max_sort;
                         $actor->save();
+                        // return $actor->id;
+                    }
+                }
+
+                //crew
+                if ($projects_play['new_crew'] ?? null !== null) {
+                    // return $projects_play['new_crew'];
+                    foreach ($projects_play['new_crew'] as $new_crew) {
+                        $crewtype_id = $new_crew['crewtype'];
+                        // create person if string
+                        if (is_numeric($new_crew['person'])) {
+                            $person_id = $new_crew['person'];
+                        } else {
+                            $first_name = split_name($new_crew['person'])[0];
+                            $last_name = split_name($new_crew['person'])[1];
+                            $person = Person::firstOrCreate(['first_name'=>$first_name, 'last_Name'=>$last_name]);
+                            $person_id = $person->id;
+                        }
+                        // store crewmember
+                        $crewmember = new Crewmember;
+                        $crewmember->project_id = $project_id;
+                        $crewmember->projects_play_id = $projects_play_id;
+                        $crewmember->crewtype_id = $crewtype_id;
+                        $crewmember->person_id = $person_id;
+                        $crewmember->save();
                         // return $actor->id;
                     }
                 }
