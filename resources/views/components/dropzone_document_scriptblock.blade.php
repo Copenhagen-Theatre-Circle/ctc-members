@@ -5,7 +5,7 @@
             url: '/upload-document',
             method: 'post',
             maxFilesize: 50,
-            maxFiles: 10,
+            maxFiles: 100,
             parallelUploads: 4,
             uploadMultiple: false,
             autoProcessQueue: true,
