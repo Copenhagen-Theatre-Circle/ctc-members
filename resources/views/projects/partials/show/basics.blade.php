@@ -32,6 +32,9 @@
             Synopsis:
         </td>
         <td style="padding-top: 11px;">
+            @if(count($project->projects_plays)>1)
+                {!!nl2br($project->synopsis)!!}
+            @endif
             @foreach($project->projects_plays as $projects_play)
                 @if($projects_play->synopsis_programme)
                     @if(count($project->projects_plays)>1)
@@ -50,6 +53,9 @@
             Director's Statement:
         </td>
         <td style="padding-top: 11px;">
+            @if(count($project->projects_plays)>1)
+                {!!nl2br($project->directors_statement)!!}
+            @endif
             @foreach($project->projects_plays as $projects_play)
                 @if($projects_play->synopsis_programme)
                     @if(count($project->projects_plays)>1)
