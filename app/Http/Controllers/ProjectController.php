@@ -92,7 +92,8 @@ class ProjectController extends Controller
             'showpics',
             'videos.hyperlinktype',
             'projectmemories',
-            'directors.person'
+            'directors.person',
+            'production_crewmembers.person'
         );
 
         // return $project;

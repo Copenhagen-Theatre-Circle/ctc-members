@@ -1,3 +1,58 @@
+@if(count($project->projects_plays)>1)
+  <h5 class="title is-4" style="padding-top:20px;"><u>Overall Production Crew</u></h5>
+  <table class="table is-striped is-bordered" id="production_crewmembers">
+    @foreach ($project->production_crewmembers as $crewmember)
+    <tr>
+        <td class="hidden-xs-down" style="width: 60px; padding:2px;">
+          @if (count($crewmember->person->portraits)>0)
+            @foreach ($crewmember->person->portraits as $portrait)
+            <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/{{$portrait->file_name}}" style="object-fit: cover; height: 55px; width: 55px; ">
+            @break
+            @endforeach
+          @else
+            <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_55,c_thumb,g_face,z_0.8/https://ctc-members.dk/media/unisex_silhouette.png" style="object-fit: cover; height: 55px; width: 55px; ">
+          @endif
+        </td>
+        <td>{{$crewmember->crewtype->name }}</td>
+        <td>
+          <a href="/people/{{$crewmember->person_id}}">{{$crewmember->person->full_name }}</a>
+        </td>
+        <td v-if="mode=='edit'" style="width: 50px;">
+          <button class="button is-danger is-pulled-right" @click.prevent="deleteProductionCrewmember({{$crewmember->id}}, {{$loop->iteration}})">
+            delete
+          </button>
+        </td>
+    </tr>
+    @endforeach
+    {{-- add new crew member --}}
+    <tr v-for="(new_crewmember, index) in new_production_crewmembers" v-show="mode=='edit'" style="height: 65px;">
+        <td class="has-text-centered hidden-xs-down"><i class="fas fa-plus"></i></td>
+        <td>
+            <div class="control">
+                <select :name="'new_crew[' + index + '][crewtype]'" class="js-basic-single-notags" required>
+                  <option></option>
+                  @foreach($crewtypes as $crewtype)
+                      <option value={{$crewtype->id}}>{{$crewtype->name}}</option>
+                  @endforeach
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="control">
+                <select :name="'new_crew[' + index + '][person]'" class="js-basic-single" required>
+                  <option></option>
+                  @foreach($people as $person)
+                      <option value={{$person->id}}>{{$person->first_name}} {{$person->last_name}}</option>
+                  @endforeach
+                </select>
+            </div>
+        </td>
+        <td v-if="mode=='edit'" style="width: 50px;"><button class="button is-danger is-pulled-right" @click.prevent="deleteNewProductionCrewmember(index)">delete</button></td>
+    </tr>
+  </table>
+  <a v-show="mode=='edit'" class="button is-medium" v-on:click="addProductionCrewMember()" class="help">+ add crew member</a>
+@endif
+
 @foreach ($project->projects_plays as $project_play)
 @if(count($project->projects_plays)>1)
     <h5 class="title is-4" style="padding-top:20px;"><u>{{$project_play->play->title}}</u></h5>

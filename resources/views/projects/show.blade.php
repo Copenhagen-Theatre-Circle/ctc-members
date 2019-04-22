@@ -86,6 +86,7 @@
                 @foreach ($project->projects_plays as $project_play)
                   new_crewmembers_{{$project_play->id}}: [],
                 @endforeach
+                new_production_crewmembers: [],
                 new_videos: [],
             },
             methods:{
@@ -104,6 +105,17 @@
               addCrewMember(projectplay_id) {
                 objectName = 'new_crewmembers_' + projectplay_id;
                 this[objectName].push({});
+                $(document).ready(function() {
+                        $('.js-basic-single').select2({
+                            tags: true
+                        });
+                        $('.js-basic-single-notags').select2({
+                            tags: false
+                        });
+                    });
+              },
+              addProductionCrewMember() {
+                this.new_production_crewmembers.push({});
                 $(document).ready(function() {
                         $('.js-basic-single').select2({
                             tags: true
@@ -133,9 +145,17 @@
                   .delete('/crewmembers/'+ crewmember_id)
                   .then(document.getElementById('crewmember_' + project_play_id).deleteRow(row-1));
               },
+              deleteProductionCrewmember: function(crewmember_id, row){
+                axios
+                  .delete('/crewmembers/'+ crewmember_id)
+                  .then(document.getElementById('production_crewmembers').deleteRow(row-1));
+              },
               deleteNewCrewmember: function(projectplay_id, index){
                 objectName = 'new_crewmembers_' + projectplay_id;
                 this.$delete(this[objectName], index);
+              },
+              deleteNewProductionCrewmember: function(index){
+                this.$delete(this.new_production_crewmembers, index);
               }
             }
         });

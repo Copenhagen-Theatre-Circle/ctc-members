@@ -46,6 +46,11 @@ class Project extends BaseModel
         return $this->hasMany('App\Crewmember');
     }
 
+    public function production_crewmembers()
+    {
+        return $this->hasMany('App\Crewmember')->where('projects_play_id',NULL);
+    }
+
     public function projectmemories()
     {
         return $this->hasMany('App\Projectmemory');
