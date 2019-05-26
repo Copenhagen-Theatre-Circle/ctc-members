@@ -157,6 +157,22 @@
                                     @endforeach
                                   </div>
                                 </div>
+                                <hr/>
+                              @endif
+
+                               @if (!empty($photographs))
+                                <div class="row pb-3">
+                                  <div class="col-2 pr-0">
+                                    Photographs:
+                                  </div>
+                                  <div class="col-8 pl-0">
+                                    @foreach ($photographs as $photograph)
+                                      <a href="/files/{{$photograph->file_name}}" target="_blank">
+                                        <img src="https://res.cloudinary.com/ctcircle/image/fetch/h_100/https://ctc-members.dk/files/{{$photograph->file_name}}">
+                                      </a>
+                                    @endforeach
+                                  </div>
+                                </div>
                               @endif
 
 

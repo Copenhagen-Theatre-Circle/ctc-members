@@ -31,6 +31,11 @@ class Person extends BaseModel
         return $this->hasMany('App\Photograph')->orderBy('created_at', 'desc');
     }
 
+    public function photographs()
+    {
+        return $this->belongsToMany('App\Photograph', 'phototags');
+    }
+
     public function mainportrait()
     {
           return $this->hasMany('App\Photograph')->orderBy('created_at', 'desc')->pluck('file_name')->first();

@@ -145,7 +145,8 @@ class PersonController extends Controller
             'crewjobs.crewtype',
             'crewjobs.projects_play.play',
             'crewjobs.projects_play.project',
-            'crewjobs.project'
+            'crewjobs.project',
+            'photographs'
         );
 
 
@@ -157,6 +158,7 @@ class PersonController extends Controller
         $reformed['first_name']=$person->first_name;
         $reformed['last_name']=$person->last_name;
         $reformed['biography']=$person->member_bio;
+        $reformed['photographs']=$person->photographs;
         // $reformed['roles']=$person->roles;
         if (!empty($person->portraits[0])) {
           $reformed['portrait']=$person->portraits[0]['file_name'];
