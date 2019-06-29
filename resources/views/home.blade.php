@@ -21,7 +21,7 @@
                       <p class="lead">Thanks for visiting the CTC Members' Area!</p>
                     </div>
 
-                    <div class="jumbotron bg-white p-3 mb-3" >
+                    {{-- <div class="jumbotron bg-white p-3 mb-3" >
                       <div class="row">
                         <div class="col-auto">
                           <img src="/media/book.jpg" style="height: 150px" class="img-fluid">
@@ -32,7 +32,7 @@
                           <a class="btn btn-outline-danger" href="jubilee-book/{{$user->uniqid()}}">Open the book form here!</a>
                         </div>
                       </div>
-                    </div>
+                    </div> --}}
 
                     <div class="jumbotron pt-3 pb-2 mb-4" style="min-height: 320px;
                     /*background-color: grey;*/
