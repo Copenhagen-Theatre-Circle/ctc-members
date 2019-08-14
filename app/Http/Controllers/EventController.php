@@ -81,7 +81,7 @@ class EventController extends Controller
             $subarray['name']="";
           }
           $subarray['created_at']= date ('d M Y', strtotime ($order['created_at']));
-          $pr = $order['custom_fields']['custom_field'][1]['value'];
+          $pr = $order['custom_fields']['custom_field'][1]['value'] ?? '';
           if (!is_array($pr)){
             $subarray['pr']=$pr;
           } else {
