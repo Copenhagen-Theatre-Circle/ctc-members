@@ -87,7 +87,8 @@ Route::post('/jubilee-book/{person_id}/step-3/{show_id}/store','JubileeBookContr
 Route::get('/jubilee-book/{person_id}/step-3/essays/{essay_id}/edit','JubileeBookController@step_3_essay_edit');
 Route::post('/jubilee-book/{person_id}/step-3/essays/{essay_id}/store','JubileeBookController@step_3_essay_store')->name('jubilee.step3_essay.store');
 
-Route::post('/upload-photo','PhotoUploadController@store');
+// Route::post('/upload-photo','PhotoUploadController@store');
+Route::post('/upload-photo', ['middleware' => 'cors' , 'uses'=> 'PhotoUploadController@store']);
 Route::post('/upload-document','DocumentUploadController@store');
 
 Route::get('/tributes/{slug}', 'TributeController@show');
