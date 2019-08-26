@@ -17,6 +17,7 @@
         "laravel/telescope": "^1.0",
         "laravel/tinker": "~1.0",
         "merujan99/laravel-video-embed": "dev-master",
+        "spatie/laravel-cors": "^1.5",
         "usmanhalalit/laracsv": "1.*@dev"
     },
     "require-dev": {
