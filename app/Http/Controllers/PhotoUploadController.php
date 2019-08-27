@@ -12,11 +12,13 @@ use App\Photograph;
 
 class PhotoUploadController extends Controller
 {
-    public function create() {
+    public function create()
+    {
         return view('file_uploader_test');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         //enter file into photographs table
         $photo = new Photograph;
@@ -38,5 +40,6 @@ class PhotoUploadController extends Controller
         //save original file
         move_uploaded_file($_FILES["file"]["tmp_name"], "files/" . $filename);
 
+        return $photo;
     }
 }
