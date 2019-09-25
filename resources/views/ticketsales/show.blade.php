@@ -196,7 +196,8 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script>
 
-
+var capacity=150;
+var shows=5;
 Highcharts.chart('container2', {
 chart: {
   type: 'column'
@@ -265,31 +266,31 @@ series: [{
     {{$output['total_sold']}}
   ],
   zones: [{
-      value: 21, // Values up to 10 (not including) ...
-      color: 'red' // ... have the color blue.
+      value: capacity/4, // Values up to 1/4 capacity ...
+      color: 'red' // ... have the color red.
   },{
-      value: 42,
-      color: 'orange' // Values from 10 (including) and up have the color red
+      value: capacity/2, // Values up to 1/2 capacity ...
+      color: 'orange' // ... have the color orange.
   },{
-      value: 63,
-      color: 'lightgreen' // Values from 10 (including) and up have the color red
+      value: capacity/(3/4),
+      color: 'lightgreen'
   },{
-      value: 85,
-      color: 'darkgreen' // Values from 10 (including) and up have the color red
+      value: capacity,
+      color: 'darkgreen'
   },{
-      value: 88,
-      color: '#D4AF37' // Values from 10 (including) and up have the color red
+      value: capacity + 1,
+      color: '#D4AF37'
   },{
-      value: 255,
-      color: 'red' // Values from 10 (including) and up have the color red
+      value: capacity*shows/4,
+      color: 'red'
   },{
-      value: 510,
-      color: 'orange' // Values from 10 (including) and up have the color red
+      value: capacity*shows/2,
+      color: 'orange'
   },{
-      value: 765,
-      color: 'lightgreen' // Values from 10 (including) and up have the color red
+      value: capacity*shows/(3/4),
+      color: 'lightgreen'
   },{
-      color: 'darkgreen' // Values from 10 (including) and up have the color red
+      color: 'darkgreen'
   }]
 }]
 });
