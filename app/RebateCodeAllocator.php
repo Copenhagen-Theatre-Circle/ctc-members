@@ -18,9 +18,11 @@ class RebateCodeAllocator
     {
         // $this_season = Settings::first()->active_season_id;
         $members = Membership::where(function ($query) {
-            $query->where('season_id', '>', $this->season)->where('person_id', $this->person);
+            $query->where('season_id', '>', $this->season - 1)
+                ->where('person_id', $this->person);
         })->orWhere(function ($query) {
-            $query->where('season_id', '>', $this->season)->where('person_purchaser_id', $this->person);
+            $query->where('season_id', '>', $this->season - 1)
+                ->where('person_purchaser_id', $this->person);
         })->get();
         // return $members;
         $array = [];

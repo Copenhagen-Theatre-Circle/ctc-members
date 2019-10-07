@@ -38,7 +38,7 @@ class HomeController extends Controller
         $rebatecodeallocator = new RebateCodeAllocator($project_id, $person_id);
         $import = $rebatecodeallocator->allocateCodes();
 
-        $codes = DB::select( DB::raw("
+        $codes = DB::select(DB::raw("
 
             SELECT code, rebate, first_name, last_name, r.person_id
             FROM people p
@@ -61,12 +61,12 @@ class HomeController extends Controller
             AND r.project_id = $project_id
             ORDER BY person_id
 
-            ") );
+            "));
 
 
         // return $result;
 
 
-        return view('home', Compact ('user','user_is_admin','codes'));
+        return view('home', Compact('user', 'user_is_admin', 'codes'));
     }
 }
