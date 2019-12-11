@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends BaseModel
 {
 
-    protected $visible = ['id','first_name','last_name','full_name','portraits','roles','crewjobs','questionnaire_answers','member_bio', 'obituary'];
+    protected $visible = ['id','first_name','last_name','full_name','portraits','roles','crewjobs','questionnaire_answers','directing_and_writing_questionnaire_answers','member_bio', 'obituary'];
 
     protected $appends = ['full_name'];
 
@@ -35,22 +35,27 @@ class Person extends BaseModel
     {
         return $this->belongsToMany('App\Photograph', 'phototags');
     }
-
+    
     public function mainportrait()
     {
-          return $this->hasMany('App\Photograph')->orderBy('created_at', 'desc')->pluck('file_name')->first();
+        return $this->hasMany('App\Photograph')->orderBy('created_at', 'desc')->pluck('file_name')->first();
     }
-
+    
     public function rights()
     {
         return $this->hasMany('App\Right');
     }
-
+    
     public function questionnaire_answers()
     {
         return $this->hasMany('App\QuestionnaireAnswer');
     }
 
+    public function directing_and_writing_questionnaire_answers()
+    {
+        return $this->hasMany('App\QuestionnaireAnswer')->where('function_id',1)->orWhere('function_id',33);
+    }
+    
     public function roles()
     {
         return $this->hasMany('App\Actor');
