@@ -55,6 +55,7 @@ Route::resources([
     'auditions'=>'AuditionController',
     'actors'=>'ActorController',
     'directors'=>'DirectorController',
+    'help'=>'HelpController',
     'crewmembers'=>'CrewmemberController',
     'comments'=>'CommentsController',
     'essays'=>'EssaysController',

@@ -55,6 +55,11 @@ class Person extends BaseModel
     {
         return $this->hasMany('App\QuestionnaireAnswer')->where('function_id',1)->orWhere('function_id',33);
     }
+
+    public function questionnaire_answers_with_parameter($function_id)
+    {
+        return $this->hasMany('App\QuestionnaireAnswer')->where('function-id',$function_id);
+    }
     
     public function roles()
     {
