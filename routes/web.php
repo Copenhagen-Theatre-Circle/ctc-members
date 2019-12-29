@@ -123,3 +123,7 @@ Route::get('rebatecodeallocator/{project}/{person}', function ($project, $person
     $import = $importer->allocateCodes();
     return $import;
 });
+
+Route::get('want-to-direct', function(){
+    return view('various.want_to_direct');
+});
