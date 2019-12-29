@@ -13,7 +13,7 @@
       <h2 id="summary">Summary</h2>
 
 <ul>
-<li>If you have a show you would like to direct, please contact us on info@ctcircle.dk!</li>
+<li>If you have a show you would like to direct, please contact us on info@ctcircle.dk or fill in the form <a href="https://forms.gle/wLYRP8jFiv7eUUZy7">here</a>!</li>
 
 <li>A show can be of any size and genre, ranging from a 30-minute experimental performance piece at our annual Fringe Festival to a full-blown musical production with a big budget.</li>
 
@@ -39,7 +39,7 @@
 
 <p>Do you direct, and have a play or musical you would like to put on? Have you found a great play, but are looking for a director? Have you got your own script tucked away in a drawer waiting to see the light of day? Or have you come up with an experimental performance piece that needs a fitting forum?</p>
 
-<p>Then please do not hesitate to get in touch with us on info@ctcircle.dk!</p>
+<p>Then please do not hesitate to get in touch with us on info@ctcircle.dk or fill in the form <a href="https://forms.gle/wLYRP8jFiv7eUUZy7">here</a>!</p>
 
 <p>We are constantly on the lookout for new directors and shows to fill our season and activate our members, and are open to new suggestions for both shorter and longer projects.</p>
 
