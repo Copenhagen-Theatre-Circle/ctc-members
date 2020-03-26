@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
 </head>
 
-<body style="background-color: #ddd; padding-top: 30px; min-height: 100%;">
+<body style="background-color: #ddd; padding-top: 30px; padding-bottom: 40px; min-height: 100%;">
     <div id="app" >
       <div class="container card" style="max-width: 750px; padding: 30px; background-color: #fff; border-radius: 5px;">
         <h1 class="title is-4 has-text-centered">CTC proudly presents</h1>
