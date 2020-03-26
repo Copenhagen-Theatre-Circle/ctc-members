@@ -127,3 +127,7 @@ Route::get('rebatecodeallocator/{project}/{person}', function ($project, $person
 Route::get('want-to-direct', function(){
     return view('various.want_to_direct');
 });
+
+Route::get('phils-film-quiz', function(){
+    return view('various.phils_quiz');
+});
