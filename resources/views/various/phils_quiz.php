@@ -76,7 +76,7 @@
                   {
                     number: 3,
                     question: "The song “Make ‘em Laugh” is from which film?",
-                    imgLink: "http://www.longpauses.com/wp-content/uploads/2012/07/make-em-laugh.jpg",
+                    imgLink: "https://www.longpauses.com/wp-content/uploads/2012/07/make-em-laugh.jpg",
                     filmLink: "https://www.youtube.com/watch?v=SND3v0i9uhE"
                   },
                   {
