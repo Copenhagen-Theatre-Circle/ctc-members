@@ -50,6 +50,11 @@ Route::get('/signup', function () {
 
 Route::get('people/map', 'PersonController@map');
 
+
+Route::get('message/confirmation', function () {
+    return view('contactconfirmation');
+});
+
 Route::resources([
     'audition_form_answers' => 'AuditionFormAnswersController',
     'auditions'=>'AuditionController',
@@ -61,6 +66,7 @@ Route::resources([
     'essays'=>'EssaysController',
     'events'=>'EventController',
     'groupmessage'=>'GroupMessageController',
+    'membermessage'=>'MemberMessageController',
     'mappings'=>'MappingController',
     'memberbenefits'=>'MemberbenefitController',
     'message'=>'MessageController',
@@ -95,9 +101,6 @@ Route::post('/upload-document','DocumentUploadController@store');
 Route::get('/tributes/{slug}', 'TributeController@show');
 
 
-Route::get('message/confirmation',function () {
-  return view('contactconfirmation');
-});
 
 // Route::get('/storage', function (){
 //     return 'hello world';

@@ -176,6 +176,19 @@
 
       </div>
 
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+
+        <div class="card">
+          <img class="card-img-top mt-4 ml-4" style="height: 112px; width:112px;" src="media/group-mail.png" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Member Mail</h4>
+            <p class="card-text">Write a mail to all members</p>
+            <a href="/membermessage/create" class="btn btn-primary">Write Message</a>
+          </div>
+        </div>
+
+      </div>
+
       @endif
 
       {{-- Essays --}}
