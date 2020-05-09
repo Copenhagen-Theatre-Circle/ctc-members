@@ -55,7 +55,7 @@ class GroupMessageController extends Controller
         $crewfunctions = $_POST['crewfunction'];
         $experience = $_POST['experience'];
 
-        $people = Person::select('first_name','last_name','mail')
+        $people = Person::select('first_name','last_name','mail','uniqid')
                   ->whereHas('questionnaire_answers', function ($query) use ($crewfunctions, $experience) {
 
                       $query->where(function ($query) use ($crewfunctions, $experience) {
@@ -84,6 +84,8 @@ class GroupMessageController extends Controller
           $subject = $request->subject;
           $body = $request->body;
           $body = str_replace('<<FIRST_NAME>>', $to_person->first_name, $body);
+          $link = 'https://ctc-members.dk/questionnaire/index.php?p=' . $to_person->uniqid;
+          $body = str_replace('<<QUESTIONNAIRE_LINK>>', $link, $body);
           $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body, 'bcc' => $bcc];
           Mail::to($mail_to)->send(new ContactMessage($attributes));
         }
