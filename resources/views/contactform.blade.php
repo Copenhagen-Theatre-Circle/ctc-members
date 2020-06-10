@@ -39,8 +39,8 @@
                     <table style="width: 100%;">
                       <tr class="align-middle">
                         <td style="width: 60px;">
-                          @if (!empty($recipient->main_portrait()))
-                            <img src="https://ctc-members.dk/media/{{$recipient->main_portrait()}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
+                          @if (!empty($recipient->main_portrait))
+                            <img src="https://ctc-members.dk/media/{{$recipient->main_portrait}}" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
                           @else
                             <img src="https://ctc-members.dk/media/unisex_silhouette.png" alt="" style="display: inline; object-fit: cover; height: 50px; width: 50px; border-radius: 5px; border: solid rgba(0, 0, 0, 0.14902) 1px; ">
                           @endif
@@ -76,7 +76,7 @@
                     <div class="form-group">
                       <input type="hidden" name="self_copy" value="0">
                       <input type="checkbox" name="self_copy" class="form-check-input ml-0" id="self_copy" value="1">
-                      <label for="self_copy" class="form-check-label">send copy to {{auth_person('mail')}}</label>
+                      <label for="self_copy" class="form-check-label ml-3">send copy to {{auth_person('mail')}}</label>
                     </div>
 
 

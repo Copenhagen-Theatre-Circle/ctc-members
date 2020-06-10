@@ -28,7 +28,7 @@ class MembersController extends Controller
   public function index()
   {
 
-    $people = Person::select('first_name','last_name','id');
+    $people = Person::select('first_name','last_name','mail','id');
 
     $people->orderBy('first_name', 'asc')->orderBy('last_name', 'asc');
 
