@@ -36,13 +36,13 @@
 
     <div class="jumbotron pt-3 pb-2 mb-4" style="min-height: 320px;
                     /*background-color: grey;*/
-                    background: no-repeat url('media/beauty_banner.jpg');
+                    background: no-repeat url('media/the_effect.jpg');
                     background-size: cover; background-position: 0% 80%; ">
       <div class="row">
         <div class="col-xs-1 col-sm-1 col-md-3 col-lg-4 @if ( count($codes) > 3 ) col-xl-6 @else col-xl-7 @endif ">
         </div>
         <div class="col mx-3 rounded" style="background-color:rgba(0, 0, 0, 0.8);">
-          <h4 class="text-light pt-3 mb-2">Your Rebate Codes for 'Beauty and the Beast':</h4>
+          <h4 class="text-light pt-3 mb-2">Your Rebate Codes for 'The Effect':</h4>
 
           <div @if ( count($codes)> 3 ) style="column-count: 2" @endif class="text-light mb-2">
             @foreach ($codes as $code)
@@ -55,7 +55,7 @@
           </div>
           <div style="border-bottom: 1pt solid grey; margin-bottom: 12px;"></div>
           <a href="https://place2book.com/en/list/EM175" target="_blank" class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To Ticket Sales Page</a>
-          <a href="ticketsales/155" class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check Ticket Sales Stats</a>
+          <a href="ticketsales/158" class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check Ticket Sales Stats</a>
         </div>
       </div>
     </div>

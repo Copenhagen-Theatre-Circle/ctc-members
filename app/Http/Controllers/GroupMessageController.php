@@ -85,7 +85,7 @@ class GroupMessageController extends Controller
           $body = $request->body;
           $body = str_replace('<<FIRST_NAME>>', $to_person->first_name, $body);
           $link = 'https://ctc-members.dk/questionnaire/index.php?p=' . $to_person->uniqid;
-          $body = str_replace('<<QUESTIONNAIRE_LINK>>', $link, $body);
+          $body = str_replace(' ', $link, $body);
           $attributes = ['fromName' => $name_from, 'replyTo' => $mail_from, 'subject' => $subject, 'body' => $body, 'bcc' => $bcc];
           Mail::to($mail_to)->send(new ContactMessage($attributes));
         }
