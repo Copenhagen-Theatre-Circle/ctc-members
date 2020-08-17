@@ -20,12 +20,16 @@
 
                   <div class="form-row">
 
-                    <div class="col-md-3">
-                      <form action="/membership" method="GET">
-                        <label>Find by Name:</label>
-                        <input type="text" class="form-control @if (!empty ($request['name'])) filtered  @endif" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
-                      </form>
-                    </div>
+                    <span class="foo">
+                      <div class="col-md-3">
+                        <form action="/membership" method="GET">
+                          <label>Find by Name:</label>
+                          <input type="text" class="form-control @if (!empty ($request['name'])) filtered  @endif" placeholder="Name" name="name" value="{{app('request')->input('name')}}">
+                        </form>
+                      </div>
+                    </span>
+
+
 
                     <div class="col-md-3">
                       <form action="/membership" method="GET">

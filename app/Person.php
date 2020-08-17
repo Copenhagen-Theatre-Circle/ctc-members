@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends BaseModel
 {
-
-    protected $visible = ['id','first_name','last_name','mail','full_name','portraits','main_portrait','roles','crewjobs','questionnaire_answers','directing_and_writing_questionnaire_answers','member_bio', 'obituary'];
+    protected $visible = ['id','first_name','last_name','mail','full_name','portraits','main_portrait','is_life_member','roles','crewjobs','questionnaire_answers','directing_and_writing_questionnaire_answers','member_bio', 'obituary'];
 
     protected $appends = ['full_name'];
 
@@ -53,12 +52,12 @@ class Person extends BaseModel
 
     public function directing_and_writing_questionnaire_answers()
     {
-        return $this->hasMany('App\QuestionnaireAnswer')->where('function_id',1)->orWhere('function_id',33);
+        return $this->hasMany('App\QuestionnaireAnswer')->where('function_id', 1)->orWhere('function_id', 33);
     }
 
     public function questionnaire_answers_with_parameter($function_id)
     {
-        return $this->hasMany('App\QuestionnaireAnswer')->where('function-id',$function_id);
+        return $this->hasMany('App\QuestionnaireAnswer')->where('function-id', $function_id);
     }
 
     public function roles()

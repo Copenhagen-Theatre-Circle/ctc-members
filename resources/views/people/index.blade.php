@@ -159,7 +159,7 @@
                             {{-- Membership Star --}}
 
                             <td class="hidden-xs-down" style="vertical-align:middle; text-align: center; ">
-                              @if ($person->membership_this_season->count()>0)
+                              @if ($person->membership_this_season->count()>0 or $person->is_life_member)
                                     <img src="https://ctc-members.dk/media/star.png" alt="" style="object-fit: cover; height: 30px; width: 30px;  ">
                               @endif
                             </td>
