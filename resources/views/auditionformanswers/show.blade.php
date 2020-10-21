@@ -72,6 +72,20 @@
                                 <hr/>
                               @endif
 
+                              @if (! empty($auditionFormAnswer->experience))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Experience:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#39;',"'",$auditionFormAnswer->experience))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
                               @if (! empty($auditionFormAnswer->person->member_bio))
                                 <div class="row">
                                   <div class="col-2 pr-0">
