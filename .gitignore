@@ -5,6 +5,7 @@
 /public/files
 /storage/*.key
 /vendor
+/vendor.nosync
 /.idea
 /.vagrant
 Homestead.json
