@@ -36,9 +36,9 @@
     </div> --}}
 
                         <div class="jumbotron pt-3 pb-2 mb-4" style="min-height: 320px;
-                                                    background-color: grey;
-                                                    background: no-repeat url('media/chekhov_dreamers.png');
-                                                    background-size: cover; background-position: 0% 80%; ">
+                                                        background-color: grey;
+                                                        background: no-repeat url('media/chekhov_dreamers.jpg');
+                                                        background-size: cover; background-position: 0% 80%; ">
                             <div class="row">
                                 <div class="col-xs-1 col-sm-1 col-md-3 col-lg-4 @if (count($codes) > 3) col-xl-6 @else col-xl-7 @endif ">
                                 </div>
