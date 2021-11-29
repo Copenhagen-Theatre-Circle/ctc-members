@@ -37,9 +37,9 @@
 
                         <div class="jumbotron pt-3 pb-2 mb-4"
                             style="min-height: 320px;
-                                                                                            background-color: grey;
-                                                                                            background: no-repeat url('media/snow-white-website-banner-v2.jpg');
-                                                                                            background-size: cover; background-position: 0% 80%; ">
+                                                                                                background-color: grey;
+                                                                                                background: no-repeat url('media/snow-white-website-banner-v2.jpg');
+                                                                                                background-size: cover; background-position: 0% 80%; ">
                             <div class="row">
                                 <div class="col-xs-1 col-sm-1 col-md-3 col-lg-4 @if (count($codes) > 3) col-xl-6 @else col-xl-7 @endif ">
                                 </div>
@@ -61,9 +61,9 @@
                                     <a href="https://www.place2book.com/en/list/EM175" target="_blank"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
                                         Ticket Sales Page</a>
-                                    {{-- <a href="ticketsales/163"
+                                    <a href="ticketsales/163"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check
-                                        Ticket Sales Stats</a> --}}
+                                        Ticket Sales Stats</a>
                                 </div>
                             </div>
                         </div>
