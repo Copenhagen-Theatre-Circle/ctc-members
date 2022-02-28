@@ -35,7 +35,7 @@
       </div>
     </div> --}}
 
-                        <div class="jumbotron pt-3 pb-2 mb-4"
+                        {{-- <div class="jumbotron pt-3 pb-2 mb-4"
                             style="min-height: 320px;
                                                                                                 background-color: grey;
                                                                                                 background: no-repeat url('media/snow-white-website-banner-v2.jpg');
@@ -66,7 +66,7 @@
                                         Ticket Sales Stats</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row">
 
@@ -177,19 +177,16 @@
                         </div>
 
                         @if (user_is_admin())
-
                             <div class="row pb-3">
                                 <div class="col">
                                     <h4>Admin only:</h4>
                                 </div>
                             </div>
-
                         @endif
 
                         <div class="row">
 
                             @if (user_is_admin())
-
                                 <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                                     <div class="card">
@@ -218,13 +215,11 @@
                                     </div>
 
                                 </div>
-
                             @endif
 
                             {{-- Essays --}}
 
                             @if (user_is_jubilee_book_editor())
-
                                 <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                                     <div class="card">
@@ -239,11 +234,9 @@
                                     </div>
 
                                 </div>
-
                             @endif
 
                             @if (count($user->person->rights) > 0)
-
                                 <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
 
                                     <div class="card">
@@ -257,7 +250,6 @@
                                     </div>
 
                                 </div>
-
                             @endif
 
                         </div>
