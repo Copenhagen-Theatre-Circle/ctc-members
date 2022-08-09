@@ -51,7 +51,7 @@
                                     <div @if (count($codes) > 3) style="column-count: 2" @endif class="text-light mb-2">
                                         @foreach ($codes as $code)
                                             <p class="mb-0 @if (count($codes) < 4) lead @endif">
-                                                <b>{{ strtoupper($code->code) }}</b>
+                                                <b>{{ $code->code }}</b>
                                                 @if ($code->person_id != $user->person->id) &nbsp; ({{ $code->first_name }}) @endif
                                                 @if ($code->rebate == 100) (comp) @endif
                                             </p>
