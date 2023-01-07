@@ -4,6 +4,7 @@
 /public/storage
 /public/files
 /storage/*.key
+/storage/logs
 /vendor
 /vendor.nosync
 /.idea
