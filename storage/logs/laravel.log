@@ -1582,3 +1582,145 @@
 [stacktrace]
 #0 {main}
 "} 
+[2023-01-07 11:21:14] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Class 'Laravel\\\\...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(132): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 /Users/andrewblackwell/code/ctc/ctc-members/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2023-01-07 11:21:14] laravel.ERROR: Class 'Laravel\Nova\NovaApplicationServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Nova\\NovaApplicationServiceProvider' not found at /Users/andrewblackwell/code/ctc/ctc-members/app/Providers/NovaServiceProvider.php:10)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/composer/ClassLoader.php(571): include()
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/composer/ClassLoader.php(428): Composer\\Autoload\\includeFile('/Users/andrewbl...')
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Providers\\\\N...')
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(208): spl_autoload_call('App\\\\Providers\\\\N...')
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('App\\\\Providers\\\\N...')
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(574): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(211): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#11 /Users/andrewblackwell/code/ctc/ctc-members/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-01-07 11:21:20] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Class 'Laravel\\\\...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(132): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2023-01-07 11:21:20] laravel.ERROR: Class 'Laravel\Nova\NovaApplicationServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Nova\\NovaApplicationServiceProvider' not found at /Users/andrewblackwell/code/ctc/ctc-members/app/Providers/NovaServiceProvider.php:10)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/composer/ClassLoader.php(571): include()
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/composer/ClassLoader.php(428): Composer\\Autoload\\includeFile('/Users/andrewbl...')
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Providers\\\\N...')
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(208): spl_autoload_call('App\\\\Providers\\\\N...')
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('App\\\\Providers\\\\N...')
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(574): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(211): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#11 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-01-07 11:21:21] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Class 'Laravel\\\\...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(132): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2023-01-07 11:21:21] laravel.ERROR: Class 'Laravel\Nova\NovaApplicationServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Nova\\NovaApplicationServiceProvider' not found at /Users/andrewblackwell/code/ctc/ctc-members/app/Providers/NovaServiceProvider.php:10)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/composer/ClassLoader.php(571): include()
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/composer/ClassLoader.php(428): Composer\\Autoload\\includeFile('/Users/andrewbl...')
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Providers\\\\N...')
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(208): spl_autoload_call('App\\\\Providers\\\\N...')
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('App\\\\Providers\\\\N...')
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(574): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(211): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#11 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-01-07 11:21:21] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:21:21] laravel.ERROR: Uncaught ReflectionException: Class view does not exist in /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php:779
+Stack trace:
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php(779): ReflectionClass->__construct('view')
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php(658): Illuminate\Container\Container->build('view')
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php(609): Illuminate\Container\Container->resolve('view', Array)
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(759): Illuminate\Container\Container->make('view', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(121): Illuminate\Foundation\Application->make('view', Array)
+#5 Comma {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught ReflectionException: Class view does not exist in /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php:779
+Stack trace:
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php(779): ReflectionClass->__construct('view')
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php(658): Illuminate\\Container\\Container->build('view')
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php(609): Illuminate\\Container\\Container->resolve('view', Array)
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(759): Illuminate\\Container\\Container->make('view', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(121): Illuminate\\Foundation\\Application->make('view', Array)
+#5 Comma at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Container/Container.php:779)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:22:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:22:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:22:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
