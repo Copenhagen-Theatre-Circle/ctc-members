@@ -22,38 +22,29 @@
                             <p class="lead">Thanks for visiting the CTC Members' Area!</p>
                         </div>
 
-                        {{-- <div class="jumbotron bg-white p-3 mb-3" >
-                      <div class="row">
-                        <div class="col-auto">
-                          <img src="/media/book.jpg" style="height: 150px" class="img-fluid">
-                        </div>
-                        <div class="col">
-                          <h1 class="display-6">CTC 50th Anniversary Book Project</h1>
-                          <p class="lead">We are collecting memories, pictures and documentation from 50 years of activity, and need your help and input!</p>
-                          <a class="btn btn-outline-danger" href="jubilee-book/{{$user->uniqid()}}">Open the book form here!</a>
-        </div>
-      </div>
-    </div> --}}
-
-                        {{-- <div class="jumbotron pt-3 pb-2 mb-4"
+                        <div class="jumbotron pt-3 pb-2 mb-4"
                             style="min-height: 320px;
-                                                                                                background-color: grey;
-                                                                                                background: no-repeat url('media/snow-white-website-banner-v2.jpg');
-                                                                                                background-size: cover; background-position: 0% 80%; ">
+                                  background-color: grey;
+                                  background: no-repeat url('media/{{ $project->banner_image_file_name }}');
+                                  background-size: cover; background-position: 0% 80%; ">
                             <div class="row">
-                                <div class="col-xs-1 col-sm-1 col-md-3 col-lg-4 @if (count($codes) > 3) col-xl-6 @else col-xl-7 @endif ">
+                                <div
+                                    class="col-xs-1 col-sm-1 col-md-3 col-lg-4 @if (count($codes) > 3) col-xl-6 @else col-xl-7 @endif ">
                                 </div>
                                 <div class="col mx-3 rounded" style="background-color:rgba(0, 0, 0, 0.8);">
-                                    <h4 class="text-light pt-3 mb-2">Your Rebate Codes for 'Snow White and the Seven
-                                        Dwarfs':
+                                    <h4 class="text-light pt-3 mb-2">Your Rebate Codes for '{{ $project->name }}':
                                     </h4>
-
-                                    <div @if (count($codes) > 3) style="column-count: 2" @endif class="text-light mb-2">
+                                    <div @if (count($codes) > 3) style="column-count: 2" @endif
+                                        class="text-light mb-2">
                                         @foreach ($codes as $code)
                                             <p class="mb-0 @if (count($codes) < 4) lead @endif">
                                                 <b>{{ $code->code }}</b>
-                                                @if ($code->person_id != $user->person->id) &nbsp; ({{ $code->first_name }}) @endif
-                                                @if ($code->rebate == 100) (comp) @endif
+                                                @if ($code->person_id != $user->person->id)
+                                                    &nbsp; ({{ $code->first_name }})
+                                                @endif
+                                                @if ($code->rebate == 100)
+                                                    (comp)
+                                                @endif
                                             </p>
                                         @endforeach
                                     </div>
@@ -61,12 +52,12 @@
                                     <a href="https://place2book.com/en/sw2/sales/event_list/EM175" target="_blank"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
                                         Ticket Sales Page</a>
-                                    <a href="ticketsales/163"
+                                    {{-- <a href="ticketsales/163"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check
-                                        Ticket Sales Stats</a>
+                                        Ticket Sales Stats</a> --}}
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="row">
 

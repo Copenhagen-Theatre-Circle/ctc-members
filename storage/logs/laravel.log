@@ -2088,3 +2088,1219 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2023-01-07 11:36:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:36:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:36:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:36:15] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(ErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(81): App\\Exceptions\\Handler->report(Object(ErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(ErrorException))
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#27 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#28 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#29 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#30 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#31 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-cors/src/HandleCors.php(36): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/andrewblackwell/code/ctc/ctc-members/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#56 /Users/andrewblackwell/code/ctc/ctc-members/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#57 /Users/andrewblackwell/code/ctc/ctc-members/server.php(21): require_once('/Users/andrewbl...')
+#58 {main}
+"} 
+[2023-01-07 11:36:15] laravel.ERROR: Call to undefined method App\Person::main_portrait() (View: /Users/andrewblackwell/code/ctc/ctc-members/resources/views/suggestions/index.blade.php) {"userId":1,"email":"andrew@blackwell.dk","exception":"[object] (ErrorException(code: 0): Call to undefined method App\\Person::main_portrait() (View: /Users/andrewblackwell/code/ctc/ctc-members/resources/views/suggestions/index.blade.php) at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:50, BadMethodCallException(code: 0): Call to undefined method App\\Person::main_portrait() at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:50)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(BadMethodCallException), 1)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/andrewbl...', Array)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/View.php(142): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/andrewbl...', Array)
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/View.php(125): Illuminate\\View\\View->getContents()
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/View.php(90): Illuminate\\View\\View->renderContents()
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Http/Response.php(42): Illuminate\\View\\View->render()
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/symfony/http-foundation/Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(722): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#31 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#32 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#33 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#34 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#35 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-cors/src/HandleCors.php(36): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#40 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/andrewblackwell/code/ctc/ctc-members/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#58 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#59 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#60 /Users/andrewblackwell/code/ctc/ctc-members/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#61 /Users/andrewblackwell/code/ctc/ctc-members/server.php(21): require_once('/Users/andrewbl...')
+#62 {main}
+"} 
+[2023-01-07 11:37:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:37:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:37:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:38:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:38:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:38:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:39:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:39:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:39:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:40:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:40:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:40:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:41:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:41:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:41:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:42:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:42:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:42:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:43:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:43:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:43:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:44:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:44:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:44:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:45:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:45:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:45:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:46:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:46:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:46:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:47:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:47:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:47:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:48:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:48:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:48:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:49:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:49:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:49:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:50:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:50:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:50:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:51:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:51:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:51:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:52:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:52:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:52:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:53:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:53:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:53:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:54:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:54:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:54:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:55:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:55:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:55:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:56:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:56:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:56:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:57:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:57:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:57:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:57:36] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Creating defaul...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(ErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(81): App\\Exceptions\\Handler->report(Object(ErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(ErrorException))
+#7 /Users/andrewblackwell/code/ctc/ctc-members/app/Http/Middleware/Member.php(25): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): App\\Http\\Middleware\\Member->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-cors/src/HandleCors.php(36): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/andrewblackwell/code/ctc/ctc-members/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#58 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#60 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#61 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#62 /Users/andrewblackwell/code/ctc/ctc-members/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#63 /Users/andrewblackwell/code/ctc/ctc-members/server.php(21): require_once('/Users/andrewbl...')
+#64 {main}
+"} 
+[2023-01-07 11:57:36] laravel.ERROR: Creating default object from empty value {"userId":1,"email":"andrew@blackwell.dk","exception":"[object] (ErrorException(code: 0): Creating default object from empty value at /Users/andrewblackwell/code/ctc/ctc-members/app/RebateCodeAllocator.php:38)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/app/RebateCodeAllocator.php(38): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Creating defaul...', '/Users/andrewbl...', 38, Array)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/app/Http/Controllers/HomeController.php(44): App\\RebateCodeAllocator->allocateCodes()
+#2 [internal function]: App\\Http\\Controllers\\HomeController->index()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\HomeController), 'index')
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Routing\\Route->run()
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/app/Http/Middleware/Member.php(25): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): App\\Http\\Middleware\\Member->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#36 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#37 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#38 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#39 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#40 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-cors/src/HandleCors.php(36): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/andrewblackwell/code/ctc/ctc-members/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#50 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#56 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#60 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#62 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#63 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#64 /Users/andrewblackwell/code/ctc/ctc-members/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#65 /Users/andrewblackwell/code/ctc/ctc-members/server.php(21): require_once('/Users/andrewbl...')
+#66 {main}
+"} 
+[2023-01-07 11:58:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:58:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:58:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 11:59:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:59:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 11:59:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 12:00:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:00:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:00:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 12:01:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:01:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:01:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 12:02:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:02:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:02:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 12:03:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:03:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:03:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2023-01-07 12:03:46] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Creating defaul...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(ErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(81): App\\Exceptions\\Handler->report(Object(ErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(ErrorException))
+#7 /Users/andrewblackwell/code/ctc/ctc-members/app/Http/Middleware/Member.php(25): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): App\\Http\\Middleware\\Member->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-cors/src/HandleCors.php(36): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/andrewblackwell/code/ctc/ctc-members/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#58 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#60 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#61 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#62 /Users/andrewblackwell/code/ctc/ctc-members/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#63 /Users/andrewblackwell/code/ctc/ctc-members/server.php(21): require_once('/Users/andrewbl...')
+#64 {main}
+"} 
+[2023-01-07 12:03:46] laravel.ERROR: Creating default object from empty value {"userId":1,"email":"andrew@blackwell.dk","exception":"[object] (ErrorException(code: 0): Creating default object from empty value at /Users/andrewblackwell/code/ctc/ctc-members/app/RebateCodeAllocator.php:38)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/app/RebateCodeAllocator.php(38): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Creating defaul...', '/Users/andrewbl...', 38, Array)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/app/Http/Controllers/HomeController.php(44): App\\RebateCodeAllocator->allocateCodes()
+#2 [internal function]: App\\Http\\Controllers\\HomeController->index()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\HomeController), 'index')
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(682): Illuminate\\Routing\\Route->run()
+#8 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 /Users/andrewblackwell/code/ctc/ctc-members/app/Http/Middleware/Member.php(25): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): App\\Http\\Middleware\\Member->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#19 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#36 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#37 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#38 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#39 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#40 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-debugbar/src/Middleware/InjectDebugbar.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/andrewblackwell/code/ctc/ctc-members/vendor/barryvdh/laravel-cors/src/HandleCors.php(36): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Barryvdh\\Cors\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/andrewblackwell/code/ctc/ctc-members/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#50 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#56 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(163): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#60 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#62 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#63 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#64 /Users/andrewblackwell/code/ctc/ctc-members/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#65 /Users/andrewblackwell/code/ctc/ctc-members/server.php(21): require_once('/Users/andrewbl...')
+#66 {main}
+"} 
+[2023-01-07 12:04:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Uncaught Reflec...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:04:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:168)
+[stacktrace]
+#0 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(102): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(90): Illuminate\\Log\\LogManager->get(NULL)
+#2 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(498): Illuminate\\Log\\LogManager->driver()
+#3 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('Cannot redeclar...', Array)
+#4 /Users/andrewblackwell/code/ctc/ctc-members/app/Exceptions/Handler.php(39): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#5 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(81): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#6 /Users/andrewblackwell/code/ctc/ctc-members/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(Symfony\\Component\\Debug\\Exception\\FatalErrorException))
+#7 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#8 {main}
+"} 
+[2023-01-07 12:04:06] laravel.ERROR: Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot redeclare auth_person() (previously declared in /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5) at /Users/andrewblackwell/code/ctc/ctc-members/app/helpers.php:5)
+[stacktrace]
+#0 {main}
+"} 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\User;
 use App\RebateCodeAllocator;
+use App\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,14 +29,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user_id = \Auth::user()->id;
+        $user_id = auth()->user()->id;
         $user = User::find($user_id);
         $user_is_admin = $user->canSeeAllPeople();
 
         $person_id = $_GET['person'] ?? $user->person->id;
 
+        $settings = Settings::first();
+        $project = Project::find($settings->active_project_id_members_home);
+
         //generate rebate codes for selected show:
-        $project_id = 163;
+        $project_id = $project->id;
         $rebatecodeallocator = new RebateCodeAllocator($project_id, $person_id);
         $import = $rebatecodeallocator->allocateCodes();
 
@@ -67,6 +72,6 @@ class HomeController extends Controller
         // return $result;
 
 
-        return view('home', Compact('user', 'user_is_admin', 'codes'));
+        return view('home', Compact('user', 'user_is_admin', 'codes', 'project'));
     }
 }
