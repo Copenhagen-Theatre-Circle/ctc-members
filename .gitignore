@@ -4,7 +4,7 @@
 /public/storage
 /public/files
 /storage/*.key
-/storage/logs
+/storage/logs/laravel.log
 /vendor
 /vendor.nosync
 /.idea
