@@ -122,6 +122,7 @@ function mapTicketType ($tickettype) {
     //child tickets
     case 'Child (reserved)';
     case 'Child';
+    case 'Under 18';
       $tickettype = "child";
       break;
     //group 10-19
@@ -129,6 +130,7 @@ function mapTicketType ($tickettype) {
     case 'Split Group 10-19';
     case 'Group 10-19 (reserved)';
     case 'Group (10-19 tickets)';
+    case 'Group 10-19';
       $tickettype = "group_10_to_19";
       break;
     //group 20+
@@ -182,6 +184,7 @@ function mapTicketTypeID ($tickettype) {
     case 'Child (reserved)';
     case 'Child';
     case 'Child (12 yrs and under)';
+    case 'Under 18';
       $tickettype = 2;
       break;
     //group 10-19
@@ -189,6 +192,7 @@ function mapTicketTypeID ($tickettype) {
     case 'Split Group 10-19';
     case 'Group 10-19 (reserved)';
     case 'Group (10-19 tickets)';
+    case 'Group 10-19';
       $tickettype = 3;
       break;
     //group 20+
