@@ -52,9 +52,9 @@
                                     <a href="https://place2book.com/en/sw2/sales/event_list/EM175" target="_blank"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
                                         Ticket Sales Page</a>
-                                    {{-- <a href="ticketsales/163"
+                                    <a href="ticketsales/167"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check
-                                        Ticket Sales Stats</a> --}}
+                                        Ticket Sales Stats</a>
                                 </div>
                             </div>
                         </div>

@@ -156,6 +156,7 @@ class TicketsalesController extends Controller
             case 'Child (reserved)';
             case 'Child';
             case 'Child (12 yrs and under)';
+            case 'Under 18';
               $tickettype = "child";
               break;
             //group 10-19
@@ -165,6 +166,7 @@ class TicketsalesController extends Controller
             case 'Group 10-19 Adults';
             case 'Group of 10-19 adults';
             case 'Group (10 - 19 adults)';
+            case 'Group 10-19';
               $tickettype = "group_10_to_19";
               break;
             //group 20+
