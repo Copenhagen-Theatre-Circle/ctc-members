@@ -30,9 +30,11 @@ class AuditionFormController extends Controller
     {
         $person_id = lookup_or_create_person($request->input('email'), $request->input('first_name'), $request->input('last_name'));
         $person = Person::find($person_id);
+        $auditionFormVariables = AuditionFormVariable::where('project_id', $request->input('project_id'))->first();
         $link = "https://ctc-members.dk/audition?p=" . $person->uniqid . "&project_id=" . $request->input('project_id');
         //send AuditionForm mail
         Mail::to('andrew@blackwell.dk')->send(new AuditionForm($person, $link));
+        return view('auditionform.thank_you', ['auditionFormVariables' => $auditionFormVariables]);
         return $link;
         return 'mail sent';
         return [$person, $link];
