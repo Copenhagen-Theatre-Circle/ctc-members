@@ -22,7 +22,7 @@
                             <p class="lead">Thanks for visiting the CTC Members' Area!</p>
                         </div>
 
-                        <div class="jumbotron pt-3 pb-2 mb-4"
+                        <!--<div class="jumbotron pt-3 pb-2 mb-4"
                             style="min-height: 320px;
                                   background-color: grey;
                                   background: no-repeat url('media/{{ $project->banner_image_file_name }}');
@@ -52,12 +52,12 @@
                                     <a href="https://place2book.com/en/sw2/sales/event_list/EM175" target="_blank"
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
                                         Ticket Sales Page</a>
-                                    <a href="ticketsales/167"
+                                     <a href="ticketsales/167" 
                                         class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check
-                                        Ticket Sales Stats</a>
+                                        Ticket Sales Stats</a> 
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="row">
 
