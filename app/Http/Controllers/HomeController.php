@@ -37,6 +37,7 @@ class HomeController extends Controller
 
         $settings = Settings::first();
         $project = Project::find($settings->active_project_id_members_home);
+        $display_on_frontpage = $settings->display_on_frontpage;
 
         //generate rebate codes for selected show:
         $project_id = $project->id;
@@ -72,6 +73,6 @@ class HomeController extends Controller
         // return $result;
 
 
-        return view('home', Compact('user', 'user_is_admin', 'codes', 'project'));
+        return view('home', Compact('user', 'user_is_admin', 'codes', 'project', 'display_on_frontpage'));
     }
 }
