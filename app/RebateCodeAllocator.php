@@ -29,6 +29,10 @@ class RebateCodeAllocator
         foreach ($members as $member) {
             $rebatecode = Rebatecode::where('person_id', $member->person_id)->where('project_id', $this->project_id)->where('rebate', 20)->get();
             $count = count($rebatecode);
+            // If there are no codes generated yet for this project, return an empty array
+            if ($count == 0) {
+                return $array;
+            }
             if ($count == 2) {
                 $rebatecode1 = $rebatecode[0];
                 $rebatecode2 = $rebatecode[1];

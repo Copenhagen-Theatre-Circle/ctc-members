@@ -54,7 +54,7 @@
                                         <a href="https://place2book.com/en/sw2/sales/event_list/EM175" target="_blank"
                                             class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
                                             Ticket Sales Page</a>
-                                        <a href="ticketsales/167" 
+                                        <a href="ticketsales/{{ $project->id }}" 
                                             class="btn btn-lg btn-outline-info btn-block border-white text-white mb-4">Check
                                             Ticket Sales Stats</a> 
                                     </div>
