@@ -196,7 +196,9 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script>
 
-var capacity=150;
+// capacity per show is the sum of available and sold tickets for that show
+// for simplicity, we take the average (the sum of total available and sold divided by number of shows)
+var capacity= {{ $output['total_available'] + $output['total_sold'] }} / {{ count($output['events']) }};
 var shows=5;
 Highcharts.chart('container2', {
 chart: {
