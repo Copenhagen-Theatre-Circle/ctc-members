@@ -25,17 +25,20 @@ class RebateCodeAllocator
             $query->where('season_id', '>', $this->season_id - 1)
                 ->where('person_purchaser_id', $this->person_id);
         })->get();
+
         $array = [];
+        $projectRebateCodes = Rebatecode::where('project_id', $this->project_id)->where('rebate', 20)->get();
+        // If there are no codes generated yet for this project, return an empty array
+        if (count($projectRebateCodes) == 0) {
+            return $array;
+        }
         foreach ($members as $member) {
-            $rebatecode = Rebatecode::where('person_id', $member->person_id)->where('project_id', $this->project_id)->where('rebate', 20)->get();
-            $count = count($rebatecode);
-            // If there are no codes generated yet for this project, return an empty array
-            if ($count == 0) {
-                return $array;
-            }
+            $personalRebateCodes = Rebatecode::where('person_id', $member->person_id)->where('project_id', $this->project_id)->where('rebate', 20)->get();
+            $count = count($personalRebateCodes);
+
             if ($count == 2) {
-                $rebatecode1 = $rebatecode[0];
-                $rebatecode2 = $rebatecode[1];
+                $rebatecode1 = $personalRebateCodes[0];
+                $rebatecode2 = $personalRebateCodes[1];
             }
             if ($count < 2) {
                 $first_code = Rebatecode::where('rebate', 20)->where('project_id', $this->project_id)->where('person_id', null)->first();

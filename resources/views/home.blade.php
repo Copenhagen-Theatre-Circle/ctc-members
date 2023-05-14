@@ -34,22 +34,24 @@
                                         class="col-xs-1 col-sm-1 col-md-3 col-lg-4 @if (count($codes) > 3) col-xl-6 @else col-xl-7 @endif ">
                                     </div>
                                     <div class="col mx-3 rounded" style="background-color:rgba(0, 0, 0, 0.8);">
-                                        <h4 class="text-light pt-3 mb-2">Your Rebate Codes for '{{ $project->name }}':
-                                        </h4>
-                                        <div @if (count($codes) > 3) style="column-count: 2" @endif
-                                            class="text-light mb-2">
-                                            @foreach ($codes as $code)
-                                                <p class="mb-0 @if (count($codes) < 4) lead @endif">
-                                                    <b>{{ $code->code }}</b>
-                                                    @if ($code->person_id != $user->person->id)
-                                                        &nbsp; ({{ $code->first_name }})
-                                                    @endif
-                                                    @if ($code->rebate == 100)
-                                                        (comp)
-                                                    @endif
-                                                </p>
-                                            @endforeach
-                                        </div>
+                                        @if (count($codes) != 0)
+                                            <h4 class="text-light pt-3 mb-2">Your Rebate Codes for '{{ $project->name }}':
+                                            </h4>
+                                            <div @if (count($codes) > 3) style="column-count: 2" @endif
+                                                class="text-light mb-2">
+                                                @foreach ($codes as $code)
+                                                    <p class="mb-0 @if (count($codes) < 4) lead @endif">
+                                                        <b>{{ $code->code }}</b>
+                                                        @if ($code->person_id != $user->person->id)
+                                                            &nbsp; ({{ $code->first_name }})
+                                                        @endif
+                                                        @if ($code->rebate == 100)
+                                                            (comp)
+                                                        @endif
+                                                    </p>
+                                                @endforeach
+                                            </div>
+                                        @endif
                                         <div style="border-bottom: 1pt solid grey; margin-bottom: 12px;"></div>
                                         <a href="https://place2book.com/en/sw2/sales/event_list/EM175" target="_blank"
                                             class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
