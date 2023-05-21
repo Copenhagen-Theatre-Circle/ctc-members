@@ -36,7 +36,11 @@ class CodeGeneratorController extends Controller
     for ($i = 0; $i < $number_of_codes; $i++) {
       $code = new Rebatecode;
       $code->project_id = $project_id;
+      /* check that the code is unique in the codes array */
       $code->code = $this->generateCode();
+      while (in_array($code->code, array_column($codes, 'code'))) {
+        $code->code = $this->generateCode();
+      }
       $code->rebate = $rebate;
       $code->save();
       $codes[] = $code;
