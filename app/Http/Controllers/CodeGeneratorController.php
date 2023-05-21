@@ -27,7 +27,7 @@ class CodeGeneratorController extends Controller
       ], 400);
     }
     $project_id = $request->input('project_id');
-    /* default number of codes is 100 */
+    /* default number of codes is 10 */
     $number_of_codes = $request->input('number_of_codes', 10);
     /* default rebate amount is 20 */
     $rebate = $request->input('rebate', 20);
