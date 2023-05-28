@@ -61,6 +61,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="/projects">CTCDB+</a>
               </li>
+              <li class="nav-item">
+                <!-- Display only to admins -->
+                @if (Auth::user()->person->is_superuser == 1 || Auth::user()->person->is_admin == 1)
+                  <a class="nav-link" href="/rebate-codes">Rebate Codes</a>
+                @endif
+              </li>
               <li class="nav-item dropdown">
 
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

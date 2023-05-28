@@ -77,6 +77,7 @@ Route::resources([
     'preferences' => 'UserpreferenceController',
     'posts' => 'PostController',
     'projects' => 'ProjectController',
+    'rebate-codes' => 'RebateCodeController',
     'suggestions' => 'SuggestionController',
     'test' => 'TestController',
     'ticketsales' => 'TicketsalesController'
@@ -135,9 +136,12 @@ Route::get('phils-film-quiz', function () {
     return view('various.phils_quiz');
 });
 
-Route::get('/generate-codes', function (Request $request) {
-    /* use the CodeGeneratorController to generate codes */
-    return App::call('App\Http\Controllers\CodeGeneratorController@index', [
-        'request' => $request
-    ]);
-});
+// Route::get('/generate-codes', function (Request $request) {
+//     /* use the RebateCodeGeneratorController to generate codes */
+//     return App::call('App\Http\Controllers\RebateCodeGeneratorController@index', [
+//         'request' => $request
+//     ]);
+// });
+
+Route::get('/generate-codes', 'RebateCodeGeneratorController@index');
+Route::post('/generate-codes', 'RebateCodeGeneratorController@generateCodes');
