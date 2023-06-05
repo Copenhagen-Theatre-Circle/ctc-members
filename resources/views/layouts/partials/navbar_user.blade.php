@@ -14,6 +14,11 @@
     <a class="navbar-item is-tab {{ Request::segment(1) === 'handbooks' ? 'is-active' : null }} " href="/handbooks">
       Handbooks
     </a>
+    @if (Auth::user()->person->is_superuser == 1 || Auth::user()->person->is_admin == 1)
+      <a class="navbar-item is-tab {{ Request::segment(1) === 'rebate-codes' ? 'is-active' : null }} " href="/rebate-codes">
+        Rebate Codes
+      </a>
+    @endif
 </div>
 <div class="navbar-end" style="padding-top: 5px;">
     <div class="navbar-item has-dropdown is-hoverable">
