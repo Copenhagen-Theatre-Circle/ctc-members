@@ -21,7 +21,7 @@ class MembershipImporter
         // return $seccode;
         $place2bookResponse = json_decode(place2bookShowOrders($seccode));
         // in the edge case with 1 purchase only, place2book returns an object instead of a collection of objects
-        if (is_object($place2bookResponse->event->purchases)) {
+        if (is_object($place2bookResponse->event->purchases->purchase)) {
             $purchases = array($place2bookResponse->event->purchases->purchase);
         } else {
             $purchases = $place2bookResponse->event->purchases->purchase;
