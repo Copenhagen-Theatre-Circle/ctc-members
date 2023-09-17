@@ -58,6 +58,20 @@
                           <div class="tab-content p-3 border-tab rounded-bottom rounded-right" id="myTabContent">
                             <div class="tab-pane fade show active" id="audition" role="tabpanel">
 
+                            @if (! empty($auditionFormAnswer->person->preferred_pronouns))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Preferred Pronouns:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->preferred_pronouns)))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
                                @if (! empty($auditionFormAnswer->characters))
                                 <div class="row">
                                   <div class="col-2 pr-0">
@@ -80,6 +94,91 @@
                                   <div class="col-6 pl-0">
                                       <p>
                                       {!! nl2br(e(str_replace('&#39;',"'",$auditionFormAnswer->experience))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
+                              @if (! empty($auditionFormAnswer->person->languages))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Languages:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->languages)))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
+                              @if (! empty($auditionFormAnswer->person->musical_instruments))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Musical Instruments:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->musical_instruments)))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
+                              @if (! empty($auditionFormAnswer->person->combat_experience))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Stage Combat Experience:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->combat_experience)))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
+                              @if (! empty($auditionFormAnswer->person->special_talents))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Special Talents:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->special_talents)))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
+
+                              @if (! empty($auditionFormAnswer->person->performance_resume))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Performance Resume:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      {!! nl2br(e(str_replace('&#34;', '"', str_replace('&#39;',"'",$auditionFormAnswer->person->performance_resume)))) !!}
+                                      </p>
+                                  </div>
+                                </div>
+                                <hr/>
+                              @endif
+
+                              @if (! empty($auditionFormAnswer->person->performance_resume_file))
+                                <div class="row">
+                                  <div class="col-2 pr-0">
+                                    Performance Resume File:
+                                  </div>
+                                  <div class="col-6 pl-0">
+                                      <p>
+                                      <a href="https://ctc-members.dk/performance_resumes/{{$auditionFormAnswer->person->performance_resume_file}}" target="_blank">Click here to download</a>
                                       </p>
                                   </div>
                                 </div>
