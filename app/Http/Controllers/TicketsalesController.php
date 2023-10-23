@@ -61,9 +61,9 @@ class TicketsalesController extends Controller
     $array['total_sold'] = 0;
     $array['total_available'] = 0;
     $array['total_standard'] = 0;
-    $array['total_vip'] = 0;
-    $array['total_discount'] = 0;
+    $array['total_early_bird'] = 0;
     $array['total_child'] = 0;
+    $array['total_student'] = 0;
     $array['total_group_10_to_19'] = 0;
     $array['total_group_20_or_more'] = 0;
     $array['total_membership_adult'] = 0;
@@ -78,29 +78,32 @@ class TicketsalesController extends Controller
       $subarray['id'] = $event['id'];
       $subarray['date'] = $event['date'];
       $subarray['time'] = $event['time'];
-      $seccode = $event['place2book_seccode'];
-      $subarray['seccode'] = $seccode;
-      $orders = place2bookShowStats($seccode);
-      $orders_array = json_decode($orders, TRUE);
+      // $seccode = $event['place2book_seccode'];
+      // $subarray['seccode'] = $seccode;
+      // $orders = place2bookShowStats($seccode);
+      // $orders_array = json_decode($orders, TRUE);
+
+      // Get orders from ticketsales_billetlugen entity with given event-id
+      $orders_array = \App\TicketsalesBilletlugen::where('event_id', $event['billetlugen_event_id'])->get();
 
       // return $orders_array;
 
-      $orders_array = $orders_array['event']['tickets']['ticket'];
+      // $orders_array = $orders_array['event']['tickets']['ticket'];
       //wrap in array if only one value
-      if (isset($orders_array['name'])) {
-        $extended_array = array();
-        $extended_array[0] = $orders_array;
-        $orders_array = $extended_array;
-      }
+      // if (isset($orders_array['name'])) {
+      //   $extended_array = array();
+      //   $extended_array[0] = $orders_array;
+      //   $orders_array = $extended_array;
+      // }
       // return $orders_array;
       //initialise ticket amounts
       $subarray['sold'] = 0;
 
       $subarray['available'] = 0;
       $subarray['standard'] = 0;
-      $subarray['vip'] = 0;
-      $subarray['discount'] = 0;
+      $subarray['early_bird'] = 0;
       $subarray['child'] = 0;
+      $subarray['student'] = 0;
       $subarray['group_10_to_19'] = 0;
       $subarray['group_20_or_more'] = 0;
       $subarray['membership_adult'] = 0;
@@ -112,102 +115,80 @@ class TicketsalesController extends Controller
       //map each ticket type and add to sum
       foreach ($orders_array as $orders_detail) {
 
-        if (isset($orders_detail['available'])) {
-          $available_iteration = (int) $orders_detail['available'];
-          if ($available_iteration > $subarray['available']) {
-            $subarray['available'] = $available_iteration;
-          }
-        } else {
-          $available_iteration = (int) $orders_array['available'];
-          if ($available_iteration > $subarray['available']) {
-            $subarray['available'] = $available_iteration;
-          }
+        // if (isset($orders_detail['available'])) {
+        //   $available_iteration = (int) $orders_detail['available'];
+        //   if ($available_iteration > $subarray['available']) {
+        //     $subarray['available'] = $available_iteration;
+        //   }
+        // } else {
+        //   $available_iteration = (int) $orders_array['available'];
+        //   if ($available_iteration > $subarray['available']) {
+        //     $subarray['available'] = $available_iteration;
+        //   }
+        // }
+        // if not a valid order, skip
+        if ($orders_detail['status'] != 'valid') {
+          continue;
         }
 
-        $tickettype = $orders_detail['name'];
-        $sold = $orders_detail['sold'];
-        $subarray['sold'] += $sold;
-        $array['total_sold'] += $sold;
+        $tickettype = $orders_detail['ticket_type'];
+        $subarray['sold'] += 1;
+        $array['total_sold'] += 1;
 
         switch ($tickettype) {
           //standard tickets
-          case 'Standard (reserved)';
-          case 'Standard';
-          case 'Standard overbooking';
+          case 'Normal';
           case 'Adult';
-          case 'Adults';
-          case 'voksen';
-          case 'Unnumbered seats';
-          case 'Fringe ticket';
             $tickettype = "standard";
             break;
-          //discount tickets
-          case 'VIP Table 1A';
-          case 'VIP Table 1B';
-          case 'VIP Table 2A';
-          case 'VIP Table 2B';
-            $tickettype = "vip";
+          case 'Early Bird Tickets';
+          case 'Early Bird Promo';
+            $tickettype = 'early_bird';
             break;
-          //discount tickets
-          case 'Club Lorry';
-          case 'Discount';
-            $tickettype = "discount";
-            break;
+          //   $tickettype = "discount";
+          //   break;
           //child tickets
-          case 'Child (reserved)';
-          case 'Child';
-          case 'Child (12 yrs and under)';
-          case 'Under 18';
+          case 'Under 25';
+          case 'Students (18-25 y.o.)';
+            $tickettype = 'student';
+            break;
+          case 'Kids (17 y.o. & below)';
             $tickettype = "child";
             break;
           //group 10-19
-          case 'Group 10-19 adults';
-          case 'Split Group 10-19';
-          case 'Group 10-19 (reserved)';
-          case 'Group 10-19 Adults';
-          case 'Group of 10-19 adults';
-          case 'Group (10 - 19 adults)';
           case 'Group 10-19';
             $tickettype = "group_10_to_19";
             break;
           //group 20+
           case 'Group 20+';
-          case 'Group 20+ adults';
-          case 'Group of 20+ adults';
-          case 'Group 20+ Adults';
-          case 'Group 20+ (reserved)';
-          case 'Group (20 or more adults)';
-          case 'Extra group tickets (over 20)';
             $tickettype = "group_20_or_more";
             break;
           //membership
-          case 'Membership Ticket';
-          case 'Membership';
+          case 'CTC Member';
             $tickettype = "membership_adult";
             break;
           //membership child
-          case 'Membership Ticket (child)';
-          case 'Membership ticket (child)';
-            $tickettype = "membership_child";
-            break;
+          // case 'Membership Ticket (child)';
+          // case 'Membership ticket (child)';
+          //   $tickettype = "membership_child";
+          //   break;
           //membership child
           case 'Complimentary';
           case 'Comp';
-          case 'Complimentary Ticket';
             $tickettype = "comp";
             break;
           //default: list ticket type
           default;
-            $tickettype = $tickettype;
             break;
         }
 
         $subarray[$tickettype] = $subarray[$tickettype] ?? 0;
-        $subarray[$tickettype] += $sold;
-        $array['total_' . $tickettype] += $sold;
+        $subarray[$tickettype] += 1;
+        $array['total_' . $tickettype] += 1;
 
       }
-
+      // Assign available from events data instead
+      $subarray['available'] = $event['available_tickets'] - $subarray['sold'];
       $array['total_available'] += $subarray['available'];
       $array['events'][] = $subarray;
     }
@@ -370,11 +351,15 @@ class TicketsalesController extends Controller
 
           //newsletter
           elseif (
-            strpos($custom_field_1_name,
-              'newsletter') !== false
+            strpos(
+              $custom_field_1_name,
+              'newsletter'
+            ) !== false
             ||
-            strpos($custom_field_1_name,
-              'Newsletter') !== false
+            strpos(
+              $custom_field_1_name,
+              'Newsletter'
+            ) !== false
           ) {
             $newsletter = trim($custom_field_1_value);
             if (strpos($newsletter, "Yes") !== false) {

@@ -56,7 +56,8 @@
                             </tr>
                             <tr>
                                 <th>Standard</th>
-                                <th>VIP</th>
+                                <th>Early Bird</th>
+                                <th>Student</th>
                                 <th>Child</th>
                                 <th>Group<br>10 to 19</th>
                                 <th>Group<br>20+</th>
@@ -73,7 +74,8 @@
                                   <td>{{ $event['sold'] }}</td>
                                   <td>{{ $event['available'] }}</td>
                                   <td>{{ $event['standard'] }}</td>
-                                  <td>{{ $event['vip'] }}</td>
+                                  <td>{{ $event['early_bird'] }}</td>
+                                  <td>{{ $event['student'] }}</td>
                                   <td>{{ $event['child'] }}</td>
                                   <td>{{ $event['group_10_to_19'] }}</td>
                                   <td>{{ $event['group_20_or_more'] }}</td>
@@ -92,7 +94,8 @@
                                 <td><strong>{{$output['total_sold']}}</strong></td>
                                 <td><strong>{{$output['total_available']}}</strong></td>
                                 <td>{{$output['total_standard']}}</td>
-                                <td>{{$output['total_vip']}}</td>
+                                <td>{{$output['total_early_bird']}}</td>
+                                <td>{{$output['total_student']}}</td>
                                 <td>{{$output['total_child']}}</td>
                                 <td>{{$output['total_group_10_to_19']}}</td>
                                 <td>{{$output['total_group_20_or_more']}}</td>
