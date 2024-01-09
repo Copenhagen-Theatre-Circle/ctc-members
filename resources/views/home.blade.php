@@ -53,7 +53,7 @@
                                             </div>
                                         @endif
                                         <div style="border-bottom: 1pt solid grey; margin-bottom: 12px;"></div>
-                                        <a href="https://place2book.com/en/sw2/sales/event_list/EM175" target="_blank"
+                                        <a href="https://www.eventim-light.com/dk/a/644b86b798e989662aba99fd" target="_blank"
                                             class="btn btn-lg btn-outline-info btn-block border-white text-white mb-3">Go To
                                             Ticket Sales Page</a>
                                         <a href="ticketsales/{{ $project->id }}" 
